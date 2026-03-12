@@ -1,0 +1,170 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+:root {
+  --bg: #111;
+  --fg: #eee;
+  --line: #2a2a2a;
+  --muted: rgba(255,255,255,0.7);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  overscroll-behavior: none;
+  touch-action: manipulation;
+}
+
+.top {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: max(10px, env(safe-area-inset-top)) 12px 10px;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: rgba(17, 17, 17, 0.92);
+  backdrop-filter: blur(6px);
+  z-index: 20;
+}
+
+#startBtn {
+  min-width: 82px;
+  padding: 10px 14px;
+  border: 1px solid #444;
+  background: #1b1b1b;
+  color: var(--fg);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.info {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.info b {
+  color: var(--fg);
+}
+
+.app {
+  min-height: calc(100vh - 60px);
+  padding: 12px 0 calc(20px + env(safe-area-inset-bottom));
+}
+
+.carouselSection {
+  display: grid;
+  gap: 14px;
+}
+
+.carouselViewport {
+  overflow: hidden;
+  width: 100%;
+  touch-action: pan-y;
+}
+
+.carouselTrack {
+  display: flex;
+  width: 300%;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.32s ease;
+  will-change: transform;
+}
+
+.carouselTrack.isDragging {
+  transition: none;
+}
+
+.slide {
+  width: 100vw;
+  flex: 0 0 100vw;
+  padding: 0 12px;
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+}
+
+.slideHeader {
+  width: min(100%, 560px);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.9);
+}
+
+.panoFrame {
+  position: relative;
+  width: min(100%, 560px);
+  height: min(62vh, 460px);
+  min-height: 280px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #000;
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
+}
+
+.pano {
+  height: 100%;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: 0px 50%;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.pano.dragging {
+  cursor: grabbing;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 4px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255,255,255,0.28);
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.dot.isActive {
+  width: 14px;
+  height: 14px;
+  background: rgba(255,255,255,0.92);
+  transform: scale(1.02);
+}
+
+@media (min-width: 768px) {
+  .slide {
+    padding: 0 20px;
+  }
+
+  .slideHeader {
+    font-size: 15px;
+  }
+
+  .info {
+    font-size: 14px;
+  }
+}
