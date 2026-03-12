@@ -72,12 +72,15 @@ body {
 .carouselViewport {
   overflow: hidden;
   width: 100%;
-  touch-action: pan-y;
+  height: calc(100vh - 120px - env(safe-area-inset-bottom));
+  min-height: 520px;
+  touch-action: pan-x;
 }
 
 .carouselTrack {
   display: flex;
-  width: 300%;
+  flex-direction: column;
+  height: calc(100% * 3);
   transform: translate3d(0, 0, 0);
   transition: transform 0.32s ease;
   will-change: transform;
@@ -88,12 +91,15 @@ body {
 }
 
 .slide {
-  width: 100vw;
-  flex: 0 0 100vw;
+  width: 100%;
+  height: calc((100vh - 120px - env(safe-area-inset-bottom)));
+  min-height: 520px;
+  flex: 0 0 calc((100vh - 120px - env(safe-area-inset-bottom)));
   padding: 0 12px;
   display: grid;
-  gap: 12px;
+  align-content: start;
   justify-items: center;
+  gap: 12px;
 }
 
 .slideHeader {
@@ -101,6 +107,7 @@ body {
   font-size: 14px;
   letter-spacing: 0.04em;
   color: rgba(255,255,255,0.9);
+  padding-top: 4px;
 }
 
 .panoFrame {
@@ -130,11 +137,16 @@ body {
 }
 
 .dots {
+  position: fixed;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding-bottom: 4px;
+  z-index: 25;
 }
 
 .dot {
@@ -166,5 +178,9 @@ body {
 
   .info {
     font-size: 14px;
+  }
+
+  .dots {
+    right: 20px;
   }
 }

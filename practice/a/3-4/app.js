@@ -24,9 +24,9 @@ let globalActiveSetName = '-';
 let currentSlide = 0;
 let carouselDragging = false;
 let carouselPointerId = null;
-let carouselStartX = 0;
-let carouselBaseX = 0;
-let carouselDragDx = 0;
+let carouselStartY = 0;
+let carouselBaseY = 0;
+let carouselDragDy = 0;
 
 const sets = [
   {
@@ -84,8 +84,8 @@ function renderHUD() {
   sEl.textContent = globalActiveSetName;
 }
 
-function getSlideWidth() {
-  return window.innerWidth;
+function getSlideHeight() {
+  return carouselViewport.clientHeight || window.innerHeight;
 }
 
 function updateDots() {
@@ -94,14 +94,14 @@ function updateDots() {
   });
 }
 
-function applyCarouselX(x) {
-  carouselTrack.style.transform = `translate3d(${x}px, 0, 0)`;
+function applyCarouselY(y) {
+  carouselTrack.style.transform = `translate3d(0, ${y}px, 0)`;
 }
 
 function snapCarousel(animate = true) {
   carouselTrack.classList.toggle('isDragging', !animate);
-  const x = -currentSlide * getSlideWidth();
-  applyCarouselX(x);
+  const y = -currentSlide * getSlideHeight();
+  applyCarouselY(y);
   updateDots();
 }
 
@@ -138,7 +138,6 @@ function makePanoSet(def, index) {
 
   let bgX = 0;
   let tileW = 0;
-  let regionW = 0;
   let frameW = 0;
 
   let isDragging = false;
@@ -175,7 +174,7 @@ function makePanoSet(def, index) {
 
   function setFrameWidth() {
     if (!tileW) return;
-    regionW = tileW / REGION_COUNT;
+    const regionW = tileW / REGION_COUNT;
     frameW = regionW * 2;
     const maxW = Math.min(window.innerWidth - 24, 560);
     const viewW = Math.min(frameW, maxW);
@@ -400,9 +399,9 @@ carouselViewport.addEventListener('pointerdown', (ev) => {
 
   carouselDragging = true;
   carouselPointerId = ev.pointerId;
-  carouselStartX = ev.clientX;
-  carouselBaseX = -currentSlide * getSlideWidth();
-  carouselDragDx = 0;
+  carouselStartY = ev.clientY;
+  carouselBaseY = -currentSlide * getSlideHeight();
+  carouselDragDy = 0;
 
   carouselTrack.classList.add('isDragging');
 
@@ -417,19 +416,19 @@ carouselViewport.addEventListener('pointermove', (ev) => {
   if (!carouselDragging) return;
   if (carouselPointerId !== null && ev.pointerId !== carouselPointerId) return;
 
-  carouselDragDx = ev.clientX - carouselStartX;
-  applyCarouselX(carouselBaseX + carouselDragDx);
+  carouselDragDy = ev.clientY - carouselStartY;
+  applyCarouselY(carouselBaseY + carouselDragDy);
 });
 
 function endCarouselDrag(ev) {
   if (!carouselDragging) return;
   if (carouselPointerId !== null && ev.pointerId !== carouselPointerId) return;
 
-  const threshold = getSlideWidth() * 0.18;
+  const threshold = getSlideHeight() * 0.14;
 
-  if (carouselDragDx < -threshold) {
+  if (carouselDragDy < -threshold) {
     currentSlide = clamp(currentSlide + 1, 0, sets.length - 1);
-  } else if (carouselDragDx > threshold) {
+  } else if (carouselDragDy > threshold) {
     currentSlide = clamp(currentSlide - 1, 0, sets.length - 1);
   }
 
@@ -443,7 +442,7 @@ function endCarouselDrag(ev) {
   }
 
   carouselPointerId = null;
-  carouselDragDx = 0;
+  carouselDragDy = 0;
 
   setCurrentSlide(currentSlide, true);
 }
