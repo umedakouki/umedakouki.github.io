@@ -321,6 +321,23 @@ body {
   color: var(--muted);
 }
 
+.sheetLinkWrap {
+  margin-top: 8px;
+}
+
+.sheetLink {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.sheetLink:hover {
+  color: var(--fg);
+}
+
 @media (min-width: 768px) {
   .top {
     padding-left: 18px;
