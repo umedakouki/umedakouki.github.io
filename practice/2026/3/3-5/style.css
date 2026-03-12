@@ -290,6 +290,37 @@ body {
   min-width: 120px;
 }
 
+.subBtn {
+  min-width: 120px;
+  padding: 10px 14px;
+  border: 1px solid #444;
+  background: #1b1b1b;
+  color: var(--fg);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.subBtn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.recordToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.recordNote {
+  margin: -4px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
 @media (min-width: 768px) {
   .top {
     padding-left: 18px;
@@ -313,4 +344,5 @@ body {
   .dots {
     right: 20px;
   }
+  
 }

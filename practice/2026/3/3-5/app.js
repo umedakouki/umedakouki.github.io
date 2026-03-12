@@ -9,6 +9,9 @@ const TURN_DURATION_MS = 560;
 const FRONT_LISTEN_MS = 3000;
 const SLIDE_COUNT = 4;
 
+// Step 4: ここに Apps Script の Web アプリ URL を貼る
+const FEEDBACK_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxJhgvpVrX7y73eaTUocB_ptHuVbNo3nWcHklhHW7SYBmRrJaUPkGhGMbSOOIfcSCgXyA/exec';
+
 const startBtn = document.getElementById('startBtn');
 const turnBtn = document.getElementById('turnBtn');
 const feedbackBtn = document.getElementById('feedbackBtn');
@@ -23,11 +26,17 @@ const dotEls = Array.from(document.querySelectorAll('.dot'));
 const recordTableBodyEl = document.getElementById('recordTableBody');
 const recordCountEl = document.getElementById('recordCount');
 
+// 参加者ごとの簡易セッションID
+const sessionId = (window.crypto && crypto.randomUUID)
+  ? crypto.randomUUID()
+  : `session-${Date.now()}-${Math.floor(Math.random() * 1e6)}`;
+
 let unlocked = false;
 let startPerf = 0;
 let lastSyncCheck = 0;
 let globalActiveRegion = -1;
 let globalActiveSetName = '-';
+let hasSubmittedCurrentRecords = false;
 
 let currentSlide = 0;
 let carouselDragging = false;
@@ -122,57 +131,22 @@ function snapCarousel(animate = true) {
   updateDots();
 }
 
-function buildFeedbackPayload() {
-  const lines = turnRecords.map((rec) => rec.raw);
-  return lines.join('\n');
-}
+function updateFeedbackButtonState() {
+  if (!feedbackBtn) return;
 
-function downloadFeedbackText(text) {
-  const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-  a.href = url;
-  a.download = `turn-records-${stamp}.txt`;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
-}
+  const onRecordSlide = currentSlide === SLIDE_COUNT - 1;
+  const hasRecords = turnRecords.length > 0;
 
-async function feedbackRecords() {
-  if (turnRecords.length === 0) {
-    alert('まだフィードバックする記録がありません。');
+  feedbackBtn.disabled = !onRecordSlide || !hasRecords;
+
+  if (!hasRecords) {
+    feedbackBtn.textContent = '記録をフィードバック';
     return;
   }
 
-  const payload = buildFeedbackPayload();
-  const shareTitle = 'turn records';
-  const shareText = payload;
-
-  try {
-    if (navigator.share) {
-      await navigator.share({
-        title: shareTitle,
-        text: shareText
-      });
-      return;
-    }
-  } catch (_) {
-    // ユーザーが共有を閉じた場合などは次へフォールバック
-  }
-
-  try {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      await navigator.clipboard.writeText(payload);
-      alert('記録をクリップボードにコピーしました。自分宛メールやメモに貼り付けてください。');
-      return;
-    }
-  } catch (_) {
-    // 次へフォールバック
-  }
-
-  downloadFeedbackText(payload);
+  feedbackBtn.textContent = hasSubmittedCurrentRecords
+    ? '送信済み'
+    : '記録をフィードバック';
 }
 
 function renderRecords() {
@@ -183,6 +157,7 @@ function renderRecords() {
     const tr = document.createElement('tr');
     tr.innerHTML = `<td colspan="4" class="recordEmptyCell">まだ記録はありません。</td>`;
     recordTableBodyEl.appendChild(tr);
+    updateFeedbackButtonState();
     return;
   }
 
@@ -197,6 +172,56 @@ function renderRecords() {
     `;
     recordTableBodyEl.appendChild(tr);
   }
+
+  updateFeedbackButtonState();
+}
+
+function buildFeedbackPayload() {
+  return {
+    sessionId,
+    submittedAt: new Date().toISOString(),
+    records: turnRecords.map((rec) => ({
+      pano: rec.pano,
+      before: rec.before,
+      after: rec.after,
+      sec: rec.sec,
+      raw: rec.raw
+    }))
+  };
+}
+
+async function sendFeedbackToServer() {
+  if (turnRecords.length === 0) {
+    throw new Error('まだ送信する記録がありません。');
+  }
+
+  if (!FEEDBACK_ENDPOINT || FEEDBACK_ENDPOINT.includes('PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE')) {
+    throw new Error('FEEDBACK_ENDPOINT に Apps Script の URL を設定してください。');
+  }
+
+  const payload = buildFeedbackPayload();
+
+  const res = await fetch(FEEDBACK_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'text/plain;charset=utf-8'
+    },
+    body: JSON.stringify(payload)
+  });
+
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status}`);
+  }
+
+  const json = await res.json();
+
+  if (!json.ok) {
+    throw new Error(json.error || '送信に失敗しました。');
+  }
+
+  hasSubmittedCurrentRecords = true;
+  updateFeedbackButtonState();
+  return json;
 }
 
 function muteAllExcept(activeIndex) {
@@ -226,6 +251,7 @@ function setCurrentSlide(index, animate = true) {
     globalActiveRegion = -1;
     globalActiveSetName = '記録';
     turnBtn.disabled = true;
+    updateFeedbackButtonState();
     return;
   }
 
@@ -237,6 +263,8 @@ function setCurrentSlide(index, animate = true) {
     globalActiveRegion = -1;
     globalActiveSetName = '-';
   }
+
+  updateFeedbackButtonState();
 }
 
 function makePanoSet(def, index) {
@@ -435,6 +463,7 @@ function makePanoSet(def, index) {
       raw: `${pano}${dirs.before},${pano}${dirs.after},${sec}`
     });
 
+    hasSubmittedCurrentRecords = false;
     renderRecords();
   }
 
@@ -466,7 +495,7 @@ function makePanoSet(def, index) {
       bgX = endX;
       applyBg();
       isTurning = false;
-      turnBtn.disabled = currentSlide >= panoSets.length ? true : false;
+      turnBtn.disabled = currentSlide >= panoSets.length;
       startFrontHold();
     }
 
@@ -570,6 +599,7 @@ window.addEventListener('resize', async () => {
   await initializeMetrics();
   renderRecords();
   turnBtn.disabled = true;
+  updateFeedbackButtonState();
 })();
 
 async function startSystem() {
@@ -616,9 +646,19 @@ turnBtn.addEventListener('click', () => {
   }
 });
 
-feedbackBtn.addEventListener('click', async () => {
-  await feedbackRecords();
-});
+if (feedbackBtn) {
+  feedbackBtn.addEventListener('click', async () => {
+    try {
+      feedbackBtn.disabled = true;
+      await sendFeedbackToServer();
+      alert('記録を送信しました。');
+    } catch (err) {
+      alert(`送信に失敗しました: ${err.message}`);
+    } finally {
+      updateFeedbackButtonState();
+    }
+  });
+}
 
 carouselViewport.addEventListener('pointerdown', (ev) => {
   if (ev.target.closest('.pano')) return;
