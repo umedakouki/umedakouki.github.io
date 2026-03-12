@@ -6,7 +6,12 @@ const SYNC_EPS = 0.2;
 const SYNC_INTERVAL_MS = 250;
 const MASTER_GAIN = 0.7;
 
+const TURN_OFFSET_REGIONS = REGION_COUNT / 2; // 8領域なら180度 = 4領域
+const TURN_ANIM_MS = 700;
+const TURN_HOLD_MS = 3000;
+
 const startBtn = document.getElementById('startBtn');
+const turnBtn = document.getElementById('turnBtn');
 const tEl = document.getElementById('t');
 const rEl = document.getElementById('r');
 const sEl = document.getElementById('s');
@@ -66,6 +71,12 @@ function clamp(v, min, max) {
   return Math.max(min, Math.min(max, v));
 }
 
+function easeInOutCubic(t) {
+  return t < 0.5
+    ? 4 * t * t * t
+    : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
 function wrappedDiff(a, b, loopLen) {
   const diff = Math.abs(a - b);
   const wrap1 = Math.abs((a + loopLen) - b);
@@ -121,6 +132,8 @@ function setCurrentSlide(index, animate = true) {
     globalActiveSetName = '-';
     globalActiveRegion = -1;
   }
+
+  updateTurnButtonState();
 }
 
 function muteAllSetsExcept(activeIndex) {
@@ -128,6 +141,11 @@ function muteAllSetsExcept(activeIndex) {
     if (i === activeIndex) continue;
     panoSets[i].muteSelf();
   }
+}
+
+function updateTurnButtonState() {
+  const activeSet = panoSets[currentSlide];
+  turnBtn.disabled = !unlocked || !activeSet || activeSet.isTurning();
 }
 
 function makePanoSet(def, index) {
@@ -145,6 +163,10 @@ function makePanoSet(def, index) {
   let dragStartX = 0;
   let dragStartBgX = 0;
   let isSelected = index === currentSlide;
+
+  let turning = false;
+  let holdUntilMs = 0;
+  let heldBlend = null;
 
   const audios = def.audioFiles.map((src) => {
     const a = new Audio(src);
@@ -198,7 +220,7 @@ function makePanoSet(def, index) {
     });
   }
 
-  function calcBlendFromFrameCenter() {
+  function getFrontBlend() {
     if (!tileW) return null;
 
     const currentFrameW = frame.clientWidth;
@@ -222,12 +244,39 @@ function makePanoSet(def, index) {
     };
   }
 
+  function getBackBlend() {
+    const front = getFrontBlend();
+    if (!front) return null;
+
+    const backCenter = mod(front.center + TURN_OFFSET_REGIONS, REGION_COUNT);
+    return {
+      center: backCenter,
+      left: mod(backCenter - 1, REGION_COUNT),
+      right: mod(backCenter + 1, REGION_COUNT),
+      t: front.t
+    };
+  }
+
+  function getActiveBlend() {
+    const now = performance.now();
+
+    if (heldBlend && now < holdUntilMs) {
+      return heldBlend;
+    }
+
+    if (heldBlend && now >= holdUntilMs) {
+      heldBlend = null;
+    }
+
+    return getBackBlend();
+  }
+
   function applyBlend(force = false) {
     if (!unlocked) return;
     if (!isSelected && !force) return;
     if (index !== currentSlide && !force) return;
 
-    const blend = calcBlendFromFrameCenter();
+    const blend = getActiveBlend();
     if (!blend) return;
 
     muteAllSetsExcept(index);
@@ -270,8 +319,55 @@ function makePanoSet(def, index) {
     }
   }
 
+  function isTurning() {
+    return turning;
+  }
+
+  function animateTurnAround() {
+    if (!unlocked || turning || !tileW) return;
+    if (index !== currentSlide) return;
+
+    const currentBackBlend = getBackBlend();
+    if (!currentBackBlend) return;
+
+    turning = true;
+    updateTurnButtonState();
+
+    heldBlend = currentBackBlend;
+    holdUntilMs = performance.now() + TURN_ANIM_MS + TURN_HOLD_MS;
+
+    const startX = bgX;
+    const targetX = bgX - tileW / 2;
+    const startTime = performance.now();
+
+    function step(now) {
+      const elapsed = now - startTime;
+      const t = clamp01(elapsed / TURN_ANIM_MS);
+      const eased = easeInOutCubic(t);
+
+      bgX = startX + (targetX - startX) * eased;
+      applyBg();
+      applyBlend(true);
+
+      if (t < 1) {
+        requestAnimationFrame(step);
+        return;
+      }
+
+      bgX = targetX;
+      applyBg();
+      applyBlend(true);
+      turning = false;
+      updateTurnButtonState();
+    }
+
+    requestAnimationFrame(step);
+  }
+
   pano.addEventListener('pointerdown', (ev) => {
     if (currentSlide !== index) return;
+    if (turning) return;
+
     isDragging = true;
     pointerId = ev.pointerId;
     pano.classList.add('dragging');
@@ -318,6 +414,8 @@ function makePanoSet(def, index) {
 
   pano.addEventListener('wheel', (ev) => {
     if (currentSlide !== index) return;
+    if (turning) return;
+
     ev.preventDefault();
     bgX += -ev.deltaY;
     applyBg();
@@ -333,7 +431,9 @@ function makePanoSet(def, index) {
     stopAllAudios,
     muteSelf,
     setSelected,
-    refreshBlend: () => applyBlend(true)
+    refreshBlend: () => applyBlend(true),
+    turnAround: animateTurnAround,
+    isTurning
   };
 }
 
@@ -356,6 +456,7 @@ window.addEventListener('resize', async () => {
 
 (async () => {
   await initializeMetrics();
+  updateTurnButtonState();
 })();
 
 async function startSystem() {
@@ -371,6 +472,7 @@ async function startSystem() {
   }
 
   setCurrentSlide(currentSlide, false);
+  updateTurnButtonState();
 }
 
 function stopSystem() {
@@ -384,6 +486,8 @@ function stopSystem() {
   for (const ps of panoSets) {
     ps.stopAllAudios();
   }
+
+  updateTurnButtonState();
 }
 
 startBtn.addEventListener('click', async () => {
@@ -392,6 +496,13 @@ startBtn.addEventListener('click', async () => {
   } else {
     stopSystem();
   }
+});
+
+turnBtn.addEventListener('click', () => {
+  if (!unlocked) return;
+  const activeSet = panoSets[currentSlide];
+  if (!activeSet) return;
+  activeSet.turnAround();
 });
 
 carouselViewport.addEventListener('pointerdown', (ev) => {
@@ -479,6 +590,15 @@ function syncIfNeeded(nowMs) {
 function tick(nowMs) {
   renderHUD();
   syncIfNeeded(nowMs);
+
+  if (unlocked) {
+    const activeSet = panoSets[currentSlide];
+    if (activeSet) {
+      activeSet.refreshBlend();
+      updateTurnButtonState();
+    }
+  }
+
   requestAnimationFrame(tick);
 }
 

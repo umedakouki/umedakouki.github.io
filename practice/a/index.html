@@ -1,16 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>シリーズA</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Panorama Audio Window</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>シリーズA</h1>
-    </header>
-    <main>
-        <a href="3-4/index.html">3-4</a>
-    </main>
+  <header class="top">
+    <button id="startBtn" type="button">Start</button>
+    <div class="info">
+      <span>time: <b id="t">0.0</b>s / 60.0s</span>
+      <span>set: <b id="s">-</b></span>
+      <span>region: <b id="r">-</b></span>
+    </div>
+  </header>
+
+  <main class="app">
+    <section class="lead">
+      <p>
+        画面を横にスワイプすると、その方向の風景が現れてきます。左上の「Start」を押すと、画面の反対方向の音が流れます。
+        気になる音があったら「振り返る」ボタンを押して確認することができます。
+      </p>
+    </section>
+
+    <section class="carouselSection" aria-label="panorama carousel">
+      <div class="carouselViewport" id="carouselViewport">
+        <div class="carouselTrack" id="carouselTrack">
+          <article class="slide" data-index="0">
+            <div class="slideHeader">A: 修学院</div>
+            <div class="panoFrame">
+              <div class="pano" id="panoA" aria-label="panorama A"></div>
+            </div>
+          </article>
+
+          <article class="slide" data-index="1">
+            <div class="slideHeader">B: 一乗寺</div>
+            <div class="panoFrame">
+              <div class="pano" id="panoB" aria-label="panorama B"></div>
+            </div>
+          </article>
+
+          <article class="slide" data-index="2">
+            <div class="slideHeader">C: 北白川</div>
+            <div class="panoFrame">
+              <div class="pano" id="panoC" aria-label="panorama C"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="dots" id="dots" aria-label="carousel pagination">
+        <button class="dot isActive" type="button" aria-label="A: 修学院を表示" data-index="0"></button>
+        <button class="dot" type="button" aria-label="B: 一乗寺を表示" data-index="1"></button>
+        <button class="dot" type="button" aria-label="C: 北白川を表示" data-index="2"></button>
+      </div>
+    </section>
+  </main>
+
+  <div class="bottomBar">
+    <button id="turnBtn" class="turnBtn" type="button">振り返る</button>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>

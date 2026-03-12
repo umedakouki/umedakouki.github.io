@@ -17,6 +17,13 @@
   </header>
 
   <main class="app">
+    <section class="intro">
+      <p>
+        画面を横にスワイプすると、その方向の風景が現れてきます。左上の「Start」を押すと、画面の反対方向の音が流れます。
+        気になる音があったら「振り返る」ボタンを押して確認することができます。
+      </p>
+    </section>
+
     <section class="carouselSection" aria-label="panorama carousel">
       <div class="carouselViewport" id="carouselViewport">
         <div class="carouselTrack" id="carouselTrack">
@@ -50,6 +57,8 @@
       </div>
     </section>
   </main>
+
+  <button id="turnBtn" class="turnBtn" type="button">振り返る</button>
 
   <script src="app.js"></script>
 </body>

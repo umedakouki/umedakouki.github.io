@@ -7,7 +7,7 @@ html, body {
   --bg: #111;
   --fg: #eee;
   --line: #2a2a2a;
-  --muted: rgba(255,255,255,0.7);
+  --muted: rgba(255,255,255,0.72);
 }
 
 * {
@@ -32,7 +32,7 @@ body {
   top: 0;
   background: rgba(17, 17, 17, 0.92);
   backdrop-filter: blur(6px);
-  z-index: 20;
+  z-index: 30;
 }
 
 #startBtn {
@@ -61,7 +61,19 @@ body {
 
 .app {
   min-height: calc(100vh - 60px);
-  padding: 12px 0 calc(20px + env(safe-area-inset-bottom));
+  padding: 12px 0 calc(108px + env(safe-area-inset-bottom));
+}
+
+.lead {
+  padding: 0 12px 12px;
+}
+
+.lead p {
+  margin: 0 auto;
+  width: min(100%, 560px);
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.85);
 }
 
 .carouselSection {
@@ -72,8 +84,8 @@ body {
 .carouselViewport {
   overflow: hidden;
   width: 100%;
-  height: calc(100vh - 120px - env(safe-area-inset-bottom));
-  min-height: 520px;
+  height: calc(100vh - 250px - env(safe-area-inset-bottom));
+  min-height: 420px;
   touch-action: pan-x;
 }
 
@@ -92,9 +104,9 @@ body {
 
 .slide {
   width: 100%;
-  height: calc((100vh - 120px - env(safe-area-inset-bottom)));
-  min-height: 520px;
-  flex: 0 0 calc((100vh - 120px - env(safe-area-inset-bottom)));
+  height: calc(100vh - 250px - env(safe-area-inset-bottom));
+  min-height: 420px;
+  flex: 0 0 calc(100vh - 250px - env(safe-area-inset-bottom));
   padding: 0 12px;
   display: grid;
   align-content: start;
@@ -113,8 +125,8 @@ body {
 .panoFrame {
   position: relative;
   width: min(100%, 560px);
-  height: min(62vh, 460px);
-  min-height: 280px;
+  height: min(56vh, 420px);
+  min-height: 260px;
   overflow: hidden;
   border: 1px solid var(--line);
   background: #000;
@@ -167,7 +179,42 @@ body {
   transform: scale(1.02);
 }
 
+.bottomBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  background: linear-gradient(to top, rgba(17,17,17,0.96), rgba(17,17,17,0.78), rgba(17,17,17,0));
+  display: flex;
+  justify-content: center;
+  z-index: 35;
+  pointer-events: none;
+}
+
+.turnBtn {
+  pointer-events: auto;
+  min-width: 160px;
+  padding: 14px 20px;
+  border: 1px solid #4a4a4a;
+  border-radius: 999px;
+  background: rgba(32,32,32,0.96);
+  color: var(--fg);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.turnBtn:disabled,
+#startBtn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
 @media (min-width: 768px) {
+  .lead p {
+    font-size: 15px;
+  }
+
   .slide {
     padding: 0 20px;
   }

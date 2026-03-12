@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Panorama Audio Window</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <button id="startBtn">Start</button>
+    <div class="info">
+      <span>time: <b id="t">0.0</b>s / 60.0s</span>
+      <span>set: <b id="s">-</b></span>
+      <span>region: <b id="r">-</b></span>
+      <span class="hint">窓の中央が音の基準です。窓を左右にドラッグ、またはホイールで横に振れます。</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="stack" aria-label="panorama sets">
+      <div class="setBlock">
+        <div class="setLabel">A: 修学院</div>
+        <div class="panoFrame">
+          <div class="pano" id="panoA" aria-label="panorama A"></div>
+        </div>
+      </div>
+
+      <div class="setBlock">
+        <div class="setLabel">B: 一乗寺</div>
+        <div class="panoFrame">
+          <div class="pano" id="panoB" aria-label="panorama B"></div>
+        </div>
+      </div>
+
+      <div class="setBlock">
+        <div class="setLabel">C: 北白川</div>
+        <div class="panoFrame">
+          <div class="pano" id="panoC" aria-label="panorama C"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
