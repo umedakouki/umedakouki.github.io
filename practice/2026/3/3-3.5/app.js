@@ -7,14 +7,9 @@ const SYNC_INTERVAL_MS = 250;
 const MASTER_GAIN = 0.7;
 const TURN_DURATION_MS = 560;
 const FRONT_LISTEN_MS = 3000;
-const SLIDE_COUNT = 4;
-
-// Step 4: ここに Apps Script の Web アプリ URL を貼る
-const FEEDBACK_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxJhgvpVrX7y73eaTUocB_ptHuVbNo3nWcHklhHW7SYBmRrJaUPkGhGMbSOOIfcSCgXyA/exec';
 
 const startBtn = document.getElementById('startBtn');
 const turnBtn = document.getElementById('turnBtn');
-const feedbackBtn = document.getElementById('feedbackBtn');
 const tEl = document.getElementById('t');
 const rEl = document.getElementById('r');
 const sEl = document.getElementById('s');
@@ -23,20 +18,11 @@ const carouselViewport = document.getElementById('carouselViewport');
 const carouselTrack = document.getElementById('carouselTrack');
 const dotEls = Array.from(document.querySelectorAll('.dot'));
 
-const recordTableBodyEl = document.getElementById('recordTableBody');
-const recordCountEl = document.getElementById('recordCount');
-
-// 参加者ごとの簡易セッションID
-const sessionId = (window.crypto && crypto.randomUUID)
-  ? crypto.randomUUID()
-  : `session-${Date.now()}-${Math.floor(Math.random() * 1e6)}`;
-
 let unlocked = false;
 let startPerf = 0;
 let lastSyncCheck = 0;
 let globalActiveRegion = -1;
 let globalActiveSetName = '-';
-let hasSubmittedCurrentRecords = false;
 
 let currentSlide = 0;
 let carouselDragging = false;
@@ -44,8 +30,6 @@ let carouselPointerId = null;
 let carouselStartY = 0;
 let carouselBaseY = 0;
 let carouselDragDy = 0;
-
-const turnRecords = [];
 
 const sets = [
   {
@@ -131,99 +115,6 @@ function snapCarousel(animate = true) {
   updateDots();
 }
 
-function updateFeedbackButtonState() {
-  if (!feedbackBtn) return;
-
-  const onRecordSlide = currentSlide === SLIDE_COUNT - 1;
-  const hasRecords = turnRecords.length > 0;
-
-  feedbackBtn.disabled = !onRecordSlide || !hasRecords;
-
-  if (!hasRecords) {
-    feedbackBtn.textContent = '記録をフィードバック';
-    return;
-  }
-
-  feedbackBtn.textContent = hasSubmittedCurrentRecords
-    ? '送信済み'
-    : '記録をフィードバック';
-}
-
-function renderRecords() {
-  recordCountEl.textContent = String(turnRecords.length);
-  recordTableBodyEl.innerHTML = '';
-
-  if (turnRecords.length === 0) {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `<td colspan="4" class="recordEmptyCell">まだ記録はありません。</td>`;
-    recordTableBodyEl.appendChild(tr);
-    updateFeedbackButtonState();
-    return;
-  }
-
-  const items = [...turnRecords].reverse();
-  for (const rec of items) {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td>パノラマ：${rec.pano.toUpperCase()}</td>
-      <td>${rec.before}方向</td>
-      <td>${rec.after}方向</td>
-      <td>${rec.sec}</td>
-    `;
-    recordTableBodyEl.appendChild(tr);
-  }
-
-  updateFeedbackButtonState();
-}
-
-function buildFeedbackPayload() {
-  return {
-    sessionId,
-    submittedAt: new Date().toISOString(),
-    records: turnRecords.map((rec) => ({
-      pano: rec.pano,
-      before: rec.before,
-      after: rec.after,
-      sec: rec.sec,
-      raw: rec.raw
-    }))
-  };
-}
-
-async function sendFeedbackToServer() {
-  if (turnRecords.length === 0) {
-    throw new Error('まだ送信する記録がありません。');
-  }
-
-  if (!FEEDBACK_ENDPOINT || FEEDBACK_ENDPOINT.includes('PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE')) {
-    throw new Error('FEEDBACK_ENDPOINT に Apps Script の URL を設定してください。');
-  }
-
-  const payload = buildFeedbackPayload();
-
-  const res = await fetch(FEEDBACK_ENDPOINT, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'text/plain;charset=utf-8'
-    },
-    body: JSON.stringify(payload)
-  });
-
-  if (!res.ok) {
-    throw new Error(`HTTP ${res.status}`);
-  }
-
-  const json = await res.json();
-
-  if (!json.ok) {
-    throw new Error(json.error || '送信に失敗しました。');
-  }
-
-  hasSubmittedCurrentRecords = true;
-  updateFeedbackButtonState();
-  return json;
-}
-
 function muteAllExcept(activeIndex) {
   for (let i = 0; i < panoSets.length; i++) {
     if (i !== activeIndex) {
@@ -232,31 +123,13 @@ function muteAllExcept(activeIndex) {
   }
 }
 
-function muteAllPanos() {
-  for (const ps of panoSets) {
-    ps.muteSelf();
-  }
-}
-
 function setCurrentSlide(index, animate = true) {
-  currentSlide = clamp(index, 0, SLIDE_COUNT - 1);
-  document.body.classList.toggle('record-mode', currentSlide === SLIDE_COUNT - 1);
+  currentSlide = clamp(index, 0, panoSets.length - 1);
   snapCarousel(animate);
 
   for (let i = 0; i < panoSets.length; i++) {
     panoSets[i].setSelected(i === currentSlide);
   }
-
-  if (currentSlide >= panoSets.length) {
-    muteAllPanos();
-    globalActiveRegion = -1;
-    globalActiveSetName = '記録';
-    turnBtn.disabled = true;
-    updateFeedbackButtonState();
-    return;
-  }
-
-  turnBtn.disabled = !unlocked;
 
   if (unlocked) {
     panoSets[currentSlide].applyBlend();
@@ -264,8 +137,6 @@ function setCurrentSlide(index, animate = true) {
     globalActiveRegion = -1;
     globalActiveSetName = '-';
   }
-
-  updateFeedbackButtonState();
 }
 
 function makePanoSet(def, index) {
@@ -355,21 +226,6 @@ function makePanoSet(def, index) {
     return mod(frameCenterX - bgX, tileW);
   }
 
-  function getDirectionPair() {
-    const frontWorldX = getFrontWorldX();
-    if (frontWorldX == null || !tileW) return null;
-
-    const regionW = tileW / REGION_COUNT;
-    const beforeIndex = clamp(Math.floor(frontWorldX / regionW), 0, REGION_COUNT - 1);
-    const rearWorldX = mod(frontWorldX + tileW / 2, tileW);
-    const afterIndex = clamp(Math.floor(rearWorldX / regionW), 0, REGION_COUNT - 1);
-
-    return {
-      before: beforeIndex + 1,
-      after: afterIndex + 1
-    };
-  }
-
   function calcBlend() {
     const frontWorldX = getFrontWorldX();
     if (frontWorldX == null || !tileW) return null;
@@ -419,7 +275,14 @@ function makePanoSet(def, index) {
       a.volume = 0;
     }
 
-    await Promise.allSettled(audios.map((a) => a.play()));
+    const results = await Promise.allSettled(
+      audios.map((a) => a.play())
+    );
+
+    const failed = results.filter((r) => r.status === 'rejected');
+    if (failed.length) {
+      console.warn(`play failed (${def.key}): ${failed.length}/${audios.length}`);
+    }
   }
 
   function stopAllAudios() {
@@ -449,29 +312,9 @@ function makePanoSet(def, index) {
     }, FRONT_LISTEN_MS + 20);
   }
 
-  function createTurnRecord() {
-    const dirs = getDirectionPair();
-    if (!dirs) return;
-
-    const sec = Math.floor(getGlobalTimeSec());
-    const pano = def.key.toLowerCase();
-
-    turnRecords.push({
-      pano,
-      before: dirs.before,
-      after: dirs.after,
-      sec,
-      raw: `${pano}${dirs.before},${pano}${dirs.after},${sec}`
-    });
-
-    hasSubmittedCurrentRecords = false;
-    renderRecords();
-  }
-
   function turnAround() {
     if (!unlocked || !isSelected || !tileW || isTurning) return;
 
-    createTurnRecord();
     clearFrontHoldTimer();
     isTurning = true;
     turnBtn.disabled = true;
@@ -496,7 +339,7 @@ function makePanoSet(def, index) {
       bgX = endX;
       applyBg();
       isTurning = false;
-      turnBtn.disabled = currentSlide >= panoSets.length;
+      turnBtn.disabled = false;
       startFrontHold();
     }
 
@@ -591,16 +434,14 @@ async function initializeMetrics() {
 
 window.addEventListener('resize', async () => {
   await initializeMetrics();
-  if (unlocked && currentSlide < panoSets.length) {
+  if (unlocked) {
     panoSets[currentSlide].applyBlend();
   }
 });
 
 (async () => {
   await initializeMetrics();
-  renderRecords();
   turnBtn.disabled = true;
-  updateFeedbackButtonState();
 })();
 
 async function startSystem() {
@@ -610,13 +451,10 @@ async function startSystem() {
   startPerf = performance.now();
   lastSyncCheck = 0;
   startBtn.textContent = 'Stop';
-  turnBtn.disabled = currentSlide >= panoSets.length;
+  turnBtn.disabled = false;
 
   await Promise.all(panoSets.map((ps) => ps.startAllAudios()));
-
-  if (currentSlide < panoSets.length) {
-    panoSets[currentSlide].applyBlend();
-  }
+  panoSets[currentSlide].applyBlend();
 }
 
 function stopSystem() {
@@ -642,24 +480,8 @@ startBtn.addEventListener('click', async () => {
 });
 
 turnBtn.addEventListener('click', () => {
-  if (currentSlide < panoSets.length) {
-    panoSets[currentSlide].turnAround();
-  }
+  panoSets[currentSlide].turnAround();
 });
-
-if (feedbackBtn) {
-  feedbackBtn.addEventListener('click', async () => {
-    try {
-      feedbackBtn.disabled = true;
-      await sendFeedbackToServer();
-      alert('記録を送信しました。');
-    } catch (err) {
-      alert(`送信に失敗しました: ${err.message}`);
-    } finally {
-      updateFeedbackButtonState();
-    }
-  });
-}
 
 carouselViewport.addEventListener('pointerdown', (ev) => {
   if (ev.target.closest('.pano')) return;
@@ -694,9 +516,9 @@ function endCarouselDrag(ev) {
   const threshold = getSlideHeight() * 0.14;
 
   if (carouselDragDy < -threshold) {
-    currentSlide = clamp(currentSlide + 1, 0, SLIDE_COUNT - 1);
+    currentSlide = clamp(currentSlide + 1, 0, panoSets.length - 1);
   } else if (carouselDragDy > threshold) {
-    currentSlide = clamp(currentSlide - 1, 0, SLIDE_COUNT - 1);
+    currentSlide = clamp(currentSlide - 1, 0, panoSets.length - 1);
   }
 
   carouselDragging = false;

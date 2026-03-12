@@ -8,7 +8,6 @@ html, body {
   --fg: #eee;
   --line: #2a2a2a;
   --muted: rgba(255,255,255,0.72);
-  --card: #171717;
 }
 
 * {
@@ -43,8 +42,7 @@ body {
 }
 
 #startBtn,
-#turnBtn,
-.subBtn {
+#turnBtn {
   min-width: 88px;
   padding: 10px 14px;
   border: 1px solid #444;
@@ -56,8 +54,7 @@ body {
 }
 
 #startBtn:disabled,
-#turnBtn:disabled,
-.subBtn:disabled {
+#turnBtn:disabled {
   opacity: 0.45;
   cursor: default;
 }
@@ -103,7 +100,7 @@ body {
 .carouselTrack {
   display: flex;
   flex-direction: column;
-  height: calc(100% * 4);
+  height: calc(100% * 3);
   transform: translate3d(0, 0, 0);
   transition: transform 0.32s ease;
   will-change: transform;
@@ -159,90 +156,6 @@ body {
   cursor: grabbing;
 }
 
-.recordSlide {
-  align-content: start;
-}
-
-.recordPanel {
-  width: min(100%, 560px);
-  min-height: min(58vh, 430px);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: var(--card);
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
-  padding: 16px;
-  display: grid;
-  gap: 14px;
-}
-
-.recordLead {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.7;
-  font-size: 14px;
-}
-
-.recordToolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.recordMeta {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.recordMeta b {
-  color: var(--fg);
-}
-
-.recordNote {
-  margin: -4px 0 0;
-  font-size: 12px;
-  line-height: 1.6;
-  color: var(--muted);
-}
-
-.recordTableWrap {
-  min-height: 0;
-  overflow: auto;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 10px;
-}
-
-.recordTable {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
-}
-
-.recordTable th,
-.recordTable td {
-  text-align: left;
-  padding: 10px 8px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  vertical-align: top;
-}
-
-.recordTable th {
-  color: var(--muted);
-  font-weight: 600;
-  position: sticky;
-  top: 0;
-  background: var(--card);
-}
-
-.recordTable td {
-  color: var(--fg);
-}
-
-.recordEmptyCell {
-  color: var(--muted);
-}
-
 .dots {
   position: fixed;
   right: 14px;
@@ -290,58 +203,6 @@ body {
   min-width: 120px;
 }
 
-.subBtn {
-  min-width: 120px;
-  padding: 10px 14px;
-  border: 1px solid #444;
-  background: #1b1b1b;
-  color: var(--fg);
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.subBtn:disabled {
-  opacity: 0.45;
-  cursor: default;
-}
-
-.recordToolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.recordNote {
-  margin: -4px 0 0;
-  font-size: 12px;
-  line-height: 1.6;
-  color: var(--muted);
-}
-
-.sheetLinkWrap {
-  margin-top: 8px;
-}
-
-.sheetLink {
-  display: inline-block;
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--muted);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.sheetLink:hover {
-  color: var(--fg);
-}
-
-body.record-mode .lead {
-  display: none;
-}
-
 @media (min-width: 768px) {
   .top {
     padding-left: 18px;
@@ -353,8 +214,7 @@ body.record-mode .lead {
   }
 
   .slideHeader,
-  .lead,
-  .recordLead {
+  .lead {
     font-size: 14px;
   }
 
@@ -365,5 +225,4 @@ body.record-mode .lead {
   .dots {
     right: 20px;
   }
-  
 }
