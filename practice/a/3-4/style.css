@@ -8,6 +8,16 @@ html, body {
   --fg: #eee;
   --line: #2a2a2a;
   --muted: rgba(255,255,255,0.7);
+
+  /* 右のドット帯ぶんを確保 */
+  --dots-safe-width: 44px;
+
+  /* パノラマ窓の横幅 */
+  --frame-side-gap: 16px;
+
+  /* 窓は「8等分のうち2領域ぶん」なので 2:8 = 1:4。
+     高さ / 幅 = 1 / 4 として固定 */
+  --pano-aspect: 4 / 1;
 }
 
 * {
@@ -92,9 +102,9 @@ body {
 
 .slide {
   width: 100%;
-  height: calc((100vh - 120px - env(safe-area-inset-bottom)));
+  height: calc(100vh - 120px - env(safe-area-inset-bottom));
   min-height: 520px;
-  flex: 0 0 calc((100vh - 120px - env(safe-area-inset-bottom)));
+  flex: 0 0 calc(100vh - 120px - env(safe-area-inset-bottom));
   padding: 0 12px;
   display: grid;
   align-content: start;
@@ -110,12 +120,22 @@ body {
   padding-top: 4px;
 }
 
+/* ここが今回の修正の中心 */
 .panoFrame {
   position: relative;
-  width: min(100%, 560px);
-  aspect-ratio: 16 / 9;
+
+  /* スマホ幅より少し小さく、さらに右のドット帯を避ける */
+  width: min(
+    560px,
+    calc(100vw - (var(--frame-side-gap) * 2) - var(--dots-safe-width))
+  );
+
+  /* 縦横比を固定 */
+  aspect-ratio: var(--pano-aspect);
+
+  /* 高さを固定値で持たず、比率で決める */
   height: auto;
-  min-height: 0;
+
   overflow: hidden;
   border: 1px solid var(--line);
   background: #000;
@@ -124,6 +144,7 @@ body {
 }
 
 .pano {
+  width: 100%;
   height: 100%;
   background-repeat: repeat-x;
   background-size: auto 100%;
@@ -166,6 +187,42 @@ body {
   height: 14px;
   background: rgba(255,255,255,0.92);
   transform: scale(1.02);
+}
+
+@media (max-width: 480px) {
+  :root {
+    --dots-safe-width: 48px;
+    --frame-side-gap: 14px;
+  }
+
+  .top {
+    gap: 10px;
+  }
+
+  #startBtn {
+    min-width: 76px;
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  .info {
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .slide {
+    padding: 0 10px;
+  }
+
+  .slideHeader {
+    width: calc(100vw - 20px - var(--dots-safe-width));
+    font-size: 13px;
+  }
+
+  .dots {
+    right: 10px;
+    gap: 9px;
+  }
 }
 
 @media (min-width: 768px) {
