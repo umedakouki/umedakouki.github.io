@@ -240,6 +240,7 @@ function muteAllPanos() {
 
 function setCurrentSlide(index, animate = true) {
   currentSlide = clamp(index, 0, SLIDE_COUNT - 1);
+  document.body.classList.toggle('record-mode', currentSlide === SLIDE_COUNT - 1);
   snapCarousel(animate);
 
   for (let i = 0; i < panoSets.length; i++) {

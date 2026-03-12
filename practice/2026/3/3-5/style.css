@@ -338,6 +338,10 @@ body {
   color: var(--fg);
 }
 
+body.record-mode .lead {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .top {
     padding-left: 18px;
