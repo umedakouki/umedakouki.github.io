@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Panorama Audio Window (Draft)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <button id="startBtn">Start</button>
+    <div class="info">
+      <span>time: <b id="t">0.0</b>s / 60.0s</span>
+      <span>region: <b id="r">-</b></span>
+      <span class="hint">（マウスを移動することで、その方向の音に切り替えられる。ドラッグ/ホイールで横スクロール）</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="stack" aria-label="panorama sets">
+        <div class="pano" id="panoA" aria-label="panorama A"></div>
+        <div class="pano" id="panoB" aria-label="panorama B"></div>
+        <div class="pano" id="panoC" aria-label="panorama C"></div>
+    </section>
+  </main>
+
+
+  <script src="app.js"></script>
+</body>
+</html>

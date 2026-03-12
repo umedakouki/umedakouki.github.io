@@ -1,0 +1,30 @@
+html, body { height: 100%; margin: 0; }
+body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #111; color: #eee; }
+
+.top {
+  display: flex; gap: 12px; align-items: center;
+  padding: 10px 12px; border-bottom: 1px solid #2a2a2a;
+  position: sticky; top: 0; background: rgba(17,17,17,0.9); backdrop-filter: blur(6px);
+  z-index: 10;
+}
+#startBtn { padding: 8px 12px; cursor: pointer; }
+.info { display: flex; gap: 14px; flex-wrap: wrap; align-items: baseline; font-size: 14px; }
+.hint { opacity: 0.7; }
+
+/* ここが重要：mainを固定高にしない */
+main { padding: 12px; }
+
+.stack { display: grid; gap: 32px; }
+
+/* 3つのパノラマ */
+.pano {
+  height: 40vh;
+  width: 100%;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: 0px 50%;
+  cursor: grab;
+  border: 1px solid #2a2a2a;
+}
+.pano.dragging { cursor: grabbing; }
+

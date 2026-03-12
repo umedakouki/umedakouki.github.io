@@ -8,22 +8,22 @@
 </head>
 <body>
   <header class="top">
-    <button id="startBtn" type="button">Start</button>
-    <div class="info">
-      <span>time: <b id="t">0.0</b>s / 60.0s</span>
-      <span>set: <b id="s">-</b></span>
-      <span>region: <b id="r">-</b></span>
+    <div class="topBar">
+      <button id="startBtn" type="button">Start</button>
+      <div class="info">
+        <span>time: <b id="t">0.0</b>s / 60.0s</span>
+        <span>set: <b id="s">-</b></span>
+        <span>region: <b id="r">-</b></span>
+      </div>
     </div>
+
+    <p class="lead">
+      画面を横にスワイプすると、その方向の風景が現れてきます。左上の「Start」を押すと、
+      画面の反対方向の音が流れます。気になる音があったら「振り返る」ボタンを押して確認することができます。
+    </p>
   </header>
 
   <main class="app">
-    <section class="lead">
-      <p>
-        画面を横にスワイプすると、その方向の風景が現れてきます。左上の「Start」を押すと、画面の反対方向の音が流れます。
-        気になる音があったら「振り返る」ボタンを押して確認することができます。
-      </p>
-    </section>
-
     <section class="carouselSection" aria-label="panorama carousel">
       <div class="carouselViewport" id="carouselViewport">
         <div class="carouselTrack" id="carouselTrack">
@@ -59,7 +59,7 @@
   </main>
 
   <div class="bottomBar">
-    <button id="turnBtn" class="turnBtn" type="button">振り返る</button>
+    <button id="turnBtn" type="button">振り返る</button>
   </div>
 
   <script src="app.js"></script>

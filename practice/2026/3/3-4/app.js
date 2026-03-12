@@ -5,10 +5,8 @@ const REGION_COUNT = 8;
 const SYNC_EPS = 0.2;
 const SYNC_INTERVAL_MS = 250;
 const MASTER_GAIN = 0.7;
-
-const TURN_OFFSET_REGIONS = REGION_COUNT / 2; // 8領域なら180度 = 4領域
-const TURN_ANIM_MS = 700;
-const TURN_HOLD_MS = 3000;
+const TURN_DURATION_MS = 560;
+const FRONT_LISTEN_MS = 3000;
 
 const startBtn = document.getElementById('startBtn');
 const turnBtn = document.getElementById('turnBtn');
@@ -62,13 +60,15 @@ function mod(n, m) {
 }
 
 function clamp01(v) {
-  if (v < 0) return 0;
-  if (v > 1) return 1;
-  return v;
+  return Math.max(0, Math.min(1, v));
 }
 
 function clamp(v, min, max) {
   return Math.max(min, Math.min(max, v));
+}
+
+function lerp(a, b, t) {
+  return a + (b - a) * t;
 }
 
 function easeInOutCubic(t) {
@@ -111,62 +111,50 @@ function applyCarouselY(y) {
 
 function snapCarousel(animate = true) {
   carouselTrack.classList.toggle('isDragging', !animate);
-  const y = -currentSlide * getSlideHeight();
-  applyCarouselY(y);
+  applyCarouselY(-currentSlide * getSlideHeight());
   updateDots();
 }
 
+function muteAllExcept(activeIndex) {
+  for (let i = 0; i < panoSets.length; i++) {
+    if (i !== activeIndex) {
+      panoSets[i].muteSelf();
+    }
+  }
+}
+
 function setCurrentSlide(index, animate = true) {
-  currentSlide = clamp(index, 0, sets.length - 1);
+  currentSlide = clamp(index, 0, panoSets.length - 1);
   snapCarousel(animate);
 
   for (let i = 0; i < panoSets.length; i++) {
-    const active = i === currentSlide;
-    panoSets[i].setSelected(active);
-    if (!active) panoSets[i].muteSelf();
+    panoSets[i].setSelected(i === currentSlide);
   }
 
   if (unlocked) {
-    panoSets[currentSlide].refreshBlend();
+    panoSets[currentSlide].applyBlend();
   } else {
-    globalActiveSetName = '-';
     globalActiveRegion = -1;
+    globalActiveSetName = '-';
   }
-
-  updateTurnButtonState();
-}
-
-function muteAllSetsExcept(activeIndex) {
-  for (let i = 0; i < panoSets.length; i++) {
-    if (i === activeIndex) continue;
-    panoSets[i].muteSelf();
-  }
-}
-
-function updateTurnButtonState() {
-  const activeSet = panoSets[currentSlide];
-  turnBtn.disabled = !unlocked || !activeSet || activeSet.isTurning();
 }
 
 function makePanoSet(def, index) {
   const pano = def.el;
   const frame = pano.parentElement;
-
   pano.style.backgroundImage = `url("${def.panoSrc}")`;
 
   let bgX = 0;
   let tileW = 0;
-  let frameW = 0;
 
+  let isSelected = index === 0;
   let isDragging = false;
   let pointerId = null;
   let dragStartX = 0;
   let dragStartBgX = 0;
-  let isSelected = index === currentSlide;
-
-  let turning = false;
-  let holdUntilMs = 0;
-  let heldBlend = null;
+  let isTurning = false;
+  let frontListenUntil = 0;
+  let frontHoldTimer = null;
 
   const audios = def.audioFiles.map((src) => {
     const a = new Audio(src);
@@ -180,6 +168,13 @@ function makePanoSet(def, index) {
     pano.style.backgroundPosition = `${bgX}px 50%`;
   }
 
+  function clearFrontHoldTimer() {
+    if (frontHoldTimer) {
+      clearTimeout(frontHoldTimer);
+      frontHoldTimer = null;
+    }
+  }
+
   function muteSelf() {
     for (const a of audios) {
       a.volume = 0;
@@ -188,20 +183,23 @@ function makePanoSet(def, index) {
 
   function setSelected(v) {
     isSelected = v;
-    if (!v && globalActiveSetName === `${def.key}: ${def.displayName}`) {
-      globalActiveRegion = -1;
-      globalActiveSetName = '-';
+    if (!v) {
+      muteSelf();
+      if (globalActiveSetName === `${def.key}: ${def.displayName}`) {
+        globalActiveRegion = -1;
+        globalActiveSetName = '-';
+      }
     }
   }
 
   function setFrameWidth() {
     if (!tileW) return;
     const regionW = tileW / REGION_COUNT;
-    frameW = regionW * 2;
+    const idealFrameW = regionW * 2;
     const maxW = Math.min(window.innerWidth - 24, 560);
-    const viewW = Math.min(frameW, maxW);
-    frame.style.width = `${viewW}px`;
-    pano.style.width = `${viewW}px`;
+    const frameW = Math.min(idealFrameW, maxW);
+    frame.style.width = `${frameW}px`;
+    pano.style.width = `${frameW}px`;
   }
 
   function computeMetrics() {
@@ -220,21 +218,27 @@ function makePanoSet(def, index) {
     });
   }
 
-  function getFrontBlend() {
+  function getFrontWorldX() {
     if (!tileW) return null;
+    const frameW = frame.clientWidth;
+    if (!frameW) return null;
+    const frameCenterX = frameW / 2;
+    return mod(frameCenterX - bgX, tileW);
+  }
 
-    const currentFrameW = frame.clientWidth;
-    if (!currentFrameW) return null;
+  function calcBlend() {
+    const frontWorldX = getFrontWorldX();
+    if (frontWorldX == null || !tileW) return null;
 
-    const frameCenterX = currentFrameW / 2;
-    const centerWorldX = mod(frameCenterX - bgX, tileW);
-    const currentRegionW = tileW / REGION_COUNT;
+    const useFront = performance.now() < frontListenUntil;
+    const targetWorldX = useFront
+      ? frontWorldX
+      : mod(frontWorldX + tileW / 2, tileW);
 
-    let center = Math.floor(centerWorldX / currentRegionW);
-    center = clamp(center, 0, REGION_COUNT - 1);
-
-    const localX = centerWorldX - center * currentRegionW;
-    const t = clamp01(localX / currentRegionW);
+    const regionW = tileW / REGION_COUNT;
+    const center = clamp(Math.floor(targetWorldX / regionW), 0, REGION_COUNT - 1);
+    const localX = targetWorldX - center * regionW;
+    const t = clamp01(localX / regionW);
 
     return {
       center,
@@ -244,42 +248,13 @@ function makePanoSet(def, index) {
     };
   }
 
-  function getBackBlend() {
-    const front = getFrontBlend();
-    if (!front) return null;
+  function applyBlend() {
+    if (!unlocked || !isSelected || isTurning) return;
 
-    const backCenter = mod(front.center + TURN_OFFSET_REGIONS, REGION_COUNT);
-    return {
-      center: backCenter,
-      left: mod(backCenter - 1, REGION_COUNT),
-      right: mod(backCenter + 1, REGION_COUNT),
-      t: front.t
-    };
-  }
-
-  function getActiveBlend() {
-    const now = performance.now();
-
-    if (heldBlend && now < holdUntilMs) {
-      return heldBlend;
-    }
-
-    if (heldBlend && now >= holdUntilMs) {
-      heldBlend = null;
-    }
-
-    return getBackBlend();
-  }
-
-  function applyBlend(force = false) {
-    if (!unlocked) return;
-    if (!isSelected && !force) return;
-    if (index !== currentSlide && !force) return;
-
-    const blend = getActiveBlend();
+    const blend = calcBlend();
     if (!blend) return;
 
-    muteAllSetsExcept(index);
+    muteAllExcept(index);
     muteSelf();
 
     audios[blend.center].volume = 1.0 * MASTER_GAIN;
@@ -300,16 +275,21 @@ function makePanoSet(def, index) {
       a.volume = 0;
     }
 
-    for (const a of audios) {
-      try {
-        await a.play();
-      } catch (e) {
-        console.warn(`play failed (${def.key}):`, e);
-      }
+    const results = await Promise.allSettled(
+      audios.map((a) => a.play())
+    );
+
+    const failed = results.filter((r) => r.status === 'rejected');
+    if (failed.length) {
+      console.warn(`play failed (${def.key}): ${failed.length}/${audios.length}`);
     }
   }
 
   function stopAllAudios() {
+    clearFrontHoldTimer();
+    frontListenUntil = 0;
+    isTurning = false;
+
     for (const a of audios) {
       try {
         a.pause();
@@ -319,78 +299,80 @@ function makePanoSet(def, index) {
     }
   }
 
-  function isTurning() {
-    return turning;
+  function startFrontHold() {
+    clearFrontHoldTimer();
+    frontListenUntil = performance.now() + FRONT_LISTEN_MS;
+    applyBlend();
+
+    frontHoldTimer = setTimeout(() => {
+      frontListenUntil = 0;
+      if (unlocked && isSelected) {
+        applyBlend();
+      }
+    }, FRONT_LISTEN_MS + 20);
   }
 
-  function animateTurnAround() {
-    if (!unlocked || turning || !tileW) return;
-    if (index !== currentSlide) return;
+  function turnAround() {
+    if (!unlocked || !isSelected || !tileW || isTurning) return;
 
-    const currentBackBlend = getBackBlend();
-    if (!currentBackBlend) return;
-
-    turning = true;
-    updateTurnButtonState();
-
-    heldBlend = currentBackBlend;
-    holdUntilMs = performance.now() + TURN_ANIM_MS + TURN_HOLD_MS;
+    clearFrontHoldTimer();
+    isTurning = true;
+    turnBtn.disabled = true;
 
     const startX = bgX;
-    const targetX = bgX - tileW / 2;
-    const startTime = performance.now();
+    const endX = bgX - tileW / 2;
+    const startedAt = performance.now();
 
     function step(now) {
-      const elapsed = now - startTime;
-      const t = clamp01(elapsed / TURN_ANIM_MS);
+      const raw = (now - startedAt) / TURN_DURATION_MS;
+      const t = clamp01(raw);
       const eased = easeInOutCubic(t);
 
-      bgX = startX + (targetX - startX) * eased;
+      bgX = lerp(startX, endX, eased);
       applyBg();
-      applyBlend(true);
 
       if (t < 1) {
         requestAnimationFrame(step);
         return;
       }
 
-      bgX = targetX;
+      bgX = endX;
       applyBg();
-      applyBlend(true);
-      turning = false;
-      updateTurnButtonState();
+      isTurning = false;
+      turnBtn.disabled = false;
+      startFrontHold();
     }
 
     requestAnimationFrame(step);
   }
 
   pano.addEventListener('pointerdown', (ev) => {
-    if (currentSlide !== index) return;
-    if (turning) return;
+    if (!isSelected || isTurning) return;
 
     isDragging = true;
     pointerId = ev.pointerId;
-    pano.classList.add('dragging');
     dragStartX = ev.clientX;
     dragStartBgX = bgX;
+    pano.classList.add('dragging');
 
     if (pano.setPointerCapture) {
       try {
         pano.setPointerCapture(pointerId);
       } catch (_) {}
     }
-
-    applyBlend(true);
   });
 
   pano.addEventListener('pointermove', (ev) => {
     if (!isDragging) return;
     if (pointerId !== null && ev.pointerId !== pointerId) return;
 
+    clearFrontHoldTimer();
+    frontListenUntil = 0;
+
     const dx = ev.clientX - dragStartX;
     bgX = dragStartBgX + dx;
     applyBg();
-    applyBlend(true);
+    applyBlend();
   });
 
   function endDrag(ev) {
@@ -405,7 +387,6 @@ function makePanoSet(def, index) {
         pano.releasePointerCapture(pointerId);
       } catch (_) {}
     }
-
     pointerId = null;
   }
 
@@ -413,13 +394,15 @@ function makePanoSet(def, index) {
   pano.addEventListener('pointercancel', endDrag);
 
   pano.addEventListener('wheel', (ev) => {
-    if (currentSlide !== index) return;
-    if (turning) return;
-
+    if (!isSelected || isTurning) return;
     ev.preventDefault();
+
+    clearFrontHoldTimer();
+    frontListenUntil = 0;
+
     bgX += -ev.deltaY;
     applyBg();
-    applyBlend(true);
+    applyBlend();
   }, { passive: false });
 
   applyBg();
@@ -431,9 +414,8 @@ function makePanoSet(def, index) {
     stopAllAudios,
     muteSelf,
     setSelected,
-    refreshBlend: () => applyBlend(true),
-    turnAround: animateTurnAround,
-    isTurning
+    applyBlend,
+    turnAround
   };
 }
 
@@ -452,11 +434,14 @@ async function initializeMetrics() {
 
 window.addEventListener('resize', async () => {
   await initializeMetrics();
+  if (unlocked) {
+    panoSets[currentSlide].applyBlend();
+  }
 });
 
 (async () => {
   await initializeMetrics();
-  updateTurnButtonState();
+  turnBtn.disabled = true;
 })();
 
 async function startSystem() {
@@ -466,13 +451,10 @@ async function startSystem() {
   startPerf = performance.now();
   lastSyncCheck = 0;
   startBtn.textContent = 'Stop';
+  turnBtn.disabled = false;
 
-  for (const ps of panoSets) {
-    await ps.startAllAudios();
-  }
-
-  setCurrentSlide(currentSlide, false);
-  updateTurnButtonState();
+  await Promise.all(panoSets.map((ps) => ps.startAllAudios()));
+  panoSets[currentSlide].applyBlend();
 }
 
 function stopSystem() {
@@ -480,14 +462,13 @@ function stopSystem() {
 
   unlocked = false;
   startBtn.textContent = 'Start';
+  turnBtn.disabled = true;
   globalActiveRegion = -1;
   globalActiveSetName = '-';
 
   for (const ps of panoSets) {
     ps.stopAllAudios();
   }
-
-  updateTurnButtonState();
 }
 
 startBtn.addEventListener('click', async () => {
@@ -499,10 +480,7 @@ startBtn.addEventListener('click', async () => {
 });
 
 turnBtn.addEventListener('click', () => {
-  if (!unlocked) return;
-  const activeSet = panoSets[currentSlide];
-  if (!activeSet) return;
-  activeSet.turnAround();
+  panoSets[currentSlide].turnAround();
 });
 
 carouselViewport.addEventListener('pointerdown', (ev) => {
@@ -538,9 +516,9 @@ function endCarouselDrag(ev) {
   const threshold = getSlideHeight() * 0.14;
 
   if (carouselDragDy < -threshold) {
-    currentSlide = clamp(currentSlide + 1, 0, sets.length - 1);
+    currentSlide = clamp(currentSlide + 1, 0, panoSets.length - 1);
   } else if (carouselDragDy > threshold) {
-    currentSlide = clamp(currentSlide - 1, 0, sets.length - 1);
+    currentSlide = clamp(currentSlide - 1, 0, panoSets.length - 1);
   }
 
   carouselDragging = false;
@@ -590,15 +568,6 @@ function syncIfNeeded(nowMs) {
 function tick(nowMs) {
   renderHUD();
   syncIfNeeded(nowMs);
-
-  if (unlocked) {
-    const activeSet = panoSets[currentSlide];
-    if (activeSet) {
-      activeSet.refreshBlend();
-      updateTurnButtonState();
-    }
-  }
-
   requestAnimationFrame(tick);
 }
 
