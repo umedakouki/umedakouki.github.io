@@ -113,8 +113,9 @@ body {
 .panoFrame {
   position: relative;
   width: min(100%, 560px);
-  height: min(62vh, 460px);
-  min-height: 280px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 0;
   overflow: hidden;
   border: 1px solid var(--line);
   background: #000;
