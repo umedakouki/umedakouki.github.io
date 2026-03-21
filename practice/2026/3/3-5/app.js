@@ -2,23 +2,11 @@
 
 const TURN_DURATION_MS = 320;
 const TURN_AUDIO_HOLD_MS = 3000;
-const TURN_AUDIO_CROSSFADE_MS = 600;
-const SYNC_INTERVAL_MS = 500;
-const SYNC_EPS = 0.08;
+const TURN_AUDIO_CROSSFADE_MS = 450;
+const SYNC_INTERVAL_MS = 600;
+const SYNC_EPS = 0.12;
 const SLIDE_COUNT = 3;
 
-/*
-  false: 背面側でも通常の左右対応
-  true : 背面側だけ左右を反転してミックス
-  まずは false で試してください。
-  まだ「逆方向感」が変なら true にしてください。
-*/
-const REVERSE_PAN_ON_BACKSIDE = true;
-
-/*
-  元動画は 16:9 フレームの中に 3:1 の映像が中央配置され、
-  上下は黒帯という前提。
-*/
 const CONTENT_ASPECT = 3 / 1;
 const DEFAULT_SOURCE_ASPECT = 16 / 9;
 
@@ -118,34 +106,28 @@ function updateHUD() {
   posLabelEl.textContent = set.xNorm.toFixed(2);
 }
 
-function muteAllSets() {
-  for (const set of viewSets) {
-    set.applyAudio(false);
-  }
+function createVideoEl(src) {
+  const video = document.createElement('video');
+  video.className = 'viewVideo isHidden';
+  video.src = src;
+  video.loop = true;
+  video.muted = true;
+  video.playsInline = true;
+  video.preload = 'metadata';
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+  return video;
 }
 
-function setCurrentSlide(index, animate = true) {
-  currentSlide = clamp(index, 0, SLIDE_COUNT - 1);
-  snapCarousel(animate);
-
-  for (let i = 0; i < viewSets.length; i++) {
-    viewSets[i].setSelected(i === currentSlide);
-  }
-
-  if (!unlocked) {
-    turnBtn.disabled = true;
-    updateHUD();
-    return;
-  }
-
-  turnBtn.disabled = false;
-  viewSets[currentSlide].applyAudio(true);
-  updateHUD();
+function createAudioEl(src) {
+  const audio = new Audio(src);
+  audio.loop = true;
+  audio.preload = 'metadata';
+  audio.crossOrigin = 'anonymous';
+  return audio;
 }
 
 function makeMediaNodes(audioEl) {
-  if (!audioCtx) return null;
-
   const source = audioCtx.createMediaElementSource(audioEl);
   const splitter = audioCtx.createChannelSplitter(2);
   const leftGain = audioCtx.createGain();
@@ -160,7 +142,6 @@ function makeMediaNodes(audioEl) {
   sideGain.gain.value = 0;
 
   source.connect(splitter);
-
   splitter.connect(leftGain, 0);
   splitter.connect(rightGain, 1);
 
@@ -170,31 +151,9 @@ function makeMediaNodes(audioEl) {
   monoBus.connect(sideGain);
   sideGain.connect(merger, 0, 0);
   sideGain.connect(merger, 0, 1);
-
   merger.connect(audioCtx.destination);
 
-  return { source, splitter, leftGain, rightGain, monoBus, sideGain, merger };
-}
-
-function createVideoEl(src) {
-  const video = document.createElement('video');
-  video.className = 'viewVideo isHidden';
-  video.src = src;
-  video.loop = true;
-  video.muted = true;
-  video.playsInline = true;
-  video.preload = 'auto';
-  video.setAttribute('playsinline', '');
-  video.setAttribute('webkit-playsinline', '');
-  return video;
-}
-
-function createAudioEl(src) {
-  const audio = new Audio(src);
-  audio.loop = true;
-  audio.preload = 'auto';
-  audio.crossOrigin = 'anonymous';
-  return audio;
+  return { leftGain, rightGain, sideGain };
 }
 
 function makeViewSet(def) {
@@ -230,9 +189,17 @@ function makeViewSet(def) {
   let dragStartNorm = 0;
   let isTurning = false;
 
-  let audioMixWeights = [1, 0];
   let pendingAudioSwitchTimer = null;
   let audioFadeRaf = null;
+  let currentAudibleSideIndex = 0;
+
+  function getActiveSide() {
+    return sideStates[activeSideIndex];
+  }
+
+  function getOtherSide() {
+    return sideStates[1 - activeSideIndex];
+  }
 
   function clearAudioTimers() {
     if (pendingAudioSwitchTimer) {
@@ -243,13 +210,6 @@ function makeViewSet(def) {
       cancelAnimationFrame(audioFadeRaf);
       audioFadeRaf = null;
     }
-  }
-
-  function getPanNormForSide(sideIndex) {
-    if (REVERSE_PAN_ON_BACKSIDE && sideIndex === 1) {
-      return 1 - xNorm;
-    }
-    return xNorm;
   }
 
   function getContentHeightRatio(sourceAspect) {
@@ -287,98 +247,108 @@ function makeViewSet(def) {
     }
   }
 
-  function applyAudioGains() {
+  function setSideMix(sideIndex, sideWeight) {
+    const side = sideStates[sideIndex];
+    if (!side.audioNodes) return;
+
+    const leftWeight = 1 - xNorm;
+    const rightWeight = xNorm;
+
+    side.audioNodes.leftGain.gain.value = leftWeight;
+    side.audioNodes.rightGain.gain.value = rightWeight;
+    side.audioNodes.sideGain.gain.value = sideWeight;
+  }
+
+  function muteAllAudioGains() {
     for (let i = 0; i < sideStates.length; i++) {
-      const side = sideStates[i];
-      if (!side.audioNodes) continue;
-
-      const panNorm = getPanNormForSide(i);
-      const leftWeight = 1 - panNorm;
-      const rightWeight = panNorm;
-      const sideWeight = audioMixWeights[i] || 0;
-
-      side.audioNodes.leftGain.gain.value = leftWeight;
-      side.audioNodes.rightGain.gain.value = rightWeight;
-      side.audioNodes.sideGain.gain.value = sideWeight;
+      setSideMix(i, 0);
     }
   }
 
-  function muteSelf() {
-    audioMixWeights = [0, 0];
-    applyAudioGains();
+  async function ensureVideosPlaying() {
+    await Promise.allSettled(sideStates.map((s) => s.video.play()));
   }
 
-  function applyAudio(shouldSound) {
-    if (!unlocked || !isSelected || !shouldSound) {
-      muteSelf();
-      return;
+  async function ensureAudioPlaying(sideIndex) {
+    const side = sideStates[sideIndex];
+    try {
+      await side.audio.play();
+    } catch (_) {}
+  }
+
+  function pauseAudio(sideIndex) {
+    const side = sideStates[sideIndex];
+    try {
+      side.audio.pause();
+    } catch (_) {}
+  }
+
+  function pauseAllMedia() {
+    clearAudioTimers();
+    for (const side of sideStates) {
+      try { side.video.pause(); } catch (_) {}
+      try { side.audio.pause(); } catch (_) {}
     }
-    applyAudioGains();
+    muteAllAudioGains();
+  }
+
+  async function startSetMedia() {
+    await ensureVideosPlaying();
+
+    currentAudibleSideIndex = activeSideIndex;
+    const audible = sideStates[currentAudibleSideIndex];
+
+    try {
+      audible.audio.currentTime = audible.video.currentTime;
+    } catch (_) {}
+
+    await ensureAudioPlaying(currentAudibleSideIndex);
+    pauseAudio(1 - currentAudibleSideIndex);
+
+    muteAllAudioGains();
+    setSideMix(currentAudibleSideIndex, 1);
   }
 
   function setSelected(v) {
     isSelected = v;
-    if (!v) {
-      muteSelf();
-    } else if (unlocked) {
-      applyAudio(true);
+  }
+
+  function applyAudio(shouldSound) {
+    if (!unlocked || !isSelected || !shouldSound) {
+      muteAllAudioGains();
+      return;
+    }
+
+    if (currentAudibleSideIndex === 0 || currentAudibleSideIndex === 1) {
+      muteAllAudioGains();
+      setSideMix(currentAudibleSideIndex, 1);
     }
   }
 
-  function syncEachAudioToOwnVideo() {
-    for (const side of sideStates) {
-      if (!side.duration) continue;
-
-      const videoT = side.video.currentTime;
-      const audioT = side.audio.currentTime;
-      const d = wrappedDiff(videoT, audioT, side.duration);
-
-      if (d > SYNC_EPS) {
-        try {
-          side.audio.currentTime = videoT;
-        } catch (_) {}
-      }
-    }
-  }
-
-  function syncOtherVideoToActive() {
-    const active = sideStates[activeSideIndex];
-    const other = sideStates[1 - activeSideIndex];
+  function syncVideos() {
+    const active = getActiveSide();
+    const other = getOtherSide();
 
     if (!active.duration) return;
 
-    try {
-      other.video.currentTime = active.video.currentTime;
-    } catch (_) {}
-  }
-
-  async function startAllMedia() {
-    for (const side of sideStates) {
+    const d = wrappedDiff(active.video.currentTime, other.video.currentTime, active.duration);
+    if (d > SYNC_EPS) {
       try {
-        side.video.currentTime = 0;
-      } catch (_) {}
-      try {
-        side.audio.currentTime = 0;
+        other.video.currentTime = active.video.currentTime;
       } catch (_) {}
     }
-
-    await Promise.allSettled([
-      ...sideStates.map((s) => s.video.play()),
-      ...sideStates.map((s) => s.audio.play())
-    ]);
   }
 
-  function stopAllMedia() {
-    clearAudioTimers();
+  function syncCurrentAudio() {
+    const audible = sideStates[currentAudibleSideIndex];
+    if (!audible.duration) return;
 
-    for (const side of sideStates) {
-      try { side.video.pause(); } catch (_) {}
-      try { side.audio.pause(); } catch (_) {}
-      try { side.video.currentTime = 0; } catch (_) {}
-      try { side.audio.currentTime = 0; } catch (_) {}
+    const d = wrappedDiff(audible.video.currentTime, audible.audio.currentTime, audible.duration);
+    if (d > SYNC_EPS) {
+      try {
+        audible.audio.currentTime = audible.video.currentTime;
+      } catch (_) {}
     }
-
-    muteSelf();
   }
 
   function startCrossfade(fromIndex, toIndex, durationMs) {
@@ -390,51 +360,55 @@ function makeViewSet(def) {
       const t = clamp01((now - start) / durationMs);
       const eased = easeInOutCubic(t);
 
-      const fromW = 1 - eased;
-      const toW = eased;
-
-      audioMixWeights[fromIndex] = fromW;
-      audioMixWeights[toIndex] = toW;
-      applyAudio(true);
+      muteAllAudioGains();
+      setSideMix(fromIndex, 1 - eased);
+      setSideMix(toIndex, eased);
 
       if (t < 1) {
         audioFadeRaf = requestAnimationFrame(step);
         return;
       }
 
-      audioMixWeights[fromIndex] = 0;
-      audioMixWeights[toIndex] = 1;
       audioFadeRaf = null;
-      applyAudio(true);
+      currentAudibleSideIndex = toIndex;
+
+      muteAllAudioGains();
+      setSideMix(toIndex, 1);
+
+      pauseAudio(fromIndex);
     }
 
     audioFadeRaf = requestAnimationFrame(step);
   }
 
-  function scheduleAudioSwitchToActive(previousAudioSideIndex) {
+  function scheduleAudioSwitch(prevSideIndex) {
     clearAudioTimers();
 
-    audioMixWeights = [0, 0];
-    audioMixWeights[previousAudioSideIndex] = 1;
-    applyAudio(true);
+    currentAudibleSideIndex = prevSideIndex;
+    muteAllAudioGains();
+    setSideMix(prevSideIndex, 1);
 
-    pendingAudioSwitchTimer = setTimeout(() => {
+    pendingAudioSwitchTimer = setTimeout(async () => {
       const targetSideIndex = activeSideIndex;
 
-      if (previousAudioSideIndex === targetSideIndex) {
-        audioMixWeights = [0, 0];
-        audioMixWeights[targetSideIndex] = 1;
-        applyAudio(true);
+      if (targetSideIndex === prevSideIndex) {
         pendingAudioSwitchTimer = null;
         return;
       }
 
+      const targetSide = sideStates[targetSideIndex];
+
+      try {
+        targetSide.audio.currentTime = targetSide.video.currentTime;
+      } catch (_) {}
+
+      await ensureAudioPlaying(targetSideIndex);
       pendingAudioSwitchTimer = null;
-      startCrossfade(previousAudioSideIndex, targetSideIndex, TURN_AUDIO_CROSSFADE_MS);
+      startCrossfade(prevSideIndex, targetSideIndex, TURN_AUDIO_CROSSFADE_MS);
     }, TURN_AUDIO_HOLD_MS);
   }
 
-  function turnAround() {
+  async function turnAround() {
     if (!unlocked || !isSelected || isTurning) return;
 
     const prevVisualSideIndex = activeSideIndex;
@@ -448,9 +422,6 @@ function makeViewSet(def) {
     try {
       toSide.video.currentTime = fromSide.video.currentTime;
     } catch (_) {}
-    try {
-      toSide.audio.currentTime = toSide.video.currentTime;
-    } catch (_) {}
 
     updateVisibleSide(true);
 
@@ -460,7 +431,7 @@ function makeViewSet(def) {
       const t = clamp01((now - startTime) / TURN_DURATION_MS);
       const eased = easeInOutCubic(t);
 
-      sideStates[prevVisualSideIndex].video.style.opacity = String(1 - eased);
+      fromSide.video.style.opacity = String(1 - eased);
       toSide.video.style.opacity = String(eased);
 
       if (t < 1) {
@@ -470,11 +441,11 @@ function makeViewSet(def) {
 
       activeSideIndex = nextSideIndex;
 
-      sideStates[prevVisualSideIndex].video.style.opacity = '';
+      fromSide.video.style.opacity = '';
       toSide.video.style.opacity = '';
       updateVisibleSide(false);
 
-      scheduleAudioSwitchToActive(prevVisualSideIndex);
+      scheduleAudioSwitch(prevVisualSideIndex);
 
       isTurning = false;
       turnBtn.disabled = false;
@@ -510,8 +481,8 @@ function makeViewSet(def) {
 
       const frameSize = frame.clientWidth || 1;
       const dx = ev.clientX - dragStartX;
-
       const panRangePx = frameSize * 2;
+
       xNorm = clamp01(dragStartNorm - (dx / panRangePx));
 
       updateVideoLayout();
@@ -543,6 +514,7 @@ function makeViewSet(def) {
 
       const frameSize = frame.clientWidth || 1;
       const panRangePx = frameSize * 2;
+
       xNorm = clamp01(xNorm + (ev.deltaY / panRangePx));
 
       updateVideoLayout();
@@ -586,7 +558,7 @@ function makeViewSet(def) {
         side.audioNodes = makeMediaNodes(side.audio);
       }
     }
-    muteSelf();
+    muteAllAudioGains();
   }
 
   bindStageDrag();
@@ -603,14 +575,13 @@ function makeViewSet(def) {
     setupAudioGraph,
     updateVideoLayout,
     updateVisibleSide,
-    startAllMedia,
-    stopAllMedia,
-    applyAudio,
     setSelected,
+    startSetMedia,
+    pauseAllMedia,
+    applyAudio,
     turnAround,
-    syncEachAudioToOwnVideo,
-    syncOtherVideoToActive,
-    muteSelf
+    syncVideos,
+    syncCurrentAudio
   };
 }
 
@@ -638,6 +609,35 @@ async function ensureAudioContext() {
   }
 }
 
+async function activateOnlyCurrentSet() {
+  for (let i = 0; i < viewSets.length; i++) {
+    if (i === currentSlide) continue;
+    viewSets[i].pauseAllMedia();
+  }
+
+  await viewSets[currentSlide].startSetMedia();
+  viewSets[currentSlide].applyAudio(true);
+}
+
+function setCurrentSlide(index, animate = true) {
+  currentSlide = clamp(index, 0, SLIDE_COUNT - 1);
+  snapCarousel(animate);
+
+  for (let i = 0; i < viewSets.length; i++) {
+    viewSets[i].setSelected(i === currentSlide);
+  }
+
+  updateHUD();
+
+  if (!unlocked) {
+    turnBtn.disabled = true;
+    return;
+  }
+
+  turnBtn.disabled = false;
+  activateOnlyCurrentSet();
+}
+
 async function startSystem() {
   if (unlocked) return;
 
@@ -647,10 +647,7 @@ async function startSystem() {
   startBtn.textContent = 'Stop';
   turnBtn.disabled = false;
 
-  await Promise.all(viewSets.map((set) => set.startAllMedia()));
-
-  muteAllSets();
-  viewSets[currentSlide].applyAudio(true);
+  await activateOnlyCurrentSet();
   updateHUD();
 }
 
@@ -662,7 +659,7 @@ function stopSystem() {
   turnBtn.disabled = true;
 
   for (const set of viewSets) {
-    set.stopAllMedia();
+    set.pauseAllMedia();
   }
 
   updateHUD();
@@ -676,8 +673,8 @@ startBtn.addEventListener('click', async () => {
   }
 });
 
-turnBtn.addEventListener('click', () => {
-  viewSets[currentSlide].turnAround();
+turnBtn.addEventListener('click', async () => {
+  await viewSets[currentSlide].turnAround();
 });
 
 carouselViewport.addEventListener('pointerdown', (ev) => {
@@ -748,10 +745,9 @@ function syncIfNeeded(nowMs) {
   if (nowMs - lastSyncCheck < SYNC_INTERVAL_MS) return;
   lastSyncCheck = nowMs;
 
-  for (const set of viewSets) {
-    set.syncEachAudioToOwnVideo();
-    set.syncOtherVideoToActive();
-  }
+  const set = viewSets[currentSlide];
+  set.syncVideos();
+  set.syncCurrentAudio();
 }
 
 function tick(nowMs) {
