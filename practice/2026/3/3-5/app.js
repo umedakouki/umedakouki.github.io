@@ -191,14 +191,25 @@ function makeViewSet(def) {
 
   let pendingAudioSwitchTimer = null;
   let audioFadeRaf = null;
-  let currentAudibleSideIndex = 0;
+
+  // 今実際に聞こえている音側
+  let currentAudibleSideIndex = 1;
+
+  function getOppositeSideIndex(sideIndex) {
+    return 1 - sideIndex;
+  }
 
   function getActiveSide() {
     return sideStates[activeSideIndex];
   }
 
   function getOtherSide() {
-    return sideStates[1 - activeSideIndex];
+    return sideStates[getOppositeSideIndex(activeSideIndex)];
+  }
+
+  function getTargetAudibleSideIndex() {
+    // 常に「見えている映像の反対側の音」
+    return getOppositeSideIndex(activeSideIndex);
   }
 
   function clearAudioTimers() {
@@ -295,15 +306,18 @@ function makeViewSet(def) {
   async function startSetMedia() {
     await ensureVideosPlaying();
 
-    currentAudibleSideIndex = activeSideIndex;
+    const targetAudibleSideIndex = getTargetAudibleSideIndex();
+    currentAudibleSideIndex = targetAudibleSideIndex;
+
     const audible = sideStates[currentAudibleSideIndex];
+    const referenceVideo = getActiveSide().video;
 
     try {
-      audible.audio.currentTime = audible.video.currentTime;
+      audible.audio.currentTime = referenceVideo.currentTime;
     } catch (_) {}
 
     await ensureAudioPlaying(currentAudibleSideIndex);
-    pauseAudio(1 - currentAudibleSideIndex);
+    pauseAudio(getOppositeSideIndex(currentAudibleSideIndex));
 
     muteAllAudioGains();
     setSideMix(currentAudibleSideIndex, 1);
@@ -319,10 +333,8 @@ function makeViewSet(def) {
       return;
     }
 
-    if (currentAudibleSideIndex === 0 || currentAudibleSideIndex === 1) {
-      muteAllAudioGains();
-      setSideMix(currentAudibleSideIndex, 1);
-    }
+    muteAllAudioGains();
+    setSideMix(currentAudibleSideIndex, 1);
   }
 
   function syncVideos() {
@@ -341,12 +353,14 @@ function makeViewSet(def) {
 
   function syncCurrentAudio() {
     const audible = sideStates[currentAudibleSideIndex];
+    const referenceVideo = getActiveSide();
+
     if (!audible.duration) return;
 
-    const d = wrappedDiff(audible.video.currentTime, audible.audio.currentTime, audible.duration);
+    const d = wrappedDiff(referenceVideo.video.currentTime, audible.audio.currentTime, audible.duration);
     if (d > SYNC_EPS) {
       try {
-        audible.audio.currentTime = audible.video.currentTime;
+        audible.audio.currentTime = referenceVideo.video.currentTime;
       } catch (_) {}
     }
   }
@@ -381,30 +395,34 @@ function makeViewSet(def) {
     audioFadeRaf = requestAnimationFrame(step);
   }
 
-  function scheduleAudioSwitch(prevSideIndex) {
+  function scheduleAudioSwitch(prevAudibleSideIndex) {
     clearAudioTimers();
 
-    currentAudibleSideIndex = prevSideIndex;
+    currentAudibleSideIndex = prevAudibleSideIndex;
     muteAllAudioGains();
-    setSideMix(prevSideIndex, 1);
+    setSideMix(prevAudibleSideIndex, 1);
 
     pendingAudioSwitchTimer = setTimeout(async () => {
-      const targetSideIndex = activeSideIndex;
+      const targetSideIndex = getTargetAudibleSideIndex();
 
-      if (targetSideIndex === prevSideIndex) {
+      if (targetSideIndex === prevAudibleSideIndex) {
+        currentAudibleSideIndex = targetSideIndex;
+        muteAllAudioGains();
+        setSideMix(targetSideIndex, 1);
         pendingAudioSwitchTimer = null;
         return;
       }
 
       const targetSide = sideStates[targetSideIndex];
+      const referenceVideo = getActiveSide().video;
 
       try {
-        targetSide.audio.currentTime = targetSide.video.currentTime;
+        targetSide.audio.currentTime = referenceVideo.currentTime;
       } catch (_) {}
 
       await ensureAudioPlaying(targetSideIndex);
       pendingAudioSwitchTimer = null;
-      startCrossfade(prevSideIndex, targetSideIndex, TURN_AUDIO_CROSSFADE_MS);
+      startCrossfade(prevAudibleSideIndex, targetSideIndex, TURN_AUDIO_CROSSFADE_MS);
     }, TURN_AUDIO_HOLD_MS);
   }
 
@@ -412,7 +430,9 @@ function makeViewSet(def) {
     if (!unlocked || !isSelected || isTurning) return;
 
     const prevVisualSideIndex = activeSideIndex;
-    const nextSideIndex = 1 - activeSideIndex;
+    const prevAudibleSideIndex = currentAudibleSideIndex;
+    const nextSideIndex = getOppositeSideIndex(activeSideIndex);
+
     const fromSide = sideStates[prevVisualSideIndex];
     const toSide = sideStates[nextSideIndex];
 
@@ -445,7 +465,7 @@ function makeViewSet(def) {
       toSide.video.style.opacity = '';
       updateVisibleSide(false);
 
-      scheduleAudioSwitch(prevVisualSideIndex);
+      scheduleAudioSwitch(prevAudibleSideIndex);
 
       isTurning = false;
       turnBtn.disabled = false;
