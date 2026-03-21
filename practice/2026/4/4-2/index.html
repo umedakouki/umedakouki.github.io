@@ -93,7 +93,12 @@
 
   <script>
     const TOTAL_IMAGES = 17;
-    const IMAGE_PATHS = Array.from({ length: TOTAL_IMAGES }, (_, i) => `assets/4-2 (${i + 1}).jpg`);
+
+    // aassets フォルダ内、拡張子は JPG
+    const IMAGE_PATHS = Array.from(
+      { length: TOTAL_IMAGES },
+      (_, i) => `aassets/4-2 (${i + 1}).JPG`
+    );
 
     const viewer = document.getElementById("viewer");
     const imageCanvas = document.getElementById("imageCanvas");
@@ -109,7 +114,6 @@
     let width = 0;
     let height = 0;
 
-    // 曇りの抜け具合を持つ低解像度フィールド
     const FIELD_SCALE = 0.22;
     let fieldW = 0;
     let fieldH = 0;
@@ -120,10 +124,10 @@
     const pointers = new Map();
 
     const REVEAL_RADIUS_PX = 100;
-    const FULL_REVEAL_SECONDS = 10;   // 同じ場所を押し続けると中心が約10秒で見える
-    const FADEOUT_SECONDS = 600;      // 約10分で曇る
+    const FULL_REVEAL_SECONDS = 10;
+    const FADEOUT_SECONDS = 600;
     const EDGE_POWER = 1.7;
-    const POINTERDOWN_BOOST = 0.08;   // 押した瞬間に少し反応を見せる
+    const POINTERDOWN_BOOST = 0.12;
     const BLUR_PASSES = 2;
 
     let lastTime = performance.now();
@@ -168,7 +172,7 @@
       return new Promise((resolve, reject) => {
         const img = new Image();
         img.onload = () => resolve(img);
-        img.onerror = reject;
+        img.onerror = () => reject(new Error(`画像を読み込めません: ${src}`));
         img.src = src;
       });
     }
@@ -253,8 +257,7 @@
       }
     }
 
-    function blurOnce(src, dst) {
-      // 横
+    function blurOnce(src, temp, dst) {
       for (let y = 0; y < fieldH; y++) {
         for (let x = 0; x < fieldW; x++) {
           let sum = 0;
@@ -265,11 +268,10 @@
             sum += src[y * fieldW + xx];
             count++;
           }
-          dst[y * fieldW + x] = sum / count;
+          temp[y * fieldW + x] = sum / count;
         }
       }
 
-      // 縦
       for (let y = 0; y < fieldH; y++) {
         for (let x = 0; x < fieldW; x++) {
           let sum = 0;
@@ -277,35 +279,30 @@
           for (let k = -2; k <= 2; k++) {
             const yy = y + k;
             if (yy < 0 || yy >= fieldH) continue;
-            sum += dst[yy * fieldW + x];
+            sum += temp[yy * fieldW + x];
             count++;
           }
-          blurFieldB[y * fieldW + x] = sum / count;
+          dst[y * fieldW + x] = sum / count;
         }
       }
     }
 
     function buildBlurField() {
       blurFieldA.set(revealField);
-
       for (let i = 0; i < BLUR_PASSES; i++) {
-        blurOnce(blurFieldA, blurFieldB);
-        blurFieldA.set(blurFieldB);
+        blurOnce(blurFieldA, blurFieldB, blurFieldA);
       }
     }
 
     function drawFogLayer() {
       fogCtx.clearRect(0, 0, width, height);
 
-      // 1. まず完全な白
       fogCtx.globalCompositeOperation = "source-over";
       fogCtx.fillStyle = "#ffffff";
       fogCtx.fillRect(0, 0, width, height);
 
-      // 2. reveal量をぼかす
       buildBlurField();
 
-      // 3. 白を削る
       fogCtx.globalCompositeOperation = "destination-out";
 
       const cellW = width / fieldW;
@@ -336,13 +333,12 @@
       const p = getLocalPoint(e.clientX, e.clientY);
       pointers.set(e.pointerId, { x: p.x, y: p.y });
 
-      // 押した瞬間に少しだけ反応
       addRevealAt(p.x, p.y, 0, POINTERDOWN_BOOST);
       drawFogLayer();
 
       try {
         fogCanvas.setPointerCapture(e.pointerId);
-      } catch (_) {}
+      } catch (err) {}
 
       e.preventDefault();
     }
