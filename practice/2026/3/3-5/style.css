@@ -7,7 +7,6 @@ html, body {
   --bg: #111;
   --fg: #eee;
   --line: #2a2a2a;
-  --muted: rgba(255,255,255,0.72);
 }
 
 * {
@@ -15,11 +14,10 @@ html, body {
 }
 
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: system-ui, sans-serif;
   background: var(--bg);
   color: var(--fg);
   overscroll-behavior: none;
-  touch-action: manipulation;
 }
 
 .top {
@@ -28,18 +26,17 @@ body {
   z-index: 20;
   padding: max(10px, env(safe-area-inset-top)) 12px 10px;
   border-bottom: 1px solid var(--line);
-  background: rgba(17, 17, 17, 0.92);
-  backdrop-filter: blur(6px);
+  background: rgba(17,17,17,0.92);
 }
 
 .topBar {
   display: flex;
   gap: 12px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-#startBtn,
-#turnBtn {
+#startBtn, #turnBtn {
   min-width: 88px;
   padding: 10px 14px;
   border: 1px solid #444;
@@ -50,7 +47,6 @@ body {
   font-size: 14px;
 }
 
-#startBtn:disabled,
 #turnBtn:disabled {
   opacity: 0.45;
   cursor: default;
@@ -60,38 +56,19 @@ body {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  align-items: baseline;
   font-size: 13px;
-  color: var(--muted);
-}
-
-.info b {
-  color: var(--fg);
-}
-
-.lead {
-  margin: 10px 0 0;
-  font-size: 13px;
-  line-height: 1.7;
-  color: var(--muted);
 }
 
 .app {
-  min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 120px);
   padding: 12px 0 calc(88px + env(safe-area-inset-bottom));
-}
-
-.carouselSection {
-  display: grid;
-  gap: 14px;
 }
 
 .carouselViewport {
   overflow: hidden;
   width: 100%;
-  height: calc(100vh - 230px - env(safe-area-inset-bottom));
+  height: calc(100vh - 190px - env(safe-area-inset-bottom));
   min-height: 460px;
-  touch-action: pan-y;
 }
 
 .carouselTrack {
@@ -109,9 +86,9 @@ body {
 
 .slide {
   width: 100%;
-  height: calc(100vh - 230px - env(safe-area-inset-bottom));
+  height: calc(100vh - 190px - env(safe-area-inset-bottom));
   min-height: 460px;
-  flex: 0 0 calc(100vh - 230px - env(safe-area-inset-bottom));
+  flex: 0 0 calc(100vh - 190px - env(safe-area-inset-bottom));
   padding: 0 12px;
   display: grid;
   align-content: start;
@@ -122,7 +99,6 @@ body {
 .slideHeader {
   width: min(100%, 560px);
   font-size: 14px;
-  color: rgba(255,255,255,0.92);
 }
 
 .sceneWindow {
@@ -145,25 +121,25 @@ body {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
+  transition: opacity 0.15s ease;
 }
 
 .viewLayer.isActive {
   opacity: 1;
-  pointer-events: auto;
 }
 
 .viewVideo {
   position: absolute;
-  top: 0;
   left: 0;
-  height: 100%;
   width: auto;
+  pointer-events: none;
+  user-select: none;
+
+  /* 16:9フレーム内の中央1:3帯だけを正方形窓用に拡大 */
+  height: 168.75%;
+  top: -34.375%;
   transform: translate3d(0, 0, 0);
   will-change: transform;
-  user-select: none;
-  pointer-events: none;
 }
 
 .dots {
@@ -202,15 +178,22 @@ body {
   display: flex;
   justify-content: center;
   padding: 10px 12px calc(12px + env(safe-area-inset-bottom));
-  background: linear-gradient(to top, rgba(17,17,17,0.98), rgba(17,17,17,0.75), rgba(17,17,17,0));
-  pointer-events: none;
+  background: linear-gradient(to top, rgba(17,17,17,0.98), rgba(17,17,17,0));
 }
 
-#turnBtn {
-  pointer-events: auto;
-  min-width: 120px;
-}
+@media (max-width: 640px) {
+  .carouselViewport {
+    height: calc(100vh - 210px - env(safe-area-inset-bottom));
+    min-height: 420px;
+  }
 
-audio {
-  display: none;
+  .slide {
+    height: calc(100vh - 210px - env(safe-area-inset-bottom));
+    min-height: 420px;
+    flex-basis: calc(100vh - 210px - env(safe-area-inset-bottom));
+  }
+
+  .sceneWindow {
+    width: 100%;
+  }
 }
