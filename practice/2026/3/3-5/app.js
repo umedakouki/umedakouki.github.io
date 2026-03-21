@@ -1,368 +1,693 @@
 'use strict';
 
-const HOLD_MS = 3000;
-const VIDEO_WIDTH_RATIO = 3; // 1:3映像
-const MASTER_GAIN = 1.0;
+const TURN_DURATION_MS = 320;
+const SYNC_INTERVAL_MS = 500;
+const SYNC_EPS = 0.08;
+const SLIDE_COUNT = 3;
+
+/*
+  元動画は 16:9 フレームの中に 3:1 の映像が中央配置されており、
+  上下は黒帯という前提。
+  1280x720 の場合、実映像高さは 1280/3 = 426.666...
+  よって「実映像高さ / 元フレーム高さ」は 426.666... / 720 = 0.592592...
+  これを使って、正方形フレーム内で中央の 3:1 部分だけを見せる。
+*/
+const CONTENT_ASPECT = 3 / 1; // 実際に見せたい映像部分
+const DEFAULT_SOURCE_ASPECT = 16 / 9;
 
 const startBtn = document.getElementById('startBtn');
 const turnBtn = document.getElementById('turnBtn');
-const setBtns = [...document.querySelectorAll('.setBtn')];
+const setLabelEl = document.getElementById('setLabel');
+const sideLabelEl = document.getElementById('sideLabel');
+const posLabelEl = document.getElementById('posLabel');
 
-const setLabel = document.getElementById('setLabel');
-const viewLabel = document.getElementById('viewLabel');
-const posLabel = document.getElementById('posLabel');
-
-const windowEl = document.getElementById('window');
-const videoFront = document.getElementById('videoFront');
-const videoBack = document.getElementById('videoBack');
-const audioEl = document.getElementById('audioEl');
-
-const DATA = [
-  {
-    name: 'A',
-    frontVideo: 'assets/a1-view.mp4',
-    frontAudio: 'assets/a1-sound.mp3',
-    backVideo: 'assets/a2-view.mp4',
-    backAudio: 'assets/a2-sound.mp3'
-  },
-  {
-    name: 'B',
-    frontVideo: 'assets/b1-view.mp4',
-    frontAudio: 'assets/b1-sound.mp3',
-    backVideo: 'assets/b2-view.mp4',
-    backAudio: 'assets/b2-sound.mp3'
-  },
-  {
-    name: 'C',
-    frontVideo: 'assets/c1-view.mp4',
-    frontAudio: 'assets/c1-sound.mp3',
-    backVideo: 'assets/c2-view.mp4',
-    backAudio: 'assets/c2-sound.mp3'
-  }
-];
+const carouselViewport = document.getElementById('carouselViewport');
+const carouselTrack = document.getElementById('carouselTrack');
+const dotEls = Array.from(document.querySelectorAll('.dot'));
 
 let audioCtx = null;
-let sourceNode = null;
-let splitter = null;
-let gainL = null;
-let gainR = null;
-let monoGain = null;
-let outL = null;
-let outR = null;
-let merger = null;
+let unlocked = false;
+let currentSlide = 0;
+let lastSyncCheck = 0;
 
-let started = false;
-let currentSet = 0;
-let currentView = 0; // 0=front,1=back
-let position = 0.5;
+let carouselDragging = false;
+let carouselPointerId = null;
+let carouselStartY = 0;
+let carouselBaseY = 0;
+let carouselDragDy = 0;
 
-let holdUntil = 0;
-let heldAudioPath = null;
-
-let dragging = false;
-let startX = 0;
-let startPos = 0;
+const sets = [
+  {
+    key: 'A',
+    stageEl: document.getElementById('stageA'),
+    sides: [
+      { videoSrc: 'assets/a1-view.mp4', audioSrc: 'assets/a1-sound.mp3' },
+      { videoSrc: 'assets/a2-view.mp4', audioSrc: 'assets/a2-sound.mp3' }
+    ]
+  },
+  {
+    key: 'B',
+    stageEl: document.getElementById('stageB'),
+    sides: [
+      { videoSrc: 'assets/b1-view.mp4', audioSrc: 'assets/b1-sound.mp3' },
+      { videoSrc: 'assets/b2-view.mp4', audioSrc: 'assets/b2-sound.mp3' }
+    ]
+  },
+  {
+    key: 'C',
+    stageEl: document.getElementById('stageC'),
+    sides: [
+      { videoSrc: 'assets/c1-view.mp4', audioSrc: 'assets/c1-sound.mp3' },
+      { videoSrc: 'assets/c2-view.mp4', audioSrc: 'assets/c2-sound.mp3' }
+    ]
+  }
+];
 
 function clamp(v, min, max) {
   return Math.max(min, Math.min(max, v));
 }
 
-function getCurrentData() {
-  return DATA[currentSet];
+function clamp01(v) {
+  return clamp(v, 0, 1);
 }
 
-function getVisibleVideoEl() {
-  return currentView === 0 ? videoFront : videoBack;
+function wrappedDiff(a, b, loopLen) {
+  const diff = Math.abs(a - b);
+  const wrap1 = Math.abs((a + loopLen) - b);
+  const wrap2 = Math.abs(a - (b + loopLen));
+  return Math.min(diff, wrap1, wrap2);
 }
 
-function getHiddenVideoEl() {
-  return currentView === 0 ? videoBack : videoFront;
+function easeInOutCubic(t) {
+  return t < 0.5
+    ? 4 * t * t * t
+    : 1 - Math.pow(-2 * t + 2, 3) / 2;
 }
 
-function getViewName() {
-  return currentView === 0 ? 'front' : 'back';
+function getSlideHeight() {
+  return carouselViewport.clientHeight || window.innerHeight;
 }
 
-function getOppositeAudioPath() {
-  const d = getCurrentData();
-  return currentView === 0 ? d.backAudio : d.frontAudio;
-}
-
-function getCurrentVideoPath() {
-  const d = getCurrentData();
-  return currentView === 0 ? d.frontVideo : d.backVideo;
-}
-
-function getHiddenVideoPath() {
-  const d = getCurrentData();
-  return currentView === 0 ? d.backVideo : d.frontVideo;
-}
-
-function updateLabels() {
-  setLabel.textContent = getCurrentData().name;
-  viewLabel.textContent = getViewName();
-  posLabel.textContent = String(Math.round(position * 100));
-
-  setBtns.forEach((btn, i) => {
-    btn.classList.toggle('active', i === currentSet);
+function updateDots() {
+  dotEls.forEach((dot, i) => {
+    dot.classList.toggle('isActive', i === currentSlide);
   });
 }
 
-function setVideoSources() {
-  const visible = getVisibleVideoEl();
-  const hidden = getHiddenVideoEl();
-
-  visible.src = getCurrentVideoPath();
-  hidden.src = getHiddenVideoPath();
-
-  visible.classList.add('active');
-  hidden.classList.remove('active');
-
-  visible.load();
-  hidden.load();
+function applyCarouselY(y) {
+  carouselTrack.style.transform = `translate3d(0, ${y}px, 0)`;
 }
 
-function updateVideoOffset() {
-  const x = -position * windowEl.clientWidth * (VIDEO_WIDTH_RATIO - 1);
-  videoFront.style.transform = `translate3d(${x}px,0,0)`;
-  videoBack.style.transform = `translate3d(${x}px,0,0)`;
+function snapCarousel(animate = true) {
+  carouselTrack.classList.toggle('isDragging', !animate);
+  applyCarouselY(-currentSlide * getSlideHeight());
+  updateDots();
 }
 
-function ensureAudioGraph() {
-  if (audioCtx) return;
+function updateHUD() {
+  const set = viewSets[currentSlide];
+  setLabelEl.textContent = set.key;
+  sideLabelEl.textContent = String(set.activeSideIndex + 1);
+  posLabelEl.textContent = set.xNorm.toFixed(2);
+}
 
-  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  sourceNode = audioCtx.createMediaElementSource(audioEl);
-  splitter = audioCtx.createChannelSplitter(2);
+function muteAllSets() {
+  for (const set of viewSets) {
+    set.applyAudio(false);
+  }
+}
 
-  gainL = audioCtx.createGain();
-  gainR = audioCtx.createGain();
-  monoGain = audioCtx.createGain();
-  outL = audioCtx.createGain();
-  outR = audioCtx.createGain();
-  merger = audioCtx.createChannelMerger(2);
+function setCurrentSlide(index, animate = true) {
+  currentSlide = clamp(index, 0, SLIDE_COUNT - 1);
+  snapCarousel(animate);
 
-  sourceNode.connect(splitter);
-  splitter.connect(gainL, 0);
-  splitter.connect(gainR, 1);
+  for (let i = 0; i < viewSets.length; i++) {
+    viewSets[i].setSelected(i === currentSlide);
+  }
 
-  gainL.connect(monoGain);
-  gainR.connect(monoGain);
+  if (!unlocked) {
+    turnBtn.disabled = true;
+    updateHUD();
+    return;
+  }
 
-  monoGain.connect(outL);
-  monoGain.connect(outR);
+  turnBtn.disabled = false;
+  viewSets[currentSlide].applyAudio(true);
+  updateHUD();
+}
 
-  outL.connect(merger, 0, 0);
-  outR.connect(merger, 0, 1);
+function makeMediaNodes(audioEl) {
+  if (!audioCtx) return null;
+
+  const source = audioCtx.createMediaElementSource(audioEl);
+  const splitter = audioCtx.createChannelSplitter(2);
+  const leftGain = audioCtx.createGain();
+  const rightGain = audioCtx.createGain();
+  const monoBus = audioCtx.createGain();
+  const merger = audioCtx.createChannelMerger(2);
+
+  leftGain.gain.value = 0;
+  rightGain.gain.value = 0;
+  monoBus.gain.value = 1;
+
+  source.connect(splitter);
+
+  splitter.connect(leftGain, 0);
+  splitter.connect(rightGain, 1);
+
+  leftGain.connect(monoBus);
+  rightGain.connect(monoBus);
+
+  monoBus.connect(merger, 0, 0);
+  monoBus.connect(merger, 0, 1);
+
   merger.connect(audioCtx.destination);
 
-  outL.gain.value = 1;
-  outR.gain.value = 1;
+  return { source, splitter, leftGain, rightGain, monoBus, merger };
 }
 
-function updateAudioPanMix() {
-  if (!audioCtx) return;
-  gainL.gain.value = 1 - position;
-  gainR.gain.value = position;
-  monoGain.gain.value = MASTER_GAIN;
+function createVideoEl(src) {
+  const video = document.createElement('video');
+  video.className = 'viewVideo isHidden';
+  video.src = src;
+  video.loop = true;
+  video.muted = true;
+  video.playsInline = true;
+  video.preload = 'auto';
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+  return video;
 }
 
-async function safePlay(media) {
-  try {
-    await media.play();
-  } catch (e) {
-    console.warn(e);
-  }
+function createAudioEl(src) {
+  const audio = new Audio(src);
+  audio.loop = true;
+  audio.preload = 'auto';
+  audio.crossOrigin = 'anonymous';
+  return audio;
 }
 
-function safePause(media) {
-  try {
-    media.pause();
-  } catch (e) {
-    console.warn(e);
-  }
-}
+function makeViewSet(def) {
+  const stage = def.stageEl;
+  const frame = stage.parentElement;
 
-async function setAudioSource(path, syncTime = null) {
-  if (audioEl.getAttribute('src') !== path) {
-    audioEl.src = path;
-    audioEl.load();
-  }
+  const layer = document.createElement('div');
+  layer.className = 'viewLayer';
+  stage.appendChild(layer);
 
-  if (typeof syncTime === 'number' && Number.isFinite(syncTime)) {
-    const applyTime = () => {
-      try {
-        audioEl.currentTime = syncTime;
-      } catch (e) {}
+  const sideStates = def.sides.map((sideDef, i) => {
+    const video = createVideoEl(sideDef.videoSrc);
+    const audio = createAudioEl(sideDef.audioSrc);
+    layer.appendChild(video);
+
+    return {
+      index: i,
+      video,
+      audio,
+      audioNodes: null,
+      sourceAspect: DEFAULT_SOURCE_ASPECT,
+      duration: 0
     };
+  });
 
-    if (audioEl.readyState >= 1) {
-      applyTime();
-    } else {
-      audioEl.addEventListener('loadedmetadata', applyTime, { once: true });
+  let isSelected = false;
+  let activeSideIndex = 0;
+  let xNorm = 0.5;
+
+  let isDragging = false;
+  let pointerId = null;
+  let dragStartX = 0;
+  let dragStartNorm = 0;
+  let isTurning = false;
+
+  function getActiveSide() {
+    return sideStates[activeSideIndex];
+  }
+
+  function getInactiveSide() {
+    return sideStates[1 - activeSideIndex];
+  }
+
+  function getContentHeightRatio(sourceAspect) {
+    return sourceAspect / CONTENT_ASPECT;
+  }
+
+  function updateVideoLayout() {
+    const frameSize = frame.clientWidth;
+    if (!frameSize) return;
+
+    for (const side of sideStates) {
+      const sourceAspect = side.sourceAspect || DEFAULT_SOURCE_ASPECT;
+      const contentHeightRatio = getContentHeightRatio(sourceAspect);
+
+      const displayHeight = frameSize / contentHeightRatio;
+      const displayWidth = displayHeight * sourceAspect;
+
+      const visibleContentWidth = frameSize * CONTENT_ASPECT;
+      const panRange = Math.max(0, visibleContentWidth - frameSize);
+      const tx = -(panRange * xNorm);
+
+      const top = -(displayHeight - frameSize) / 2;
+
+      side.video.style.width = `${displayWidth}px`;
+      side.video.style.height = `${displayHeight}px`;
+      side.video.style.left = `${tx}px`;
+      side.video.style.top = `${top}px`;
     }
   }
 
-  updateAudioPanMix();
+  function updateVisibleSide(withAnimation = false) {
+    for (const side of sideStates) {
+      side.video.classList.toggle('isAnimating', withAnimation);
+      side.video.classList.toggle('isVisible', side.index === activeSideIndex);
+      side.video.classList.toggle('isHidden', side.index !== activeSideIndex);
+    }
+  }
 
-  if (started) {
-    await safePlay(audioEl);
+  function updateAudioWeights() {
+    const active = getActiveSide();
+    if (!active.audioNodes) return;
+
+    const leftWeight = 1 - xNorm;
+    const rightWeight = xNorm;
+
+    active.audioNodes.leftGain.gain.value = leftWeight;
+    active.audioNodes.rightGain.gain.value = rightWeight;
+  }
+
+  function muteSelf() {
+    for (const side of sideStates) {
+      if (!side.audioNodes) continue;
+      side.audioNodes.leftGain.gain.value = 0;
+      side.audioNodes.rightGain.gain.value = 0;
+    }
+  }
+
+  function applyAudio(shouldSound) {
+    muteSelf();
+
+    if (!unlocked || !isSelected || !shouldSound) return;
+
+    updateAudioWeights();
+  }
+
+  function setSelected(v) {
+    isSelected = v;
+    if (!v) {
+      muteSelf();
+    }
+  }
+
+  function syncInactiveToActive() {
+    const active = getActiveSide();
+    const inactive = getInactiveSide();
+
+    if (!active.duration) return;
+
+    try {
+      inactive.video.currentTime = active.video.currentTime;
+    } catch (_) {}
+
+    try {
+      inactive.audio.currentTime = active.audio.currentTime;
+    } catch (_) {}
+  }
+
+  function syncAudioToVideo() {
+    const active = getActiveSide();
+    if (!active.duration) return;
+
+    const videoT = active.video.currentTime;
+    const audioT = active.audio.currentTime;
+    const d = wrappedDiff(videoT, audioT, active.duration);
+
+    if (d > SYNC_EPS) {
+      try {
+        active.audio.currentTime = videoT;
+      } catch (_) {}
+    }
+  }
+
+  async function startAllMedia() {
+    for (const side of sideStates) {
+      try {
+        side.video.currentTime = 0;
+      } catch (_) {}
+      try {
+        side.audio.currentTime = 0;
+      } catch (_) {}
+    }
+
+    await Promise.allSettled([
+      ...sideStates.map((s) => s.video.play()),
+      ...sideStates.map((s) => s.audio.play())
+    ]);
+  }
+
+  function stopAllMedia() {
+    for (const side of sideStates) {
+      try { side.video.pause(); } catch (_) {}
+      try { side.audio.pause(); } catch (_) {}
+      try { side.video.currentTime = 0; } catch (_) {}
+      try { side.audio.currentTime = 0; } catch (_) {}
+    }
+    muteSelf();
+  }
+
+  function turnAround() {
+    if (!unlocked || !isSelected || isTurning) return;
+
+    const fromSide = getActiveSide();
+    const nextSideIndex = 1 - activeSideIndex;
+    const toSide = sideStates[nextSideIndex];
+
+    isTurning = true;
+    turnBtn.disabled = true;
+
+    try {
+      toSide.video.currentTime = fromSide.video.currentTime;
+    } catch (_) {}
+    try {
+      toSide.audio.currentTime = fromSide.audio.currentTime;
+    } catch (_) {}
+
+    updateVisibleSide(true);
+
+    const startTime = performance.now();
+    const prevSideIndex = activeSideIndex;
+
+    function step(now) {
+      const t = clamp01((now - startTime) / TURN_DURATION_MS);
+      const eased = easeInOutCubic(t);
+
+      sideStates[prevSideIndex].video.style.opacity = String(1 - eased);
+      toSide.video.style.opacity = String(eased);
+
+      if (t < 1) {
+        requestAnimationFrame(step);
+        return;
+      }
+
+      activeSideIndex = nextSideIndex;
+      sideStates[prevSideIndex].video.style.opacity = '';
+      toSide.video.style.opacity = '';
+      updateVisibleSide(false);
+
+      isTurning = false;
+      turnBtn.disabled = false;
+      applyAudio(true);
+      updateHUD();
+    }
+
+    toSide.video.classList.add('isVisible', 'isAnimating');
+    toSide.video.classList.remove('isHidden');
+
+    requestAnimationFrame(step);
+  }
+
+  function bindStageDrag() {
+    stage.addEventListener('pointerdown', (ev) => {
+      if (!isSelected || isTurning) return;
+
+      isDragging = true;
+      pointerId = ev.pointerId;
+      dragStartX = ev.clientX;
+      dragStartNorm = xNorm;
+      stage.classList.add('dragging');
+
+      if (stage.setPointerCapture) {
+        try {
+          stage.setPointerCapture(pointerId);
+        } catch (_) {}
+      }
+    });
+
+    stage.addEventListener('pointermove', (ev) => {
+      if (!isDragging) return;
+      if (pointerId !== null && ev.pointerId !== pointerId) return;
+
+      const frameSize = frame.clientWidth || 1;
+      const dx = ev.clientX - dragStartX;
+
+      // 1:3のコンテンツを1:1で切るので、パン可能幅は「2画面分」
+      const panRangePx = frameSize * 2;
+      xNorm = clamp01(dragStartNorm - (dx / panRangePx));
+
+      updateVideoLayout();
+      applyAudio(true);
+      updateHUD();
+    });
+
+    function endDrag(ev) {
+      if (!isDragging) return;
+      if (pointerId !== null && ev.pointerId !== pointerId) return;
+
+      isDragging = false;
+      stage.classList.remove('dragging');
+
+      if (stage.releasePointerCapture && pointerId !== null) {
+        try {
+          stage.releasePointerCapture(pointerId);
+        } catch (_) {}
+      }
+      pointerId = null;
+    }
+
+    stage.addEventListener('pointerup', endDrag);
+    stage.addEventListener('pointercancel', endDrag);
+
+    stage.addEventListener('wheel', (ev) => {
+      if (!isSelected || isTurning) return;
+      ev.preventDefault();
+
+      const frameSize = frame.clientWidth || 1;
+      const panRangePx = frameSize * 2;
+      xNorm = clamp01(xNorm + (ev.deltaY / panRangePx));
+
+      updateVideoLayout();
+      applyAudio(true);
+      updateHUD();
+    }, { passive: false });
+  }
+
+  async function loadMetadata() {
+    await Promise.all(sideStates.map((side) => {
+      return new Promise((resolve) => {
+        let done = false;
+
+        function finish() {
+          if (done) return;
+          done = true;
+
+          const vw = side.video.videoWidth || 1280;
+          const vh = side.video.videoHeight || 720;
+          side.sourceAspect = vw / vh;
+          side.duration = side.video.duration || side.audio.duration || 0;
+          resolve();
+        }
+
+        side.video.addEventListener('loadedmetadata', finish, { once: true });
+        side.audio.addEventListener('loadedmetadata', finish, { once: true });
+
+        if (side.video.readyState >= 1 || side.audio.readyState >= 1) {
+          finish();
+        }
+      });
+    }));
+
+    updateVideoLayout();
+    updateVisibleSide(false);
+  }
+
+  function setupAudioGraph() {
+    for (const side of sideStates) {
+      if (!side.audioNodes) {
+        side.audioNodes = makeMediaNodes(side.audio);
+      }
+    }
+    muteSelf();
+  }
+
+  bindStageDrag();
+
+  return {
+    key: def.key,
+    get activeSideIndex() {
+      return activeSideIndex;
+    },
+    get xNorm() {
+      return xNorm;
+    },
+    loadMetadata,
+    setupAudioGraph,
+    updateVideoLayout,
+    updateVisibleSide,
+    startAllMedia,
+    stopAllMedia,
+    applyAudio,
+    setSelected,
+    turnAround,
+    syncAudioToVideo,
+    syncInactiveToActive,
+    muteSelf
+  };
+}
+
+const viewSets = sets.map((def) => makeViewSet(def));
+
+async function initializeLayout() {
+  for (const set of viewSets) {
+    await set.loadMetadata();
+    set.updateVideoLayout();
+    set.updateVisibleSide(false);
+  }
+  setCurrentSlide(currentSlide, false);
+}
+
+async function ensureAudioContext() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    for (const set of viewSets) {
+      set.setupAudioGraph();
+    }
+  }
+
+  if (audioCtx.state === 'suspended') {
+    await audioCtx.resume();
   }
 }
 
-async function startAll() {
-  ensureAudioGraph();
-  await audioCtx.resume();
+async function startSystem() {
+  if (unlocked) return;
 
-  started = true;
+  await ensureAudioContext();
+
+  unlocked = true;
   startBtn.textContent = 'Stop';
   turnBtn.disabled = false;
 
-  setVideoSources();
-  updateVideoOffset();
+  await Promise.all(viewSets.map((set) => set.startAllMedia()));
 
-  await safePlay(getVisibleVideoEl());
-  await setAudioSource(getOppositeAudioPath(), getVisibleVideoEl().currentTime || 0);
-
-  updateLabels();
+  muteAllSets();
+  viewSets[currentSlide].applyAudio(true);
+  updateHUD();
 }
 
-function stopAll() {
-  started = false;
+function stopSystem() {
+  if (!unlocked) return;
+
+  unlocked = false;
   startBtn.textContent = 'Start';
   turnBtn.disabled = true;
 
-  safePause(videoFront);
-  safePause(videoBack);
-  safePause(audioEl);
-}
-
-async function switchSet(index) {
-  currentSet = index;
-  currentView = 0;
-  holdUntil = 0;
-  heldAudioPath = null;
-
-  setVideoSources();
-  updateVideoOffset();
-  updateLabels();
-
-  if (started) {
-    const visible = getVisibleVideoEl();
-    await safePlay(visible);
-    await setAudioSource(getOppositeAudioPath(), visible.currentTime || 0);
+  for (const set of viewSets) {
+    set.stopAllMedia();
   }
-}
 
-async function turnAround() {
-  const oldVisible = getVisibleVideoEl();
-  const oldTime = oldVisible.currentTime || 0;
-  const oldAudioPath = audioEl.getAttribute('src') || getOppositeAudioPath();
-
-  currentView = currentView === 0 ? 1 : 0;
-
-  const newVisible = getVisibleVideoEl();
-  const newHidden = getHiddenVideoEl();
-
-  newVisible.classList.add('active');
-  newHidden.classList.remove('active');
-
-  newVisible.currentTime = oldTime;
-
-  await safePlay(newVisible);
-  safePause(newHidden);
-
-  heldAudioPath = oldAudioPath;
-  holdUntil = performance.now() + HOLD_MS;
-
-  updateLabels();
-}
-
-function maybeSwitchHeldAudio() {
-  if (!started) return;
-  if (!heldAudioPath) return;
-  if (performance.now() < holdUntil) return;
-
-  heldAudioPath = null;
-  setAudioSource(getOppositeAudioPath(), getVisibleVideoEl().currentTime || 0);
-}
-
-function syncAudioToVideo() {
-  if (!started) return;
-  const v = getVisibleVideoEl();
-  const vt = v.currentTime || 0;
-  const at = audioEl.currentTime || 0;
-
-  if (Math.abs(vt - at) > 0.15) {
-    try {
-      audioEl.currentTime = vt;
-    } catch (e) {}
-  }
+  updateHUD();
 }
 
 startBtn.addEventListener('click', async () => {
-  if (!started) {
-    await startAll();
+  if (!unlocked) {
+    await startSystem();
   } else {
-    stopAll();
+    stopSystem();
   }
 });
 
-turnBtn.addEventListener('click', async () => {
-  if (!started) return;
-  await turnAround();
+turnBtn.addEventListener('click', () => {
+  viewSets[currentSlide].turnAround();
 });
 
-setBtns.forEach((btn) => {
-  btn.addEventListener('click', async () => {
-    await switchSet(Number(btn.dataset.set));
+carouselViewport.addEventListener('pointerdown', (ev) => {
+  if (ev.target.closest('.viewStage')) return;
+
+  carouselDragging = true;
+  carouselPointerId = ev.pointerId;
+  carouselStartY = ev.clientY;
+  carouselBaseY = -currentSlide * getSlideHeight();
+  carouselDragDy = 0;
+
+  carouselTrack.classList.add('isDragging');
+
+  if (carouselViewport.setPointerCapture) {
+    try {
+      carouselViewport.setPointerCapture(carouselPointerId);
+    } catch (_) {}
+  }
+});
+
+carouselViewport.addEventListener('pointermove', (ev) => {
+  if (!carouselDragging) return;
+  if (carouselPointerId !== null && ev.pointerId !== carouselPointerId) return;
+
+  carouselDragDy = ev.clientY - carouselStartY;
+  applyCarouselY(carouselBaseY + carouselDragDy);
+});
+
+function endCarouselDrag(ev) {
+  if (!carouselDragging) return;
+  if (carouselPointerId !== null && ev.pointerId !== carouselPointerId) return;
+
+  const threshold = getSlideHeight() * 0.14;
+
+  if (carouselDragDy < -threshold) {
+    currentSlide = clamp(currentSlide + 1, 0, SLIDE_COUNT - 1);
+  } else if (carouselDragDy > threshold) {
+    currentSlide = clamp(currentSlide - 1, 0, SLIDE_COUNT - 1);
+  }
+
+  carouselDragging = false;
+  carouselTrack.classList.remove('isDragging');
+
+  if (carouselViewport.releasePointerCapture && carouselPointerId !== null) {
+    try {
+      carouselViewport.releasePointerCapture(carouselPointerId);
+    } catch (_) {}
+  }
+
+  carouselPointerId = null;
+  carouselDragDy = 0;
+
+  setCurrentSlide(currentSlide, true);
+}
+
+carouselViewport.addEventListener('pointerup', endCarouselDrag);
+carouselViewport.addEventListener('pointercancel', endCarouselDrag);
+
+dotEls.forEach((dot) => {
+  dot.addEventListener('click', () => {
+    const index = Number(dot.dataset.index);
+    setCurrentSlide(index, true);
   });
 });
 
-windowEl.addEventListener('pointerdown', (e) => {
-  dragging = true;
-  startX = e.clientX;
-  startPos = position;
-  try {
-    windowEl.setPointerCapture(e.pointerId);
-  } catch (e2) {}
-});
+function syncIfNeeded(nowMs) {
+  if (!unlocked) return;
+  if (nowMs - lastSyncCheck < SYNC_INTERVAL_MS) return;
+  lastSyncCheck = nowMs;
 
-windowEl.addEventListener('pointermove', (e) => {
-  if (!dragging) return;
-
-  const maxOffset = windowEl.clientWidth * (VIDEO_WIDTH_RATIO - 1);
-  const dx = e.clientX - startX;
-  position = clamp(startPos - dx / maxOffset, 0, 1);
-
-  updateVideoOffset();
-  updateAudioPanMix();
-  updateLabels();
-});
-
-function endDrag() {
-  dragging = false;
+  for (const set of viewSets) {
+    set.syncAudioToVideo();
+    set.syncInactiveToActive();
+  }
 }
 
-windowEl.addEventListener('pointerup', endDrag);
-windowEl.addEventListener('pointercancel', endDrag);
-
-window.addEventListener('resize', () => {
-  updateVideoOffset();
-});
-
-videoFront.addEventListener('loadedmetadata', () => {
-  updateVideoOffset();
-});
-videoBack.addEventListener('loadedmetadata', () => {
-  updateVideoOffset();
-});
-
-function tick() {
-  maybeSwitchHeldAudio();
-  syncAudioToVideo();
+function tick(nowMs) {
+  syncIfNeeded(nowMs);
   requestAnimationFrame(tick);
 }
-tick();
 
-switchSet(0);
+window.addEventListener('resize', () => {
+  for (const set of viewSets) {
+    set.updateVideoLayout();
+  }
+  setCurrentSlide(currentSlide, false);
+});
+
+(async () => {
+  await initializeLayout();
+  turnBtn.disabled = true;
+  updateHUD();
+  requestAnimationFrame(tick);
+})();

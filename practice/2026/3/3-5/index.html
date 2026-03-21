@@ -1,39 +1,67 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>front / back viewer</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Wide View Audio Window</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="top">
-    <div class="row">
+    <div class="topBar">
       <button id="startBtn" type="button">Start</button>
-      <button id="turnBtn" type="button" disabled>振り返る</button>
+      <div class="info">
+        <span>set: <b id="setLabel">A</b></span>
+        <span>side: <b id="sideLabel">1</b></span>
+        <span>position: <b id="posLabel">0.50</b></span>
+      </div>
     </div>
 
-    <div class="row sets">
-      <button class="setBtn active" data-set="0" type="button">A</button>
-      <button class="setBtn" data-set="1" type="button">B</button>
-      <button class="setBtn" data-set="2" type="button">C</button>
-    </div>
-
-    <div class="status">
-      <span>set: <b id="setLabel">A</b></span>
-      <span>view: <b id="viewLabel">front</b></span>
-      <span>x: <b id="posLabel">50</b>%</span>
-    </div>
+    <p class="lead">
+      横にスワイプすると、1:3の広角映像を正方形で切り取った視界が動きます。
+      「振り返る」を押すと、ちょうど180度反対側の映像へ切り替わります。
+      音は画面位置に応じて左右成分を混ぜ、最終的にはモノラルで出力されます。
+    </p>
   </header>
 
-  <main class="main">
-    <div class="window" id="window">
-      <video id="videoFront" class="video active" playsinline muted loop preload="auto"></video>
-      <video id="videoBack" class="video" playsinline muted loop preload="auto"></video>
-    </div>
+  <main class="app">
+    <section class="carouselSection" aria-label="view carousel">
+      <div class="carouselViewport" id="carouselViewport">
+        <div class="carouselTrack" id="carouselTrack">
+          <article class="slide" data-index="0">
+            <div class="slideHeader">A</div>
+            <div class="viewFrame">
+              <div class="viewStage" id="stageA" aria-label="view A"></div>
+            </div>
+          </article>
+
+          <article class="slide" data-index="1">
+            <div class="slideHeader">B</div>
+            <div class="viewFrame">
+              <div class="viewStage" id="stageB" aria-label="view B"></div>
+            </div>
+          </article>
+
+          <article class="slide" data-index="2">
+            <div class="slideHeader">C</div>
+            <div class="viewFrame">
+              <div class="viewStage" id="stageC" aria-label="view C"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="dots" id="dots" aria-label="carousel pagination">
+        <button class="dot isActive" type="button" aria-label="Aを表示" data-index="0"></button>
+        <button class="dot" type="button" aria-label="Bを表示" data-index="1"></button>
+        <button class="dot" type="button" aria-label="Cを表示" data-index="2"></button>
+      </div>
+    </section>
   </main>
 
-  <audio id="audioEl" preload="auto" loop></audio>
+  <div class="bottomBar">
+    <button id="turnBtn" type="button">振り返る</button>
+  </div>
 
   <script src="app.js"></script>
 </body>

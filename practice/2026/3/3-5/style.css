@@ -1,6 +1,14 @@
 html, body {
-  margin: 0;
   height: 100%;
+  margin: 0;
+}
+
+:root {
+  --bg: #111;
+  --fg: #eee;
+  --line: #2a2a2a;
+  --muted: rgba(255,255,255,0.72);
+  --card: #171717;
 }
 
 * {
@@ -8,93 +16,301 @@ html, body {
 }
 
 body {
-  background: #111;
-  color: #eee;
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  overscroll-behavior: none;
+  touch-action: manipulation;
 }
 
 .top {
   position: sticky;
   top: 0;
-  z-index: 10;
-  background: rgba(17,17,17,0.95);
-  padding: 12px;
-  border-bottom: 1px solid #2a2a2a;
+  z-index: 20;
+  padding:
+    max(10px, env(safe-area-inset-top))
+    12px
+    10px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(17, 17, 17, 0.92);
+  backdrop-filter: blur(6px);
 }
 
-.row {
+.topBar {
   display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 12px;
+  align-items: center;
 }
 
-button {
-  background: #1d1d1d;
-  color: #eee;
-  border: 1px solid #444;
-  border-radius: 999px;
+#startBtn,
+#turnBtn {
+  min-width: 88px;
   padding: 10px 14px;
+  border: 1px solid #444;
+  background: #1b1b1b;
+  color: var(--fg);
+  border-radius: 999px;
+  cursor: pointer;
   font-size: 14px;
 }
 
-button:disabled {
+#startBtn:disabled,
+#turnBtn:disabled {
   opacity: 0.45;
+  cursor: default;
 }
 
-.sets {
-  gap: 8px;
-}
-
-.setBtn.active {
-  background: #eee;
-  color: #111;
-}
-
-.status {
+.info {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
+  align-items: baseline;
   font-size: 13px;
-  color: rgba(255,255,255,0.8);
+  color: var(--muted);
 }
 
-.status b {
-  color: #fff;
+.info b {
+  color: var(--fg);
 }
 
-.main {
-  padding: 14px;
+.lead {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.app {
+  min-height: calc(100vh - 150px);
+  padding: 12px 0 calc(88px + env(safe-area-inset-bottom));
+}
+
+.carouselSection {
+  display: grid;
+  gap: 14px;
+}
+
+.carouselViewport {
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - 230px - env(safe-area-inset-bottom));
+  min-height: 460px;
+  touch-action: pan-x;
+}
+
+.carouselTrack {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  height: calc(100% * 3);
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.32s ease;
+  will-change: transform;
 }
 
-.window {
+.carouselTrack.isDragging {
+  transition: none;
+}
+
+.slide {
+  width: 100%;
+  height: calc(100vh - 230px - env(safe-area-inset-bottom));
+  min-height: 460px;
+  flex: 0 0 calc(100vh - 230px - env(safe-area-inset-bottom));
+  padding: 0 12px;
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  gap: 12px;
+}
+
+.slideHeader {
+  width: min(100%, 560px);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.92);
+  padding-top: 2px;
+}
+
+.viewFrame {
   position: relative;
-  width: min(92vw, 560px);
+  width: min(100%, 560px);
   aspect-ratio: 1 / 1;
   overflow: hidden;
+  border: 1px solid var(--line);
   background: #000;
-  border-radius: 18px;
-  border: 1px solid #2a2a2a;
-  touch-action: none;
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
 }
 
-.video {
-  position: absolute;
-  top: 0;
-  left: 0;
+.viewStage {
+  position: relative;
+  width: 100%;
   height: 100%;
-  width: auto;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.15s ease;
-  transform: translate3d(0,0,0);
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
 }
 
-.video.active {
+.viewStage.dragging {
+  cursor: grabbing;
+}
+
+.viewLayer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.viewVideo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.viewVideo.isHidden {
+  opacity: 0;
+}
+
+.viewVideo.isVisible {
   opacity: 1;
 }
 
-audio {
-  display: none;
+.viewVideo.isAnimating {
+  transition: opacity 0.32s ease;
+}
+
+.dots {
+  position: fixed;
+  right: 14px;
+  top: 52%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 25;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255,255,255,0.28);
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.dot.isActive {
+  width: 14px;
+  height: 14px;
+  background: rgba(255,255,255,0.92);
+  transform: scale(1.02);
+}
+
+.bottomBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  padding: 10px 12px calc(12px + env(safe-area-inset-bottom));
+  background: linear-gradient(to top, rgba(17,17,17,0.98), rgba(17,17,17,0.75), rgba(17,17,17,0));
+  pointer-events: none;
+}
+
+#turnBtn {
+  pointer-events: auto;
+  min-width: 120px;
+}
+
+@media (max-width: 640px) {
+  .top {
+    padding-top: max(10px, env(safe-area-inset-top));
+    padding-bottom: 8px;
+  }
+
+  .topBar {
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .info {
+    gap: 10px;
+    row-gap: 6px;
+    font-size: 12px;
+  }
+
+  .lead {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .app {
+    min-height: calc(100vh - 150px);
+    padding-top: 8px;
+    padding-bottom: calc(92px + env(safe-area-inset-bottom));
+  }
+
+  .carouselViewport {
+    height: calc(100vh - 250px - env(safe-area-inset-bottom));
+    min-height: 420px;
+  }
+
+  .slide {
+    height: calc(100vh - 250px - env(safe-area-inset-bottom));
+    min-height: 420px;
+    flex: 0 0 calc(100vh - 250px - env(safe-area-inset-bottom));
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .slideHeader {
+    width: 100%;
+    max-width: 560px;
+    font-size: 13px;
+  }
+
+  .viewFrame {
+    width: 100%;
+  }
+
+  .dots {
+    top: 50%;
+    right: 12px;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 768px) {
+  .top {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .slide {
+    padding: 0 20px;
+  }
+
+  .slideHeader,
+  .lead {
+    font-size: 14px;
+  }
+
+  .info {
+    font-size: 14px;
+  }
+
+  .dots {
+    right: 20px;
+  }
 }
