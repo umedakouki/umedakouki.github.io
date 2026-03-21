@@ -61,6 +61,8 @@
       display: flex;
       align-items: center;
       gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     button {
@@ -75,6 +77,7 @@
     .label {
       font-size: 14px;
       color: #666;
+      min-height: 1.2em;
     }
   </style>
 </head>
@@ -91,10 +94,13 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    const TOTAL_IMAGES = 17;
+    const SUPABASE_URL = "https://fgwcvpxxxvbzkloujzoz.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZnd2N2cHh4eHZiemtsb3Vqem96Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxMTY0MzksImV4cCI6MjA4OTY5MjQzOX0.3xoh1lMhbSg4VDtnG9trMK9OB8JVWOMjKLlPtnztBnE";
+    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    // aassets フォルダ内、拡張子は JPG
+    const TOTAL_IMAGES = 16;
     const IMAGE_PATHS = Array.from(
       { length: TOTAL_IMAGES },
       (_, i) => `assets/4-2 (${i + 1}).JPG`
@@ -120,6 +126,7 @@
     let revealField = null;
     let blurFieldA = null;
     let blurFieldB = null;
+    let blurTemp = null;
 
     const pointers = new Map();
 
@@ -129,8 +136,11 @@
     const EDGE_POWER = 1.7;
     const POINTERDOWN_BOOST = 0.12;
     const BLUR_PASSES = 2;
+    const AUTOSAVE_MS = 2000;
 
     let lastTime = performance.now();
+    let lastAutosaveAt = 0;
+    let saveInFlight = false;
 
     function resizeCanvases() {
       const rect = viewer.getBoundingClientRect();
@@ -142,21 +152,41 @@
       fogCanvas.width = width;
       fogCanvas.height = height;
 
+      const oldFieldW = fieldW;
+      const oldFieldH = fieldH;
+      const oldReveal = revealField ? new Float32Array(revealField) : null;
+
       fieldW = Math.max(48, Math.round(width * FIELD_SCALE));
       fieldH = Math.max(27, Math.round(height * FIELD_SCALE));
 
       revealField = new Float32Array(fieldW * fieldH);
       blurFieldA = new Float32Array(fieldW * fieldH);
       blurFieldB = new Float32Array(fieldW * fieldH);
+      blurTemp = new Float32Array(fieldW * fieldH);
+
+      if (oldReveal && oldFieldW > 0 && oldFieldH > 0) {
+        remapRevealField(oldReveal, oldFieldW, oldFieldH, revealField, fieldW, fieldH);
+      }
 
       drawImageLayer();
       drawFogLayer();
+    }
+
+    function remapRevealField(src, srcW, srcH, dst, dstW, dstH) {
+      for (let y = 0; y < dstH; y++) {
+        for (let x = 0; x < dstW; x++) {
+          const sx = Math.floor((x / dstW) * srcW);
+          const sy = Math.floor((y / dstH) * srcH);
+          dst[y * dstW + x] = src[Math.min(srcH - 1, sy) * srcW + Math.min(srcW - 1, sx)];
+        }
+      }
     }
 
     function resetRevealField() {
       revealField.fill(0);
       blurFieldA.fill(0);
       blurFieldB.fill(0);
+      blurTemp.fill(0);
     }
 
     function pickRandomIndex(exclude) {
@@ -175,21 +205,6 @@
         img.onerror = () => reject(new Error(`画像を読み込めません: ${src}`));
         img.src = src;
       });
-    }
-
-    async function showRandomImage() {
-      currentIndex = pickRandomIndex(currentIndex);
-
-      try {
-        currentImage = await loadImage(IMAGE_PATHS[currentIndex]);
-        resetRevealField();
-        drawImageLayer();
-        drawFogLayer();
-        label.textContent = IMAGE_PATHS[currentIndex];
-      } catch (err) {
-        console.error(err);
-        label.textContent = `読み込み失敗: ${IMAGE_PATHS[currentIndex]}`;
-      }
     }
 
     function drawImageLayer() {
@@ -290,7 +305,8 @@
     function buildBlurField() {
       blurFieldA.set(revealField);
       for (let i = 0; i < BLUR_PASSES; i++) {
-        blurOnce(blurFieldA, blurFieldB, blurFieldA);
+        blurOnce(blurFieldA, blurTemp, blurFieldB);
+        blurFieldA.set(blurFieldB);
       }
     }
 
@@ -329,16 +345,143 @@
       };
     }
 
+    function encodeFieldToBase64() {
+      const bytes = new Uint8Array(revealField.length);
+      for (let i = 0; i < revealField.length; i++) {
+        let v = Math.round(revealField[i] * 255);
+        if (v < 0) v = 0;
+        if (v > 255) v = 255;
+        bytes[i] = v;
+      }
+
+      let binary = "";
+      const chunkSize = 8192;
+      for (let i = 0; i < bytes.length; i += chunkSize) {
+        const chunk = bytes.subarray(i, i + chunkSize);
+        binary += String.fromCharCode(...chunk);
+      }
+      return btoa(binary);
+    }
+
+    function decodeBase64ToField(base64) {
+      const binary = atob(base64);
+      const len = Math.min(binary.length, revealField.length);
+
+      revealField.fill(0);
+
+      for (let i = 0; i < len; i++) {
+        revealField[i] = binary.charCodeAt(i) / 255;
+      }
+    }
+
+    function applyElapsedDecay(updatedAtIso) {
+      if (!updatedAtIso) return;
+
+      const updatedAtMs = new Date(updatedAtIso).getTime();
+      if (!Number.isFinite(updatedAtMs)) return;
+
+      const elapsedSec = Math.max(0, (Date.now() - updatedAtMs) / 1000);
+      const decay = elapsedSec / FADEOUT_SECONDS;
+
+      for (let i = 0; i < revealField.length; i++) {
+        let v = revealField[i] - decay;
+        if (v < 0) v = 0;
+        revealField[i] = v;
+      }
+    }
+
+    async function loadStateFromSupabase(imageKey) {
+      resetRevealField();
+
+      const { data, error } = await supabaseClient
+        .from("fog_states")
+        .select("image_key, field_w, field_h, data, updated_at")
+        .eq("image_key", imageKey)
+        .maybeSingle();
+
+      if (error) {
+        console.error("Supabase load error:", error);
+        return;
+      }
+
+      if (!data) return;
+
+      // 保存時と画面サイズが違っても復元できるように簡易リサイズ
+      const savedW = data.field_w;
+      const savedH = data.field_h;
+
+      if (!savedW || !savedH || !data.data) return;
+
+      const binary = atob(data.data);
+      const savedField = new Float32Array(savedW * savedH);
+      for (let i = 0; i < Math.min(binary.length, savedField.length); i++) {
+        savedField[i] = binary.charCodeAt(i) / 255;
+      }
+
+      remapRevealField(savedField, savedW, savedH, revealField, fieldW, fieldH);
+      applyElapsedDecay(data.updated_at);
+    }
+
+    async function saveStateToSupabase() {
+      if (currentIndex < 0 || saveInFlight) return;
+
+      saveInFlight = true;
+
+      const payload = {
+        image_key: IMAGE_PATHS[currentIndex],
+        field_w: fieldW,
+        field_h: fieldH,
+        data: encodeFieldToBase64(),
+        updated_at: new Date().toISOString()
+      };
+
+      const { error } = await supabaseClient
+        .from("fog_states")
+        .upsert(payload, { onConflict: "image_key" });
+
+      if (error) {
+        console.error("Supabase save error:", error);
+      }
+
+      saveInFlight = false;
+    }
+
+    function updateLabel() {
+      if (currentIndex < 0) {
+        label.textContent = "";
+        return;
+      }
+      label.textContent = IMAGE_PATHS[currentIndex];
+    }
+
+    async function showRandomImage() {
+      await saveStateToSupabase();
+
+      currentIndex = pickRandomIndex(currentIndex);
+
+      try {
+        currentImage = await loadImage(IMAGE_PATHS[currentIndex]);
+        await loadStateFromSupabase(IMAGE_PATHS[currentIndex]);
+        drawImageLayer();
+        drawFogLayer();
+        updateLabel();
+      } catch (err) {
+        console.error(err);
+        label.textContent = `読み込み失敗: ${IMAGE_PATHS[currentIndex]}`;
+      }
+    }
+
     function onPointerDown(e) {
       const p = getLocalPoint(e.clientX, e.clientY);
       pointers.set(e.pointerId, { x: p.x, y: p.y });
 
       addRevealAt(p.x, p.y, 0, POINTERDOWN_BOOST);
       drawFogLayer();
+      saveStateToSupabase();
 
       try {
         fogCanvas.setPointerCapture(e.pointerId);
-      } catch (err) {}
+      } catch (_) {}
 
       e.preventDefault();
     }
@@ -352,6 +495,7 @@
 
     function onPointerUpOrCancel(e) {
       pointers.delete(e.pointerId);
+      saveStateToSupabase();
       e.preventDefault();
     }
 
@@ -370,7 +514,12 @@
       if (currentImage) {
         drawImageLayer();
         drawFogLayer();
+        updateLabel();
       }
+    });
+
+    window.addEventListener("beforeunload", () => {
+      saveStateToSupabase();
     });
 
     function animate(now) {
@@ -384,13 +533,21 @@
       }
 
       drawFogLayer();
+
+      if (now - lastAutosaveAt > AUTOSAVE_MS) {
+        saveStateToSupabase();
+        lastAutosaveAt = now;
+      }
+
       requestAnimationFrame(animate);
     }
 
     async function init() {
       resizeCanvases();
       await showRandomImage();
+      updateLabel();
       lastTime = performance.now();
+      lastAutosaveAt = lastTime;
       requestAnimationFrame(animate);
     }
 
