@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Fog Reveal</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #dcdcdc;
+      font-family: sans-serif;
+      touch-action: none;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: 20px 0 28px;
+    }
+
+    .viewer {
+      position: relative;
+      width: 90vw;
+      max-width: 1400px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #fff;
+      user-select: none;
+      touch-action: none;
+    }
+
+    canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 12px 18px;
+      background: #f7f7f7;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .label {
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div id="viewer" class="viewer">
+      <canvas id="imageCanvas"></canvas>
+      <canvas id="fogCanvas"></canvas>
+    </div>
+
+    <div class="controls">
+      <button id="nextBtn">次へ</button>
+      <div id="label" class="label"></div>
+    </div>
+  </div>
+
+  <script>
+    const TOTAL_IMAGES = 17;
+    const IMAGE_PATHS = Array.from({ length: TOTAL_IMAGES }, (_, i) => `assets/4-2 (${i + 1}).JPG`);
+
+    const viewer = document.getElementById("viewer");
+    const imageCanvas = document.getElementById("imageCanvas");
+    const fogCanvas = document.getElementById("fogCanvas");
+    const imgCtx = imageCanvas.getContext("2d");
+    const fogCtx = fogCanvas.getContext("2d");
+    const nextBtn = document.getElementById("nextBtn");
+    const label = document.getElementById("label");
+
+    let currentImage = null;
+    let currentIndex = -1;
+
+    let width = 0;
+    let height = 0;
+
+    // 軽量化のため低解像度で曇り量を持つ
+    const FIELD_SCALE = 0.22;
+    let fieldW = 0;
+    let fieldH = 0;
+    let revealField = null;     // 0.0 = 全く見えない, 1.0 = 完全に見える
+    let blurField = null;
+
+    const pointers = new Map();
+
+    // 調整値
+    const REVEAL_RADIUS_PX = 100;
+    const FULL_REVEAL_SECONDS = 10;   // 同じ位置で約10秒
+    const FADEOUT_SECONDS = 600;      // 約10分
+    const EDGE_POWER = 1.7;
+
+    // 押した瞬間に少しだけ見えるようにする
+    const POINTERDOWN_BOOST = 0.035;
+
+    let lastTime = performance.now();
+
+    function resizeCanvases() {
+      const rect = viewer.getBoundingClientRect();
+      width = Math.round(rect.width);
+      height = Math.round(rect.height);
+
+      imageCanvas.width = width;
+      imageCanvas.height = height;
+      fogCanvas.width = width;
+      fogCanvas.height = height;
+
+      fieldW = Math.max(48, Math.round(width * FIELD_SCALE));
+      fieldH = Math.max(27, Math.round(height * FIELD_SCALE));
+      revealField = new Float32Array(fieldW * fieldH);
+      blurField = new Float32Array(fieldW * fieldH);
+
+      drawImageLayer();
+      drawFogLayer();
+    }
+
+    function resetRevealField() {
+      revealField.fill(0);
+      blurField.fill(0);
+    }
+
+    function pickRandomIndex(exclude) {
+      if (IMAGE_PATHS.length <= 1) return 0;
+      let idx;
+      do {
+        idx = Math.floor(Math.random() * IMAGE_PATHS.length);
+      } while (idx === exclude);
+      return idx;
+    }
+
+    function loadImage(src) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = src;
+      });
+    }
+
+    async function showRandomImage() {
+      currentIndex = pickRandomIndex(currentIndex);
+
+      try {
+        currentImage = await loadImage(IMAGE_PATHS[currentIndex]);
+        resetRevealField();
+        drawImageLayer();
+        drawFogLayer();
+        label.textContent = IMAGE_PATHS[currentIndex];
+      } catch (err) {
+        console.error(err);
+        label.textContent = `読み込み失敗: ${IMAGE_PATHS[currentIndex]}`;
+      }
+    }
+
+    function drawImageLayer() {
+      imgCtx.clearRect(0, 0, width, height);
+      if (!currentImage) return;
+
+      const iw = currentImage.naturalWidth;
+      const ih = currentImage.naturalHeight;
+      const ir = iw / ih;
+      const cr = width / height;
+
+      let dw, dh, dx, dy;
+
+      if (ir > cr) {
+        dw = width;
+        dh = dw / ir;
+        dx = 0;
+        dy = (height - dh) / 2;
+      } else {
+        dh = height;
+        dw = dh * ir;
+        dx = (width - dw) / 2;
+        dy = 0;
+      }
+
+      imgCtx.drawImage(currentImage, dx, dy, dw, dh);
+    }
+
+    function addRevealAt(x, y, dt, extraBoost = 0) {
+      const fx = (x / width) * fieldW;
+      const fy = (y / height) * fieldH;
+      const radius = (REVEAL_RADIUS_PX / width) * fieldW;
+
+      const minX = Math.max(0, Math.floor(fx - radius - 1));
+      const maxX = Math.min(fieldW - 1, Math.ceil(fx + radius + 1));
+      const minY = Math.max(0, Math.floor(fy - radius - 1));
+      const maxY = Math.min(fieldH - 1, Math.ceil(fy + radius + 1));
+
+      const revealRate = 1 / FULL_REVEAL_SECONDS;
+
+      for (let yy = minY; yy <= maxY; yy++) {
+        for (let xx = minX; xx <= maxX; xx++) {
+          const dx = xx - fx;
+          const dy = yy - fy;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist > radius) continue;
+
+          const t = 1 - dist / radius;
+          const strength = Math.pow(t, EDGE_POWER);
+
+          const idx = yy * fieldW + xx;
+          let v = revealField[idx] + revealRate * strength * dt + extraBoost * strength;
+          if (v > 1) v = 1;
+          revealField[idx] = v;
+        }
+      }
+    }
+
+    function decayRevealField(dt) {
+      const decay = dt / FADEOUT_SECONDS;
+      for (let i = 0; i < revealField.length; i++) {
+        let v = revealField[i] - decay;
+        if (v < 0) v = 0;
+        revealField[i] = v;
+      }
+    }
+
+    // 軽いボックスブラー
+    function blurRevealField() {
+      // 横方向
+      for (let y = 0; y < fieldH; y++) {
+        for (let x = 0; x < fieldW; x++) {
+          let sum = 0;
+          let count = 0;
+          for (let k = -2; k <= 2; k++) {
+            const xx = x + k;
+            if (xx < 0 || xx >= fieldW) continue;
+            sum += revealField[y * fieldW + xx];
+            count++;
+          }
+          blurField[y * fieldW + x] = sum / count;
+        }
+      }
+
+      // 縦方向
+      const temp = new Float32Array(fieldW * fieldH);
+      for (let y = 0; y < fieldH; y++) {
+        for (let x = 0; x < fieldW; x++) {
+          let sum = 0;
+          let count = 0;
+          for (let k = -2; k <= 2; k++) {
+            const yy = y + k;
+            if (yy < 0 || yy >= fieldH) continue;
+            sum += blurField[yy * fieldW + x];
+            count++;
+          }
+          temp[y * fieldW + x] = sum / count;
+        }
+      }
+      blurField = temp;
+    }
+
+    function drawFogLayer() {
+      fogCtx.clearRect(0, 0, width, height);
+
+      // 完全な白から始める
+      fogCtx.fillStyle = "#ffffff";
+      fogCtx.fillRect(0, 0, width, height);
+
+      blurRevealField();
+
+      const cellW = width / fieldW;
+      const cellH = height / fieldH;
+
+      // reveal量に応じて白の不透明度を下げる
+      for (let y = 0; y < fieldH; y++) {
+        for (let x = 0; x < fieldW; x++) {
+          const reveal = blurField[y * fieldW + x];
+          if (reveal <= 0.001) continue;
+
+          const fogAlpha = 1 - reveal;
+          fogCtx.fillStyle = `rgba(255,255,255,${fogAlpha})`;
+          fogCtx.fillRect(x * cellW, y * cellH, cellW + 1, cellH + 1);
+        }
+      }
+    }
+
+    function getLocalPoint(clientX, clientY) {
+      const rect = viewer.getBoundingClientRect();
+      return {
+        x: clientX - rect.left,
+        y: clientY - rect.top
+      };
+    }
+
+    function onPointerDown(e) {
+      const p = getLocalPoint(e.clientX, e.clientY);
+      pointers.set(e.pointerId, { x: p.x, y: p.y });
+
+      // 押した瞬間に少しだけ曇りを取る
+      addRevealAt(p.x, p.y, 0, POINTERDOWN_BOOST);
+
+      try {
+        viewer.setPointerCapture(e.pointerId);
+      } catch (_) {}
+
+      e.preventDefault();
+    }
+
+    function onPointerMove(e) {
+      if (!pointers.has(e.pointerId)) return;
+      const p = getLocalPoint(e.clientX, e.clientY);
+      pointers.set(e.pointerId, { x: p.x, y: p.y });
+      e.preventDefault();
+    }
+
+    function onPointerUpOrCancel(e) {
+      pointers.delete(e.pointerId);
+      e.preventDefault();
+    }
+
+    viewer.addEventListener("pointerdown", onPointerDown, { passive: false });
+    viewer.addEventListener("pointermove", onPointerMove, { passive: false });
+    viewer.addEventListener("pointerup", onPointerUpOrCancel, { passive: false });
+    viewer.addEventListener("pointercancel", onPointerUpOrCancel, { passive: false });
+
+    nextBtn.addEventListener("click", async () => {
+      pointers.clear();
+      await showRandomImage();
+    });
+
+    window.addEventListener("resize", () => {
+      resizeCanvases();
+      if (currentImage) {
+        drawImageLayer();
+        drawFogLayer();
+      }
+    });
+
+    function animate(now) {
+      const dt = Math.min((now - lastTime) / 1000, 0.05);
+      lastTime = now;
+
+      decayRevealField(dt);
+
+      for (const p of pointers.values()) {
+        addRevealAt(p.x, p.y, dt, 0);
+      }
+
+      drawFogLayer();
+      requestAnimationFrame(animate);
+    }
+
+    async function init() {
+      resizeCanvases();
+      await showRandomImage();
+      lastTime = performance.now();
+      requestAnimationFrame(animate);
+    }
+
+    init();
+  </script>
+</body>
+</html>
