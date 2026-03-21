@@ -13,7 +13,7 @@ const SLIDE_COUNT = 3;
   まずは false で試してください。
   まだ「逆方向感」が変なら true にしてください。
 */
-const REVERSE_PAN_ON_BACKSIDE = false;
+const REVERSE_PAN_ON_BACKSIDE = true;
 
 /*
   元動画は 16:9 フレームの中に 3:1 の映像が中央配置され、
