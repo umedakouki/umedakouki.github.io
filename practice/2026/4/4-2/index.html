@@ -51,6 +51,12 @@
       display: block;
     }
 
+    #fogCanvas {
+      pointer-events: auto;
+      touch-action: none;
+      cursor: pointer;
+    }
+
     .controls {
       display: flex;
       align-items: center;
@@ -87,7 +93,7 @@
 
   <script>
     const TOTAL_IMAGES = 17;
-    const IMAGE_PATHS = Array.from({ length: TOTAL_IMAGES }, (_, i) => `assets/4-2 (${i + 1}).JPG`);
+    const IMAGE_PATHS = Array.from({ length: TOTAL_IMAGES }, (_, i) => `assets/4-2 (${i + 1}).jpg`);
 
     const viewer = document.getElementById("viewer");
     const imageCanvas = document.getElementById("imageCanvas");
@@ -103,23 +109,22 @@
     let width = 0;
     let height = 0;
 
-    // 軽量化のため低解像度で曇り量を持つ
+    // 曇りの抜け具合を持つ低解像度フィールド
     const FIELD_SCALE = 0.22;
     let fieldW = 0;
     let fieldH = 0;
-    let revealField = null;     // 0.0 = 全く見えない, 1.0 = 完全に見える
-    let blurField = null;
+    let revealField = null;
+    let blurFieldA = null;
+    let blurFieldB = null;
 
     const pointers = new Map();
 
-    // 調整値
     const REVEAL_RADIUS_PX = 100;
-    const FULL_REVEAL_SECONDS = 10;   // 同じ位置で約10秒
-    const FADEOUT_SECONDS = 600;      // 約10分
+    const FULL_REVEAL_SECONDS = 10;   // 同じ場所を押し続けると中心が約10秒で見える
+    const FADEOUT_SECONDS = 600;      // 約10分で曇る
     const EDGE_POWER = 1.7;
-
-    // 押した瞬間に少しだけ見えるようにする
-    const POINTERDOWN_BOOST = 0.035;
+    const POINTERDOWN_BOOST = 0.08;   // 押した瞬間に少し反応を見せる
+    const BLUR_PASSES = 2;
 
     let lastTime = performance.now();
 
@@ -135,8 +140,10 @@
 
       fieldW = Math.max(48, Math.round(width * FIELD_SCALE));
       fieldH = Math.max(27, Math.round(height * FIELD_SCALE));
+
       revealField = new Float32Array(fieldW * fieldH);
-      blurField = new Float32Array(fieldW * fieldH);
+      blurFieldA = new Float32Array(fieldW * fieldH);
+      blurFieldB = new Float32Array(fieldW * fieldH);
 
       drawImageLayer();
       drawFogLayer();
@@ -144,7 +151,8 @@
 
     function resetRevealField() {
       revealField.fill(0);
-      blurField.fill(0);
+      blurFieldA.fill(0);
+      blurFieldB.fill(0);
     }
 
     function pickRandomIndex(exclude) {
@@ -229,7 +237,7 @@
           const strength = Math.pow(t, EDGE_POWER);
 
           const idx = yy * fieldW + xx;
-          let v = revealField[idx] + revealRate * strength * dt + extraBoost * strength;
+          let v = revealField[idx] + (revealRate * strength * dt) + (extraBoost * strength);
           if (v > 1) v = 1;
           revealField[idx] = v;
         }
@@ -245,9 +253,8 @@
       }
     }
 
-    // 軽いボックスブラー
-    function blurRevealField() {
-      // 横方向
+    function blurOnce(src, dst) {
+      // 横
       for (let y = 0; y < fieldH; y++) {
         for (let x = 0; x < fieldW; x++) {
           let sum = 0;
@@ -255,15 +262,14 @@
           for (let k = -2; k <= 2; k++) {
             const xx = x + k;
             if (xx < 0 || xx >= fieldW) continue;
-            sum += revealField[y * fieldW + xx];
+            sum += src[y * fieldW + xx];
             count++;
           }
-          blurField[y * fieldW + x] = sum / count;
+          dst[y * fieldW + x] = sum / count;
         }
       }
 
-      // 縦方向
-      const temp = new Float32Array(fieldW * fieldH);
+      // 縦
       for (let y = 0; y < fieldH; y++) {
         for (let x = 0; x < fieldW; x++) {
           let sum = 0;
@@ -271,42 +277,55 @@
           for (let k = -2; k <= 2; k++) {
             const yy = y + k;
             if (yy < 0 || yy >= fieldH) continue;
-            sum += blurField[yy * fieldW + x];
+            sum += dst[yy * fieldW + x];
             count++;
           }
-          temp[y * fieldW + x] = sum / count;
+          blurFieldB[y * fieldW + x] = sum / count;
         }
       }
-      blurField = temp;
+    }
+
+    function buildBlurField() {
+      blurFieldA.set(revealField);
+
+      for (let i = 0; i < BLUR_PASSES; i++) {
+        blurOnce(blurFieldA, blurFieldB);
+        blurFieldA.set(blurFieldB);
+      }
     }
 
     function drawFogLayer() {
       fogCtx.clearRect(0, 0, width, height);
 
-      // 完全な白から始める
+      // 1. まず完全な白
+      fogCtx.globalCompositeOperation = "source-over";
       fogCtx.fillStyle = "#ffffff";
       fogCtx.fillRect(0, 0, width, height);
 
-      blurRevealField();
+      // 2. reveal量をぼかす
+      buildBlurField();
+
+      // 3. 白を削る
+      fogCtx.globalCompositeOperation = "destination-out";
 
       const cellW = width / fieldW;
       const cellH = height / fieldH;
 
-      // reveal量に応じて白の不透明度を下げる
       for (let y = 0; y < fieldH; y++) {
         for (let x = 0; x < fieldW; x++) {
-          const reveal = blurField[y * fieldW + x];
+          const reveal = blurFieldA[y * fieldW + x];
           if (reveal <= 0.001) continue;
 
-          const fogAlpha = 1 - reveal;
-          fogCtx.fillStyle = `rgba(255,255,255,${fogAlpha})`;
+          fogCtx.fillStyle = `rgba(0,0,0,${reveal})`;
           fogCtx.fillRect(x * cellW, y * cellH, cellW + 1, cellH + 1);
         }
       }
+
+      fogCtx.globalCompositeOperation = "source-over";
     }
 
     function getLocalPoint(clientX, clientY) {
-      const rect = viewer.getBoundingClientRect();
+      const rect = fogCanvas.getBoundingClientRect();
       return {
         x: clientX - rect.left,
         y: clientY - rect.top
@@ -317,11 +336,12 @@
       const p = getLocalPoint(e.clientX, e.clientY);
       pointers.set(e.pointerId, { x: p.x, y: p.y });
 
-      // 押した瞬間に少しだけ曇りを取る
+      // 押した瞬間に少しだけ反応
       addRevealAt(p.x, p.y, 0, POINTERDOWN_BOOST);
+      drawFogLayer();
 
       try {
-        viewer.setPointerCapture(e.pointerId);
+        fogCanvas.setPointerCapture(e.pointerId);
       } catch (_) {}
 
       e.preventDefault();
@@ -339,10 +359,10 @@
       e.preventDefault();
     }
 
-    viewer.addEventListener("pointerdown", onPointerDown, { passive: false });
-    viewer.addEventListener("pointermove", onPointerMove, { passive: false });
-    viewer.addEventListener("pointerup", onPointerUpOrCancel, { passive: false });
-    viewer.addEventListener("pointercancel", onPointerUpOrCancel, { passive: false });
+    fogCanvas.addEventListener("pointerdown", onPointerDown, { passive: false });
+    fogCanvas.addEventListener("pointermove", onPointerMove, { passive: false });
+    fogCanvas.addEventListener("pointerup", onPointerUpOrCancel, { passive: false });
+    fogCanvas.addEventListener("pointercancel", onPointerUpOrCancel, { passive: false });
 
     nextBtn.addEventListener("click", async () => {
       pointers.clear();
