@@ -1,208 +1,178 @@
 'use strict';
 
-const VIDEO_ASPECT = 3;
-const AUDIO_MASTER_GAIN = 1.0;
-const SYNC_EPS = 0.12;
-const SLIDE_COUNT = 3;
-const FRONT_LISTEN_MS = 3000; // 振り返った直後、直前の音を保持する時間
+const HOLD_MS = 3000;
+const VIDEO_WIDTH_RATIO = 3; // 1:3映像
+const MASTER_GAIN = 1.0;
 
 const startBtn = document.getElementById('startBtn');
 const turnBtn = document.getElementById('turnBtn');
-const setLabelEl = document.getElementById('setLabel');
-const sideLabelEl = document.getElementById('sideLabel');
-const posLabelEl = document.getElementById('posLabel');
+const setBtns = [...document.querySelectorAll('.setBtn')];
 
-const carouselViewport = document.getElementById('carouselViewport');
-const carouselTrack = document.getElementById('carouselTrack');
-const dotEls = Array.from(document.querySelectorAll('.dot'));
+const setLabel = document.getElementById('setLabel');
+const viewLabel = document.getElementById('viewLabel');
+const posLabel = document.getElementById('posLabel');
 
-const sets = [
+const windowEl = document.getElementById('window');
+const videoFront = document.getElementById('videoFront');
+const videoBack = document.getElementById('videoBack');
+const audioEl = document.getElementById('audioEl');
+
+const DATA = [
   {
-    key: 'A',
-    stageEl: document.getElementById('stageA'),
-    windowEl: document.querySelector('.sceneWindow[data-set-index="0"]'),
-    views: [
-      { name: 'front', video: document.getElementById('a1Video'), audioEl: document.getElementById('a1Audio') },
-      { name: 'back',  video: document.getElementById('a2Video'), audioEl: document.getElementById('a2Audio') }
-    ]
+    name: 'A',
+    frontVideo: 'assets/a1-view.mp4',
+    frontAudio: 'assets/a1-sound.mp3',
+    backVideo: 'assets/a2-view.mp4',
+    backAudio: 'assets/a2-sound.mp3'
   },
   {
-    key: 'B',
-    stageEl: document.getElementById('stageB'),
-    windowEl: document.querySelector('.sceneWindow[data-set-index="1"]'),
-    views: [
-      { name: 'front', video: document.getElementById('b1Video'), audioEl: document.getElementById('b1Audio') },
-      { name: 'back',  video: document.getElementById('b2Video'), audioEl: document.getElementById('b2Audio') }
-    ]
+    name: 'B',
+    frontVideo: 'assets/b1-view.mp4',
+    frontAudio: 'assets/b1-sound.mp3',
+    backVideo: 'assets/b2-view.mp4',
+    backAudio: 'assets/b2-sound.mp3'
   },
   {
-    key: 'C',
-    stageEl: document.getElementById('stageC'),
-    windowEl: document.querySelector('.sceneWindow[data-set-index="2"]'),
-    views: [
-      { name: 'front', video: document.getElementById('c1Video'), audioEl: document.getElementById('c1Audio') },
-      { name: 'back',  video: document.getElementById('c2Video'), audioEl: document.getElementById('c2Audio') }
-    ]
+    name: 'C',
+    frontVideo: 'assets/c1-view.mp4',
+    frontAudio: 'assets/c1-sound.mp3',
+    backVideo: 'assets/c2-view.mp4',
+    backAudio: 'assets/c2-sound.mp3'
   }
 ];
 
 let audioCtx = null;
-let unlocked = false;
-let currentSlide = 0;
+let sourceNode = null;
+let splitter = null;
+let gainL = null;
+let gainR = null;
+let monoGain = null;
+let outL = null;
+let outR = null;
+let merger = null;
 
-let carouselDragging = false;
-let carouselPointerId = null;
-let carouselStartY = 0;
-let carouselBaseY = 0;
-let carouselDragDy = 0;
+let started = false;
+let currentSet = 0;
+let currentView = 0; // 0=front,1=back
+let position = 0.5;
+
+let holdUntil = 0;
+let heldAudioPath = null;
+
+let dragging = false;
+let startX = 0;
+let startPos = 0;
 
 function clamp(v, min, max) {
   return Math.max(min, Math.min(max, v));
 }
 
-function clamp01(v) {
-  return clamp(v, 0, 1);
+function getCurrentData() {
+  return DATA[currentSet];
 }
 
-function getSlideHeight() {
-  return carouselViewport.clientHeight || window.innerHeight;
+function getVisibleVideoEl() {
+  return currentView === 0 ? videoFront : videoBack;
 }
 
-function applyCarouselY(y) {
-  carouselTrack.style.transform = `translate3d(0, ${y}px, 0)`;
+function getHiddenVideoEl() {
+  return currentView === 0 ? videoBack : videoFront;
 }
 
-function updateDots() {
-  dotEls.forEach((dot, i) => {
-    dot.classList.toggle('isActive', i === currentSlide);
+function getViewName() {
+  return currentView === 0 ? 'front' : 'back';
+}
+
+function getOppositeAudioPath() {
+  const d = getCurrentData();
+  return currentView === 0 ? d.backAudio : d.frontAudio;
+}
+
+function getCurrentVideoPath() {
+  const d = getCurrentData();
+  return currentView === 0 ? d.frontVideo : d.backVideo;
+}
+
+function getHiddenVideoPath() {
+  const d = getCurrentData();
+  return currentView === 0 ? d.backVideo : d.frontVideo;
+}
+
+function updateLabels() {
+  setLabel.textContent = getCurrentData().name;
+  viewLabel.textContent = getViewName();
+  posLabel.textContent = String(Math.round(position * 100));
+
+  setBtns.forEach((btn, i) => {
+    btn.classList.toggle('active', i === currentSet);
   });
 }
 
-function snapCarousel(animate = true) {
-  carouselTrack.classList.toggle('isDragging', !animate);
-  applyCarouselY(-currentSlide * getSlideHeight());
-  updateDots();
+function setVideoSources() {
+  const visible = getVisibleVideoEl();
+  const hidden = getHiddenVideoEl();
+
+  visible.src = getCurrentVideoPath();
+  hidden.src = getHiddenVideoPath();
+
+  visible.classList.add('active');
+  hidden.classList.remove('active');
+
+  visible.load();
+  hidden.load();
 }
 
-function getOppositeSideIndex(sideIndex) {
-  return sideIndex === 0 ? 1 : 0;
+function updateVideoOffset() {
+  const x = -position * windowEl.clientWidth * (VIDEO_WIDTH_RATIO - 1);
+  videoFront.style.transform = `translate3d(${x}px,0,0)`;
+  videoBack.style.transform = `translate3d(${x}px,0,0)`;
 }
 
-function getAudibleSide(set) {
-  const now = performance.now();
+function ensureAudioGraph() {
+  if (audioCtx) return;
 
-  // 振り返り直後は、それまで聞いていた音をそのまま保持
-  if (set.frontListenUntil && now < set.frontListenUntil && set.heldAudioSide !== null) {
-    return set.heldAudioSide;
-  }
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  sourceNode = audioCtx.createMediaElementSource(audioEl);
+  splitter = audioCtx.createChannelSplitter(2);
 
-  // 通常は「見えている面の反対側の音」
-  return getOppositeSideIndex(set.facing);
-}
+  gainL = audioCtx.createGain();
+  gainR = audioCtx.createGain();
+  monoGain = audioCtx.createGain();
+  outL = audioCtx.createGain();
+  outR = audioCtx.createGain();
+  merger = audioCtx.createChannelMerger(2);
 
-function updateHUD() {
-  const set = sets[currentSlide];
-  setLabelEl.textContent = set.key;
-  sideLabelEl.textContent = set.views[set.facing].name;
-  posLabelEl.textContent = String(Math.round(set.position * 100));
-}
+  sourceNode.connect(splitter);
+  splitter.connect(gainL, 0);
+  splitter.connect(gainR, 1);
 
-function setCurrentSlide(index, animate = true) {
-  const prev = sets[currentSlide];
-  currentSlide = clamp(index, 0, SLIDE_COUNT - 1);
-  const next = sets[currentSlide];
+  gainL.connect(monoGain);
+  gainR.connect(monoGain);
 
-  snapCarousel(animate);
-
-  if (unlocked && prev !== next) {
-    pauseSet(prev);
-    playSet(next);
-  }
-
-  updateHUD();
-}
-
-function createAudioGraph(audioEl) {
-  const source = audioCtx.createMediaElementSource(audioEl);
-  const splitter = audioCtx.createChannelSplitter(2);
-
-  const leftGain = audioCtx.createGain();
-  const rightGain = audioCtx.createGain();
-
-  const monoBus = audioCtx.createGain();
-  const outL = audioCtx.createGain();
-  const outR = audioCtx.createGain();
-  const merger = audioCtx.createChannelMerger(2);
-
-  source.connect(splitter);
-
-  splitter.connect(leftGain, 0);
-  splitter.connect(rightGain, 1);
-
-  leftGain.connect(monoBus);
-  rightGain.connect(monoBus);
-
-  monoBus.connect(outL);
-  monoBus.connect(outR);
+  monoGain.connect(outL);
+  monoGain.connect(outR);
 
   outL.connect(merger, 0, 0);
   outR.connect(merger, 0, 1);
-
   merger.connect(audioCtx.destination);
 
-  leftGain.gain.value = 0.5;
-  rightGain.gain.value = 0.5;
-  monoBus.gain.value = AUDIO_MASTER_GAIN;
   outL.gain.value = 1;
   outR.gain.value = 1;
-
-  return {
-    audioEl,
-    leftGain,
-    rightGain,
-    monoBus
-  };
 }
 
-function getMaxOffsetPx(set) {
-  return Math.max(0, set.windowEl.clientWidth * (VIDEO_ASPECT - 1));
-}
-
-function updateSetAudio(set) {
+function updateAudioPanMix() {
   if (!audioCtx) return;
-
-  const audibleSide = getAudibleSide(set);
-  const activeView = set.views[audibleSide];
-
-  const leftMix = 1 - set.position;
-  const rightMix = set.position;
-
-  for (let i = 0; i < set.views.length; i++) {
-    const view = set.views[i];
-    if (!view.graph) continue;
-
-    const active = unlocked && i === audibleSide;
-
-    view.graph.leftGain.gain.value = active ? leftMix : 0;
-    view.graph.rightGain.gain.value = active ? rightMix : 0;
-    view.graph.monoBus.gain.value = active ? AUDIO_MASTER_GAIN : 0;
-  }
-
-  return activeView;
+  gainL.gain.value = 1 - position;
+  gainR.gain.value = position;
+  monoGain.gain.value = MASTER_GAIN;
 }
 
-function updateSetVisual(set) {
-  const x = -set.position * getMaxOffsetPx(set);
-
-  for (const view of set.views) {
-    view.video.style.transform = `translate3d(${x}px, 0, 0)`;
+async function safePlay(media) {
+  try {
+    await media.play();
+  } catch (e) {
+    console.warn(e);
   }
-
-  set.layers.forEach((layer, i) => {
-    layer.classList.toggle('isActive', i === set.facing);
-  });
-
-  updateSetAudio(set);
 }
 
 function safePause(media) {
@@ -213,342 +183,186 @@ function safePause(media) {
   }
 }
 
-async function safePlay(media) {
-  try {
-    await media.play();
-    return true;
-  } catch (e) {
-    console.warn('play error:', e);
-    return false;
+async function setAudioSource(path, syncTime = null) {
+  if (audioEl.getAttribute('src') !== path) {
+    audioEl.src = path;
+    audioEl.load();
   }
-}
 
-function clearFrontHoldTimer(set) {
-  if (set.frontHoldTimer) {
-    clearTimeout(set.frontHoldTimer);
-    set.frontHoldTimer = null;
-  }
-}
+  if (typeof syncTime === 'number' && Number.isFinite(syncTime)) {
+    const applyTime = () => {
+      try {
+        audioEl.currentTime = syncTime;
+      } catch (e) {}
+    };
 
-function setupSet(set) {
-  set.position = 0.5;
-  set.facing = 0;
-  set.isDragging = false;
-  set.pointerId = null;
-  set.dragStartX = 0;
-  set.dragStartPosition = 0;
-
-  // 元の実装の考え方を踏襲
-  set.frontListenUntil = 0;
-  set.heldAudioSide = null;
-  set.frontHoldTimer = null;
-
-  set.layers = Array.from(set.stageEl.querySelectorAll('.viewLayer'));
-
-  set.views.forEach((view) => {
-    view.video.loop = true;
-    view.video.muted = true;
-    view.video.playsInline = true;
-
-    view.audioEl.loop = true;
-    view.audioEl.preload = 'auto';
-    view.audioEl.crossOrigin = 'anonymous';
-
-    view.graph = null;
-  });
-
-  bindHorizontalDrag(set);
-  updateSetVisual(set);
-}
-
-function ensureAudioContext() {
-  if (audioCtx) return;
-  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-
-  for (const set of sets) {
-    for (const view of set.views) {
-      view.graph = createAudioGraph(view.audioEl);
-    }
-  }
-}
-
-async function playSet(set) {
-  const audibleSide = getAudibleSide(set);
-
-  for (let i = 0; i < set.views.length; i++) {
-    const view = set.views[i];
-
-    try {
-      if (i === audibleSide) {
-        view.audioEl.currentTime = set.views[set.facing].video.currentTime || view.audioEl.currentTime || 0;
-        await safePlay(view.audioEl);
-      } else {
-        safePause(view.audioEl);
-      }
-    } catch (e) {
-      console.warn(e);
+    if (audioEl.readyState >= 1) {
+      applyTime();
+    } else {
+      audioEl.addEventListener('loadedmetadata', applyTime, { once: true });
     }
   }
 
-  const visibleView = set.views[set.facing];
-  await safePlay(visibleView.video);
+  updateAudioPanMix();
 
-  updateSetAudio(set);
-}
-
-function pauseSet(set) {
-  clearFrontHoldTimer(set);
-
-  for (const view of set.views) {
-    safePause(view.video);
-    safePause(view.audioEl);
+  if (started) {
+    await safePlay(audioEl);
   }
-  updateSetAudio(set);
 }
 
-async function startSystem() {
-  if (unlocked) return;
-
-  ensureAudioContext();
+async function startAll() {
+  ensureAudioGraph();
   await audioCtx.resume();
 
-  unlocked = true;
+  started = true;
   startBtn.textContent = 'Stop';
   turnBtn.disabled = false;
 
-  await playSet(sets[currentSlide]);
-  updateHUD();
+  setVideoSources();
+  updateVideoOffset();
+
+  await safePlay(getVisibleVideoEl());
+  await setAudioSource(getOppositeAudioPath(), getVisibleVideoEl().currentTime || 0);
+
+  updateLabels();
 }
 
-function stopSystem() {
-  if (!unlocked) return;
-
-  unlocked = false;
+function stopAll() {
+  started = false;
   startBtn.textContent = 'Start';
   turnBtn.disabled = true;
 
-  for (const set of sets) {
-    pauseSet(set);
-  }
+  safePause(videoFront);
+  safePause(videoBack);
+  safePause(audioEl);
+}
 
-  updateHUD();
+async function switchSet(index) {
+  currentSet = index;
+  currentView = 0;
+  holdUntil = 0;
+  heldAudioPath = null;
+
+  setVideoSources();
+  updateVideoOffset();
+  updateLabels();
+
+  if (started) {
+    const visible = getVisibleVideoEl();
+    await safePlay(visible);
+    await setAudioSource(getOppositeAudioPath(), visible.currentTime || 0);
+  }
 }
 
 async function turnAround() {
-  const set = sets[currentSlide];
+  const oldVisible = getVisibleVideoEl();
+  const oldTime = oldVisible.currentTime || 0;
+  const oldAudioPath = audioEl.getAttribute('src') || getOppositeAudioPath();
 
-  // 振り返る前に聞いていた音を記録
-  const previousAudibleSide = getAudibleSide(set);
+  currentView = currentView === 0 ? 1 : 0;
 
-  const fromFacing = set.facing;
-  const toFacing = getOppositeSideIndex(fromFacing);
+  const newVisible = getVisibleVideoEl();
+  const newHidden = getHiddenVideoEl();
 
-  const fromVideo = set.views[fromFacing].video;
-  const toVideo = set.views[toFacing].video;
+  newVisible.classList.add('active');
+  newHidden.classList.remove('active');
 
-  // 映像はすぐ反転
-  try {
-    toVideo.currentTime = fromVideo.currentTime || 0;
-  } catch (e) {}
+  newVisible.currentTime = oldTime;
 
-  set.facing = toFacing;
-  updateSetVisual(set);
+  await safePlay(newVisible);
+  safePause(newHidden);
 
-  if (unlocked) {
-    await safePlay(toVideo);
+  heldAudioPath = oldAudioPath;
+  holdUntil = performance.now() + HOLD_MS;
 
-    // 直前の音を3秒保持
-    clearFrontHoldTimer(set);
-    set.heldAudioSide = previousAudibleSide;
-    set.frontListenUntil = performance.now() + FRONT_LISTEN_MS;
-
-    // 保持対象の音声を映像時刻に寄せて再生
-    const heldAudio = set.views[set.heldAudioSide].audioEl;
-    try {
-      heldAudio.currentTime = toVideo.currentTime || heldAudio.currentTime || 0;
-    } catch (e) {}
-    await safePlay(heldAudio);
-
-    updateSetAudio(set);
-
-    set.frontHoldTimer = setTimeout(async () => {
-      set.frontListenUntil = 0;
-      set.heldAudioSide = null;
-
-      const newAudibleSide = getAudibleSide(set);
-
-      for (let i = 0; i < set.views.length; i++) {
-        const view = set.views[i];
-        if (i === newAudibleSide) {
-          try {
-            view.audioEl.currentTime = set.views[set.facing].video.currentTime || view.audioEl.currentTime || 0;
-          } catch (e) {}
-          await safePlay(view.audioEl);
-        } else {
-          safePause(view.audioEl);
-        }
-      }
-
-      updateSetAudio(set);
-    }, FRONT_LISTEN_MS);
-  }
-
-  updateHUD();
+  updateLabels();
 }
 
-function bindHorizontalDrag(set) {
-  const el = set.windowEl;
+function maybeSwitchHeldAudio() {
+  if (!started) return;
+  if (!heldAudioPath) return;
+  if (performance.now() < holdUntil) return;
 
-  el.addEventListener('pointerdown', (ev) => {
-    set.isDragging = true;
-    set.pointerId = ev.pointerId;
-    set.dragStartX = ev.clientX;
-    set.dragStartPosition = set.position;
-
-    try {
-      el.setPointerCapture(ev.pointerId);
-    } catch (e) {}
-  });
-
-  el.addEventListener('pointermove', (ev) => {
-    if (!set.isDragging) return;
-    if (set.pointerId !== ev.pointerId) return;
-
-    const maxOffset = getMaxOffsetPx(set);
-    if (maxOffset <= 0) return;
-
-    const dx = ev.clientX - set.dragStartX;
-    const delta = dx / maxOffset;
-
-    set.position = clamp01(set.dragStartPosition - delta);
-    updateSetVisual(set);
-
-    if (currentSlide === sets.indexOf(set)) {
-      updateHUD();
-    }
-  });
-
-  function endDrag(ev) {
-    if (!set.isDragging) return;
-    if (set.pointerId !== ev.pointerId) return;
-
-    set.isDragging = false;
-    set.pointerId = null;
-  }
-
-  el.addEventListener('pointerup', endDrag);
-  el.addEventListener('pointercancel', endDrag);
+  heldAudioPath = null;
+  setAudioSource(getOppositeAudioPath(), getVisibleVideoEl().currentTime || 0);
 }
 
-function syncActiveMedia() {
-  if (!unlocked) return;
+function syncAudioToVideo() {
+  if (!started) return;
+  const v = getVisibleVideoEl();
+  const vt = v.currentTime || 0;
+  const at = audioEl.currentTime || 0;
 
-  const set = sets[currentSlide];
-  const visibleVideo = set.views[set.facing].video;
-  const audibleSide = getAudibleSide(set);
-  const audibleAudio = set.views[audibleSide].audioEl;
-
-  const vt = visibleVideo.currentTime || 0;
-  const at = audibleAudio.currentTime || 0;
-
-  if (Math.abs(vt - at) > SYNC_EPS) {
+  if (Math.abs(vt - at) > 0.15) {
     try {
-      audibleAudio.currentTime = vt;
+      audioEl.currentTime = vt;
     } catch (e) {}
   }
-}
-
-function resizeAll() {
-  for (const set of sets) {
-    updateSetVisual(set);
-  }
-  snapCarousel(false);
 }
 
 startBtn.addEventListener('click', async () => {
-  if (!unlocked) {
-    await startSystem();
+  if (!started) {
+    await startAll();
   } else {
-    stopSystem();
+    stopAll();
   }
 });
 
 turnBtn.addEventListener('click', async () => {
-  if (!unlocked) return;
+  if (!started) return;
   await turnAround();
 });
 
-carouselViewport.addEventListener('pointerdown', (ev) => {
-  if (ev.target.closest('.sceneWindow')) return;
-
-  carouselDragging = true;
-  carouselPointerId = ev.pointerId;
-  carouselStartY = ev.clientY;
-  carouselBaseY = -currentSlide * getSlideHeight();
-  carouselDragDy = 0;
-
-  carouselTrack.classList.add('isDragging');
-
-  try {
-    carouselViewport.setPointerCapture(carouselPointerId);
-  } catch (e) {}
-});
-
-carouselViewport.addEventListener('pointermove', (ev) => {
-  if (!carouselDragging) return;
-  if (carouselPointerId !== ev.pointerId) return;
-
-  carouselDragDy = ev.clientY - carouselStartY;
-  applyCarouselY(carouselBaseY + carouselDragDy);
-});
-
-function endCarouselDrag(ev) {
-  if (!carouselDragging) return;
-  if (carouselPointerId !== ev.pointerId) return;
-
-  const threshold = getSlideHeight() * 0.14;
-
-  if (carouselDragDy < -threshold) {
-    currentSlide = clamp(currentSlide + 1, 0, SLIDE_COUNT - 1);
-  } else if (carouselDragDy > threshold) {
-    currentSlide = clamp(currentSlide - 1, 0, SLIDE_COUNT - 1);
-  }
-
-  carouselDragging = false;
-  carouselPointerId = null;
-  carouselDragDy = 0;
-
-  carouselTrack.classList.remove('isDragging');
-  setCurrentSlide(currentSlide, true);
-}
-
-carouselViewport.addEventListener('pointerup', endCarouselDrag);
-carouselViewport.addEventListener('pointercancel', endCarouselDrag);
-
-dotEls.forEach((dot) => {
-  dot.addEventListener('click', () => {
-    setCurrentSlide(Number(dot.dataset.index), true);
+setBtns.forEach((btn) => {
+  btn.addEventListener('click', async () => {
+    await switchSet(Number(btn.dataset.set));
   });
 });
 
-window.addEventListener('resize', resizeAll);
+windowEl.addEventListener('pointerdown', (e) => {
+  dragging = true;
+  startX = e.clientX;
+  startPos = position;
+  try {
+    windowEl.setPointerCapture(e.pointerId);
+  } catch (e2) {}
+});
 
-for (const set of sets) {
-  setupSet(set);
+windowEl.addEventListener('pointermove', (e) => {
+  if (!dragging) return;
+
+  const maxOffset = windowEl.clientWidth * (VIDEO_WIDTH_RATIO - 1);
+  const dx = e.clientX - startX;
+  position = clamp(startPos - dx / maxOffset, 0, 1);
+
+  updateVideoOffset();
+  updateAudioPanMix();
+  updateLabels();
+});
+
+function endDrag() {
+  dragging = false;
 }
 
-turnBtn.disabled = true;
-setCurrentSlide(0, false);
-updateHUD();
+windowEl.addEventListener('pointerup', endDrag);
+windowEl.addEventListener('pointercancel', endDrag);
+
+window.addEventListener('resize', () => {
+  updateVideoOffset();
+});
+
+videoFront.addEventListener('loadedmetadata', () => {
+  updateVideoOffset();
+});
+videoBack.addEventListener('loadedmetadata', () => {
+  updateVideoOffset();
+});
 
 function tick() {
-  syncActiveMedia();
-
-  // 3秒保持が終わったあとも音量反映を継続
-  if (unlocked) {
-    updateSetAudio(sets[currentSlide]);
-  }
-
+  maybeSwitchHeldAudio();
+  syncAudioToVideo();
   requestAnimationFrame(tick);
 }
-requestAnimationFrame(tick);
+tick();
+
+switchSet(0);

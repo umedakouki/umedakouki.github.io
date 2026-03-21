@@ -1,12 +1,6 @@
 html, body {
-  height: 100%;
   margin: 0;
-}
-
-:root {
-  --bg: #111;
-  --fg: #eee;
-  --line: #2a2a2a;
+  height: 100%;
 }
 
 * {
@@ -14,186 +8,93 @@ html, body {
 }
 
 body {
+  background: #111;
+  color: #eee;
   font-family: system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--fg);
-  overscroll-behavior: none;
 }
 
 .top {
   position: sticky;
   top: 0;
-  z-index: 20;
-  padding: max(10px, env(safe-area-inset-top)) 12px 10px;
-  border-bottom: 1px solid var(--line);
-  background: rgba(17,17,17,0.92);
+  z-index: 10;
+  background: rgba(17,17,17,0.95);
+  padding: 12px;
+  border-bottom: 1px solid #2a2a2a;
 }
 
-.topBar {
+.row {
   display: flex;
-  gap: 12px;
-  align-items: center;
-  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-#startBtn, #turnBtn {
-  min-width: 88px;
-  padding: 10px 14px;
+button {
+  background: #1d1d1d;
+  color: #eee;
   border: 1px solid #444;
-  background: #1b1b1b;
-  color: var(--fg);
   border-radius: 999px;
-  cursor: pointer;
+  padding: 10px 14px;
   font-size: 14px;
 }
 
-#turnBtn:disabled {
+button:disabled {
   opacity: 0.45;
-  cursor: default;
 }
 
-.info {
+.sets {
+  gap: 8px;
+}
+
+.setBtn.active {
+  background: #eee;
+  color: #111;
+}
+
+.status {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
   font-size: 13px;
+  color: rgba(255,255,255,0.8);
 }
 
-.app {
-  min-height: calc(100vh - 120px);
-  padding: 12px 0 calc(88px + env(safe-area-inset-bottom));
+.status b {
+  color: #fff;
 }
 
-.carouselViewport {
-  overflow: hidden;
-  width: 100%;
-  height: calc(100vh - 190px - env(safe-area-inset-bottom));
-  min-height: 460px;
-}
-
-.carouselTrack {
+.main {
+  padding: 14px;
   display: flex;
-  flex-direction: column;
-  height: calc(100% * 3);
-  transform: translate3d(0, 0, 0);
-  transition: transform 0.32s ease;
-  will-change: transform;
+  justify-content: center;
 }
 
-.carouselTrack.isDragging {
-  transition: none;
-}
-
-.slide {
-  width: 100%;
-  height: calc(100vh - 190px - env(safe-area-inset-bottom));
-  min-height: 460px;
-  flex: 0 0 calc(100vh - 190px - env(safe-area-inset-bottom));
-  padding: 0 12px;
-  display: grid;
-  align-content: start;
-  justify-items: center;
-  gap: 12px;
-}
-
-.slideHeader {
-  width: min(100%, 560px);
-  font-size: 14px;
-}
-
-.sceneWindow {
+.window {
   position: relative;
-  width: min(100%, 560px);
+  width: min(92vw, 560px);
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  border: 1px solid var(--line);
   background: #000;
-  border-radius: 20px;
+  border-radius: 18px;
+  border: 1px solid #2a2a2a;
   touch-action: none;
 }
 
-.sceneStage {
+.video {
   position: absolute;
-  inset: 0;
-}
-
-.viewLayer {
-  position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.15s ease;
+  transform: translate3d(0,0,0);
 }
 
-.viewLayer.isActive {
+.video.active {
   opacity: 1;
 }
 
-.viewVideo {
-  position: absolute;
-  left: 0;
-  width: auto;
-  pointer-events: none;
-  user-select: none;
-
-  /* 16:9フレーム内の中央1:3帯だけを正方形窓用に拡大 */
-  height: 168.75%;
-  top: -34.375%;
-  transform: translate3d(0, 0, 0);
-  will-change: transform;
-}
-
-.dots {
-  position: fixed;
-  right: 14px;
-  top: 52%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 25;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  border: none;
-  background: rgba(255,255,255,0.28);
-  padding: 0;
-  cursor: pointer;
-}
-
-.dot.isActive {
-  width: 14px;
-  height: 14px;
-  background: rgba(255,255,255,0.92);
-}
-
-.bottomBar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 30;
-  display: flex;
-  justify-content: center;
-  padding: 10px 12px calc(12px + env(safe-area-inset-bottom));
-  background: linear-gradient(to top, rgba(17,17,17,0.98), rgba(17,17,17,0));
-}
-
-@media (max-width: 640px) {
-  .carouselViewport {
-    height: calc(100vh - 210px - env(safe-area-inset-bottom));
-    min-height: 420px;
-  }
-
-  .slide {
-    height: calc(100vh - 210px - env(safe-area-inset-bottom));
-    min-height: 420px;
-    flex-basis: calc(100vh - 210px - env(safe-area-inset-bottom));
-  }
-
-  .sceneWindow {
-    width: 100%;
-  }
+audio {
+  display: none;
 }
