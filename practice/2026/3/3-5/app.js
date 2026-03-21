@@ -1,18 +1,25 @@
 'use strict';
 
 const TURN_DURATION_MS = 320;
+const TURN_AUDIO_HOLD_MS = 3000;
+const TURN_AUDIO_CROSSFADE_MS = 600;
 const SYNC_INTERVAL_MS = 500;
 const SYNC_EPS = 0.08;
 const SLIDE_COUNT = 3;
 
 /*
-  元動画は 16:9 フレームの中に 3:1 の映像が中央配置されており、
-  上下は黒帯という前提。
-  1280x720 の場合、実映像高さは 1280/3 = 426.666...
-  よって「実映像高さ / 元フレーム高さ」は 426.666... / 720 = 0.592592...
-  これを使って、正方形フレーム内で中央の 3:1 部分だけを見せる。
+  false: 背面側でも通常の左右対応
+  true : 背面側だけ左右を反転してミックス
+  まずは false で試してください。
+  まだ「逆方向感」が変なら true にしてください。
 */
-const CONTENT_ASPECT = 3 / 1; // 実際に見せたい映像部分
+const REVERSE_PAN_ON_BACKSIDE = false;
+
+/*
+  元動画は 16:9 フレームの中に 3:1 の映像が中央配置され、
+  上下は黒帯という前提。
+*/
+const CONTENT_ASPECT = 3 / 1;
 const DEFAULT_SOURCE_ASPECT = 16 / 9;
 
 const startBtn = document.getElementById('startBtn');
@@ -144,11 +151,13 @@ function makeMediaNodes(audioEl) {
   const leftGain = audioCtx.createGain();
   const rightGain = audioCtx.createGain();
   const monoBus = audioCtx.createGain();
+  const sideGain = audioCtx.createGain();
   const merger = audioCtx.createChannelMerger(2);
 
   leftGain.gain.value = 0;
   rightGain.gain.value = 0;
   monoBus.gain.value = 1;
+  sideGain.gain.value = 0;
 
   source.connect(splitter);
 
@@ -158,12 +167,13 @@ function makeMediaNodes(audioEl) {
   leftGain.connect(monoBus);
   rightGain.connect(monoBus);
 
-  monoBus.connect(merger, 0, 0);
-  monoBus.connect(merger, 0, 1);
+  monoBus.connect(sideGain);
+  sideGain.connect(merger, 0, 0);
+  sideGain.connect(merger, 0, 1);
 
   merger.connect(audioCtx.destination);
 
-  return { source, splitter, leftGain, rightGain, monoBus, merger };
+  return { source, splitter, leftGain, rightGain, monoBus, sideGain, merger };
 }
 
 function createVideoEl(src) {
@@ -220,12 +230,26 @@ function makeViewSet(def) {
   let dragStartNorm = 0;
   let isTurning = false;
 
-  function getActiveSide() {
-    return sideStates[activeSideIndex];
+  let audioMixWeights = [1, 0];
+  let pendingAudioSwitchTimer = null;
+  let audioFadeRaf = null;
+
+  function clearAudioTimers() {
+    if (pendingAudioSwitchTimer) {
+      clearTimeout(pendingAudioSwitchTimer);
+      pendingAudioSwitchTimer = null;
+    }
+    if (audioFadeRaf) {
+      cancelAnimationFrame(audioFadeRaf);
+      audioFadeRaf = null;
+    }
   }
 
-  function getInactiveSide() {
-    return sideStates[1 - activeSideIndex];
+  function getPanNormForSide(sideIndex) {
+    if (REVERSE_PAN_ON_BACKSIDE && sideIndex === 1) {
+      return 1 - xNorm;
+    }
+    return xNorm;
   }
 
   function getContentHeightRatio(sourceAspect) {
@@ -246,7 +270,6 @@ function makeViewSet(def) {
       const visibleContentWidth = frameSize * CONTENT_ASPECT;
       const panRange = Math.max(0, visibleContentWidth - frameSize);
       const tx = -(panRange * xNorm);
-
       const top = -(displayHeight - frameSize) / 2;
 
       side.video.style.width = `${displayWidth}px`;
@@ -264,68 +287,69 @@ function makeViewSet(def) {
     }
   }
 
-  function updateAudioWeights() {
-    const active = getActiveSide();
-    if (!active.audioNodes) return;
-
-    const leftWeight = 1 - xNorm;
-    const rightWeight = xNorm;
-
-    active.audioNodes.leftGain.gain.value = leftWeight;
-    active.audioNodes.rightGain.gain.value = rightWeight;
-  }
-
-  function muteSelf() {
-    for (const side of sideStates) {
+  function applyAudioGains() {
+    for (let i = 0; i < sideStates.length; i++) {
+      const side = sideStates[i];
       if (!side.audioNodes) continue;
-      side.audioNodes.leftGain.gain.value = 0;
-      side.audioNodes.rightGain.gain.value = 0;
+
+      const panNorm = getPanNormForSide(i);
+      const leftWeight = 1 - panNorm;
+      const rightWeight = panNorm;
+      const sideWeight = audioMixWeights[i] || 0;
+
+      side.audioNodes.leftGain.gain.value = leftWeight;
+      side.audioNodes.rightGain.gain.value = rightWeight;
+      side.audioNodes.sideGain.gain.value = sideWeight;
     }
   }
 
+  function muteSelf() {
+    audioMixWeights = [0, 0];
+    applyAudioGains();
+  }
+
   function applyAudio(shouldSound) {
-    muteSelf();
-
-    if (!unlocked || !isSelected || !shouldSound) return;
-
-    updateAudioWeights();
+    if (!unlocked || !isSelected || !shouldSound) {
+      muteSelf();
+      return;
+    }
+    applyAudioGains();
   }
 
   function setSelected(v) {
     isSelected = v;
     if (!v) {
       muteSelf();
+    } else if (unlocked) {
+      applyAudio(true);
     }
   }
 
-  function syncInactiveToActive() {
-    const active = getActiveSide();
-    const inactive = getInactiveSide();
+  function syncEachAudioToOwnVideo() {
+    for (const side of sideStates) {
+      if (!side.duration) continue;
+
+      const videoT = side.video.currentTime;
+      const audioT = side.audio.currentTime;
+      const d = wrappedDiff(videoT, audioT, side.duration);
+
+      if (d > SYNC_EPS) {
+        try {
+          side.audio.currentTime = videoT;
+        } catch (_) {}
+      }
+    }
+  }
+
+  function syncOtherVideoToActive() {
+    const active = sideStates[activeSideIndex];
+    const other = sideStates[1 - activeSideIndex];
 
     if (!active.duration) return;
 
     try {
-      inactive.video.currentTime = active.video.currentTime;
+      other.video.currentTime = active.video.currentTime;
     } catch (_) {}
-
-    try {
-      inactive.audio.currentTime = active.audio.currentTime;
-    } catch (_) {}
-  }
-
-  function syncAudioToVideo() {
-    const active = getActiveSide();
-    if (!active.duration) return;
-
-    const videoT = active.video.currentTime;
-    const audioT = active.audio.currentTime;
-    const d = wrappedDiff(videoT, audioT, active.duration);
-
-    if (d > SYNC_EPS) {
-      try {
-        active.audio.currentTime = videoT;
-      } catch (_) {}
-    }
   }
 
   async function startAllMedia() {
@@ -345,20 +369,77 @@ function makeViewSet(def) {
   }
 
   function stopAllMedia() {
+    clearAudioTimers();
+
     for (const side of sideStates) {
       try { side.video.pause(); } catch (_) {}
       try { side.audio.pause(); } catch (_) {}
       try { side.video.currentTime = 0; } catch (_) {}
       try { side.audio.currentTime = 0; } catch (_) {}
     }
+
     muteSelf();
+  }
+
+  function startCrossfade(fromIndex, toIndex, durationMs) {
+    clearAudioTimers();
+
+    const start = performance.now();
+
+    function step(now) {
+      const t = clamp01((now - start) / durationMs);
+      const eased = easeInOutCubic(t);
+
+      const fromW = 1 - eased;
+      const toW = eased;
+
+      audioMixWeights[fromIndex] = fromW;
+      audioMixWeights[toIndex] = toW;
+      applyAudio(true);
+
+      if (t < 1) {
+        audioFadeRaf = requestAnimationFrame(step);
+        return;
+      }
+
+      audioMixWeights[fromIndex] = 0;
+      audioMixWeights[toIndex] = 1;
+      audioFadeRaf = null;
+      applyAudio(true);
+    }
+
+    audioFadeRaf = requestAnimationFrame(step);
+  }
+
+  function scheduleAudioSwitchToActive(previousAudioSideIndex) {
+    clearAudioTimers();
+
+    audioMixWeights = [0, 0];
+    audioMixWeights[previousAudioSideIndex] = 1;
+    applyAudio(true);
+
+    pendingAudioSwitchTimer = setTimeout(() => {
+      const targetSideIndex = activeSideIndex;
+
+      if (previousAudioSideIndex === targetSideIndex) {
+        audioMixWeights = [0, 0];
+        audioMixWeights[targetSideIndex] = 1;
+        applyAudio(true);
+        pendingAudioSwitchTimer = null;
+        return;
+      }
+
+      pendingAudioSwitchTimer = null;
+      startCrossfade(previousAudioSideIndex, targetSideIndex, TURN_AUDIO_CROSSFADE_MS);
+    }, TURN_AUDIO_HOLD_MS);
   }
 
   function turnAround() {
     if (!unlocked || !isSelected || isTurning) return;
 
-    const fromSide = getActiveSide();
+    const prevVisualSideIndex = activeSideIndex;
     const nextSideIndex = 1 - activeSideIndex;
+    const fromSide = sideStates[prevVisualSideIndex];
     const toSide = sideStates[nextSideIndex];
 
     isTurning = true;
@@ -368,19 +449,18 @@ function makeViewSet(def) {
       toSide.video.currentTime = fromSide.video.currentTime;
     } catch (_) {}
     try {
-      toSide.audio.currentTime = fromSide.audio.currentTime;
+      toSide.audio.currentTime = toSide.video.currentTime;
     } catch (_) {}
 
     updateVisibleSide(true);
 
     const startTime = performance.now();
-    const prevSideIndex = activeSideIndex;
 
     function step(now) {
       const t = clamp01((now - startTime) / TURN_DURATION_MS);
       const eased = easeInOutCubic(t);
 
-      sideStates[prevSideIndex].video.style.opacity = String(1 - eased);
+      sideStates[prevVisualSideIndex].video.style.opacity = String(1 - eased);
       toSide.video.style.opacity = String(eased);
 
       if (t < 1) {
@@ -389,13 +469,15 @@ function makeViewSet(def) {
       }
 
       activeSideIndex = nextSideIndex;
-      sideStates[prevSideIndex].video.style.opacity = '';
+
+      sideStates[prevVisualSideIndex].video.style.opacity = '';
       toSide.video.style.opacity = '';
       updateVisibleSide(false);
 
+      scheduleAudioSwitchToActive(prevVisualSideIndex);
+
       isTurning = false;
       turnBtn.disabled = false;
-      applyAudio(true);
       updateHUD();
     }
 
@@ -429,7 +511,6 @@ function makeViewSet(def) {
       const frameSize = frame.clientWidth || 1;
       const dx = ev.clientX - dragStartX;
 
-      // 1:3のコンテンツを1:1で切るので、パン可能幅は「2画面分」
       const panRangePx = frameSize * 2;
       xNorm = clamp01(dragStartNorm - (dx / panRangePx));
 
@@ -527,8 +608,8 @@ function makeViewSet(def) {
     applyAudio,
     setSelected,
     turnAround,
-    syncAudioToVideo,
-    syncInactiveToActive,
+    syncEachAudioToOwnVideo,
+    syncOtherVideoToActive,
     muteSelf
   };
 }
@@ -668,8 +749,8 @@ function syncIfNeeded(nowMs) {
   lastSyncCheck = nowMs;
 
   for (const set of viewSets) {
-    set.syncAudioToVideo();
-    set.syncInactiveToActive();
+    set.syncEachAudioToOwnVideo();
+    set.syncOtherVideoToActive();
   }
 }
 
