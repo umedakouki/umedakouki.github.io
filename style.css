@@ -125,6 +125,19 @@ li + li {
   color: #666666;
 }
 
+.work-thumbnail {
+  display: block;
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  margin: 8px 0 16px;
+}
+
+.work-item {
+  padding: 24px 0;
+  border-top: 1px solid #dddddd;
+}
+
 @media (max-width: 640px) {
   body {
     padding: 24px 16px;
