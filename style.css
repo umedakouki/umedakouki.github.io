@@ -138,6 +138,26 @@ li + li {
   border-top: 1px solid #dddddd;
 }
 
+.full-width-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 16px 0 24px;
+}
+
+.video-full {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 16px 0 24px;
+}
+
+.video-full iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
 @media (max-width: 640px) {
   body {
     padding: 24px 16px;
