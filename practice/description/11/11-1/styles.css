@@ -162,6 +162,28 @@ main { padding: 16px; }
   background: #fff;
 }
 
+.camera-box {
+  display: grid;
+  gap: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #111;
+}
+.camera-preview {
+  display: block;
+  width: 100%;
+  max-height: 62svh;
+  object-fit: contain;
+}
+.camera-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  background: var(--paper);
+}
+
 .record-button {
   min-height: 140px;
   border-style: dashed;
@@ -199,7 +221,7 @@ main { padding: 16px; }
 
 .edit-layout {
   display: grid;
-  grid-template-columns: 250px minmax(0, 1fr) 280px;
+  grid-template-columns: minmax(0, 1fr) 280px;
   gap: 16px;
   align-items: start;
 }
@@ -269,19 +291,31 @@ main { padding: 16px; }
 
 .edit-canvas {
   position: relative;
-  height: 560px;
-  overflow: auto;
+  height: min(72svh, 760px);
+  min-height: 560px;
+  overflow: hidden;
+  touch-action: none;
+  cursor: grab;
   background:
     linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px),
     #faf8f1;
   background-size: 40px 40px;
 }
+.edit-canvas:active { cursor: grabbing; }
+.edit-world {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 2400px;
+  height: 1600px;
+  transform-origin: 0 0;
+  will-change: transform;
+}
 .edge-layer {
   position: absolute;
   inset: 0;
-  width: 820px;
-  height: 560px;
+  width: 2400px;
+  height: 1600px;
   pointer-events: none;
 }
 .record-node {
@@ -304,11 +338,19 @@ main { padding: 16px; }
 }
 .record-node img {
   width: 100%;
-  height: 48px;
+  height: auto;
+  max-height: 150px;
   border-radius: 6px;
-  object-fit: cover;
+  object-fit: contain;
+  background: #fff;
 }
-.record-node audio { width: 100%; }
+.audio-play-wrap { display: inline-flex; }
+.audio-play-wrap audio { display: none; }
+.audio-play-button {
+  min-height: 30px;
+  padding: 3px 10px;
+  font-size: 12px;
+}
 
 .mobile-nudge {
   display: none;
@@ -327,7 +369,12 @@ main { padding: 16px; }
   padding-bottom: 12px;
   border-bottom: 1px solid var(--line);
 }
-.delete-record { width: 100%; }
+.delete-record {
+  justify-self: end;
+  min-height: 30px;
+  padding: 3px 8px;
+  font-size: 12px;
+}
 
 .record-detail {
   display: grid;
@@ -343,17 +390,6 @@ main { padding: 16px; }
   gap: 6px;
 }
 
-.edge-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 8px;
-  align-items: center;
-  margin-top: 8px;
-  color: var(--muted);
-  font-size: 12px;
-}
-.edge-row button { min-height: 30px; padding: 3px 8px; }
-
 .solo-map {
   padding: 0;
   overflow: hidden;
@@ -366,11 +402,21 @@ main { padding: 16px; }
   min-height: 460px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 50%, rgba(47,111,115,.12), transparent 42%),
     linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px),
     #e9e4d7;
-  background-size: auto, 56px 56px, 56px 56px;
+  background-size: 56px 56px, 56px 56px;
+}
+.map-empty {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: min(80%, 320px);
+  transform: translate(-50%, -50%);
+  color: var(--muted);
+  text-align: center;
+  pointer-events: none;
 }
 .map-lines {
   position: absolute;
@@ -445,8 +491,8 @@ main { padding: 16px; }
   .canvas-panel, .solo-map { padding: 0; }
   .main-input { min-height: 190px; }
   .manual-grid { grid-template-columns: 1fr; }
-  .edit-canvas { height: 430px; }
-  .edge-layer { width: 720px; height: 520px; }
+  .edit-canvas { height: 64svh; min-height: 430px; }
+  .edge-layer { width: 2400px; height: 1600px; }
   .record-node { width: 164px; min-height: 92px; }
   .mobile-nudge { grid-template-columns: repeat(4, 1fr); }
   .mobile-nudge span { grid-column: 1 / -1; }
