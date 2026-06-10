@@ -294,9 +294,9 @@
 
   function recordLabel(record) {
     if (record.body) return truncate(record.body.replace(/\s+/g, " "), 22);
-    if (record.type === "photo") return `写真 ${formatDate(record.submittedAt)}`;
-    if (record.type === "audio") return `音声 ${formatDate(record.submittedAt)}`;
-    return `記録 ${formatDate(record.submittedAt)}`;
+    if (record.type === "photo") return "写真";
+    if (record.type === "audio") return "音声";
+    return "記録";
   }
 
   function typeLabel(type) {
@@ -305,10 +305,6 @@
 
   function recordIcon(type) {
     return type === "photo" ? "写" : type === "audio" ? "音" : "文";
-  }
-
-  function formatDate(value) {
-    return new Intl.DateTimeFormat("ja-JP", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" }).format(new Date(value));
   }
 
   function truncate(text, length) {
@@ -1242,7 +1238,6 @@
     return h("article", { className: "record-detail" },
       h("div", { className: "record-meta" },
         h("span", null, typeLabel(record.type)),
-        h("span", null, formatDate(record.submittedAt)),
         cluster && h("span", null, cluster.name)
       ),
       h("h3", null, recordLabel(record)),
