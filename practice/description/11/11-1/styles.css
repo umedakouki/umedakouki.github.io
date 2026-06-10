@@ -41,6 +41,12 @@ button.primary, .segmented button.active {
   background: var(--ink);
   color: #fffdfa;
 }
+button.danger {
+  border-color: rgba(141, 44, 33, .45);
+  color: var(--danger);
+  background: #fff8f6;
+}
+button.danger:hover { background: #fff0ec; }
 
 input, select, textarea {
   width: 100%;
@@ -314,6 +320,14 @@ main { padding: 16px; }
 }
 
 .detail-panel { gap: 12px; }
+
+.selected-record {
+  display: grid;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.delete-record { width: 100%; }
 
 .record-detail {
   display: grid;

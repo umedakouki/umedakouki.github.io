@@ -146,6 +146,17 @@
       if (error) throw error;
     },
 
+    async deleteRecord(record) {
+      if (!this.enabled) return;
+      const { error } = await this.client.from("records").delete().eq("id", record.id);
+      if (error) throw error;
+      const marker = `/storage/v1/object/public/${MEDIA_BUCKET}/`;
+      if (record.fileUrl?.includes(marker)) {
+        const path = decodeURIComponent(record.fileUrl.split(marker)[1] || "");
+        if (path) await this.client.storage.from(MEDIA_BUCKET).remove([path]);
+      }
+    },
+
     async syncClusters(data) {
       if (!this.enabled) return;
       await this.client.from("cluster_members").delete().neq("cluster_id", ZERO_UUID);
@@ -768,9 +779,27 @@
     }
 
     async function deleteEdge(id) {
+      if (!confirm("このつながりを削除しますか？")) return;
       const next = recalculateClusters({ ...data, graphEdges: data.graphEdges.filter((edge) => edge.id !== id) });
       await commit(next, "線を削除しました。", async (saved) => {
         await remote.deleteEdge(id);
+        await remote.syncClusters(saved);
+      });
+    }
+
+    async function deleteRecord(record) {
+      if (!confirm(`「${recordLabel(record)}」を削除しますか？\nこの記録につながる線も削除されます。`)) return;
+      const graphNodes = { ...data.graphNodes };
+      delete graphNodes[record.id];
+      const next = recalculateClusters({
+        ...data,
+        records: data.records.filter((item) => item.id !== record.id),
+        graphNodes,
+        graphEdges: data.graphEdges.filter((edge) => edge.sourceRecordId !== record.id && edge.targetRecordId !== record.id),
+      });
+      setSelectedIds((current) => current.filter((id) => id !== record.id));
+      await commit(next, "記録を削除しました。", async (saved) => {
+        await remote.deleteRecord(record);
         await remote.syncClusters(saved);
       });
     }
@@ -885,10 +914,13 @@
         ),
         h("aside", { className: "panel side-panel detail-panel" },
           h("h2", null, "選択中"),
-          selected.length ? selected.map((record) => h(RecordDetail, { key: record.id, record, cluster: clusterFor(data, record.id) })) : h("p", { className: "note" }, "記録物を選んでください。"),
+          selected.length ? selected.map((record) => h("div", { className: "selected-record", key: record.id },
+            h(RecordDetail, { record, cluster: clusterFor(data, record.id) }),
+            h("button", { type: "button", className: "danger delete-record", onClick: () => deleteRecord(record) }, "この記録を削除")
+          )) : h("p", { className: "note" }, "記録物を選んでください。"),
           h("details", { className: "subtle-details" },
-            h("summary", null, "詳細"),
-            h("h3", null, "リンク"),
+            h("summary", null, "つながりの詳細・削除"),
+            h("h3", null, "つながり"),
             data.graphEdges.length ? data.graphEdges.map((edge) => {
               const a = data.records.find((record) => record.id === edge.sourceRecordId);
               const b = data.records.find((record) => record.id === edge.targetRecordId);
