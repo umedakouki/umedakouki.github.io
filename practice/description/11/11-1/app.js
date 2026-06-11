@@ -1147,7 +1147,7 @@
       setWatching(false);
     }
 
-    const localMap = location ? createLocalProjector(location, mapSize.width, mapSize.height, 50) : null;
+    const localMap = location ? createLocalProjector(location, mapSize.width, mapSize.height, 100) : null;
     const visibleRecords = localMap ? data.records.filter((record) => localMap.contains(record)) : [];
     const selected = visibleRecords.find((record) => record.id === selectedId) || null;
     const selectedCluster = selected ? clusterFor(data, selected.id) : data.clusters.find((cluster) => cluster.id === activeClusterId);
@@ -1163,7 +1163,7 @@
       h("section", { className: "panel map-panel solo-map" },
         h("div", { className: "map-toolbar simple" },
           h("button", { type: "button", className: watching ? "primary" : "", onClick: toggleWatch }, watching ? "追跡中" : "現在地"),
-          h("span", null, location ? `50m四方 / ±${Math.round(location.accuracy)}m` : "現在地を取得すると周囲が見えます")
+          h("span", null, location ? `100m四方 / ±${Math.round(location.accuracy)}m` : "現在地を取得すると周囲が見えます")
         ),
         h("div", { className: "abstract-map", ref: mapRef },
           visibleRecords.map((record) => {
@@ -1183,7 +1183,7 @@
           }),
           location && h("div", { className: "user-marker", style: { left: `${localMap.project(location).x}px`, top: `${localMap.project(location).y}px` } }),
           !location && h("div", { className: "map-empty" }, "現在地を押してください"),
-          location && !visibleRecords.length && h("div", { className: "map-empty" }, "この50m四方には記録がありません")
+          location && !visibleRecords.length && h("div", { className: "map-empty" }, "この100m四方には記録がありません")
         )
       ),
       selected && h("button", { type: "button", className: "popup-backdrop", onClick: closeRecord, "aria-label": "記録を閉じる" }),
