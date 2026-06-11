@@ -623,10 +623,13 @@
       if (!video?.videoWidth) return;
       const canvas = document.createElement("canvas");
       const max = 1600;
-      const ratio = Math.min(1, max / Math.max(video.videoWidth, video.videoHeight));
-      canvas.width = Math.round(video.videoWidth * ratio);
-      canvas.height = Math.round(video.videoHeight * ratio);
-      canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
+      const sourceSize = Math.min(video.videoWidth, video.videoHeight);
+      const sourceX = (video.videoWidth - sourceSize) / 2;
+      const sourceY = (video.videoHeight - sourceSize) / 2;
+      const outputSize = Math.min(max, sourceSize);
+      canvas.width = outputSize;
+      canvas.height = outputSize;
+      canvas.getContext("2d").drawImage(video, sourceX, sourceY, sourceSize, sourceSize, 0, 0, outputSize, outputSize);
       const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", .84));
       setMediaBlob(blob);
       setPreviewUrl(canvas.toDataURL("image/jpeg", .84));
@@ -1068,8 +1071,11 @@
             )
           )
         ),
-        h("aside", { className: "panel side-panel detail-panel" },
-          h("h2", null, "選択中"),
+        h("aside", { className: `panel side-panel detail-panel ${selected.length ? "is-open" : ""}` },
+          h("div", { className: "popup-heading" },
+            h("h2", null, "選択中"),
+            selected.length > 0 && h("button", { type: "button", className: "popup-close", onClick: () => setSelectedIds([]), "aria-label": "閉じる" }, "×")
+          ),
           selected.length ? selected.map((record) => h("div", { className: "selected-record", key: record.id },
             h(RecordDetail, { record, cluster: clusterFor(data, record.id), compactAudio: true }),
             h("button", { type: "button", className: "danger delete-record", onClick: () => deleteRecord(record) }, "この記録を削除")
@@ -1086,11 +1092,11 @@
   function ExplorePage({ data, activeClusterId, setActiveClusterId }) {
     const [location, setLocation] = useState(null);
     const [watching, setWatching] = useState(false);
-    const [showLines, setShowLines] = useState(false);
     const [selectedId, setSelectedId] = useState(null);
     const [mapSize, setMapSize] = useState({ width: 720, height: 520 });
     const mapRef = useRef(null);
     const watchRef = useRef(null);
+    const selectedOriginRef = useRef(null);
 
     useEffect(() => {
       const update = () => {
@@ -1112,11 +1118,21 @@
       }
       if (!("geolocation" in navigator)) return;
       watchRef.current = navigator.geolocation.watchPosition((pos) => {
-        setLocation({
+        const nextLocation = {
           latitude: pos.coords.latitude,
           longitude: pos.coords.longitude,
           accuracy: pos.coords.accuracy,
-        });
+        };
+        if (selectedOriginRef.current && distanceMeters(
+          selectedOriginRef.current.latitude,
+          selectedOriginRef.current.longitude,
+          nextLocation.latitude,
+          nextLocation.longitude
+        ) > 4) {
+          selectedOriginRef.current = null;
+          setSelectedId(null);
+        }
+        setLocation(nextLocation);
       }, () => setWatching(false), {
         enableHighAccuracy: true,
         maximumAge: 3000,
@@ -1133,15 +1149,15 @@
 
     const localMap = location ? createLocalProjector(location, mapSize.width, mapSize.height, 50) : null;
     const visibleRecords = localMap ? data.records.filter((record) => localMap.contains(record)) : [];
-    const visibleIds = new Set(visibleRecords.map((record) => record.id));
     const selected = visibleRecords.find((record) => record.id === selectedId) || null;
     const selectedCluster = selected ? clusterFor(data, selected.id) : data.clusters.find((cluster) => cluster.id === activeClusterId);
     const activeRecordIds = selectedCluster?.recordIds || [];
+    const clusterRecords = selectedCluster ? data.records.filter((record) => record.id !== selected?.id && activeRecordIds.includes(record.id)) : [];
 
-    const nearby = visibleRecords.map((record) => {
-      const distance = distanceMeters(location.latitude, location.longitude, record.latitude, record.longitude);
-      return { record, distance };
-    }).sort((a, b) => a.distance - b.distance);
+    function closeRecord() {
+      selectedOriginRef.current = null;
+      setSelectedId(null);
+    }
 
     return h("section", { className: "page explore-page" },
       h("section", { className: "panel map-panel solo-map" },
@@ -1150,18 +1166,6 @@
           h("span", null, location ? `50m四方 / ±${Math.round(location.accuracy)}m` : "現在地を取得すると周囲が見えます")
         ),
         h("div", { className: "abstract-map", ref: mapRef },
-          h("svg", { className: "map-lines", viewBox: `0 0 ${mapSize.width} ${mapSize.height}` },
-            (showLines || activeRecordIds.length > 0) && data.graphEdges.map((edge) => {
-              const a = data.records.find((record) => record.id === edge.sourceRecordId);
-              const b = data.records.find((record) => record.id === edge.targetRecordId);
-              if (!a || !b) return null;
-              if (!visibleIds.has(a.id) || !visibleIds.has(b.id)) return null;
-              if (activeRecordIds.length && !activeRecordIds.includes(a.id) && !activeRecordIds.includes(b.id)) return null;
-              const pa = localMap.project(a);
-              const pb = localMap.project(b);
-              return h("line", { key: edge.id, x1: pa.x, y1: pa.y, x2: pb.x, y2: pb.y, stroke: colorFor(data, a.id), strokeWidth: 2 });
-            })
-          ),
           visibleRecords.map((record) => {
             const p = localMap.project(record);
             const clusterActive = activeRecordIds.includes(record.id);
@@ -1171,6 +1175,7 @@
               className: `map-marker ${clusterActive ? "cluster-active" : ""} ${selectedId === record.id ? "selected" : ""}`,
               style: { left: `${p.x}px`, top: `${p.y}px`, borderColor: colorFor(data, record.id), background: clusterActive ? colorFor(data, record.id) : "#fffdfa" },
               onClick: () => {
+                selectedOriginRef.current = location;
                 setSelectedId(record.id);
                 setActiveClusterId(clusterFor(data, record.id)?.id || null);
               },
@@ -1181,17 +1186,23 @@
           location && !visibleRecords.length && h("div", { className: "map-empty" }, "この50m四方には記録がありません")
         )
       ),
-      h("aside", { className: "panel bottom-sheet" },
-        selected ? h(RecordDetail, { record: selected, cluster: clusterFor(data, selected.id) }) : h("p", { className: "note" }, "地図上の記録物を押すと内容が開きます。"),
-        h("details", { className: "subtle-details" },
-          h("summary", null, "詳細"),
-          h("label", { className: "check-row" }, h("input", { type: "checkbox", checked: showLines, onChange: (event) => setShowLines(event.target.checked) }), "関係線を表示"),
-          h("div", { className: "nearby-list compact-list" },
-            nearby.slice(0, 8).map((item) => h("button", {
-              key: item.record.id,
-              type: "button",
-              onClick: () => setSelectedId(item.record.id),
-            }, `${recordLabel(item.record)} ${item.distance == null ? "" : `${Math.round(item.distance)}m`}`))
+      selected && h("button", { type: "button", className: "popup-backdrop", onClick: closeRecord, "aria-label": "記録を閉じる" }),
+      selected && h("aside", { className: "panel record-popup" },
+        h("div", { className: "popup-heading" },
+          h("span", { className: "note" }, "記録"),
+          h("button", { type: "button", className: "popup-close", onClick: closeRecord, "aria-label": "閉じる" }, "×")
+        ),
+        h(RecordDetail, { record: selected, cluster: selectedCluster }),
+        clusterRecords.length > 0 && h("section", { className: "cluster-companions" },
+          h("h3", null, "同じまとまりの記録"),
+          h("div", { className: "cluster-record-grid" },
+            clusterRecords.map((record) => h("article", { className: "cluster-record", key: record.id },
+              h("span", { className: "node-type" }, typeLabel(record.type)),
+              h("strong", null, recordLabel(record)),
+              record.body && h("p", null, record.body),
+              record.type === "photo" && record.fileUrl && h("img", { src: record.fileUrl, alt: "" }),
+              record.type === "audio" && record.fileUrl && h(AudioPlayButton, { src: record.fileUrl })
+            ))
           )
         )
       )
