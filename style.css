@@ -175,12 +175,27 @@ li + li {
   font-weight: 700;
 }
 
+.diary-controls {
+  padding: 16px 0 8px;
+}
+
 .diary-search {
-  padding: 16px 0 24px;
+  padding: 8px 0 24px;
 }
 
 .diary-section {
   padding: 8px 0 24px;
+}
+
+.month-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #bbbbbb;
+  border-radius: 0;
+  background: #ffffff;
+  color: #111111;
+  font: inherit;
+  line-height: 1.5;
 }
 
 .search-input {
@@ -194,6 +209,7 @@ li + li {
   line-height: 1.5;
 }
 
+.month-select:focus,
 .search-input:focus {
   outline: 2px solid #111111;
   outline-offset: 2px;
@@ -205,44 +221,32 @@ li + li {
 }
 
 .diary-list {
-  display: grid;
-  gap: 16px;
+  display: block;
 }
 
 .diary-month {
-  margin: 16px 0 0;
-  padding-top: 20px;
+  margin: 0 0 24px;
 }
 
 .diary-item {
-  padding-top: 4px;
+  width: 100%;
+  padding: 0 0 32px;
+  margin: 0 0 32px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.diary-item:last-child {
+  margin-bottom: 0;
 }
 
 .diary-item-inner {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 16px;
-  align-items: start;
+  display: block;
+  width: 100%;
 }
 
-.diary-thumb {
-  width: 120px;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  background: #eeeeee;
-}
-
-.diary-item-body {
-  display: grid;
-  gap: 4px;
-}
-
-.diary-item-body strong {
-  font-size: 1rem;
-}
-
-.diary-item-body span {
-  color: #333333;
+.diary-entry-image {
+  width: 100%;
+  margin: 0 0 16px;
 }
 
 .diary-image {
@@ -250,8 +254,34 @@ li + li {
   margin: 16px 0 24px;
 }
 
+.diary-item-body {
+  display: block;
+}
+
+.diary-item-body strong {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.diary-item-body span {
+  color: #333333;
+}
+
 .diary-content {
-  margin-top: 16px;
+  margin-top: 0;
+}
+
+.diary-content p:last-child {
+  margin-bottom: 0;
+}
+
+.diary-month-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 24px 0 0;
+  border-top: 1px solid #dddddd;
 }
 
 .post-nav {
@@ -270,14 +300,5 @@ li + li {
 
   h1 {
     font-size: 1.6rem;
-  }
-
-  .diary-item-inner {
-    grid-template-columns: 84px 1fr;
-    gap: 12px;
-  }
-
-  .diary-thumb {
-    width: 84px;
   }
 }

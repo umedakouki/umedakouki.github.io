@@ -2,6 +2,21 @@
 layout: default
 title: 日記
 ---
+<section class="diary-controls">
+    <label class="search-label" for="diary-month-select">年・月を選ぶ</label>
+    <select id="diary-month-select" class="month-select">
+        {% assign option_month = "" %}
+        {% for post in site.posts %}
+        {% assign post_month_value = post.date | date: "%Y-%m" %}
+        {% assign post_month_label = post.date | date: "%Y.%m" %}
+        {% if post_month_value != option_month %}
+        {% assign option_month = post_month_value %}
+        <option value="{{ post_month_value }}">{{ post_month_label }}</option>
+        {% endif %}
+        {% endfor %}
+    </select>
+</section>
+
 <section class="diary-search">
     <label class="search-label" for="blog-search">全文検索</label>
     <input id="blog-search" class="search-input" type="search" autocomplete="off" placeholder="日記を検索">
@@ -12,30 +27,50 @@ title: 日記
     <div id="blog-list" class="diary-list">
         {% assign current_month = "" %}
         {% for post in site.posts %}
-        {% assign post_month = post.date | date: "%Y.%m" %}
-        {% if post_month != current_month %}
-        {% assign current_month = post_month %}
-        <h3 class="diary-month">{{ post_month }}</h3>
+        {% assign post_month_value = post.date | date: "%Y-%m" %}
+        {% assign post_month_label = post.date | date: "%Y.%m" %}
+        {% if post_month_value != current_month %}
+        {% unless forloop.first %}
+        </div>
+        {% endunless %}
+        {% assign current_month = post_month_value %}
+        <div class="diary-month-section" data-month="{{ post_month_value }}">
+            <h2 class="diary-month">{{ post_month_label }}</h2>
         {% endif %}
         <article class="diary-item">
             <div class="diary-item-inner">
                 {% assign post_date = post.date | date: "%Y.%m.%d" %}
                 {% if post.image %}
-                <img class="diary-thumb" src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post_date | escape }}">
+                <img class="diary-entry-image" src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post_date | escape }}">
                 {% endif %}
-                <span class="diary-item-body">
+                <div class="diary-item-body">
                     <strong><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post_date }}</time></strong>
-                    {% if post.excerpt %}
-                    <span>{{ post.excerpt | strip_html | strip_newlines | truncate: 110 }}</span>
-                    {% endif %}
-                </span>
+                    <div class="diary-content">
+                        {{ post.content }}
+                    </div>
+                </div>
             </div>
         </article>
+        {% if forloop.last %}
+        </div>
+        {% endif %}
         {% else %}
         <p class="muted">まだ日記はありません。</p>
         {% endfor %}
     </div>
 </section>
+
+<nav class="diary-month-links" aria-label="日記の月を選ぶ">
+    {% assign link_month = "" %}
+    {% for post in site.posts %}
+    {% assign post_month_value = post.date | date: "%Y-%m" %}
+    {% assign post_month_label = post.date | date: "%Y.%m" %}
+    {% if post_month_value != link_month %}
+    {% assign link_month = post_month_value %}
+    <a href="?month={{ post_month_value }}" data-month-link="{{ post_month_value }}">{{ post_month_label }}</a>
+    {% endif %}
+    {% endfor %}
+</nav>
 
 <script>
     window.BLOG_SEARCH_INDEX = "{{ '/search.json' | relative_url }}";

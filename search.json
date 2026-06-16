@@ -7,6 +7,7 @@ permalink: /search.json
   {% assign post_date = post.date | date: "%Y.%m.%d" %}
   {
     "date": {{ post_date | jsonify }},
+    "month": {{ post.date | date: "%Y-%m" | jsonify }},
     "image": {% if post.image %}{{ post.image | relative_url | jsonify }}{% else %}""{% endif %},
     "imageAlt": {{ post.image_alt | default: post_date | jsonify }},
     "excerpt": {{ post.excerpt | strip_html | strip_newlines | jsonify }},
