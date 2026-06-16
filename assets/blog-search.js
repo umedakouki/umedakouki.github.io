@@ -148,7 +148,10 @@
       if (monthJump && monthNav) {
         monthJump.addEventListener("click", function (event) {
           event.preventDefault();
-          monthNav.scrollIntoView({ block: "start" });
+          window.scrollTo({
+            top: monthNav.getBoundingClientRect().top + window.pageYOffset,
+            behavior: "smooth"
+          });
           window.history.replaceState({}, "", "#diary-month-links");
         });
       }
