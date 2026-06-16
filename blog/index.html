@@ -1,0 +1,39 @@
+---
+layout: default
+title: 日記
+description: 日々の記録。テキストと画像を中心に更新します。
+---
+<section class="section diary-search">
+    <label class="search-label" for="blog-search">全文検索</label>
+    <input id="blog-search" class="search-input" type="search" autocomplete="off" placeholder="日記を検索">
+    <p id="blog-search-status" class="search-status" aria-live="polite"></p>
+</section>
+
+<section class="section">
+    <h2>すべての日記</h2>
+    <div id="blog-list" class="diary-list">
+        {% for post in site.posts %}
+        <article class="diary-item">
+            <a href="{{ post.url | relative_url }}">
+                {% assign post_date = post.date | date: "%Y.%m.%d" %}
+                {% if post.image %}
+                <img class="diary-thumb" src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post_date | escape }}">
+                {% endif %}
+                <span class="diary-item-body">
+                    <strong><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post_date }}</time></strong>
+                    {% if post.excerpt %}
+                    <span>{{ post.excerpt | strip_html | strip_newlines | truncate: 110 }}</span>
+                    {% endif %}
+                </span>
+            </a>
+        </article>
+        {% else %}
+        <p class="muted">まだ日記はありません。</p>
+        {% endfor %}
+    </div>
+</section>
+
+<script>
+    window.BLOG_SEARCH_INDEX = "{{ '/search.json' | relative_url }}";
+</script>
+<script src="{{ '/assets/blog-search.js' | relative_url }}" defer></script>

@@ -44,7 +44,7 @@
                 <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="current"{% endif %}>ホーム</a>
                 <a href="{{ '/works.html' | relative_url }}">活動・作品</a>
                 <a href="{{ '/practice.html' | relative_url }}">制作ノート</a>
-                <a href="{{ '/blog.html' | relative_url }}"{% if page.url == '/blog.html' or page.layout == 'post' %} class="current"{% endif %}>日記</a>
+                <a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' or page.layout == 'post' %} class="current"{% endif %}>日記</a>
             </nav>
             {% if page.description %}
             <p class="site-description">{{ page.description | escape }}</p>
