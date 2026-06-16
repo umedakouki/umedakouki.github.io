@@ -6,7 +6,7 @@ title: 日記
     <label class="search-label" for="blog-search">全文検索</label>
     <input id="blog-search" class="search-input" type="search" autocomplete="off" placeholder="日記を検索">
     <p id="blog-search-status" class="search-status" aria-live="polite"></p>
-    <a class="month-jump" href="#diary-month-links">年・月を選ぶ</a>
+    <a class="search-label month-jump" href="#diary-month-links">年・月を選ぶ</a>
 </section>
 
 <section class="diary-section">
@@ -20,7 +20,7 @@ title: 日記
         </div>
         {% endunless %}
         {% assign current_month = post_month_value %}
-        <div class="diary-month-section" data-month="{{ post_month_value }}">
+        <div class="diary-month-section" data-month="{{ post_month_value }}"{% unless forloop.first %} hidden{% endunless %}>
             <h2 class="diary-month">{{ post_month_label }}</h2>
         {% endif %}
         <article class="diary-item">
@@ -57,6 +57,8 @@ title: 日記
     {% endif %}
     {% endfor %}
 </nav>
+
+<div class="diary-scroll-buffer" aria-hidden="true"></div>
 
 <script>
     window.BLOG_SEARCH_INDEX = "{{ '/search.json' | relative_url }}";

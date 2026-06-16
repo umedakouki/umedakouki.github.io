@@ -206,7 +206,7 @@ li + li {
 
 .month-jump {
   display: inline-block;
-  margin-top: 4px;
+  margin-top: 12px;
 }
 
 .diary-list {
@@ -275,6 +275,11 @@ li + li {
   gap: 12px;
   padding: 24px 0 0;
   border-top: 1px solid #dddddd;
+  scroll-margin-top: 0;
+}
+
+.diary-scroll-buffer {
+  height: 70vh;
 }
 
 .post-nav {

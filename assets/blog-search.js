@@ -2,6 +2,8 @@
   var input = document.getElementById("blog-search");
   var list = document.getElementById("blog-list");
   var status = document.getElementById("blog-search-status");
+  var monthJump = document.querySelector(".month-jump");
+  var monthNav = document.getElementById("diary-month-links");
   var monthLinks = Array.prototype.slice.call(document.querySelectorAll("[data-month-link]"));
   var indexUrl = window.BLOG_SEARCH_INDEX || "/search.json";
   var originalListHtml = list ? list.innerHTML : "";
@@ -107,7 +109,7 @@
         '</article>'
       );
     }).join("");
-    status.textContent = items.length + "件";
+    status.textContent = "検索結果 " + items.length + "件";
   }
 
   function search() {
@@ -142,6 +144,14 @@
       posts = Array.isArray(data) ? data : [];
       input.addEventListener("input", search);
       applyMonth(getMonthFromUrl(), false);
+
+      if (monthJump && monthNav) {
+        monthJump.addEventListener("click", function (event) {
+          event.preventDefault();
+          monthNav.scrollIntoView({ block: "start" });
+          window.history.replaceState({}, "", "#diary-month-links");
+        });
+      }
 
       monthLinks.forEach(function (link) {
         link.addEventListener("click", function (event) {
