@@ -177,10 +177,13 @@ li + li {
 
 .diary-search {
   padding: 16px 0 20px;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
 }
 
 .diary-section {
-  padding: 8px 0 24px;
+  padding: 24px 0 24px;
+  border-top: 0;
 }
 
 .search-input {
@@ -225,7 +228,6 @@ li + li {
   width: 100%;
   padding: 0 0 32px;
   margin: 0 0 32px;
-  border-bottom: 1px solid #dddddd;
 }
 
 .diary-item:last-child {
@@ -273,7 +275,8 @@ li + li {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  padding: 0;
+  padding: 24px 0 0;
+  border-top: 1px solid #dddddd;
   scroll-margin-top: 0;
 }
 

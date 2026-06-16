@@ -162,6 +162,7 @@
           input.value = "";
           list.innerHTML = originalListHtml;
           applyMonth(link.getAttribute("data-month-link"), true);
+          list.scrollIntoView({ block: "start" });
         });
       });
     })
