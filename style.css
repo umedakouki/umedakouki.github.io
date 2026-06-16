@@ -175,27 +175,12 @@ li + li {
   font-weight: 700;
 }
 
-.diary-controls {
-  padding: 16px 0 8px;
-}
-
 .diary-search {
-  padding: 8px 0 24px;
+  padding: 16px 0 20px;
 }
 
 .diary-section {
   padding: 8px 0 24px;
-}
-
-.month-select {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #bbbbbb;
-  border-radius: 0;
-  background: #ffffff;
-  color: #111111;
-  font: inherit;
-  line-height: 1.5;
 }
 
 .search-input {
@@ -209,7 +194,6 @@ li + li {
   line-height: 1.5;
 }
 
-.month-select:focus,
 .search-input:focus {
   outline: 2px solid #111111;
   outline-offset: 2px;
@@ -220,12 +204,21 @@ li + li {
   margin: 8px 0 0;
 }
 
+.month-jump {
+  display: inline-block;
+  margin-top: 4px;
+}
+
 .diary-list {
   display: block;
 }
 
 .diary-month {
   margin: 0 0 24px;
+}
+
+.search-month {
+  margin-top: 24px;
 }
 
 .diary-item {

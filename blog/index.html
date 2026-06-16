@@ -2,25 +2,11 @@
 layout: default
 title: 日記
 ---
-<section class="diary-controls">
-    <label class="search-label" for="diary-month-select">年・月を選ぶ</label>
-    <select id="diary-month-select" class="month-select">
-        {% assign option_month = "" %}
-        {% for post in site.posts %}
-        {% assign post_month_value = post.date | date: "%Y-%m" %}
-        {% assign post_month_label = post.date | date: "%Y.%m" %}
-        {% if post_month_value != option_month %}
-        {% assign option_month = post_month_value %}
-        <option value="{{ post_month_value }}">{{ post_month_label }}</option>
-        {% endif %}
-        {% endfor %}
-    </select>
-</section>
-
 <section class="diary-search">
     <label class="search-label" for="blog-search">全文検索</label>
     <input id="blog-search" class="search-input" type="search" autocomplete="off" placeholder="日記を検索">
     <p id="blog-search-status" class="search-status" aria-live="polite"></p>
+    <a class="month-jump" href="#diary-month-links">年・月を選ぶ</a>
 </section>
 
 <section class="diary-section">
@@ -60,7 +46,7 @@ title: 日記
     </div>
 </section>
 
-<nav class="diary-month-links" aria-label="日記の月を選ぶ">
+<nav id="diary-month-links" class="diary-month-links" aria-label="日記の月を選ぶ">
     {% assign link_month = "" %}
     {% for post in site.posts %}
     {% assign post_month_value = post.date | date: "%Y-%m" %}

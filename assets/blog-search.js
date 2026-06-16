@@ -2,7 +2,6 @@
   var input = document.getElementById("blog-search");
   var list = document.getElementById("blog-list");
   var status = document.getElementById("blog-search-status");
-  var monthSelect = document.getElementById("diary-month-select");
   var monthLinks = Array.prototype.slice.call(document.querySelectorAll("[data-month-link]"));
   var indexUrl = window.BLOG_SEARCH_INDEX || "/search.json";
   var originalListHtml = list ? list.innerHTML : "";
@@ -31,7 +30,7 @@
   }
 
   function getDefaultMonth() {
-    return monthSelect && monthSelect.options.length ? monthSelect.options[0].value : "";
+    return monthLinks.length ? monthLinks[0].getAttribute("data-month-link") : "";
   }
 
   function setUrlMonth(month) {
@@ -59,10 +58,6 @@
       section.hidden = section.getAttribute("data-month") !== activeMonth;
     });
 
-    if (monthSelect) {
-      monthSelect.value = activeMonth;
-    }
-
     monthLinks.forEach(function (link) {
       link.classList.toggle("current", link.getAttribute("data-month-link") === activeMonth);
     });
@@ -84,11 +79,23 @@
       return;
     }
 
+    var currentMonth = "";
+
     list.innerHTML = items.map(function (post) {
       var image = post.image
         ? '<img class="diary-entry-image" src="' + escapeHtml(post.image) + '" alt="' + escapeHtml(post.imageAlt || post.date) + '">'
         : "";
+      var month = post.month || "";
+      var monthLabel = post.monthLabel || month.replace("-", ".");
+      var monthHeading = "";
+
+      if (month !== currentMonth) {
+        currentMonth = month;
+        monthHeading = '<h2 class="diary-month search-month">' + escapeHtml(monthLabel) + '</h2>';
+      }
+
       return (
+        monthHeading +
         '<article class="diary-item">' +
           '<div class="diary-item-inner">' +
             image +
@@ -109,7 +116,7 @@
     if (!query) {
       list.innerHTML = originalListHtml;
       status.textContent = "";
-      applyMonth(monthSelect ? monthSelect.value : getMonthFromUrl(), false);
+      applyMonth(getMonthFromUrl(), false);
       return;
     }
 
@@ -135,14 +142,6 @@
       posts = Array.isArray(data) ? data : [];
       input.addEventListener("input", search);
       applyMonth(getMonthFromUrl(), false);
-
-      if (monthSelect) {
-        monthSelect.addEventListener("change", function () {
-          input.value = "";
-          list.innerHTML = originalListHtml;
-          applyMonth(monthSelect.value, true);
-        });
-      }
 
       monthLinks.forEach(function (link) {
         link.addEventListener("click", function (event) {
