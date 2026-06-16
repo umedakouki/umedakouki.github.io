@@ -10,11 +10,17 @@ description: 日々の記録。テキストと画像を中心に更新します�
 </section>
 
 <section class="section">
-    <h2>すべての日記</h2>
+    <h2>日記</h2>
     <div id="blog-list" class="diary-list">
+        {% assign current_month = "" %}
         {% for post in site.posts %}
+        {% assign post_month = post.date | date: "%Y.%m" %}
+        {% if post_month != current_month %}
+        {% assign current_month = post_month %}
+        <h3 class="diary-month">{{ post_month }}</h3>
+        {% endif %}
         <article class="diary-item">
-            <a href="{{ post.url | relative_url }}">
+            <div class="diary-item-inner">
                 {% assign post_date = post.date | date: "%Y.%m.%d" %}
                 {% if post.image %}
                 <img class="diary-thumb" src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post_date | escape }}">
@@ -25,7 +31,7 @@ description: 日々の記録。テキストと画像を中心に更新します�
                     <span>{{ post.excerpt | strip_html | strip_newlines | truncate: 110 }}</span>
                     {% endif %}
                 </span>
-            </a>
+            </div>
         </article>
         {% else %}
         <p class="muted">まだ日記はありません。</p>

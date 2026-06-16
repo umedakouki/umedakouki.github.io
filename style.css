@@ -198,25 +198,24 @@ li + li {
 
 .diary-list {
   display: grid;
-  gap: 20px;
+  gap: 16px;
 }
 
-.diary-item {
+.diary-month {
+  margin: 16px 0 0;
   padding-top: 20px;
   border-top: 1px solid #dddddd;
 }
 
-.diary-item a {
+.diary-item {
+  padding-top: 4px;
+}
+
+.diary-item-inner {
   display: grid;
   grid-template-columns: 120px 1fr;
   gap: 16px;
   align-items: start;
-  text-decoration: none;
-}
-
-.diary-item a:hover strong {
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
 }
 
 .diary-thumb {
@@ -266,7 +265,7 @@ li + li {
     font-size: 1.6rem;
   }
 
-  .diary-item a {
+  .diary-item-inner {
     grid-template-columns: 84px 1fr;
     gap: 12px;
   }

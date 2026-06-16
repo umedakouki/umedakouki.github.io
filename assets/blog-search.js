@@ -41,13 +41,13 @@
         : "";
       return (
         '<article class="diary-item">' +
-          '<a href="' + escapeHtml(post.url) + '">' +
+          '<div class="diary-item-inner">' +
             image +
             '<span class="diary-item-body">' +
               '<strong><time>' + escapeHtml(post.date) + '</time></strong>' +
               '<span>' + escapeHtml(post.excerpt || "") + '</span>' +
             '</span>' +
-          '</a>' +
+          '</div>' +
         '</article>'
       );
     }).join("");

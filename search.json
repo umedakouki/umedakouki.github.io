@@ -6,7 +6,6 @@ permalink: /search.json
 {% for post in site.posts %}
   {% assign post_date = post.date | date: "%Y.%m.%d" %}
   {
-    "url": {{ post.url | relative_url | jsonify }},
     "date": {{ post_date | jsonify }},
     "image": {% if post.image %}{{ post.image | relative_url | jsonify }}{% else %}""{% endif %},
     "imageAlt": {{ post.image_alt | default: post_date | jsonify }},
