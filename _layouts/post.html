@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<article class="diary-post">
+    {% assign diary_date = page.date | date: "%Y.%m.%d" %}
+    {% if page.image %}
+    <img class="diary-image" src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: diary_date | escape }}">
+    {% endif %}
+    <div class="diary-content">
+        {{ content }}
+    </div>
+</article>
+
+<nav class="post-nav" aria-label="日記の前後の記事">
+    {% if page.previous %}
+    <a href="{{ page.previous.url | relative_url }}">前の日記</a>
+    {% endif %}
+    <a href="{{ '/blog.html' | relative_url }}">日記一覧</a>
+    {% if page.next %}
+    <a href="{{ page.next.url | relative_url }}">次の日記</a>
+    {% endif %}
+</nav>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWMWLYXC3T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-BWMWLYXC3T');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+    {% assign page_title = page.title | default: site.title %}
+    {% if page.layout == 'post' %}
+    {% assign page_title = page.date | date: "%Y.%m.%d" %}
+    {% endif %}
+    {% if page.description %}
+    {% assign page_description = page.description | strip_html %}
+    {% else %}
+    {% assign page_description = site.description %}
+    {% endif %}
+    <title>{% if page.layout == 'post' %}{{ page.date | date: "%Y.%m.%d" }} | {% elsif page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
+    <meta name="description" content="{{ page_description | escape }}">
+    <meta property="og:title" content="{{ page_title | escape }}">
+    <meta property="og:description" content="{{ page_description | escape }}">
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+    {% if page.image %}
+    <meta property="og:image" content="{{ page.image | absolute_url }}">
+    {% endif %}
+</head>
+<body>
+    <div class="site-name">
+        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    </div>
+    <div class="container">
+        <header class="site-header">
+            <h1 class="site-title">{% if page.layout == 'post' %}{{ page.date | date: "%Y.%m.%d" }}{% else %}{{ page.heading | default: page.title | escape }}{% endif %}</h1>
+            <nav class="global-nav">
+                <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="current"{% endif %}>ホーム</a>
+                <a href="{{ '/works.html' | relative_url }}">活動・作品</a>
+                <a href="{{ '/practice.html' | relative_url }}">制作ノート</a>
+                <a href="{{ '/blog.html' | relative_url }}"{% if page.url == '/blog.html' or page.layout == 'post' %} class="current"{% endif %}>日記</a>
+            </nav>
+            {% if page.description %}
+            <p class="site-description">{{ page.description | escape }}</p>
+            {% endif %}
+        </header>
+        <main class="main">
+            {{ content }}
+        </main>
+    </div>
+</body>
+</html>

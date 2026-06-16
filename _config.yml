@@ -1,0 +1,16 @@
+title: 梅田航輝
+description: 活動、作品、制作ノート、日記。
+lang: ja
+timezone: Asia/Tokyo
+permalink: /diary/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      category: diary
+
+exclude:
+  - BLOGGING.md
