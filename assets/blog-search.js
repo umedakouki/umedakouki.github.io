@@ -103,7 +103,7 @@
             image +
             '<div class="diary-item-body">' +
               '<strong><time>' + escapeHtml(post.date) + '</time></strong>' +
-              '<span>' + escapeHtml(post.excerpt || "") + '</span>' +
+              '<div class="diary-content">' + (post.contentHtml || escapeHtml(post.content || "")) + '</div>' +
             '</div>' +
           '</div>' +
         '</article>'
