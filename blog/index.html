@@ -1,16 +1,14 @@
 ---
 layout: default
 title: 日記
-description: 日々の記録。テキストと画像を中心に更新します。
 ---
-<section class="section diary-search">
+<section class="diary-search">
     <label class="search-label" for="blog-search">全文検索</label>
     <input id="blog-search" class="search-input" type="search" autocomplete="off" placeholder="日記を検索">
     <p id="blog-search-status" class="search-status" aria-live="polite"></p>
 </section>
 
-<section class="section">
-    <h2>日記</h2>
+<section class="diary-section">
     <div id="blog-list" class="diary-list">
         {% assign current_month = "" %}
         {% for post in site.posts %}

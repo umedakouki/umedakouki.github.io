@@ -175,6 +175,14 @@ li + li {
   font-weight: 700;
 }
 
+.diary-search {
+  padding: 16px 0 24px;
+}
+
+.diary-section {
+  padding: 8px 0 24px;
+}
+
 .search-input {
   width: 100%;
   padding: 10px 12px;
@@ -204,7 +212,6 @@ li + li {
 .diary-month {
   margin: 16px 0 0;
   padding-top: 20px;
-  border-top: 1px solid #dddddd;
 }
 
 .diary-item {
