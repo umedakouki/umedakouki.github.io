@@ -273,8 +273,7 @@ li + li {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  padding: 24px 0 0;
-  border-top: 1px solid #dddddd;
+  padding: 0;
   scroll-margin-top: 0;
 }
 
