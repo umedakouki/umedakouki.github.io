@@ -228,6 +228,7 @@ li + li {
   width: 100%;
   padding: 0 0 32px;
   margin: 0 0 32px;
+  border: 0;
 }
 
 .diary-item:last-child {
