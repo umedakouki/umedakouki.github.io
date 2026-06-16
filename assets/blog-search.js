@@ -2,6 +2,7 @@
   var input = document.getElementById("blog-search");
   var list = document.getElementById("blog-list");
   var status = document.getElementById("blog-search-status");
+  var diarySearch = document.querySelector(".diary-search");
   var monthJump = document.querySelector(".month-jump");
   var monthNav = document.getElementById("diary-month-links");
   var monthLinks = Array.prototype.slice.call(document.querySelectorAll("[data-month-link]"));
@@ -162,7 +163,7 @@
           input.value = "";
           list.innerHTML = originalListHtml;
           applyMonth(link.getAttribute("data-month-link"), true);
-          list.scrollIntoView({ block: "start" });
+          (diarySearch || list).scrollIntoView({ block: "start" });
         });
       });
     })
