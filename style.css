@@ -163,8 +163,7 @@ li + li {
 }
 
 .muted,
-.search-status,
-.diary-item time {
+.search-status {
   color: #666666;
   font-size: 0.9rem;
 }
@@ -242,22 +241,31 @@ li + li {
 
 .diary-entry-image {
   width: 100%;
-  margin: 0 0 16px;
+  height: calc(1.7rem * 15);
+  max-height: 70vh;
+  margin: 0 0 20px;
+  display: block;
+  object-fit: cover;
 }
 
 .diary-image {
   width: 100%;
+  height: calc(1.7rem * 15);
+  max-height: 70vh;
   margin: 16px 0 24px;
+  display: block;
+  object-fit: cover;
 }
 
 .diary-item-body {
   display: block;
 }
 
-.diary-item-body strong {
-  display: block;
-  margin-bottom: 12px;
-  font-size: 1rem;
+.diary-date {
+  margin: 0 0 16px;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  font-weight: 700;
 }
 
 .diary-item-body span {

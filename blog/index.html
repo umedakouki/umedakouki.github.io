@@ -26,11 +26,11 @@ title: 日記
         <article class="diary-item">
             <div class="diary-item-inner">
                 {% assign post_date = post.date | date: "%Y.%m.%d" %}
-                {% if post.image %}
-                <img class="diary-entry-image" src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post_date | escape }}">
-                {% endif %}
                 <div class="diary-item-body">
-                    <strong><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post_date }}</time></strong>
+                    <h3 class="diary-date"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post_date }}</time></h3>
+                    {% if post.image %}
+                    <img class="diary-entry-image" src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post_date | escape }}">
+                    {% endif %}
                     <div class="diary-content">
                         {{ post.content }}
                     </div>

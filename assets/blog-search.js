@@ -101,9 +101,9 @@
         monthHeading +
         '<article class="diary-item">' +
           '<div class="diary-item-inner">' +
-            image +
             '<div class="diary-item-body">' +
-              '<strong><time>' + escapeHtml(post.date) + '</time></strong>' +
+              '<h3 class="diary-date"><time>' + escapeHtml(post.date) + '</time></h3>' +
+              image +
               '<div class="diary-content">' + (post.contentHtml || escapeHtml(post.content || "")) + '</div>' +
             '</div>' +
           '</div>' +
