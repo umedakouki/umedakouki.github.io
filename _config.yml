@@ -14,3 +14,4 @@ defaults:
 
 exclude:
   - BLOGGING.md
+  - tools
