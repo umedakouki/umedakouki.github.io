@@ -39,13 +39,12 @@ li + li { margin-top: .6em; }
   font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
 }
 .site-rail .site-name { display: inline-block; margin-bottom: 44px; font-size: 1rem; font-weight: 700; }
-.chapter-nav { display: grid; border-top: 1px solid #111; }
+.chapter-nav { display: grid; }
 .chapter-nav a {
   display: grid;
   grid-template-columns: 2.4em 1fr;
   gap: 8px;
   padding: 10px 0;
-  border-bottom: 1px solid #bbb;
   font-size: .8rem;
   text-decoration: none;
 }
@@ -60,26 +59,23 @@ li + li { margin-top: .6em; }
 .page-kicker { margin: 0 0 12px; font-size: .7rem; font-weight: 700; letter-spacing: 0; }
 .page-description { max-width: 38em; margin: 16px 0 0; color: #444; font-size: .94rem; }
 .breadcrumb { display: flex; flex-wrap: wrap; gap: 8px; margin: -26px 0 40px; color: #555; font-size: .75rem; }
-.section { padding: 32px 0; border-top: 1px solid #bbb; }
-.section:first-child { border-top-color: #111; }
+.section { padding: 32px 0; }
 .section > h2 { margin-bottom: 22px; }
 .home-intro { max-width: 35em; margin: 0 0 48px; font-size: 1.12rem; line-height: 2; }
 
 .chapter-index { margin: 0; padding: 0; list-style: none; }
-.chapter-index li { display: grid; grid-template-columns: 52px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid #ddd; }
-.chapter-index li:first-child { border-top: 0; padding-top: 0; }
+.chapter-index li { display: grid; grid-template-columns: 52px 1fr; gap: 16px; padding: 22px 0; }
+.chapter-index li:first-child { padding-top: 0; }
 .chapter-index li + li { margin-top: 0; }
 .chapter-index h3 { font-size: 1.2rem; }
 .chapter-index p { margin: 5px 0 0; color: #444; }
 .chapter-number { font-family: "Courier New", monospace; font-size: .82rem; }
 .document-link { margin: 0 0 36px; font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; font-size: .86rem; }
-.work-catalog { border-top: 1px solid #111; }
 .catalog-entry {
   display: grid;
   grid-template-columns: 96px minmax(0, 1fr) 180px;
   gap: 24px;
   padding: 28px 0;
-  border-bottom: 1px solid #bbb;
 }
 .catalog-meta { display: flex; flex-direction: column; gap: 5px; font-size: .7rem; line-height: 1.45; }
 .catalog-meta time { font-weight: 700; font-variant-numeric: tabular-nums; }
@@ -89,8 +85,7 @@ li + li { margin-top: .6em; }
 .catalog-image { align-self: start; }
 .catalog-image img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 
-.note-index { border-top: 1px solid #111; }
-.note-entry { display: grid; grid-template-columns: 96px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid #bbb; }
+.note-entry { display: grid; grid-template-columns: 96px 1fr; gap: 24px; padding: 28px 0; }
 .note-entry > time { font-size: .75rem; font-weight: 700; font-variant-numeric: tabular-nums; }
 .note-entry h2 { margin-bottom: 8px; }
 .note-entry p { margin: 0; color: #444; }
@@ -98,8 +93,8 @@ li + li { margin-top: .6em; }
 .note-entry-archive h2 { color: #444; }
 
 .work-item + .work-item { margin-top: 32px; }
-.work-item { padding: 28px 0; border-top: 1px solid #bbb; }
-.section > .work-item:first-of-type { padding-top: 0; border-top: 0; }
+.work-item { padding: 28px 0; }
+.section > .work-item:first-of-type { padding-top: 0; }
 .work-item h3 { margin-bottom: 8px; }
 .work-thumbnail { width: min(100%, 300px); margin: 16px 0 24px; }
 .full-width-image { width: 100%; margin: 20px 0 30px; }
@@ -111,7 +106,7 @@ li + li { margin-top: .6em; }
 .photo-row { display: flex; gap: 12px; }
 .photo-row img { width: calc((100% - 24px) / 3); aspect-ratio: 1; object-fit: cover; }
 
-.diary-search { padding: 0 0 28px; border-bottom: 1px solid #111; }
+.diary-search { padding: 0 0 28px; }
 .search-label { display: block; margin-bottom: 8px; font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; font-size: .82rem; font-weight: 700; }
 .search-input { width: 100%; padding: 11px 12px; border: 1px solid #777; border-radius: 0; background: #fff; color: #111; font: inherit; }
 .search-input:focus { outline: 2px solid #111; outline-offset: 2px; }
@@ -120,15 +115,15 @@ li + li { margin-top: .6em; }
 .month-jump { display: inline-block; margin-top: 12px; }
 .diary-section { padding: 36px 0 0; border: 0; }
 .diary-month { margin-bottom: 28px; font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; font-size: 1.35rem; }
-.diary-item { width: 100%; margin: 0 0 42px; padding: 0 0 42px; border-bottom: 1px solid #bbb; }
+.diary-item { width: 100%; margin: 0 0 56px; }
 .diary-date { margin-bottom: 18px; font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; font-size: 1rem; font-variant-numeric: tabular-nums; }
 .diary-entry-image, .diary-image { width: auto; max-height: calc(1.7rem * 15); }
 .diary-entry-image { margin: 0 0 22px; }
 .diary-image { margin: 16px 0 26px; }
 .diary-content p:last-child { margin-bottom: 0; }
-.diary-month-links { display: flex; flex-wrap: wrap; gap: 14px; padding-top: 24px; border-top: 1px solid #111; }
+.diary-month-links { display: flex; flex-wrap: wrap; gap: 14px; padding-top: 24px; }
 .diary-scroll-buffer { height: 70vh; }
-.post-nav { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 42px; padding-top: 18px; border-top: 1px solid #bbb; }
+.post-nav { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 42px; padding-top: 18px; }
 
 .site-footer { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 56px; padding-top: 18px; border-top: 1px solid #111; color: #555; font-size: .72rem; }
 .site-footer span { margin-left: auto; }
@@ -146,7 +141,7 @@ li + li { margin-top: .6em; }
   .site-shell { display: block; width: min(100%, 720px); }
   .site-rail { position: static; margin-bottom: 38px; }
   .site-rail .site-name { margin-bottom: 18px; }
-  .chapter-nav { grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid #111; }
+  .chapter-nav { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .chapter-nav a { display: block; padding: 8px 4px; border: 0; font-size: .72rem; white-space: nowrap; }
   .chapter-nav a:hover, .chapter-nav .current { padding: 8px 4px; }
   .chapter-nav span { display: block; font-size: .62rem; }
