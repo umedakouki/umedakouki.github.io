@@ -83,15 +83,13 @@ li + li { margin-top: .6em; }
 .related-link { font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; font-size: .75rem !important; }
 .catalog-image { align-self: start; }
 .catalog-image img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.video-wrap { width: 100%; aspect-ratio: 16 / 9; margin: 18px 0 24px; }
+.video-wrap iframe { display: block; width: 100%; height: 100%; border: 0; }
 
 .note-entry { display: grid; grid-template-columns: 96px 1fr; gap: 24px; padding: 28px 0; }
 .note-entry > time { font-size: .75rem; font-weight: 700; font-variant-numeric: tabular-nums; }
 .note-entry h2 { margin-bottom: 8px; }
 .note-entry p { margin: 0; color: #444; }
-.work-item + .work-item { margin-top: 32px; }
-.work-item { padding: 28px 0; }
-.section > .work-item:first-of-type { padding-top: 0; }
-.work-item h3 { margin-bottom: 8px; }
 .work-thumbnail { width: min(100%, 300px); margin: 16px 0 24px; }
 .full-width-image { width: 100%; margin: 20px 0 30px; }
 .video-full { width: 100%; aspect-ratio: 16 / 9; margin: 20px 0 30px; }
