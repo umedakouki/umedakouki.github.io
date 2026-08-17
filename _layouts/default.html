@@ -6,48 +6,56 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-BWMWLYXC3T');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
     {% assign page_title = page.title | default: site.title %}
-    {% if page.layout == 'post' %}
-    {% assign page_title = page.date | date: "%Y.%m.%d" %}
-    {% endif %}
-    {% if page.description %}
-    {% assign page_description = page.description | strip_html %}
-    {% else %}
-    {% assign page_description = site.description %}
-    {% endif %}
-    <title>{% if page.layout == 'post' %}{{ page.date | date: "%Y.%m.%d" }} | {% elsif page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
+    {% if page.layout == 'post' %}{% assign page_title = page.date | date: "%Y.%m.%d" %}{% endif %}
+    {% assign page_description = page.description | default: site.description | strip_html %}
+    <title>{% if page.layout == 'post' %}{{ page.date | date: "%Y.%m.%d" }} | {% elsif page.title and page.url != '/' %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
     <meta name="description" content="{{ page_description | escape }}">
     <meta property="og:title" content="{{ page_title | escape }}">
     <meta property="og:description" content="{{ page_description | escape }}">
     <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-    {% if page.image %}
-    <meta property="og:image" content="{{ page.image | absolute_url }}">
-    {% endif %}
+    {% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}">{% endif %}
 </head>
-<body>
-    <div class="container">
-        <header class="site-header">
+<body id="top">
+    <div class="site-shell">
+        <aside class="site-rail">
             <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-            <h1 class="site-title">{% if page.layout == 'post' %}{{ page.date | date: "%Y.%m.%d" }}{% else %}{{ page.heading | default: page.title | escape }}{% endif %}</h1>
-            <nav class="global-nav">
-                <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="current"{% endif %}>ホーム</a>
-                <a href="{{ '/works.html' | relative_url }}"{% if page.url contains '/works' %} class="current"{% endif %}>活動・作品</a>
-                <a href="{{ '/practice.html' | relative_url }}"{% if page.url contains '/practice' %} class="current"{% endif %}>ノート</a>
-                <a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' or page.layout == 'post' %} class="current"{% endif %}>日記</a>
+            <nav class="chapter-nav" aria-label="主要な目次">
+                <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="current" aria-current="page"{% endif %}><span>00</span>目次</a>
+                <a href="{{ '/works.html' | relative_url }}"{% if page.url contains '/works' %} class="current" aria-current="page"{% endif %}><span>01</span>活動・作品</a>
+                <a href="{{ '/practice.html' | relative_url }}"{% if page.url contains '/practice' %} class="current" aria-current="page"{% endif %}><span>02</span>ノート</a>
+                <a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' or page.layout == 'post' %} class="current" aria-current="page"{% endif %}><span>03</span>日記</a>
             </nav>
-            {% if page.description %}
-            <p class="site-description">{{ page.description | escape }}</p>
+        </aside>
+
+        <div class="page">
+            <header class="page-header">
+                <p class="page-kicker">{% if page.url == '/' %}INDEX{% elsif page.url contains '/works' %}WORKS{% elsif page.url contains '/practice' %}NOTES{% elsif page.url == '/blog/' or page.layout == 'post' %}DIARY{% else %}PAGE{% endif %}</p>
+                <h1>{% if page.layout == 'post' %}{{ page.date | date: "%Y.%m.%d" }}{% else %}{{ page.heading | default: page.title | escape }}{% endif %}</h1>
+                {% if page.description and page.url != '/' %}<p class="page-description">{{ page.description | escape }}</p>{% endif %}
+            </header>
+
+            {% if page.layout == 'post' %}
+            <nav class="breadcrumb" aria-label="現在位置"><a href="{{ '/blog/' | relative_url }}">日記</a><span>/</span><span>{{ page.date | date: "%Y.%m.%d" }}</span></nav>
+            {% elsif page.url contains '/works/' %}
+            <nav class="breadcrumb" aria-label="現在位置"><a href="{{ '/works.html' | relative_url }}">活動・作品</a><span>/</span><span>{{ page.title | escape }}</span></nav>
+            {% elsif page.url contains '/practice/' %}
+            <nav class="breadcrumb" aria-label="現在位置"><a href="{{ '/practice.html' | relative_url }}">ノート</a><span>/</span><span>{{ page.title | escape }}</span></nav>
             {% endif %}
-        </header>
-        <main>
-            {{ content }}
-        </main>
+
+            <main>{{ content }}</main>
+
+            <footer class="site-footer">
+                <a href="{{ '/' | relative_url }}">目次へ</a>
+                <a href="#top">ページ上部へ</a>
+                <span>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</span>
+            </footer>
+        </div>
     </div>
 </body>
 </html>
