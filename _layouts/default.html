@@ -26,7 +26,7 @@
         <aside class="site-rail">
             <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
             <nav class="chapter-nav" aria-label="主要な目次">
-                <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="current" aria-current="page"{% endif %}><span>00</span>目次</a>
+                <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="current" aria-current="page"{% endif %}><span>00</span>ホーム</a>
                 <a href="{{ '/works.html' | relative_url }}"{% if page.url contains '/works' %} class="current" aria-current="page"{% endif %}><span>01</span>活動・作品</a>
                 <a href="{{ '/practice.html' | relative_url }}"{% if page.url contains '/practice' %} class="current" aria-current="page"{% endif %}><span>02</span>ノート</a>
                 <a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' or page.layout == 'post' %} class="current" aria-current="page"{% endif %}><span>03</span>日記</a>
