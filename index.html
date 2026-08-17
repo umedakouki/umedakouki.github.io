@@ -1,66 +1,37 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWMWLYXC3T"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+---
+layout: default
+title: ホーム
+heading: 目次
+description: 活動、作品、ノート、日記。
+---
+<section class="section">
+    <ol class="contents-list">
+        <li>
+            <a href="{{ '/works.html' | relative_url }}">活動・作品</a>
+            <p>今までの活動と作品をまとめています。</p>
+        </li>
+        <li>
+            <a href="{{ '/practice.html' | relative_url }}">ノート</a>
+            <p>活動や作品制作を進める中で考えたこと、実験的に作ってみたもの、あとから参照したい記録をまとめています。</p>
+        </li>
+        <li>
+            <a href="{{ '/blog/' | relative_url }}">日記</a>
+            <p>日々の生活を過ごす中で、まとまらない考えや感じたこと、そして周りのことについて書いています。</p>
+        </li>
+    </ol>
+</section>
 
-        gtag('config', 'G-BWMWLYXC3T');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>ホーム</title>
-</head>
-<body>
-    <div class="site-name">
-        <a href="index.html">梅田航輝</a>
-    </div>
-    <div class="container">
-        <header class="site-header">
-            <h1 class="site-title">ホーム</h1>
-            <nav class="global-nav">
-                <a href="index.html" class="current">ホーム</a>
-                <a href="works.html">活動・作品</a>
-                <a href="practice.html">ノート</a>
-                <a href="blog/">日記</a>
-            </nav>
-            <p class="site-description">ポートフォリオサイトです。同時に考えていることや日々の暮らしについて気ままに書いています。2026年7月22日更新。</p>
-        </header>
-        <main class="main">
-            <section class="section">
-                <h2>プロフィール</h2>
-                <p>2001年新潟市生まれ。京都工芸繊維大学建築学専攻修士課程に在籍。</p>
-                <p>建築や都市、空間や場所という現象の記述について、主にカメラを通して考え制作を行っています。</p>
-                <p>制作コレクティブ「<a href="https://plantshop.work">プラントショップ</a>」では、場所の記述を公共化する活動のほか、「共同で作ること」をテーマに活動しています。</p>
-            </section>
-            <section class="section">
-                <h2>サイトコンテンツ</h2>
-                <ul>
-                    <li><a href="works.html">活動・作品</a></li>
-                    <p>今までの活動と作品をまとめています。</p>
-                    <li><a href="practice.html">ノート</a></li>
-                    <p>活動や作品制作を進める中で考えたこと、実験的に作ってみたものなどをまとめています。</p>
-                    <li><a href="blog/">日記</a></li>
-                    <p>日々の生活を過ごす中で、まとまらない考えや感じたこと、そして周りのことについて、徒然なるままに書いています。</p>
-                </ul>
-            </section>
-            <section class="section">
-                <h2>連絡先・SNS</h2>
-                <ul>
-                    <li><a href="mailto:uk34926mu@outlook.jp">uk34926mu@outlook.jp</a></li>
-                    <li>X：<a href="https://x.com/aomou2001" rel="me">@aomou2001</a></li>
-                </ul>
-            </section>
-        </main>
-        <footer>
-            <p>2026年7月22日更新</p>
-        </footer>
-    </div>
-</body>
-</html>
+<section class="section">
+    <h2>プロフィール</h2>
+    <p>2001年新潟市生まれ。京都工芸繊維大学建築学専攻修士課程に在籍。</p>
+    <p>建築や都市、空間や場所という現象の記述について、主にカメラを通して考え制作を行っています。</p>
+    <p>制作コレクティブ「<a href="https://plantshop.work">プラントショップ</a>」では、場所の記述を公共化する活動のほか、「共同で作ること」をテーマに活動しています。</p>
+</section>
+
+<section class="section">
+    <h2>連絡先・SNS</h2>
+    <ul>
+        <li><a href="mailto:uk34926mu@outlook.jp">uk34926mu@outlook.jp</a></li>
+        <li>X：<a href="https://x.com/aomou2001" rel="me">@aomou2001</a></li>
+    </ul>
+</section>

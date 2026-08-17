@@ -4,16 +4,12 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 16px;
-}
-
 body {
   margin: 0;
-  padding: 40px 20px;
+  padding: 32px 20px 64px;
   background: #ffffff;
   color: #111111;
-  font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
   line-height: 1.8;
 }
 
@@ -30,22 +26,10 @@ img {
 }
 
 .site-name {
-  position: fixed;
-  top: 16px;
-  left: 20px;
-  z-index: 1000;
+  display: inline-block;
+  margin-bottom: 28px;
   font-size: 0.9rem;
   font-weight: 500;
-  line-height: 1;
-}
-
-.site-name a {
-  color: #111;
-  text-decoration: none;
-}
-
-.site-name a:hover {
-  text-decoration: underline;
 }
 
 .container {
@@ -53,7 +37,7 @@ img {
   margin: 0 auto;
 }
 
-header {
+.site-header {
   margin-bottom: 40px;
 }
 
@@ -82,11 +66,11 @@ p {
   margin: 0 0 16px;
 }
 
-nav {
+.global-nav {
   margin-top: 16px;
 }
 
-nav a {
+.global-nav a {
   margin-right: 16px;
 }
 
@@ -114,22 +98,27 @@ li + li {
 }
 
 .work-item + .work-item {
-  margin-top: 24px;
+  margin-top: 28px;
 }
 
-.footer {
-  margin-top: 48px;
-  padding-top: 16px;
-  border-top: 1px solid #dddddd;
-  font-size: 0.9rem;
-  color: #666666;
+.work-item h3 {
+  margin-bottom: 6px;
+}
+
+.work-item p:last-child {
+  margin-bottom: 0;
+}
+
+.contents-list li + li {
+  margin-top: 20px;
+}
+
+.contents-list p {
+  margin: 4px 0 0;
 }
 
 .work-thumbnail {
-  display: block;
   width: 240px;
-  max-width: 100%;
-  height: auto;
   margin: 8px 0 16px;
 }
 
@@ -138,10 +127,41 @@ li + li {
   border-top: 1px solid #dddddd;
 }
 
+.section > .work-item:first-of-type {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.example-list {
+  margin: 24px 0;
+  padding-left: 32px;
+}
+
+.example-list p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.photo-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.photo-row {
+  display: flex;
+  gap: 12px;
+}
+
+.photo-row img {
+  width: calc((100% - 24px) / 3);
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
 .full-width-image {
-  display: block;
   width: 100%;
-  height: auto;
   margin: 16px 0 24px;
 }
 
@@ -211,10 +231,6 @@ li + li {
   margin-top: 12px;
 }
 
-.diary-list {
-  display: block;
-}
-
 .diary-month {
   margin: 0 0 28px;
   font-size: 1.5rem;
@@ -236,31 +252,18 @@ li + li {
   margin-bottom: 0;
 }
 
-.diary-item-inner {
-  display: block;
-  width: 100%;
+.diary-entry-image,
+.diary-image {
+  width: auto;
+  max-height: calc(1.7rem * 15);
 }
 
 .diary-entry-image {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: calc(1.7rem * 15);
   margin: 0 0 20px;
-  display: block;
 }
 
 .diary-image {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: calc(1.7rem * 15);
   margin: 16px 0 24px;
-  display: block;
-}
-
-.diary-item-body {
-  display: block;
 }
 
 .diary-date {
@@ -270,7 +273,7 @@ li + li {
   font-weight: 700;
 }
 
-.diary-item-body span {
+.diary-item span {
   color: #333333;
 }
 
@@ -307,6 +310,11 @@ li + li {
 @media (max-width: 640px) {
   body {
     padding: 24px 16px;
+  }
+
+  .global-nav a {
+    display: inline-block;
+    margin-bottom: 4px;
   }
 
   h1 {

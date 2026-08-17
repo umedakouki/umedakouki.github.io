@@ -10,7 +10,7 @@ title: 日記
 </section>
 
 <section class="diary-section">
-    <div id="blog-list" class="diary-list">
+    <div id="blog-list">
         {% assign current_month = "" %}
         {% for post in site.posts %}
         {% assign post_month_value = post.date | date: "%Y-%m" %}
@@ -24,17 +24,13 @@ title: 日記
             <h2 class="diary-month">{{ post_month_label }}</h2>
         {% endif %}
         <article class="diary-item">
-            <div class="diary-item-inner">
-                {% assign post_date = post.date | date: "%Y.%m.%d" %}
-                <div class="diary-item-body">
-                    <h3 class="diary-date"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post_date }}</time></h3>
-                    {% if post.image %}
-                    <img class="diary-entry-image" src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post_date | escape }}">
-                    {% endif %}
-                    <div class="diary-content">
-                        {{ post.content }}
-                    </div>
-                </div>
+            {% assign post_date = post.date | date: "%Y.%m.%d" %}
+            <h3 class="diary-date"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post_date }}</time></h3>
+            {% if post.image %}
+            <img class="diary-entry-image" src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post_date | escape }}">
+            {% endif %}
+            <div class="diary-content">
+                {{ post.content }}
             </div>
         </article>
         {% if forloop.last %}

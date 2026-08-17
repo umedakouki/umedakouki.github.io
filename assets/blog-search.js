@@ -2,9 +2,6 @@
   var input = document.getElementById("blog-search");
   var list = document.getElementById("blog-list");
   var status = document.getElementById("blog-search-status");
-  var diarySearch = document.querySelector(".diary-search");
-  var monthJump = document.querySelector(".month-jump");
-  var monthNav = document.getElementById("diary-month-links");
   var monthLinks = Array.prototype.slice.call(document.querySelectorAll("[data-month-link]"));
   var indexUrl = window.BLOG_SEARCH_INDEX || "/search.json";
   var originalListHtml = list ? list.innerHTML : "";
@@ -100,13 +97,9 @@
       return (
         monthHeading +
         '<article class="diary-item">' +
-          '<div class="diary-item-inner">' +
-            '<div class="diary-item-body">' +
-              '<h3 class="diary-date"><time>' + escapeHtml(post.date) + '</time></h3>' +
-              image +
-              '<div class="diary-content">' + (post.contentHtml || escapeHtml(post.content || "")) + '</div>' +
-            '</div>' +
-          '</div>' +
+          '<h3 class="diary-date"><time>' + escapeHtml(post.date) + '</time></h3>' +
+          image +
+          '<div class="diary-content">' + (post.contentHtml || escapeHtml(post.content || "")) + '</div>' +
         '</article>'
       );
     }).join("");
@@ -146,24 +139,13 @@
       input.addEventListener("input", search);
       applyMonth(getMonthFromUrl(), false);
 
-      if (monthJump && monthNav) {
-        monthJump.addEventListener("click", function (event) {
-          event.preventDefault();
-          window.scrollTo({
-            top: monthNav.getBoundingClientRect().top + window.pageYOffset,
-            behavior: "smooth"
-          });
-          window.history.replaceState({}, "", "#diary-month-links");
-        });
-      }
-
       monthLinks.forEach(function (link) {
         link.addEventListener("click", function (event) {
           event.preventDefault();
           input.value = "";
           list.innerHTML = originalListHtml;
           applyMonth(link.getAttribute("data-month-link"), true);
-          (diarySearch || list).scrollIntoView({ block: "start" });
+          list.scrollIntoView({ block: "start" });
         });
       });
     })
