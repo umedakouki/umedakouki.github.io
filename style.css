@@ -29,7 +29,6 @@ li + li { margin-top: .6em; }
   gap: 64px;
   width: min(100%, 952px);
   margin: 0 auto;
-  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif;
   line-height: 1.9;
 }
 .site-rail {
