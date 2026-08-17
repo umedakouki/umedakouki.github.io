@@ -69,25 +69,10 @@ li + li { margin-top: .6em; }
 .chapter-index h3 { font-size: 1.2rem; }
 .chapter-index p { margin: 5px 0 0; color: #444; }
 .chapter-number { font-family: "Courier New", monospace; font-size: .82rem; }
-.contact-index { display: grid; margin: 0; font-style: normal; }
-.contact-index a {
-  display: grid;
-  grid-template-columns: 32px 64px minmax(0, 1fr) 1em;
-  gap: 14px;
-  align-items: baseline;
-  margin: 0 -10px;
-  padding: 12px 10px;
-  text-decoration: none;
-}
-.contact-index a:hover { background: #111; color: #fff; }
-.contact-number, .contact-kind, .contact-arrow {
-  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
-  font-size: .7rem;
-}
-.contact-number { font-family: "Courier New", monospace; }
-.contact-kind { font-weight: 700; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 14px 32px; margin: 0; font-style: normal; }
+.contact-links a { display: inline-flex; gap: 10px; align-items: baseline; text-decoration: none; }
+.contact-kind { font-size: .7rem; font-weight: 700; }
 .contact-value { overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: .18em; }
-.contact-arrow { justify-self: end; }
 .document-link { margin: 0 0 36px; font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; font-size: .86rem; }
 .catalog-entry {
   display: grid;
