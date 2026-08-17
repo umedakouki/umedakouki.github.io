@@ -37,7 +37,7 @@
             <header class="page-header">
                 <p class="page-kicker">{% if page.url == '/' %}INDEX{% elsif page.section == 'notes' or page.url contains '/practice' %}NOTES{% elsif page.url contains '/works' %}WORKS{% elsif page.url == '/blog/' or page.layout == 'post' %}DIARY{% else %}PAGE{% endif %}</p>
                 <h1>{% if page.layout == 'post' %}{{ page.date | date: "%Y.%m.%d" }}{% else %}{{ page.heading | default: page.title | escape }}{% endif %}</h1>
-                {% if page.description and page.url != '/' %}<p class="page-description">{{ page.description | escape }}</p>{% endif %}
+                {% if page.description and page.url != '/' and page.hide_description != true %}<p class="page-description">{{ page.description | escape }}</p>{% endif %}
             </header>
 
             {% if page.layout == 'post' %}
