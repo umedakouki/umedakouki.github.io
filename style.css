@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
 body {
   margin: 0;
   padding: 32px 20px 64px;
@@ -179,7 +184,8 @@ li + li {
 }
 
 .current {
-  font-weight: 700;
+  font-weight: inherit;
+  text-decoration-thickness: 0.12em;
 }
 
 .muted,
