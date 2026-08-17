@@ -85,6 +85,21 @@ li + li { margin-top: .6em; }
 .catalog-image img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .video-wrap { width: 100%; aspect-ratio: 16 / 9; margin: 18px 0 24px; }
 .video-wrap iframe { display: block; width: 100%; height: 100%; border: 0; }
+.video-disclosure { margin: .8em 0; }
+.video-disclosure summary {
+  display: inline-flex;
+  gap: .5em;
+  align-items: baseline;
+  cursor: pointer;
+  list-style: none;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  font-size: .82rem;
+}
+.video-disclosure summary::-webkit-details-marker { display: none; }
+.video-disclosure summary::before { content: "＋"; width: 1em; }
+.video-disclosure[open] summary::before { content: "−"; }
+.video-disclosure summary:hover { text-decoration: underline; text-underline-offset: .18em; }
+.video-disclosure .video-wrap { margin: 12px 0 24px; }
 
 .note-entry { display: grid; grid-template-columns: 96px 1fr; gap: 24px; padding: 28px 0; }
 .note-entry > time { font-size: .75rem; font-weight: 700; font-variant-numeric: tabular-nums; }
