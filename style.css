@@ -88,8 +88,6 @@ li + li { margin-top: .6em; }
 .note-entry > time { font-size: .75rem; font-weight: 700; font-variant-numeric: tabular-nums; }
 .note-entry h2 { margin-bottom: 8px; }
 .note-entry p { margin: 0; color: #444; }
-.note-entry-archive h2 { color: #444; }
-
 .work-item + .work-item { margin-top: 32px; }
 .work-item { padding: 28px 0; }
 .section > .work-item:first-of-type { padding-top: 0; }
