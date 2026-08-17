@@ -50,7 +50,7 @@ li + li { margin-top: .6em; }
   text-decoration: none;
 }
 .chapter-nav a:hover, .chapter-nav .current { background: #111; color: #fff; padding-left: 6px; padding-right: 6px; }
-.chapter-nav span, .page-kicker, .catalog-meta, .note-entry > time, .recent-list time, .note-branch, .site-footer, .breadcrumb {
+.chapter-nav span, .page-kicker, .catalog-meta, .note-entry > time, .note-branch, .site-footer, .breadcrumb {
   font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
 }
 .chapter-nav span { font-variant-numeric: tabular-nums; }
@@ -65,19 +65,13 @@ li + li { margin-top: .6em; }
 .section > h2 { margin-bottom: 22px; }
 .home-intro { max-width: 35em; margin: 0 0 48px; font-size: 1.12rem; line-height: 2; }
 
-.chapter-index, .recent-list { margin: 0; padding: 0; list-style: none; }
+.chapter-index { margin: 0; padding: 0; list-style: none; }
 .chapter-index li { display: grid; grid-template-columns: 52px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid #ddd; }
 .chapter-index li:first-child { border-top: 0; padding-top: 0; }
 .chapter-index li + li { margin-top: 0; }
 .chapter-index h3 { font-size: 1.2rem; }
 .chapter-index p { margin: 5px 0 0; color: #444; }
 .chapter-number { font-family: "Courier New", monospace; font-size: .82rem; }
-.recent-list li { display: grid; grid-template-columns: 92px 36px 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid #ddd; }
-.recent-list li + li { margin-top: 0; }
-.recent-list time, .recent-list a { font-size: .8rem; }
-.recent-list span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #555; }
-.index-more { margin: 18px 0 0; }
-
 .document-link { margin: 0 0 36px; font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; font-size: .86rem; }
 .work-catalog { border-top: 1px solid #111; }
 .catalog-entry {
@@ -167,8 +161,6 @@ li + li { margin-top: .6em; }
   .catalog-entry { grid-template-columns: 58px 1fr; }
   .catalog-image { grid-column: 2; width: min(100%, 220px); }
   .chapter-index li { grid-template-columns: 38px 1fr; gap: 10px; }
-  .recent-list li { grid-template-columns: 84px 1fr; }
-  .recent-list span { grid-column: 1 / -1; white-space: normal; }
   .note-entry { grid-template-columns: 58px 1fr; }
   .site-footer span { width: 100%; margin-left: 0; }
 }

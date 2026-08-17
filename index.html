@@ -15,16 +15,6 @@ description: 活動、作品、ノート、日記。
     </ol>
 </section>
 
-<section class="section recent-section">
-    <h2>最近の日記</h2>
-    <ol class="recent-list">
-        {% for post in site.posts limit:3 %}
-        <li><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%Y.%m.%d" }}</time><a href="{{ post.url | relative_url }}">読む</a><span>{{ post.excerpt | strip_html | strip_newlines | truncate: 76 }}</span></li>
-        {% endfor %}
-    </ol>
-    <p class="index-more"><a href="{{ '/blog/' | relative_url }}">日記をすべて読む</a></p>
-</section>
-
 <section class="section">
     <h2>活動について</h2>
     <p>制作コレクティブ「<a href="https://plantshop.work">プラントショップ</a>」では、場所の記述を公共化する活動のほか、「共同で作ること」をテーマに活動しています。</p>
