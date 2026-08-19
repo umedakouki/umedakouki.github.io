@@ -1,0 +1,5 @@
+{% assign category = site.data.works.categories[include.category] %}
+<p class="category-description">{{ category.description }}</p>
+{% if category.links %}<p class="document-link">{% for link in category.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% unless forloop.last %} {% endunless %}{% endfor %}</p>{% endif %}
+<h2 class="catalog-heading">関連する活動・作品</h2>
+{% include work-catalog.html category=include.category %}

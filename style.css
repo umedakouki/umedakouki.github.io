@@ -82,6 +82,7 @@ li + li { margin-top: .6em; }
 }
 .catalog-meta { display: flex; flex-direction: column; gap: 5px; font-size: .7rem; line-height: 1.45; }
 .catalog-meta time { font-weight: 700; font-variant-numeric: tabular-nums; }
+.catalog-category { align-self: flex-start; }
 .catalog-copy h2 { margin-bottom: 9px; }
 .catalog-copy p { margin-bottom: .7em; font-size: .92rem; line-height: 1.75; }
 .related-link { font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; font-size: .75rem !important; }
@@ -104,6 +105,9 @@ li + li { margin-top: .6em; }
 .video-disclosure[open] summary::before { content: "−"; }
 .video-disclosure summary:hover { text-decoration: underline; text-underline-offset: .18em; }
 .video-disclosure .video-wrap { margin: 12px 0 24px; }
+.category-description { max-width: 38em; margin-bottom: 24px; }
+.category-description + .document-link { margin-bottom: 40px; }
+.catalog-heading { margin: 40px 0 8px; }
 
 .note-entry { display: grid; grid-template-columns: 96px 1fr; gap: 24px; padding: 28px 0; }
 .note-entry > time { font-size: .75rem; font-weight: 700; font-variant-numeric: tabular-nums; }

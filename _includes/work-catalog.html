@@ -1,0 +1,26 @@
+<div class="work-catalog">
+{% for item in site.data.works.works %}
+    {% if include.category == nil or item.category == include.category %}
+    {% assign category = site.data.works.categories[item.category] %}
+    <article class="catalog-entry">
+        <div class="catalog-meta">
+            <time>{{ item.year }}</time>
+            <span>{{ item.type }}</span>
+            <a class="catalog-category" href="{{ category.url | relative_url }}">{{ category.label }}</a>
+        </div>
+        <div class="catalog-copy">
+            <h2>{% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h2>
+            <p>{{ item.description }}</p>
+            {% if item.related_links %}<p class="related-link">{% for link in item.related_links %}<a href="{{ link.url }}">{{ link.label }}</a>{% unless forloop.last %} {% endunless %}{% endfor %}</p>{% endif %}
+            {% for video in item.videos %}
+            <details class="video-disclosure">
+                <summary>{{ video.title }}</summary>
+                <div class="video-wrap"><iframe loading="lazy" src="{{ video.embed }}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+            </details>
+            {% endfor %}
+        </div>
+        {% if item.image %}{% if item.url %}<a class="catalog-image" href="{{ item.url | relative_url }}"><img src="{{ item.image | relative_url }}" alt="{{ item.image_alt }}"></a>{% else %}<div class="catalog-image"><img src="{{ item.image | relative_url }}" alt="{{ item.image_alt }}"></div>{% endif %}{% endif %}
+    </article>
+    {% endif %}
+{% endfor %}
+</div>
