@@ -1,11 +1,12 @@
 <div class="work-catalog">
 {% for item in site.data.works.works %}
     {% if include.category == nil or item.category == include.category %}
+    {% if include.featured != true or item.featured == true %}
     {% assign category = site.data.works.categories[item.category] %}
     <article class="catalog-entry">
         <div class="catalog-meta">
             <time>{{ item.year }}</time>
-            <span>{{ item.type }}</span>
+            <span>{{ item.roles | join: '・' }}</span>
             <a class="catalog-category" href="{{ category.url | relative_url }}">{{ category.label }}</a>
         </div>
         <div class="catalog-copy">
@@ -21,6 +22,7 @@
         </div>
         {% if item.image %}{% if item.url %}<a class="catalog-image" href="{{ item.url | relative_url }}"><img src="{{ item.image | relative_url }}" alt="{{ item.image_alt }}"></a>{% else %}<div class="catalog-image"><img src="{{ item.image | relative_url }}" alt="{{ item.image_alt }}"></div>{% endif %}{% endif %}
     </article>
+    {% endif %}
     {% endif %}
 {% endfor %}
 </div>
