@@ -82,9 +82,10 @@ li + li { margin-top: .6em; }
 }
 .catalog-meta { display: flex; flex-direction: column; gap: 5px; font-size: .7rem; line-height: 1.45; }
 .catalog-meta time { font-weight: 700; font-variant-numeric: tabular-nums; }
-.catalog-category { align-self: flex-start; }
+.catalog-category { align-self: flex-start; overflow-wrap: anywhere; }
+.catalog-copy { min-width: 0; }
 .catalog-copy h2 { margin-bottom: 9px; }
-.catalog-copy p { margin-bottom: .7em; font-size: .92rem; line-height: 1.75; }
+.catalog-copy p { margin-bottom: .7em; overflow-wrap: anywhere; font-size: .92rem; line-height: 1.75; }
 .related-link { font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; font-size: .75rem !important; }
 .catalog-image { align-self: start; }
 .catalog-image img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
