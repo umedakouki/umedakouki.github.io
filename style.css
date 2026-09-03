@@ -69,10 +69,12 @@ li + li { margin-top: .6em; }
 .chapter-index h3 { font-size: 1.2rem; }
 .chapter-index p { margin: 5px 0 0; color: #444; }
 .chapter-number { font-family: "Courier New", monospace; font-size: .82rem; }
-.contact-links { display: flex; flex-wrap: wrap; gap: 14px 32px; margin: 0; font-style: normal; }
-.contact-links a { display: inline-flex; gap: 10px; align-items: baseline; text-decoration: none; }
+.contact-links { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 14px 24px; margin: 0; font-style: normal; }
+.contact-row { display: contents; }
+.contact-links a { color: inherit; text-decoration: underline; text-underline-offset: .18em; }
 .contact-kind { font-size: .7rem; font-weight: 700; }
-.contact-value { overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: .18em; }
+.contact-value { overflow-wrap: anywhere; }
+.social-links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .document-link { margin: 0 0 36px; font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; font-size: .86rem; }
 .catalog-entry {
   display: grid;
