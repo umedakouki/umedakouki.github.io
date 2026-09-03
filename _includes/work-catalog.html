@@ -6,7 +6,7 @@
     <article class="catalog-entry">
         <div class="catalog-meta">
             <time>{{ item.year }}</time>
-            <span>{{ item.roles | join: '・' }}</span>
+            {% if item.roles.size > 0 %}<span>{{ item.roles | join: '・' }}</span>{% endif %}
             <a class="catalog-category" href="{{ category.url | relative_url }}">{{ category.label }}</a>
         </div>
         <div class="catalog-copy">

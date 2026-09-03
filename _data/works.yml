@@ -20,7 +20,7 @@ works:
     title: 展示「生産」
     category: plantshop
     featured: true
-    roles: [制作, 展示]
+    roles: [企画, 進行, 制作]
     url: /works/plantshop/seisan.html
     description: >-
       「プラントショップ」の最初の活動として、自分たちにとってもっとも基本的な行為である「作る」ということを、あらためて見つめ直すことにした。社会の中で「作る」ことは、しばしば「生産」という言葉に置き換えられる。しかし、生産とは、価値ある商品や作品を新しく生み出すことだけなのだろうか。何かを選び、捨て、残し、整えること。普段は見過ごしているものに気づくこと。生活の中の小さな違和感や、手元の所作、物の変化を捉え直すこと。そうした行為もまた、私たちの日常を作り出しているのではないかと考えた。
@@ -33,7 +33,7 @@ works:
   - year: '2026'
     title: 『メルトロンの日常』
     category: orion
-    roles: [絵コンテ, 撮影]
+    roles: [撮影]
     description: 『GELEL』のスピンオフ作品。怪獣メルトロンが人間の大学生生活に溶け込んでいる設定である。簡単な絵コンテ作成、撮影を依頼され受ける。
 
   - year: '2026'
@@ -46,7 +46,7 @@ works:
     title: 『GELEL』
     category: orion
     featured: true
-    roles: [美術, 設計, 制作]
+    roles: [美術, 撮影]
     url: /works/gelel.html
     description: 映像研究会オリヲン座での作品。怪獣と巨人が戦い、防衛隊と駆け引きをする自主怪獣特撮映画。担当は主に美術で、特に京都駅前の街並みを模したジオラマや、それを支える土台等の設計・制作を行った。京都工芸繊維大学学祭での展示、コミュニティスペース「5.6」、イベント「kougei noel」、「全国自主怪獣映画選手権 特撮のまち・須賀川大会」にて上映された。自主怪獣映画選手権では田口清隆賞を受賞した。
     image: /assets/thumbnail-gelel.avif
@@ -55,7 +55,7 @@ works:
   - year: 2023-2025
     title: 「ダイアローグ4.9」「ビデオローグス」
     category: orion
-    roles: [企画, 編集]
+    roles: [企画, 進行, 編集]
     description: オリヲン座での制作活動をレポートしつつ雑談する形式のラジオ「ダイアローグ4.9」と、その後続の「ビデオローグス」。企画、編集をする。
     image: /works/assets/thumbnail-dialog.jpg
     image_alt: 「ダイアローグ4.9」「ビデオローグス」
@@ -69,7 +69,7 @@ works:
     title: 『ふるまいの模型』
     category: university
     featured: true
-    roles: [構想, 設計, 制作]
+    roles: [制作]
     url: /works/furumainomokei.html
     description: 大学の卒業制作。都市の小さな記憶を共有するための演劇、その仮設劇場の構想。都市や建築に潜む無意識的な意味を、地域のふるまいと空間の関係から読み解くことを考えた。演劇の模倣性を手がかりに、その地域固有の空間の型を「ふるまいの模型」として抽出し、劇場設計へ展開した。 同年の京都工芸繊維大学 卒業・終了研究展にて展示された。
     image: /assets/thumbnail-furumai.jpg
@@ -78,7 +78,7 @@ works:
   - year: '2024'
     title: 『GreenRooms』
     category: orion
-    roles: [企画, 撮影, 編集, CG]
+    roles: [制作]
     description: 「Backroom」のパロディ作品。企画、撮影、編集、CGをする。設定上は制作者不明である。
     image: /works/assets/thumbnail-greenrooms.jpg
     image_alt: 『GreenRooms』
@@ -86,7 +86,7 @@ works:
   - year: '2024'
     title: 『マカロナージュは、水の泡となる。』
     category: orion
-    roles: [撮影, 編集助言]
+    roles: [撮影]
     description: インフルエンサーの内面を描く映像作品。撮影、編集アドバイスをする。
     image: /works/assets/thumbnail-macaron.png
     image_alt: 『マカロナージュは、水の泡となる。』
@@ -97,7 +97,7 @@ works:
   - year: 2022-2024
     title: 松ヶ崎祭での上映・展示
     category: orion
-    roles: [ポスター制作, 会場計画, 展示構成]
+    roles: []
     description: 京都工芸繊維大学の学祭「松ヶ崎祭」にて、オリヲン座の作品の上映・展示をする。2022年はポスター、2023年は会場計画、2024年は展示形式に注力する。
     image: /works/assets/thumbnail-gakusai.jpg
     image_alt: 松ヶ崎祭での上映・展示
@@ -105,7 +105,7 @@ works:
   - year: 2022-2024
     title: 森監督による一連の作品
     category: orion
-    roles: [企画, 撮影, 録音, 照明, 小道具, 美術]
+    roles: [企画, 撮影, 録音, 照明, 美術]
     description: メンバーの森大樹監督による複数の短中編自主制作映画。企画、撮影、録音、照明、小道具製作、舞台美術などに少しずつ関わる。
     image: /works/assets/thumbnail-soshihika.png
     image_alt: 森監督による一連の作品
@@ -122,7 +122,7 @@ works:
   - year: '2024'
     title: 建築資料アーカイブ・展示課題
     category: university
-    roles: [調査, 模型制作, 展示]
+    roles: [建築]
     description: 比叡山山頂に建つ「比叡山回転展望閣」の設計資料アーカイブから、模型を製作し展示する課題。模型を作りながら、設計者村野藤吾が考えたことや竣工当時の姿やその後の変遷を想像した。
     image: /works/assets/thumbnail-archive.JPG
     image_alt: 建築資料アーカイブ・展示課題
@@ -130,7 +130,7 @@ works:
   - year: '2023'
     title: 『映像的断片 2』
     category: orion
-    roles: [生成, 編集]
+    roles: [制作]
     description: 生成AIを利用して抽象的な光を生成し繋げた実験的な映像作品。映像研究会オリヲン座の上映会にて上映される。
     image: /works/assets/thumbnail-fragment2.jpg
     image_alt: 『映像的断片 2』
@@ -139,7 +139,7 @@ works:
     title: 『はしのはなし』
     category: orion
     featured: true
-    roles: [脚本, 撮影]
+    roles: [監督, 脚本, 撮影, 編集]
     description: 特徴的な形の橋を舞台にした短編映像作品。 すでにあった原案をもとに、橋の形から着想を得た「運命」というテーマで、橋を両端から中央に向かう⼆⼈の会話で構成される脚本を作成し、15分⻑回しの撮影に挑戦した。ロケ地とテーマと⼿法の融合を考えていた。 京都の学⽣中⼼のインディーズ映画祭「スポットライト映画祭」第⼀回にノミネート‧上映された。
     image: /works/assets/thumbnail-hashinohanashi.jpg
     image_alt: 『はしのはなし』
@@ -153,7 +153,7 @@ works:
   - year: '2023'
     title: 建築測量演習課題
     category: university
-    roles: [測量, 作図]
+    roles: [建築]
     description: 大学内のいくつかの建築空間や外構を測量し図面に起こす課題。画像はグラウンド脇でたまり場になりやすい場所の良さを解剖しようと測量し図面化した場所。
     image: /works/assets/thumbnail-survey.JPG
     image_alt: 建築測量演習課題
@@ -161,7 +161,7 @@ works:
   - year: '2023'
     title: メディアセンター設計課題
     category: university
-    roles: [設計]
+    roles: [建築]
     description: 敷地である元待賢小学校は1930年代の竣工であり、建築史的な観点と住民の意識の観点の両方から、この校舎の歴史的価値がうかがえる。ところが、周辺のビルやマンションの開発によって存在がかすんで見えるとともに、大通りから見る校舎はもはや"壁"であり、周辺の住宅街との隔絶が感じられる。そこで、歴史的価値を残しつつ、現在の周辺環境とのつながりをつくるために、「道」の貫入による校舎のコンバージョンを構想した。
     image: /works/assets/thumbnail-mediacenter.JPG
     image_alt: メディアセンター設計課題
@@ -169,7 +169,7 @@ works:
   - year: '2022'
     title: 『夏へのフィルム』
     category: orion
-    roles: [制作進行]
+    roles: [進行, 撮影, 編集]
     description: 「記録」と「記憶」がテーマの自主制作映画。制作の進行をする。
     image: /works/assets/thumbnail-filmintosummer.jpg
     image_alt: 『夏へのフィルム』
@@ -177,7 +177,7 @@ works:
   - year: '2022'
     title: 『映像的断片 1』
     category: orion
-    roles: [共同制作]
+    roles: [制作]
     description: モノやストーリーを意図的に崩壊させた実験的な映像作品。2人で制作する。
     image: /works/assets/thumbnail-fragment1.jpg
     image_alt: 『映像的断片 1』
@@ -185,7 +185,7 @@ works:
   - year: '2022'
     title: 『コーラフロート』
     category: orion
-    roles: [絵コンテ, 撮影計画, 撮影, 編集]
+    roles: [助監督]
     description: もどかしい恋愛を描いた自主制作映画。絵コンテの作成、撮影計画、撮影、編集をする。
     image: /works/assets/thumbnail-corafloat.jpg
     image_alt: 『コーラフロート』
@@ -193,7 +193,7 @@ works:
   - year: '2022'
     title: 保育園設計課題
     category: university
-    roles: [設計]
+    roles: [建築]
     description: 四方を囲まれた「部屋」ではなく、二面の壁によって挟まれたあいまいな領域に「保育室」や「遊戯室」「トイレ」などの機能をあてはめた。利用者は、壁に空いた大きなアーチを介して領域を横断しつつ動き回る。
     image: /works/assets/thumbnail-hoikuenn.JPG
     image_alt: 保育園設計課題
@@ -201,7 +201,7 @@ works:
   - year: '2022'
     title: 集合住宅設計課題
     category: university
-    roles: [設計]
+    roles: [建築]
     description: 共同体的なものが氷解し、個人と公に分裂した社会の中で、個人が心理的に自分の場所を持ちつつ、生活空間を共有するアパートを構想した。
     image: /works/assets/thumbnail-apartment.JPG
     image_alt: 集合住宅設計課題
@@ -209,7 +209,7 @@ works:
   - year: '2022'
     title: カフェ設計課題
     category: university
-    roles: [設計]
+    roles: [建築]
     description: 敷地である大学の中庭の良い所は、もとからある構造物の起伏と周辺の草木によって、適度な囲まれ感があることである。しかも、そうした場所が人によって複数ある。ここにできるカフェでは、そうしたもとの構造物と草木がなす空間性が多く残されているべきだと考える。その上で、この中庭全体に新たな空間の秩序をつくることを目指した。
     image: /assets/thumbnail-kadai.JPG
     image_alt: カフェ設計課題
@@ -217,7 +217,7 @@ works:
   - year: '2022'
     title: 空間デザイン基礎課題
     category: university
-    roles: [構想, 設計]
+    roles: [建築]
     description: 石をモチーフに、宝ヶ池公園に滞在するスペースを構想する。拾ってきた石は角ばりながら、多数の平らな面を持っていた。この石の形成過程に注目し、かつてそうだった形、そこにかかった力を想像して第二の表面を考えた。
     image: /works/assets/thumbnail-stone.JPG
     image_alt: 空間デザイン基礎課題
@@ -225,7 +225,7 @@ works:
   - year: '2021'
     title: ポスターデザイン課題
     category: university
-    roles: [制作]
+    roles: [デザイン]
     description: 日本美術の要素を用いて、現代のポスターを制作する課題。「慧可断臂図」をモチーフにして、職人的な仕事をする工場（コウバ）の祭典を想定し制作した。
     image: /works/assets/thumbnail-poster.JPG
     image_alt: ポスターデザイン課題
@@ -233,7 +233,7 @@ works:
   - year: '2021'
     title: モーター課題
     category: university
-    roles: [設計, 制作]
+    roles: [デザイン]
     description: モーターを自作し、その動力を用いて何かしらの機能を持ったものを制作する課題。水を張り、それをモーターによって震わせることで、そこに当てた光の揺らぎを楽しむものを制作した。
     image: /works/assets/thumbnail-motor.jpg
     image_alt: モーター課題
@@ -244,7 +244,7 @@ works:
   - year: '2021'
     title: 映画の構図を模写する課題
     category: university
-    roles: [模写]
+    roles: [デザイン]
     description: 映画の場面を模写し、そのビジュアル的な構図や明暗のバランスを理解する課題。題材にしたのは映画『タクシードライバー』。
     image: /works/assets/thumbnail-movie.JPG
     image_alt: 映画の構図を模写する課題
@@ -252,7 +252,7 @@ works:
   - year: '2021'
     title: 英語の授業での簡単な建築を構想する課題
     category: university
-    roles: [共同設計]
+    roles: [建築]
     description: ベルギーの学生と共同で、日本の「間」の概念を取り入れ、ベルギーの敷地に何かを構想する課題。内と外があいまいになる休憩所のようなものを構想した。
     image: /works/assets/thumbnail-english.JPG
     image_alt: 英語の授業での簡単な建築を構想する課題
@@ -260,7 +260,7 @@ works:
   - year: '2021'
     title: 立体構成基礎課題
     category: university
-    roles: [制作, 作図]
+    roles: [デザイン]
     description: 立方体を2つ結合し、図面に起こす課題。調和的に見える側面と、非調和的に見える側面があるアンビバレントな立体を制作した。
     image: /works/assets/thumbnail-object.JPG
     image_alt: 立体構成基礎課題
@@ -268,7 +268,7 @@ works:
   - year: '2021'
     title: ロゴデザイン課題
     category: university
-    roles: [制作]
+    roles: [デザイン]
     description: 何かしらのロゴを制作する課題。「日本きのこ学会」を題材にして、地味だが大事な発見のあるきのこに関する研究の先駆性を表現した。
     image: /works/assets/thumbnail-logo.JPG
     image_alt: ロゴデザイン課題
@@ -276,7 +276,7 @@ works:
   - year: '2021'
     title: パターンデザイン課題
     category: university
-    roles: [制作]
+    roles: [デザイン]
     description: 植物をモチーフに反復するビジュアルパターンを作る課題。遠くから見たときの印象と近くから見たときの印象が変わるような色味やパターンを考え、壁紙のようなものとして作った。
     image: /works/assets/thumbnail-pattern.JPG
     image_alt: パターンデザイン課題
