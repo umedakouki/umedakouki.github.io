@@ -6,9 +6,7 @@ description: 活動や作品制作を進める中で考えたこと、実験的�
 hide_description: true
 ---
 <div class="note-index">
-    <article class="note-entry"><time>2026</time><div><h2><a href="{{ '/practice/2026_interest2.html' | relative_url }}">作ることと見ること</a></h2></div></article>
-    <article class="note-entry"><time>2026</time><div><h2><a href="{{ '/practice/2026_plantshop.html' | relative_url }}">コレクティブ「プラントショップ」を始めた</a></h2></div></article>
-    <article class="note-entry"><time>2026</time><div><h2><a href="{{ '/practice/2026_desctiption.html' | relative_url }}">場所の記述についての習作</a></h2></div></article>
-    <article class="note-entry"><time>2026</time><div><h2><a href="{{ '/practice/2026_Interest.html' | relative_url }}">無意識的な場所の意味と、その共有について</a></h2></div></article>
-    <article class="note-entry"><time>2025</time><div><h2><a href="{{ '/practice/gelel/process.html' | relative_url }}">『GELEL』での作業プロセス</a></h2></div></article>
+{% for note in site.data.notes.notes %}
+    <article class="note-entry"><time>{{ note.year }}</time><div><h2><a href="{{ note.url | relative_url }}">{{ note.title }}</a></h2></div></article>
+{% endfor %}
 </div>

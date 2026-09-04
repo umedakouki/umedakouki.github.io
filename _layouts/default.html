@@ -11,10 +11,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-    {% assign page_title = page.title | default: site.title %}
+    {% assign work_category = site.data.works.categories[page.work_category] %}
+    {% assign resolved_title = page.title | default: work_category.label | default: site.title %}
+    {% if page.practice_series and page.title == nil %}{% capture resolved_title %}場所の記述に関する習作-シリーズ{{ page.practice_series }}{% endcapture %}{% endif %}
+    {% assign page_title = resolved_title %}
     {% if page.layout == 'post' %}{% assign page_title = page.date | date: "%Y.%m.%d" %}{% endif %}
-    {% assign page_description = page.description | default: site.description | strip_html %}
-    <title>{% if page.layout == 'post' %}{{ page.date | date: "%Y.%m.%d" }} | {% elsif page.title and page.url != '/' %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
+    {% assign page_description = page.description | default: work_category.description | default: site.description | strip_html %}
+    <title>{% if page.layout == 'post' %}{{ page.date | date: "%Y.%m.%d" }} | {% elsif resolved_title and page.url != '/' %}{{ resolved_title | escape }} | {% endif %}{{ site.title | escape }}</title>
     <meta name="description" content="{{ page_description | escape }}">
     <meta property="og:title" content="{{ page_title | escape }}">
     <meta property="og:description" content="{{ page_description | escape }}">
@@ -36,16 +39,16 @@
         <div class="page">
             <header class="page-header">
                 <p class="page-kicker">{% if page.url == '/' %}INDEX{% elsif page.url contains '/practice' %}NOTES{% elsif page.url contains '/works' %}WORKS{% elsif page.url == '/blog/' or page.layout == 'post' %}DIARY{% else %}PAGE{% endif %}</p>
-                <h1>{% if page.layout == 'post' %}{{ page.date | date: "%Y.%m.%d" }}{% else %}{{ page.heading | default: page.title | escape }}{% endif %}</h1>
+                <h1>{% if page.layout == 'post' %}{{ page.date | date: "%Y.%m.%d" }}{% else %}{{ page.heading | default: resolved_title | escape }}{% endif %}</h1>
                 {% if page.description and page.url != '/' and page.hide_description != true %}<p class="page-description">{{ page.description | escape }}</p>{% endif %}
             </header>
 
             {% if page.layout == 'post' %}
             <nav class="breadcrumb" aria-label="現在位置"><a href="{{ '/blog/' | relative_url }}">日記</a><span>/</span><span>{{ page.date | date: "%Y.%m.%d" }}</span></nav>
             {% elsif page.url contains '/works/' %}
-            <nav class="breadcrumb" aria-label="現在位置"><a href="{{ '/works.html' | relative_url }}">活動・作品</a><span>/</span><span>{{ page.title | escape }}</span></nav>
+            <nav class="breadcrumb" aria-label="現在位置"><a href="{{ '/works.html' | relative_url }}">活動・作品</a><span>/</span><span>{{ resolved_title | escape }}</span></nav>
             {% elsif page.url contains '/practice/' %}
-            <nav class="breadcrumb" aria-label="現在位置"><a href="{{ '/practice.html' | relative_url }}">ノート</a><span>/</span><span>{{ page.title | escape }}</span></nav>
+            <nav class="breadcrumb" aria-label="現在位置"><a href="{{ '/practice.html' | relative_url }}">ノート</a><span>/</span><span>{{ resolved_title | escape }}</span></nav>
             {% endif %}
 
             <main>{{ content }}</main>
