@@ -5,6 +5,9 @@ heading: 庭
 description: 公開しているメモ。
 garden_index: true
 ---
+<style>.garden-sort{display:flex;gap:1rem;margin:0 0 1rem}.garden-sort button{border:0;padding:.2rem 0;color:#666;background:transparent}.garden-sort button[aria-pressed="true"]{color:#000;text-decoration:underline;text-underline-offset:.3rem}.garden-page-list article{grid-template-columns:96px minmax(0,1fr) auto}.garden-page-list small{color:#777;font-size:.72rem}</style>
+<div class="garden-sort" aria-label="並び順"><button type="button" data-garden-sort="linked" aria-pressed="true">被リンク順</button><button type="button" data-garden-sort="newest" aria-pressed="false">新しい順</button></div>
 <section class="garden-page-list">
-  <article><time datetime="2026-09-05T23:03:30.542581900+00:00">2026-09-05</time><h2><a href="{{ '/garden/381fa316-11ec-4848-9ac5-5114bbaa0a34/' | relative_url }}">以前書いた映画感想</a></h2></article>
+  <article data-updated="2026-09-05T23:03:30.542581900+00:00" data-inbound="0"><time datetime="2026-09-05T23:03:30.542581900+00:00">2026-09-05</time><h2><a href="{{ '/garden/381fa316-11ec-4848-9ac5-5114bbaa0a34/' | relative_url }}">以前書いた映画感想</a></h2><small>← 0</small></article>
 </section>
+<script>(()=>{const list=document.querySelector('.garden-page-list');const buttons=[...document.querySelectorAll('[data-garden-sort]')];if(!list)return;const sort=mode=>{const items=[...list.querySelectorAll('article')];items.sort((a,b)=>mode==='linked'?(Number(b.dataset.inbound)-Number(a.dataset.inbound)||b.dataset.updated.localeCompare(a.dataset.updated)):b.dataset.updated.localeCompare(a.dataset.updated));items.forEach(item=>list.appendChild(item));buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.gardenSort===mode)))};buttons.forEach(button=>button.addEventListener('click',()=>sort(button.dataset.gardenSort)));sort('linked')})()</script>
