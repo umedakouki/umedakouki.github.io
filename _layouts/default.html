@@ -33,12 +33,13 @@
                 <a href="{{ '/works.html' | relative_url }}"{% if page.url contains '/works' %} class="current" aria-current="page"{% endif %}><span>01</span>活動・作品</a>
                 <a href="{{ '/practice.html' | relative_url }}"{% if page.url contains '/practice' %} class="current" aria-current="page"{% endif %}><span>02</span>ノート</a>
                 <a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' or page.layout == 'post' %} class="current" aria-current="page"{% endif %}><span>03</span>日記</a>
+                <a href="{{ '/garden/' | relative_url }}"{% if page.url contains '/garden/' %} class="current" aria-current="page"{% endif %}><span>04</span>庭</a>
             </nav>
         </aside>
 
         <div class="page">
             <header class="page-header">
-                <p class="page-kicker">{% if page.url == '/' %}INDEX{% elsif page.url contains '/practice' %}NOTES{% elsif page.url contains '/works' %}WORKS{% elsif page.url == '/blog/' or page.layout == 'post' %}DIARY{% else %}PAGE{% endif %}</p>
+                <p class="page-kicker">{% if page.url == '/' %}INDEX{% elsif page.url contains '/practice' %}NOTES{% elsif page.url contains '/works' %}WORKS{% elsif page.url == '/blog/' or page.layout == 'post' %}DIARY{% elsif page.url contains '/garden/' %}GARDEN{% else %}PAGE{% endif %}</p>
                 <h1>{% if page.layout == 'post' %}{{ page.date | date: "%Y.%m.%d" }}{% else %}{{ page.heading | default: resolved_title | escape }}{% endif %}</h1>
                 {% if page.description and page.url != '/' and page.hide_description != true %}<p class="page-description">{{ page.description | escape }}</p>{% endif %}
             </header>

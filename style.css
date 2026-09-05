@@ -154,6 +154,11 @@ li + li { margin-top: .6em; }
 .diary-scroll-buffer { height: 70vh; }
 .post-nav { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 42px; padding-top: 18px; }
 
+.garden-page-list article { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 24px; align-items: baseline; padding: 14px 0; }
+.garden-page-list time { color: #555; font-size: .72rem; font-variant-numeric: tabular-nums; }
+.garden-page-list h2 { font-size: 1rem; font-weight: 400; }
+.garden-page-list a:hover, main a[href^="/garden/"]:hover { background: #e7e7e7; text-decoration: none; }
+
 .site-footer { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 56px; padding-top: 18px; border-top: 1px solid #111; color: #555; font-size: .72rem; }
 .site-footer span { margin-left: auto; }
 .current { font-weight: inherit; }
@@ -163,7 +168,7 @@ li + li { margin-top: .6em; }
   .site-shell { display: block; width: min(100%, 720px); }
   .site-rail { position: static; margin-bottom: 38px; }
   .site-rail .site-name { margin-bottom: 18px; }
-  .chapter-nav { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .chapter-nav { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .chapter-nav a { display: block; padding: 8px 4px; border: 0; font-size: .72rem; white-space: nowrap; }
   .chapter-nav a:hover, .chapter-nav .current { padding: 8px 4px; }
   .chapter-nav span { display: block; font-size: .62rem; }
@@ -180,6 +185,7 @@ li + li { margin-top: .6em; }
   .catalog-image { grid-column: 2; width: min(100%, 220px); }
   .chapter-index li { grid-template-columns: 38px 1fr; gap: 10px; }
   .note-entry { grid-template-columns: 58px 1fr; }
+  .garden-page-list article { grid-template-columns: 58px 1fr; gap: 16px; }
   .image-set { display: grid; gap: 12px; }
   .image-set img { width: 100%; }
   .site-footer span { width: 100%; margin-left: 0; }
