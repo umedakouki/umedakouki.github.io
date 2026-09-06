@@ -29,7 +29,7 @@
         <aside class="site-rail">
             <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
             <nav class="chapter-nav" aria-label="主要な目次">
-                <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="current" aria-current="page"{% endif %}><span>00</span>ホーム</a>
+                <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="current" aria-current="page"{% endif %}><span>00</span>Garden</a>
                 <a href="{{ '/works.html' | relative_url }}"{% if page.url contains '/works' %} class="current" aria-current="page"{% endif %}><span>01</span>活動・作品</a>
                 <a href="{{ '/practice.html' | relative_url }}"{% if page.url contains '/practice' %} class="current" aria-current="page"{% endif %}><span>02</span>ノート</a>
                 <a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' or page.layout == 'post' %} class="current" aria-current="page"{% endif %}><span>03</span>日記</a>
@@ -39,7 +39,7 @@
 
         <div class="page">
             <header class="page-header">
-                <p class="page-kicker">{% if page.url == '/' %}INDEX{% elsif page.url contains '/practice' %}NOTES{% elsif page.url contains '/works' %}WORKS{% elsif page.url == '/blog/' or page.layout == 'post' %}DIARY{% elsif page.url contains '/garden/' %}GARDEN{% else %}PAGE{% endif %}</p>
+                <p class="page-kicker">{% if page.url == '/' %}GARDEN{% elsif page.url contains '/practice' %}NOTES{% elsif page.url contains '/works' %}WORKS{% elsif page.url == '/blog/' or page.layout == 'post' %}DIARY{% elsif page.url contains '/garden/' %}GARDEN NOTES{% else %}PAGE{% endif %}</p>
                 <h1>{% if page.layout == 'post' %}{{ page.date | date: "%Y.%m.%d" }}{% else %}{{ page.heading | default: resolved_title | escape }}{% endif %}</h1>
                 {% if page.description and page.url != '/' and page.hide_description != true %}<p class="page-description">{{ page.description | escape }}</p>{% endif %}
             </header>
@@ -56,7 +56,7 @@
 
             <footer class="site-footer">
                 <a href="#top">ページ上部へ</a>
-                <span>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</span>
+                <span>&copy; {{ site.time | date: '%Y' }} 梅田航輝</span>
             </footer>
         </div>
     </div>
