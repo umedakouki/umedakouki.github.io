@@ -5,7 +5,7 @@ heading: "インターネットの交換可能性美学"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-06T09:31:57.514494600+00:00">更新 2026-09-06 09:31</time><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-06T09:31:57.514494600+00:00">更新 2026-09-06 18:31</time><div class="garden-body" markdown="1">
 
 近代的な文化では、
 
@@ -55,3 +55,4 @@ Vaporwave\
 - [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
 
 </div></article>
+<script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

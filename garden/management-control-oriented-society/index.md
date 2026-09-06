@@ -5,7 +5,7 @@ heading: "管理＝制御型社会"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-06T07:25:32.580582+00:00">更新 2026-09-06 07:25</time><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-06T07:25:32.580582+00:00">更新 2026-09-06 16:25</time><div class="garden-body" markdown="1">
 
 管理や制御といったものについて考えていきたい。
 
@@ -20,3 +20,4 @@ hide_description: true
 - [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
 
 </div></article>
+<script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

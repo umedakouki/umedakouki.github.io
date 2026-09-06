@@ -5,7 +5,7 @@ heading: "個人ウェブサイト集"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-06T07:35:52.982485100+00:00">更新 2026-09-06 07:35</time><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-06T07:35:52.982485100+00:00">更新 2026-09-06 16:35</time><div class="garden-body" markdown="1">
 
 ## ego
 
@@ -32,3 +32,4 @@ hide_description: true
 <br />
 
 </div></article>
+<script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

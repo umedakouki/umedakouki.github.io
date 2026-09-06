@@ -5,7 +5,7 @@ heading: "LINE Seed JP"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-06T06:29:41.838719500+00:00">更新 2026-09-06 06:29</time><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-06T06:29:41.838719500+00:00">更新 2026-09-06 15:29</time><div class="garden-body" markdown="1">
 
 LINE Seedは、LINEが自社のサービスやブランド全体で使用するために開発したコーポレートフォントです。単にLINEらしい見た目をつくることだけが目的ではなく、スマートフォンやWebサービスの画面上で、日本語、英語、数字、記号、アイコンなどが混在しても、ひとつの統一された視覚言語として見えることを重視して設計されています。
 
@@ -22,3 +22,4 @@ LINE Seedの重要な特徴は、日本語だけを独立して考えていな�
 - [フォントの勉強]({{ '/garden/font-study/' | relative_url }})
 
 </div></article>
+<script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

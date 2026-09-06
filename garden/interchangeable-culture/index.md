@@ -5,9 +5,9 @@ heading: "交換可能な文化"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-06T08:55:57.492137200+00:00">更新 2026-09-06 08:55</time><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-06T08:55:57.492137200+00:00">更新 2026-09-06 17:55</time><div class="garden-body" markdown="1">
 
-社会の下部にあるインフラは強固なのに、その上で流行する文化や意味は無限に交換可能で、どれも決定的ではない。これはインターネット美学、特にLiminal spaceを作り出す構造と密接にかかわるのではないか。→[インターネット美学の交換可能性]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
+社会の下部にあるインフラは強固なのに、その上で流行する文化や意味は無限に交換可能で、どれも決定的ではない。これはインターネット美学、特にLiminal spaceを作り出す構造と密接にかかわるのではないか。→[インターネットの交換可能性美学]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
 
 以下はChatGPTより
 
@@ -28,3 +28,4 @@ hide_description: true
 - [管理＝制御型社会]({{ '/garden/management-control-oriented-society/' | relative_url }})
 
 </div></article>
+<script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

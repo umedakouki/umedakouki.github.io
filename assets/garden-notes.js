@@ -1,4 +1,8 @@
 (() => {
+  document.querySelectorAll('.garden-body a[href^="http://"], .garden-body a[href^="https://"]').forEach(link => {
+    link.target = '_blank'
+    link.rel = 'noopener noreferrer'
+  })
   const list = document.querySelector('.garden-page-list')
   const input = document.querySelector('#garden-search')
   const count = document.querySelector('#garden-search-count')
