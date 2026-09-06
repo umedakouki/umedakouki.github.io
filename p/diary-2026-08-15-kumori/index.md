@@ -4,7 +4,7 @@ title: "2026.08.15"
 garden_page: true
 garden_updated: "2026-08-15T00:00:00Z"
 ---
-<article class="garden-reader"><h1>2026.08.15</h1><time datetime="2026-08-15T00:00:00Z">更新 2026-08-15 00:00</time><div class="garden-body">
+<article class="garden-reader"><h1>2026.08.15</h1><time datetime="2026-08-15T00:00:00Z">更新 2026-08-15 00:00</time><div class="garden-body" markdown="1">
 
 8時に起床。と同時に、プラントショップでの新たな制作企画についての相談の電話を受ける。状況が面白い企画だから、ストーリーの精密性よりも、読み取れることが多い方がいい。そんなわけで状況を生み出す小道具やシーンの構想を手伝った。今回は主導ではないのに、なぜか自分が決断することが多く、ほんとうにそれでいいのか不安になる。
 

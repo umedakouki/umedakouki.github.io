@@ -4,7 +4,7 @@ title: "2026.08.07"
 garden_page: true
 garden_updated: "2026-08-07T00:00:00Z"
 ---
-<article class="garden-reader"><h1>2026.08.07</h1><time datetime="2026-08-07T00:00:00Z">更新 2026-08-07 00:00</time><div class="garden-body">
+<article class="garden-reader"><h1>2026.08.07</h1><time datetime="2026-08-07T00:00:00Z">更新 2026-08-07 00:00</time><div class="garden-body" markdown="1">
 
 洗濯物を干している。東京学生映画祭関連で4日間ほど出かけたのに加え、その後もバタバタして家事をする暇がなかったので、洗濯するものがたまっていた。今日は3回も洗濯機をこき使い、ベランダ、室内、椅子の上のあらゆるところに干している。エアコンは涼しい風を吐き出す。
 

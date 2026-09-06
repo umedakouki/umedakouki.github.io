@@ -4,7 +4,7 @@ title: "2026.02.16"
 garden_page: true
 garden_updated: "2026-02-16T00:00:00Z"
 ---
-<article class="garden-reader"><h1>2026.02.16</h1><time datetime="2026-02-16T00:00:00Z">更新 2026-02-16 00:00</time><div class="garden-body">
+<article class="garden-reader"><h1>2026.02.16</h1><time datetime="2026-02-16T00:00:00Z">更新 2026-02-16 00:00</time><div class="garden-body" markdown="1">
 
 3日前、近所のサイゼで数年会っていなかった大学の同級生と会った。留年と休学を経て今は大学に復帰しているらしい。
 

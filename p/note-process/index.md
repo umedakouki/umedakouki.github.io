@@ -4,7 +4,7 @@ title: "『GELEL』での作業プロセス"
 garden_page: true
 garden_updated: "2025-01-01T00:00:00Z"
 ---
-<article class="garden-reader"><h1>『GELEL』での作業プロセス</h1><time datetime="2025-01-01T00:00:00Z">更新 2025-01-01 00:00</time><div class="garden-body">
+<article class="garden-reader"><h1>『GELEL』での作業プロセス</h1><time datetime="2025-01-01T00:00:00Z">更新 2025-01-01 00:00</time><div class="garden-body" markdown="1">
 
 <p class="document-link"><a href="{{ '/works/gelel.html' | relative_url }}">『GELEL』</a></p>
 

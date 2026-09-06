@@ -4,7 +4,7 @@ title: "森監督による一連の作品"
 garden_page: true
 garden_updated: "2026-09-06T05:01:39.493700Z"
 ---
-<article class="garden-reader"><h1>森監督による一連の作品</h1><time datetime="2026-09-06T05:01:39.493700Z">更新 2026-09-06 05:01</time><div class="garden-body">
+<article class="garden-reader"><h1>森監督による一連の作品</h1><time datetime="2026-09-06T05:01:39.493700Z">更新 2026-09-06 05:01</time><div class="garden-body" markdown="1">
 
 2022-2024
 担当：企画、撮影、録音、照明、美術

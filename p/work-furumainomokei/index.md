@@ -4,7 +4,7 @@ title: "『ふるまいの模型』"
 garden_page: true
 garden_updated: "2026-09-06T05:18:39.758134Z"
 ---
-<article class="garden-reader"><h1>『ふるまいの模型』</h1><time datetime="2026-09-06T05:18:39.758134Z">更新 2026-09-06 05:18</time><div class="garden-body">
+<article class="garden-reader"><h1>『ふるまいの模型』</h1><time datetime="2026-09-06T05:18:39.758134Z">更新 2026-09-06 05:18</time><div class="garden-body" markdown="1">
 
 2025
 担当：制作

@@ -4,7 +4,7 @@ title: "無意識的な場所の意味と、その共有について"
 garden_page: true
 garden_updated: "2026-01-01T00:00:00Z"
 ---
-<article class="garden-reader"><h1>無意識的な場所の意味と、その共有について</h1><time datetime="2026-01-01T00:00:00Z">更新 2026-01-01 00:00</time><div class="garden-body">
+<article class="garden-reader"><h1>無意識的な場所の意味と、その共有について</h1><time datetime="2026-01-01T00:00:00Z">更新 2026-01-01 00:00</time><div class="garden-body" markdown="1">
 
 <h2>現在の関心</h2>
 <p>建築や都市空間において身体的な経験によって醸成される、その場所の無意識的な場所の意味に関心があります。例えば、</p>

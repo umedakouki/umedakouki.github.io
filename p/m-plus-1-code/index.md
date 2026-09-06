@@ -4,7 +4,7 @@ title: "M PLUS 1 Code"
 garden_page: true
 garden_updated: "2026-09-06 01:53:12.635049+00:00"
 ---
-<article class="garden-reader"><h1>M PLUS 1 Code</h1><time datetime="2026-09-06 01:53:12.635049+00:00">更新 2026-09-06 01:53</time><div class="garden-body">
+<article class="garden-reader"><h1>M PLUS 1 Code</h1><time datetime="2026-09-06 01:53:12.635049+00:00">更新 2026-09-06 01:53</time><div class="garden-body" markdown="1">
 
 M PLUS 1 Code は、プログラミングやコンピュータ上で文字を読むことを意識して設計された日本語フォントです。見た目を単純に「デジタル風」にしているのではなく、画面上で文字を正確に識別しやすいことを重視して作られています。
 

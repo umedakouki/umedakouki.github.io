@@ -4,7 +4,7 @@ title: "2026.03.11"
 garden_page: true
 garden_updated: "2026-03-11T00:00:00Z"
 ---
-<article class="garden-reader"><h1>2026.03.11</h1><time datetime="2026-03-11T00:00:00Z">更新 2026-03-11 00:00</time><div class="garden-body">
+<article class="garden-reader"><h1>2026.03.11</h1><time datetime="2026-03-11T00:00:00Z">更新 2026-03-11 00:00</time><div class="garden-body" markdown="1">
 
 あまり自覚はなかったが、ここ20年くらいで頻発した大災害は、自分のアイデンティティに深く影響を与えていると思う。
 

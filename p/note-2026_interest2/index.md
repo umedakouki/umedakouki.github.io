@@ -4,7 +4,7 @@ title: "作ることと見ること"
 garden_page: true
 garden_updated: "2026-01-01T00:00:00Z"
 ---
-<article class="garden-reader"><h1>作ることと見ること</h1><time datetime="2026-01-01T00:00:00Z">更新 2026-01-01 00:00</time><div class="garden-body">
+<article class="garden-reader"><h1>作ることと見ること</h1><time datetime="2026-01-01T00:00:00Z">更新 2026-01-01 00:00</time><div class="garden-body" markdown="1">
 
 <h2>関心と方向性について</h2>
 <p>どこかの風景、なにかの出来事を目にすると、そこで行われたかもしれない、あるいは行われるかもしれない、ささやかなドラマを想像せずにはいられない。そして私の頭の中に、まるで映画のワンシーンのように、カメラで切り取られた映像になって現れる。</p>

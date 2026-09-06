@@ -4,7 +4,7 @@ title: "コレクティブ「プラントショップ」を始めた"
 garden_page: true
 garden_updated: "2026-01-01T00:00:00Z"
 ---
-<article class="garden-reader"><h1>コレクティブ「プラントショップ」を始めた</h1><time datetime="2026-01-01T00:00:00Z">更新 2026-01-01 00:00</time><div class="garden-body">
+<article class="garden-reader"><h1>コレクティブ「プラントショップ」を始めた</h1><time datetime="2026-01-01T00:00:00Z">更新 2026-01-01 00:00</time><div class="garden-body" markdown="1">
 
 <p><a href="https://plantshop.work">プラントショップのウェブサイト</a></p>
 <p>「プラントショップ」は、「さまざまな分野を横断し、持続的に制作・展示・販売を行う」ための組織としている。すごく抽象的だ。今の参加者は大学の建築学生がほとんどなので、かろうじて建築的な性格を帯びるだろうが、それよりも映像や美術や演劇といった実験的な活動を志向している。つまり、まだやりたいことや方向性が決まっていないのだ。</p>

@@ -4,7 +4,7 @@ title: "2026.07.11"
 garden_page: true
 garden_updated: "2026-07-11T00:00:00Z"
 ---
-<article class="garden-reader"><h1>2026.07.11</h1><time datetime="2026-07-11T00:00:00Z">更新 2026-07-11 00:00</time><div class="garden-body">
+<article class="garden-reader"><h1>2026.07.11</h1><time datetime="2026-07-11T00:00:00Z">更新 2026-07-11 00:00</time><div class="garden-body" markdown="1">
 
 最近はファインアートを作りたくなっている。映画でも写真でも、絵画でも彫刻でもいい。何かしら感じたことをストレートに表現することに立ち返りたい。この世に未練があるとすれば、そうした純粋な作家活動をまだ本格的にしていないことだ。
 
