@@ -36,4 +36,8 @@ hide_description: true
 <p>現在は、写真や音声や映像といったメディアを用いることで、演劇のような構造をもった共有の仕方を考えています。</p>
 <a href="/practice/2026_desctiption.html">場所の記述についての習作</a>
 
+## このページへの言及
+
+- [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
+
 </div></article>

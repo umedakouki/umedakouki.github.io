@@ -79,4 +79,8 @@ hide_description: true
     </li>
 </ul>
 
+## このページへの言及
+
+- [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
+
 </div></article>

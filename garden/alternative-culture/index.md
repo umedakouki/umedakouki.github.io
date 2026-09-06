@@ -7,7 +7,7 @@ hide_description: true
 ---
 <article class="garden-note-reader"><time datetime="2026-09-06T06:39:16.861106+00:00">更新 2026-09-06 06:39</time><div class="garden-body" markdown="1">
 
-社会の下部にあるインフラは強固なのに、その上で流行する文化や意味は無限に交換可能で、どれも決定的ではない。これはインターネット美学、特にLiminal spaceを作り出す構造と密接にかかわるのではないか。→インターネット美学の交換可能性
+社会の下部にあるインフラは強固なのに、その上で流行する文化や意味は無限に交換可能で、どれも決定的ではない。これはインターネット美学、特にLiminal spaceを作り出す構造と密接にかかわるのではないか。→[インターネット美学の交換可能性]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
 
 以下はChatGPTより
 
