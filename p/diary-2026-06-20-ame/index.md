@@ -4,7 +4,7 @@ title: "2026.06.20"
 garden_page: true
 garden_updated: "2026-06-20T00:00:00Z"
 ---
-<article class="garden-reader"><h1>2026.06.20</h1><time datetime="2026-06-20T00:00:00Z">更新 2026-06-20 00:00</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>2026.06.20</h1><time datetime="2026-06-20T00:00:00Z">更新 2026-06-20 00:00</time><div class="garden-body">
 
 6時起床。昨日の撮影で腰が痛い。展示で使う予定のプロジェクターのレンタル予約が、自動システムにより拒否されたというメールが来ていた。異議申し立ての旨のメールを返す。
 

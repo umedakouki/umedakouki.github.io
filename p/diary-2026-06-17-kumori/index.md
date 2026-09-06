@@ -4,7 +4,7 @@ title: "2026.06.17"
 garden_page: true
 garden_updated: "2026-06-17T00:00:00Z"
 ---
-<article class="garden-reader"><h1>2026.06.17</h1><time datetime="2026-06-17T00:00:00Z">更新 2026-06-17 00:00</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>2026.06.17</h1><time datetime="2026-06-17T00:00:00Z">更新 2026-06-17 00:00</time><div class="garden-body">
 
 『空間の生産』に書かれている、国家や資本による日常の疎外化については、アトリエ・ワンによる『コモナリティーズ』でも指摘されている。少し長いが、『空間の生産』の訳者解説より引用する。
 

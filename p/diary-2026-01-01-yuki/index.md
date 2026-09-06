@@ -4,7 +4,7 @@ title: "2026.01.01"
 garden_page: true
 garden_updated: "2026-01-01T00:00:00Z"
 ---
-<article class="garden-reader"><h1>2026.01.01</h1><time datetime="2026-01-01T00:00:00Z">更新 2026-01-01 00:00</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>2026.01.01</h1><time datetime="2026-01-01T00:00:00Z">更新 2026-01-01 00:00</time><div class="garden-body">
 
 外は雪。10cmほど積もってそのまま。もう2倍厚く地面が覆われれば本格的な銀世界になるだろう。現状は建物の屋根も道路も隠れきらずに、歩いても見渡してもそれほど見るものはない。というわけで朝からずっと家の中で作業とゲームをしている（1）。YouTubeで音楽を流したり、stand.fmでフォロー中の配信者の雑談をだらだらと聞いている。世間は年末年始の非日常モードだけれど、それに身を投じる気分にはならず、特別なことはしていない。昼からビールを飲んでいることを除けばであるが。
 

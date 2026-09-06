@@ -4,7 +4,7 @@ title: "フォントの勉強"
 garden_page: true
 garden_updated: "2026-09-06 04:15:32.144325+00:00"
 ---
-<article class="garden-reader"><h1>フォントの勉強</h1><time datetime="2026-09-06 04:15:32.144325+00:00">更新 2026-09-06 04:15</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>フォントの勉強</h1><time datetime="2026-09-06 04:15:32.144325+00:00">更新 2026-09-06 04:15</time><div class="garden-body">
 
 [web-typography-glossary](https://github.com/fontplus/web-typography-glossary/tree/master)
 

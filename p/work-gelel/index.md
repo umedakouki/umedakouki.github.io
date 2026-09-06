@@ -4,7 +4,7 @@ title: "『GELEL』"
 garden_page: true
 garden_updated: "2026-09-06T05:18:39.758134Z"
 ---
-<article class="garden-reader"><h1>『GELEL』</h1><time datetime="2026-09-06T05:18:39.758134Z">更新 2026-09-06 05:18</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>『GELEL』</h1><time datetime="2026-09-06T05:18:39.758134Z">更新 2026-09-06 05:18</time><div class="garden-body">
 
 2025
 担当：美術、撮影

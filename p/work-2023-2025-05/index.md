@@ -4,7 +4,7 @@ title: "「ダイアローグ4.9」「ビデオローグス」"
 garden_page: true
 garden_updated: "2026-09-06T05:01:39.493700Z"
 ---
-<article class="garden-reader"><h1>「ダイアローグ4.9」「ビデオローグス」</h1><time datetime="2026-09-06T05:01:39.493700Z">更新 2026-09-06 05:01</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>「ダイアローグ4.9」「ビデオローグス」</h1><time datetime="2026-09-06T05:01:39.493700Z">更新 2026-09-06 05:01</time><div class="garden-body">
 
 2023-2025
 担当：企画、進行、編集

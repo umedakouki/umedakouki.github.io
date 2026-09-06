@@ -4,7 +4,7 @@ title: "2026.01.21"
 garden_page: true
 garden_updated: "2026-01-21T00:00:00Z"
 ---
-<article class="garden-reader"><h1>2026.01.21</h1><time datetime="2026-01-21T00:00:00Z">更新 2026-01-21 00:00</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>2026.01.21</h1><time datetime="2026-01-21T00:00:00Z">更新 2026-01-21 00:00</time><div class="garden-body">
 
 データベース外部化としてのSNSという状況について少し考えている。以下はただの書きなぐりなので読みやすさは考慮していない。
 

@@ -4,7 +4,7 @@ title: "2026.03.16"
 garden_page: true
 garden_updated: "2026-03-16T00:00:00Z"
 ---
-<article class="garden-reader"><h1>2026.03.16</h1><time datetime="2026-03-16T00:00:00Z">更新 2026-03-16 00:00</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>2026.03.16</h1><time datetime="2026-03-16T00:00:00Z">更新 2026-03-16 00:00</time><div class="garden-body">
 
 最近は「終末」について考えている。主に『少女終末旅行』というアニメを観てから、原作漫画も一気読みしてしまったからだ。ホントはそれだけではないけど。
 

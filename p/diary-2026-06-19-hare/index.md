@@ -4,7 +4,7 @@ title: "2026.06.19"
 garden_page: true
 garden_updated: "2026-06-19T00:00:00Z"
 ---
-<article class="garden-reader"><h1>2026.06.19</h1><time datetime="2026-06-19T00:00:00Z">更新 2026-06-19 00:00</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>2026.06.19</h1><time datetime="2026-06-19T00:00:00Z">更新 2026-06-19 00:00</time><div class="garden-body">
 
 6月26日からのプラントショップでの展示「生産」では、新たに映像作品を制作し展示する予定だ。その素材を（今さらながら）撮る一日だった。空に浮かぶ雲のひとつの動きをカメラで追跡するもので、その雲が消えてなくなる、または15分経つまで撮り続ける。
 

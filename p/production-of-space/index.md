@@ -4,7 +4,7 @@ title: "『空間の生産』の理論構成"
 garden_page: true
 garden_updated: "2026-09-06 00:09:08.683302+00:00"
 ---
-<article class="garden-reader"><h1>『空間の生産』の理論構成</h1><time datetime="2026-09-06 00:09:08.683302+00:00">更新 2026-09-06 00:09</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>『空間の生産』の理論構成</h1><time datetime="2026-09-06 00:09:08.683302+00:00">更新 2026-09-06 00:09</time><div class="garden-body">
 
 以下はアンリ・ルフェーブル『空間の生産』の内容の要約である。
 

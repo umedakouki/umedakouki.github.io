@@ -4,7 +4,7 @@ title: "2026.07.26"
 garden_page: true
 garden_updated: "2026-07-26T00:00:00Z"
 ---
-<article class="garden-reader"><h1>2026.07.26</h1><time datetime="2026-07-26T00:00:00Z">更新 2026-07-26 00:00</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>2026.07.26</h1><time datetime="2026-07-26T00:00:00Z">更新 2026-07-26 00:00</time><div class="garden-body">
 
 一昨日から昨日にかけて、ゼミ旅行として岡山、高松、小豆島を巡って帰ってきた。いくつかの建築を見たのち、ある場所にある木材をひたすらハイエースに積み込むというタスクをした。それで今日は腕が筋肉痛だ。
 

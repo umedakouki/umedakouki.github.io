@@ -4,7 +4,7 @@ title: "2026.08.08"
 garden_page: true
 garden_updated: "2026-08-08T00:00:00Z"
 ---
-<article class="garden-reader"><h1>2026.08.08</h1><time datetime="2026-08-08T00:00:00Z">更新 2026-08-08 00:00</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>2026.08.08</h1><time datetime="2026-08-08T00:00:00Z">更新 2026-08-08 00:00</time><div class="garden-body">
 
 「言語によって明晰になるもの、言語が明確にしたのちになお残りつづけるもののいっさいをはらんで、言語こそが「いっさいの」可能性を、言語以前的とされるもの・ことのすべてをふくめて、いっさいが立ちあらわれる「可能性」を準備する」（廣松渉『もの・こと・ことば』の熊野純彦による解説より）
 

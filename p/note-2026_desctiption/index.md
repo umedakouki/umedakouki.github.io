@@ -4,7 +4,7 @@ title: "場所の記述についての習作"
 garden_page: true
 garden_updated: "2026-01-01T00:00:00Z"
 ---
-<article class="garden-reader"><h1>場所の記述についての習作</h1><time datetime="2026-01-01T00:00:00Z">更新 2026-01-01 00:00</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>場所の記述についての習作</h1><time datetime="2026-01-01T00:00:00Z">更新 2026-01-01 00:00</time><div class="garden-body">
 
 <ul>
     <li>

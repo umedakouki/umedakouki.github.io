@@ -4,7 +4,7 @@ title: "『とある男の物語』"
 garden_page: true
 garden_updated: "2026-09-06T05:01:39.493700Z"
 ---
-<article class="garden-reader"><h1>『とある男の物語』</h1><time datetime="2026-09-06T05:01:39.493700Z">更新 2026-09-06 05:01</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>『とある男の物語』</h1><time datetime="2026-09-06T05:01:39.493700Z">更新 2026-09-06 05:01</time><div class="garden-body">
 
 2026
 担当：撮影

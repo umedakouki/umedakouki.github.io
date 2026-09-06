@@ -4,7 +4,7 @@ title: "2026.06.18"
 garden_page: true
 garden_updated: "2026-06-18T00:00:00Z"
 ---
-<article class="garden-reader"><h1>2026.06.18</h1><time datetime="2026-06-18T00:00:00Z">更新 2026-06-18 00:00</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>2026.06.18</h1><time datetime="2026-06-18T00:00:00Z">更新 2026-06-18 00:00</time><div class="garden-body">
 
 『空間の生産』の本文を読み始める。哲学的な教養が不足しているので1割ほどしか理解できない。「空間」について、哲学的な概念と科学的な概念とを比較している。
 

@@ -4,7 +4,7 @@ title: "2026.06.21"
 garden_page: true
 garden_updated: "2026-06-21T00:00:00Z"
 ---
-<article class="garden-reader"><h1>2026.06.21</h1><time datetime="2026-06-21T00:00:00Z">更新 2026-06-21 00:00</time><div class="garden-body" markdown="1">
+<article class="garden-reader"><h1>2026.06.21</h1><time datetime="2026-06-21T00:00:00Z">更新 2026-06-21 00:00</time><div class="garden-body">
 
 昨日は夜までずっと雨だったが、朝起きると外は晴れていた。展示用の雲の映像は一昨日撮り切ったつもりだったけれど、あまりの撮影日和に、9時からまた撮影を始めてしまった。見慣れた街をめぐり、10カ所くらいのスポットで撮影する。日曜の朝なので穏やかな雰囲気で、空にスマホを向けじっと撮影している変人も許容していた感じがした。今日は一昨日よりも雲の流れが速かった。
 
