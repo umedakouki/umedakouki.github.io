@@ -5,7 +5,7 @@ heading: "個人ウェブサイト集"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-06T07:23:46.261723200+00:00">更新 2026-09-06 07:23</time><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-06T07:35:52.982485100+00:00">更新 2026-09-06 07:35</time><div class="garden-body" markdown="1">
 
 ## ego
 
@@ -27,9 +27,7 @@ hide_description: true
 
 [小林秀雄](https://www.hideo-kobayashi.com/)
 
-<br />
-
-<br />
+[森博嗣の浮遊工作室](https://www.ne.jp/asahi/beat/non/mori/)
 
 <br />
 
