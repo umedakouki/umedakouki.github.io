@@ -7,6 +7,7 @@ hide_description: true
 garden_page: true
 garden_updated: "2026-09-06T00:09:08.683302700+00:00"
 ---
+<style>.garden-media{display:block;margin:1rem 0 1.5rem}.garden-media img,.garden-media video{display:block;width:auto;max-width:100%;max-height:75vh}.garden-media audio{display:block;width:min(100%,32rem)}.garden-media small{display:block;margin-top:.35rem;color:#777}</style>
 
 以下はアンリ・ルフェーブル『空間の生産』の内容の要約である。
 
