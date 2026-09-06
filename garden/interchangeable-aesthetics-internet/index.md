@@ -5,7 +5,7 @@ heading: "インターネットの交換可能性美学"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-06T08:07:59.072541300+00:00">更新 2026-09-06 08:07</time><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-06T09:31:57.514494600+00:00">更新 2026-09-06 09:31</time><div class="garden-body" markdown="1">
 
 近代的な文化では、
 
@@ -30,7 +30,7 @@ Vaporwave\
 
 しかも、これらは互いに引用し、混合し、分解できます。
 
-これは東浩紀的に言えば、
+これは[東浩紀]({{ '/garden/azuma-hiroki/' | relative_url }})的に言えば、（データベース消費）
 
 「強固なデータベース＋交換可能な表層」
 
@@ -50,9 +50,8 @@ Vaporwave\
 
 これはかなりあなたの最初の問題意識と噛み合っています。単なるノスタルジー論よりも、こちらの方向で考えた方が面白いです。
 
-
 ## このページへの言及
 
-- [交換可能な文化]({{ '/garden/alternative-culture/' | relative_url }})
+- [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
 
 </div></article>
