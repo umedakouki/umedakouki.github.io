@@ -1,25 +1,64 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWMWLYXC3T"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWMWLYXC3T');</script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-  <link rel="stylesheet" href="{{ '/assets/garden-ui.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-  <title>{% if page.title and page.url != '/' %}{{ page.title | escape }} | {% endif %}Garden</title>
-  <meta name="description" content="{{ page.description | default: site.description | strip_html | escape }}">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWMWLYXC3T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BWMWLYXC3T');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    {% assign work_category = site.data.works.categories[page.work_category] %}
+    {% assign resolved_title = page.title | default: work_category.label | default: site.title %}
+    {% if page.practice_series and page.title == nil %}{% capture resolved_title %}場所の記述に関する習作-シリーズ{{ page.practice_series }}{% endcapture %}{% endif %}
+    {% assign page_title = resolved_title %}
+    {% if page.layout == 'post' %}{% assign page_title = page.date | date: "%Y.%m.%d" %}{% endif %}
+    {% assign page_description = page.description | default: work_category.description | default: site.description | strip_html %}
+    <title>{% if page.layout == 'post' %}{{ page.date | date: "%Y.%m.%d" }} | {% elsif resolved_title and page.url != '/' %}{{ resolved_title | escape }} | {% endif %}{{ site.title | escape }}</title>
+    <meta name="description" content="{{ page_description | escape }}">
+    <meta property="og:title" content="{{ page_title | escape }}">
+    <meta property="og:description" content="{{ page_description | escape }}">
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+    {% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}">{% endif %}
 </head>
-<body class="garden-site" id="top">
-  <div class="site-shell">
-    <aside class="site-rail">
-      <a class="site-name" href="{{ '/' | relative_url }}">Garden</a>
-      <nav aria-label="主要な目次"><a href="{{ '/' | relative_url }}">ページ</a></nav>
-    </aside>
-    <div class="page">
-      <main>{{ content }}</main>
-      <footer class="site-footer">&copy; {{ site.time | date: '%Y' }} 梅田航輝</footer>
+<body id="top">
+    <div class="site-shell">
+        <aside class="site-rail">
+            <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+            <nav class="chapter-nav" aria-label="主要な目次">
+                <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="current" aria-current="page"{% endif %}><span>00</span>Garden</a>
+                <a href="{{ '/works.html' | relative_url }}"{% if page.url contains '/works' %} class="current" aria-current="page"{% endif %}><span>01</span>活動・作品</a>
+                <a href="{{ '/practice.html' | relative_url }}"{% if page.url contains '/practice' %} class="current" aria-current="page"{% endif %}><span>02</span>ノート</a>
+                <a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' or page.layout == 'post' %} class="current" aria-current="page"{% endif %}><span>03</span>日記</a>
+                <a href="{{ '/garden/' | relative_url }}"{% if page.url contains '/garden/' %} class="current" aria-current="page"{% endif %}><span>04</span>庭</a>
+            </nav>
+        </aside>
+
+        <div class="page">
+            <header class="page-header">
+                <p class="page-kicker">{% if page.url == '/' %}GARDEN{% elsif page.url contains '/practice' %}NOTES{% elsif page.url contains '/works' %}WORKS{% elsif page.url == '/blog/' or page.layout == 'post' %}DIARY{% elsif page.url contains '/garden/' %}GARDEN NOTES{% else %}PAGE{% endif %}</p>
+                <h1>{% if page.layout == 'post' %}{{ page.date | date: "%Y.%m.%d" }}{% else %}{{ page.heading | default: resolved_title | escape }}{% endif %}</h1>
+                {% if page.description and page.url != '/' and page.hide_description != true %}<p class="page-description">{{ page.description | escape }}</p>{% endif %}
+            </header>
+
+            {% if page.layout == 'post' %}
+            <nav class="breadcrumb" aria-label="現在位置"><a href="{{ '/blog/' | relative_url }}">日記</a><span>/</span><span>{{ page.date | date: "%Y.%m.%d" }}</span></nav>
+            {% elsif page.url contains '/works/' %}
+            <nav class="breadcrumb" aria-label="現在位置"><a href="{{ '/works.html' | relative_url }}">活動・作品</a><span>/</span><span>{{ resolved_title | escape }}</span></nav>
+            {% elsif page.url contains '/practice/' %}
+            <nav class="breadcrumb" aria-label="現在位置"><a href="{{ '/practice.html' | relative_url }}">ノート</a><span>/</span><span>{{ resolved_title | escape }}</span></nav>
+            {% endif %}
+
+            <main>{{ content }}</main>
+
+            <footer class="site-footer">
+                <a href="#top">ページ上部へ</a>
+                <span>&copy; {{ site.time | date: '%Y' }} 梅田航輝</span>
+            </footer>
+        </div>
     </div>
-  </div>
 </body>
 </html>
