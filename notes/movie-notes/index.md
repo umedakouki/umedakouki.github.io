@@ -2,12 +2,10 @@
 layout: default
 title: "以前書いた映画感想"
 heading: "以前書いた映画感想"
-description: ''
-hide_description: true
 garden_page: true
-garden_updated: "2026-09-05T23:03:30.542581900+00:00"
+hide_description: true
 ---
-<style>.garden-media{display:block;margin:1rem 0 1.5rem}.garden-media img,.garden-media video{display:block;width:auto;max-width:100%;max-height:75vh}.garden-media audio{display:block;width:min(100%,32rem)}.garden-media small{display:block;margin-top:.35rem;color:#777}</style>
+<article class="garden-note-reader"><time datetime="2026-09-05 23:03:30.542581+00:00">更新 2026-09-05 23:03</time><div class="garden-body" markdown="1">
 
 エブリシング・エブリウェア・オール・アット・ワンス
 
@@ -172,3 +170,5 @@ CURE キュア
 富江
 
 写真映画だった。ほぼ同時期の『リング』がビデオ映画なのに対して。 Anotherみを感じた。
+
+</div></article>

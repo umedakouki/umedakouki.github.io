@@ -1,5 +1,5 @@
 title: Garden
-description: 活動、作品、ノート、日記、庭。
+description: 活動、作品、ノート、日記。
 lang: ja
 timezone: Asia/Tokyo
 permalink: /diary/:year/:month/:day/:title/

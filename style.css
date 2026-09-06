@@ -171,7 +171,7 @@ li + li { margin-top: .6em; }
   .site-shell { display: block; width: min(100%, 720px); }
   .site-rail { position: static; margin-bottom: 38px; }
   .site-rail .site-name { margin-bottom: 18px; }
-  .chapter-nav { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .chapter-nav { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .chapter-nav a { display: block; padding: 8px 4px; border: 0; font-size: .72rem; white-space: nowrap; }
   .chapter-nav a:hover, .chapter-nav .current { padding: 8px 4px; }
   .chapter-nav span { display: block; font-size: .62rem; }

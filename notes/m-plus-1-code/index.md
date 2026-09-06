@@ -2,12 +2,10 @@
 layout: default
 title: "M PLUS 1 Code"
 heading: "M PLUS 1 Code"
-description: ''
-hide_description: true
 garden_page: true
-garden_updated: "2026-09-06T01:53:12.635049400+00:00"
+hide_description: true
 ---
-<style>.garden-media{display:block;margin:1rem 0 1.5rem}.garden-media img,.garden-media video{display:block;width:auto;max-width:100%;max-height:75vh}.garden-media audio{display:block;width:min(100%,32rem)}.garden-media small{display:block;margin-top:.35rem;color:#777}</style>
+<article class="garden-note-reader"><time datetime="2026-09-06 01:53:12.635049+00:00">更新 2026-09-06 01:53</time><div class="garden-body" markdown="1">
 
 M PLUS 1 Code は、プログラミングやコンピュータ上で文字を読むことを意識して設計された日本語フォントです。見た目を単純に「デジタル風」にしているのではなく、画面上で文字を正確に識別しやすいことを重視して作られています。
 
@@ -18,3 +16,9 @@ M PLUS 1 Code は、プログラミングやコンピュータ上で文字を読
 この点で、M PLUS 1 Code は明朝体のように筆で書いた文字の形を引き継いだ書体とは少し性格が異なります。文字を書く動作よりも、「ディスプレイ上で読む」「文字列を比較する」「情報を一定のルールで並べる」といったコンピュータ特有の環境から形が決められています。
 
 そのため、M PLUS 1 Code は「コンピュータっぽく見えるフォント」というより、コンピュータ上で文字を扱うための条件から生まれたフォントと考えると分かりやすいです。Webサイトで使えば、文章を単なる本文として見せるだけでなく、データや記録、システム上の情報のような印象を持たせることができます。
+
+## このページへの言及
+
+- [フォントの勉強]({{ '/notes/font-study/' | relative_url }})
+
+</div></article>

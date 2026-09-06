@@ -2,12 +2,10 @@
 layout: default
 title: "フォントの勉強"
 heading: "フォントの勉強"
-description: ''
-hide_description: true
 garden_page: true
-garden_updated: "2026-09-06T04:15:32.144325200+00:00"
+hide_description: true
 ---
-<style>.garden-media{display:block;margin:1rem 0 1.5rem}.garden-media img,.garden-media video{display:block;width:auto;max-width:100%;max-height:75vh}.garden-media audio{display:block;width:min(100%,32rem)}.garden-media small{display:block;margin-top:.35rem;color:#777}</style>
+<article class="garden-note-reader"><time datetime="2026-09-06T05:33:12.182347400+00:00">更新 2026-09-06 05:33</time><div class="garden-body" markdown="1">
 
 [web-typography-glossary](https://github.com/fontplus/web-typography-glossary/tree/master)
 
@@ -31,7 +29,7 @@ webタイポグラフィの基礎知識。なんとなく使っている用語�
 
 &#x20;   現代のメッセージ通信をつかさどる企業が本気で作ったフォント。とてもいい
 
-・[M PLUS 1 Code]({{ '/garden/32be4d71-282c-4654-b7be-dd14319d6733/' | relative_url }})
+・[M PLUS 1 Code]({{ '/notes/m-plus-1-code/' | relative_url }})
 
 &#x20;   プログラマーのための、誤読しにくい等幅フォント。見た目のわいわい感も好き。
 
@@ -40,3 +38,5 @@ webタイポグラフィの基礎知識。なんとなく使っている用語�
 <br />
 
 追記　やっぱりLINE Seed JPにしようかな。
+
+</div></article>
