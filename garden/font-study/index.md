@@ -29,7 +29,7 @@ webタイポグラフィの基礎知識。なんとなく使っている用語�
 
 &#x20;   現代のメッセージ通信をつかさどる企業が本気で作ったフォント。とてもいい
 
-・[M PLUS 1 Code]({{ '/notes/m-plus-1-code/' | relative_url }})
+・[M PLUS 1 Code]({{ '/garden/m-plus-1-code/' | relative_url }})
 
 &#x20;   プログラマーのための、誤読しにくい等幅フォント。見た目のわいわい感も好き。
 

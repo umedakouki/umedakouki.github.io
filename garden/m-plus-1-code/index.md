@@ -19,6 +19,6 @@ M PLUS 1 Code は、プログラミングやコンピュータ上で文字を読
 
 ## このページへの言及
 
-- [フォントの勉強]({{ '/notes/font-study/' | relative_url }})
+- [フォントの勉強]({{ '/garden/font-study/' | relative_url }})
 
 </div></article>

@@ -24,5 +24,5 @@
   }
   buttons.forEach(button => button.addEventListener('click', () => sort(button.dataset.gardenSort)))
   input.addEventListener('input', apply)
-  fetch('/notes-index.json').then(response => response.json()).then(items => { records = new Map(items.map(item => [item.id, item])); sort('linked'); apply() })
+  fetch('/garden/search.json').then(response => response.json()).then(items => { records = new Map(items.map(item => [item.id, item])); sort('linked'); apply() })
 })()
