@@ -5,9 +5,14 @@ heading: "観た映画"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T13:42:08.778373400+00:00">更新 2026-09-07 22:42</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 32%" title="PageRank 0.019034"><i style="width:32.04%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:25:53.899562300+00:00">更新 2026-09-07 23:25</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 27%" title="PageRank 0.015702"><i style="width:26.70%"></i></span><div class="garden-body" markdown="1">
+
+[以前書いた映画感想]({{ '/garden/movie-notes/' | relative_url }})は、[Garden／庭]({{ '/garden/garden/' | relative_url }})を作る以前にFilmarksなどで書いていたもの。
+
+<br />
 
 [映画『バックルームズ』]({{ '/garden/backrooms-moovie/' | relative_url }})
+
 
 ## ページリンク
 

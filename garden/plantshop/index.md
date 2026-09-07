@@ -5,7 +5,7 @@ heading: "プラントショップ"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T13:33:37.623665+00:00">更新 2026-09-07 22:33</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 62%" title="PageRank 0.036563"><i style="width:61.54%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T13:33:37.623665+00:00">更新 2026-09-07 22:33</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 68%" title="PageRank 0.039863"><i style="width:67.79%"></i></span><div class="garden-body" markdown="1">
 
 [コレクティブ「プラントショップ」を始めた]({{ '/garden/note-2026_plantshop/' | relative_url }})
 
@@ -15,11 +15,13 @@ hide_description: true
 - [コレクティブ「プラントショップ」を始めた]({{ '/garden/note-2026_plantshop/' | relative_url }})
 - [大久保颯]({{ '/garden/hayate-okubo/' | relative_url }})
 - [梅田航輝]({{ '/garden/kouki-umeda/' | relative_url }})
+- [歩く植木鉢]({{ '/garden/walking-pod/' | relative_url }})
 - [青木志央理]({{ '/garden/shiori-aoki/' | relative_url }})
 
 
 ## このページへの言及
 
+- [歩く植木鉢]({{ '/garden/walking-pod/' | relative_url }})
 - [Garden／庭の主要ページ]({{ '/garden/front-garden/' | relative_url }})
 
 </div></article>

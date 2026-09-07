@@ -5,9 +5,9 @@ heading: "交換可能な文化"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T12:34:30.728410300+00:00">更新 2026-09-07 21:34</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 36%" title="PageRank 0.021211"><i style="width:35.70%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:44:30.743384200+00:00">更新 2026-09-07 23:44</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 32%" title="PageRank 0.018837"><i style="width:32.03%"></i></span><div class="garden-body" markdown="1">
 
-社会の下部にあるインフラは強固なのに、その上で流行する文化や意味は無限に交換可能で、どれも決定的ではない。これは[インターネット美学]({{ '/garden/internet-ethsetics/' | relative_url }})、特に[Liminal Space]({{ '/garden/liminal-space/' | relative_url }})を作り出す構造と密接にかかわるのではないか。→[インターネットの交換可能性美学]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
+社会の下部にあるインフラは強固なのに、その上で流行する文化や意味は無限に交換可能で、どれも決定的ではない。これは[インターネット美学]({{ '/garden/internet-ethsetics/' | relative_url }})、特に[リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})を作り出す構造と密接にかかわるのではないか。→[インターネットの交換可能性美学]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
 
 以下はChatGPTより
 

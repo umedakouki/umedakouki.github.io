@@ -5,7 +5,7 @@ heading: "Wiki"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T13:47:47.101107700+00:00">更新 2026-09-07 22:47</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 33%" title="PageRank 0.019464"><i style="width:32.76%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T13:47:47.101107700+00:00">更新 2026-09-07 22:47</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 39%" title="PageRank 0.022755"><i style="width:38.70%"></i></span><div class="garden-body" markdown="1">
 
 Wikiは、複数のページを簡単に作成・編集し、それらをリンクで結びながら情報を蓄積する仕組みです。代表例はWikipediaですが、Wikiそのものは百科事典に限らず、個人メモ、社内文書、研究記録などにも使えます。
 
@@ -25,8 +25,9 @@ WikipediaのようなWikiは、多くの人が共通の知識を編集するこ�
 
 ## このページへの言及
 
-- [Garden／庭の主要ページ]({{ '/garden/front-garden/' | relative_url }})
 - [Garden／庭]({{ '/garden/garden/' | relative_url }})
+- [Garden／庭の主要ページ]({{ '/garden/front-garden/' | relative_url }})
+- [Garden／庭の思想]({{ '/garden/garden-thought/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

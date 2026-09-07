@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "本"
-heading: "本"
+title: "読んだ／読んでいる本"
+heading: "読んだ／読んでいる本"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T13:33:37.623665+00:00">更新 2026-09-07 22:33</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 63%" title="PageRank 0.037345"><i style="width:62.86%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:32:47.704872700+00:00">更新 2026-09-07 23:32</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 55%" title="PageRank 0.032593"><i style="width:55.42%"></i></span><div class="garden-body" markdown="1">
 
 [『空間の生産』]({{ '/garden/production-of-space/' | relative_url }})
 

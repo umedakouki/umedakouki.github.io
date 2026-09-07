@@ -5,7 +5,7 @@ heading: "交換可能空間／交換可能建築"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T11:46:02.727127+00:00">更新 2026-09-07 20:46</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 38%" title="PageRank 0.022832"><i style="width:38.43%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T11:46:02.727127+00:00">更新 2026-09-07 20:46</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 34%" title="PageRank 0.019915"><i style="width:33.87%"></i></span><div class="garden-body" markdown="1">
 
 思いついた用語。Interchangeable Space。[交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})を考えたときに。
 
@@ -19,7 +19,7 @@ hide_description: true
 
 ## ページリンク
 
-- [Liminal Space]({{ '/garden/liminal-space/' | relative_url }})
+- [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
 - [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
 
 

@@ -5,7 +5,7 @@ heading: "場所の記述についての習作"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T13:58:26.704498800+00:00">更新 2026-09-07 22:58</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 39%" title="PageRank 0.023057"><i style="width:38.81%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T13:58:26.704498800+00:00">更新 2026-09-07 22:58</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 36%" title="PageRank 0.020910"><i style="width:35.56%"></i></span><div class="garden-body" markdown="1">
 
 * [シリーズ1（YouTube）](https://youtu.be/wbiqQ-mI8yw)
 

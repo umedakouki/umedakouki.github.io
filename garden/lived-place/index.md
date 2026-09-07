@@ -5,7 +5,7 @@ heading: "生きられた場所"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:08:26.892369600+00:00">更新 2026-09-07 23:08</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 44%" title="PageRank 0.025874"><i style="width:43.55%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:08:26.892369600+00:00">更新 2026-09-07 23:08</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 40%" title="PageRank 0.023349"><i style="width:39.70%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 

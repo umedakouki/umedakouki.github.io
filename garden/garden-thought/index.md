@@ -5,7 +5,7 @@ heading: "Garden／庭の思想"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T13:47:32.088193700+00:00">更新 2026-09-07 22:47</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 57%" title="PageRank 0.034138"><i style="width:57.46%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:31:28.135341900+00:00">更新 2026-09-07 23:31</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 64%" title="PageRank 0.037865"><i style="width:64.39%"></i></span><div class="garden-body" markdown="1">
 
 [Garden／庭]({{ '/garden/garden/' | relative_url }})は、メモを分類して収納するための場所ではなく、ページ同士を結びながら思考の形を育てていく場所です。すべての記録を同じ「ページ」として扱い、それが作品、日記、研究、人物、概念のどれなのかを最初から固定しません。ページの意味は、何とつながり、どこから言及されているかによって徐々に現れます。
 
@@ -15,7 +15,13 @@ Gardenでは、文章を完成させてから保存・公開する必要もあ�
 
 原本を自分のPCにあるMarkdownとして保持することも重要です。アプリや公開サイトはその原本を扱うための窓であり、サービスそのものに文章を預けるわけではありません。公開サイトには公開を選んだページだけを反映し、非公開の思考も同じ知識空間の中に安全に残せます。
 
-つまりGardenとは、あらかじめ決めた分類に記録を当てはめるのではなく、書き、結び、読み返すなかで、自分の関心や思考の構造を後から発見するためのWikiです。私たちのGardenでは、そこに双方向のページリンクや、リンク構造から入口を作る得点表示を加えています。これは文章の価値を順位づけるものではなく、今の庭を歩き回るための案内です。
+つまりGardenとは、あらかじめ決めた分類に記録を当てはめるのではなく、書き、結び、読み返すなかで、自分の関心や思考の構造を後から発見するための[Wiki]({{ '/garden/wiki/' | relative_url }})です。私たちのGardenでは、そこに双方向のページリンクや、リンク構造から入口を作る得点表示を加えています。これは文章の価値を順位づけるものではなく、今の庭を歩き回るための案内です。
+
+<br />
+
+## フォント
+
+[フォントの勉強]({{ '/garden/font-study/' | relative_url }})
 
 
 ## ページリンク
@@ -23,7 +29,6 @@ Gardenでは、文章を完成させてから保存・公開する必要もあ�
 - [Garden／庭]({{ '/garden/garden/' | relative_url }})
 - [Wiki]({{ '/garden/wiki/' | relative_url }})
 - [garden.ooo]({{ '/garden/garden-ooo/' | relative_url }})
-- [フォントの勉強]({{ '/garden/font-study/' | relative_url }})
 - [個人ウェブサイト集]({{ '/garden/personal-website/' | relative_url }})
 - [管理＝制御型社会]({{ '/garden/management-control-oriented-society/' | relative_url }})
 
