@@ -5,7 +5,7 @@ heading: "『プロトコル――脱中心化以後のコントロールはい�
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T12:48:20.449858600+00:00">更新 2026-09-07 21:48</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 37%" title="PageRank 0.023585"><i style="width:36.85%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T12:48:20.449858600+00:00">更新 2026-09-07 21:48</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 33%" title="PageRank 0.019799"><i style="width:33.33%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 

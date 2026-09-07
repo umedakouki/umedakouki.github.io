@@ -5,7 +5,7 @@ heading: "『GELEL』での作業プロセス"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T13:17:21.088014900+00:00">更新 2026-09-07 22:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 34%" title="PageRank 0.022003"><i style="width:34.38%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T13:17:21.088014900+00:00">更新 2026-09-07 22:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 30%" title="PageRank 0.017533"><i style="width:29.51%"></i></span><div class="garden-body" markdown="1">
 
 [『GELEL』](https://umedakouki.work/works/gelel.html)
 
@@ -88,7 +88,6 @@ hide_description: true
 映像については画コンテから撮影、合成まですっと見ていたが、音声や音響、音楽が加わると一気に世界が立ち現れてきた感じがして、『GELEL』が何なのかようやく分かった気がした。もちろん制作者としては、良かった点もあれば反省することもたくさんあるが、一観客としては印象に残る良い作品だと思った。
 
 自主選に行って感じたことは、「現実にないものを画面上で実現する」ことが特撮の本懐ではある一方で、それが反転した「実現しきれないものへの想像力を惹起する」こともまた特撮の力ではないかということだった。特に自主映画は実現されないことや不完全なことばかりだが、どの作品にもロマンチックな夢は等しく潜在している。これを引き出し、日常に問いかける作用を大事にしていきたい。
-
 
 ## ページリンク
 

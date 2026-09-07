@@ -5,7 +5,7 @@ heading: "映像研究会オリヲン座"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T11:36:20.954678400+00:00">更新 2026-09-07 20:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 89%" title="PageRank 0.056963"><i style="width:89.00%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T11:36:20.954678400+00:00">更新 2026-09-07 20:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 78%" title="PageRank 0.046101"><i style="width:77.60%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 

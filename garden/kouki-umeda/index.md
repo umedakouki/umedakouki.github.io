@@ -5,16 +5,18 @@ heading: "梅田航輝"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T13:33:37.623665+00:00">更新 2026-09-07 22:33</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 40%" title="PageRank 0.025446"><i style="width:39.76%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:04:15.769047100+00:00">更新 2026-09-07 23:04</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 46%" title="PageRank 0.027371"><i style="width:46.07%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 
 - [プラントショップ]({{ '/garden/plantshop/' | relative_url }})
+- [人物]({{ '/garden/person/' | relative_url }})
 - [映像研究会オリヲン座]({{ '/garden/film-club-orion/' | relative_url }})
 
 
 ## このページへの言及
 
+- [人物]({{ '/garden/person/' | relative_url }})
 - [個人ウェブサイト集]({{ '/garden/personal-website/' | relative_url }})
 
 </div></article>

@@ -5,7 +5,7 @@ heading: "garden.ooo"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T13:15:18.925110500+00:00">更新 2026-09-07 22:15</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 27%" title="PageRank 0.017580"><i style="width:27.47%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T13:15:18.925110500+00:00">更新 2026-09-07 22:15</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 29%" title="PageRank 0.017384"><i style="width:29.26%"></i></span><div class="garden-body" markdown="1">
 
 [橋本麦]({{ '/garden/baku89/' | relative_url }})氏のgarden.oooは、単なる「メモをリンクできるWiki」ではありません。中心にあるのは、現在のCMSやSNSが情報に与えている「分類」「時系列」「プラットフォームへの従属」を解体し、Webをもう一度、自分で関係を編める場所として取り戻す考え方です。
 
@@ -66,10 +66,9 @@ gardenは、完成した記事だけを載せる場所ではありません。�
 
 要約すると、橋本氏のgardenは、**ページを分類して陳列するCMSではなく、断片を書き、リンクし、公開範囲を調整しながら、その人固有の知識と活動の構造を育て続けるための基盤**です。究極のWikiという表現は近いですが、それに加えて、個人ホームページ、ローカルな文章環境、公開CMSを一つの連続した生態系として扱おうとしている点が特徴です。
 
-
 ## ページリンク
 
-- [庭の思想]({{ '/garden/garden-thought/' | relative_url }})
+- [Garden／庭の思想]({{ '/garden/garden-thought/' | relative_url }})
 - [橋本麦]({{ '/garden/baku89/' | relative_url }})
 
 </div></article>

@@ -5,7 +5,7 @@ heading: "Liminal Space"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T13:33:37.623665+00:00">更新 2026-09-07 22:33</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 55%" title="PageRank 0.034902"><i style="width:54.53%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T13:33:37.623665+00:00">更新 2026-09-07 22:33</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 60%" title="PageRank 0.035842"><i style="width:60.33%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 
@@ -16,6 +16,7 @@ hide_description: true
 
 ## このページへの言及
 
+- [作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})
 - [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
 - [コレクティブ「プラントショップ」を始めた]({{ '/garden/note-2026_plantshop/' | relative_url }})
 

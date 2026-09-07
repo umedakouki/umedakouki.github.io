@@ -5,7 +5,7 @@ heading: "データベース消費"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T13:30:31.884447100+00:00">更新 2026-09-07 22:30</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 63%" title="PageRank 0.040248"><i style="width:62.88%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T13:30:31.884447100+00:00">更新 2026-09-07 22:30</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 49%" title="PageRank 0.028843"><i style="width:48.55%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 

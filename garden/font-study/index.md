@@ -5,7 +5,7 @@ heading: "フォントの勉強"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T10:55:16.679187300+00:00">更新 2026-09-07 19:55</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 18%" title="PageRank 0.011685"><i style="width:18.26%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T10:55:16.679187300+00:00">更新 2026-09-07 19:55</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 17%" title="PageRank 0.009836"><i style="width:16.56%"></i></span><div class="garden-body" markdown="1">
 
 [web-typography-glossary](https://github.com/fontplus/web-typography-glossary/tree/master)
 
@@ -41,7 +41,7 @@ webタイポグラフィの基礎知識。なんとなく使っている用語�
 
 ## ページリンク
 
-- [庭の思想]({{ '/garden/garden-thought/' | relative_url }})
+- [Garden／庭の思想]({{ '/garden/garden-thought/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>
