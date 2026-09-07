@@ -26,7 +26,11 @@
     const items = [...list.querySelectorAll('article')]
     items.sort((a, b) => mode === 'rank' ? Number(b.dataset.rank) - Number(a.dataset.rank) || b.dataset.updated.localeCompare(a.dataset.updated) : b.dataset.updated.localeCompare(a.dataset.updated))
     items.forEach(item => list.appendChild(item))
-    buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.gardenSort === mode)))
+    buttons.forEach(button => {
+      const active = button.dataset.gardenSort === mode
+      button.setAttribute('aria-pressed', String(active))
+      button.title = active ? '新しい順：オン' : '新しい順：オフ'
+    })
   }
   buttons.forEach(button => button.addEventListener('click', () => sort(sortMode === 'newest' ? 'rank' : 'newest')))
   input.addEventListener('input', apply)
