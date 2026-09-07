@@ -5,7 +5,7 @@ heading: "個人ウェブサイト集"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T08:05:47.957480400+00:00">更新 2026-09-07 17:05</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 10%" title="PageRank 0.021930"><i style="width:10.29%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T11:12:22.496175700+00:00">更新 2026-09-07 20:12</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 29%" title="PageRank 0.028291"><i style="width:29.26%"></i></span><div class="garden-body" markdown="1">
 
 ## ego
 
@@ -32,6 +32,12 @@ hide_description: true
 [小林秀雄](https://www.hideo-kobayashi.com/)
 
 [森博嗣の浮遊工作室](https://www.ne.jp/asahi/beat/non/mori/)
+
+
+## ページリンク
+
+- [庭の思想]({{ '/garden/garden-thought/' | relative_url }})
+
 
 ## このページへの言及
 

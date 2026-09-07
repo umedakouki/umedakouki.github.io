@@ -5,7 +5,7 @@ heading: "Garden／庭を始めました"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T09:04:06.191758700+00:00">更新 2026-09-07 18:04</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.011854"><i style="width:5.56%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T11:34:11.593827300+00:00">更新 2026-09-07 20:34</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 25%" title="PageRank 0.023783"><i style="width:24.60%"></i></span><div class="garden-body" markdown="1">
 
 Gardenという、自分のためのメモ環境をつくり始めた。
 
@@ -55,15 +55,13 @@ SNSへ投稿した情報は、時間順のフィードへ流れ、何が表示�
 
 Gardenでは、ローカルにある全ページのうち、公開を選んだものだけを個人サイトへ出力する。公開サイトは原本ではなく、自分のGardenから外へ開いた一部分になる。
 
-umedakouki.workでは、これまで「ノート」に置いていた文章を「庭」へ移していく。公開した文章も完成品として固定せず、あとから書き足したり、別のページへつないだりできるようにする。
+umedakouki.workでは、これまで「ノート」に置いていた文章を「庭」へ移していく。公開した文章も完成品として固定せず、あとから書き足したり、別のページへつないだりできるようにする。[旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 
 さらに理想を言えば、それぞれの人が自分のGardenとドメインを持ち、それらが相互にリンクしていく状態がよい。中心となるタイムラインや推薦アルゴリズムがなくても、誰かの庭から別の庭へ移動できる。フォロー数や反応の速さではなく、時間をかけて手入れされたページ同士の関係から人や考えに出会える。
 
 これは、データと公開場所を自分で所有するIndieWebの考え方にも近い。[IndieWeb](https://indieweb.org/)では、自分のドメインをオンライン上の主体とし、まず自分のサイトへ公開することが重視されている。
 
-SNSを完全にやめるというより、自分の記録の本拠地をプラットフォームの外に持つ。そのうえで、必要ならSNSを入口として使う。庭の土地そのものまで、SNSから借りる必要はない。
-
-[個人ウェブサイト集]({{ '/garden/personal-website/' | relative_url }})
+SNSを完全にやめるというより、自分の記録の本拠地をプラットフォームの外に持つ。そのうえで、必要ならSNSを入口として使う。庭の土地そのものまで、SNSから借りる必要はない。[個人ウェブサイト集]({{ '/garden/personal-website/' | relative_url }})
 
 ## つくりながら、庭いじりする
 
@@ -74,6 +72,11 @@ Gardenはまだ完成していない。実際にメモを書きながら、リ�
 整理されていないものを安心して置けて、あとから必要なもの同士をつなげられること。自分の記録を自分の場所に持ち、その一部をWebへ開けること。
 
 そんな個人用の知識環境として、Garden／庭を始めます。
+
+
+## ページリンク
+
+- [庭の思想]({{ '/garden/garden-thought/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

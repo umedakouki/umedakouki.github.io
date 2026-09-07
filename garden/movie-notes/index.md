@@ -5,7 +5,7 @@ heading: "以前書いた映画感想"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-05T23:03:30.542581+00:00">更新 2026-09-06 08:03</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.011854"><i style="width:5.56%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T10:50:20.471826800+00:00">更新 2026-09-07 19:50</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 26%" title="PageRank 0.025608"><i style="width:26.49%"></i></span><div class="garden-body" markdown="1">
 
 エブリシング・エブリウェア・オール・アット・ワンス
 
@@ -170,6 +170,10 @@ CURE キュア
 富江
 
 写真映画だった。ほぼ同時期の『リング』がビデオ映画なのに対して。 Anotherみを感じた。
+
+## ページリンク
+
+- [映画感想]({{ '/garden/movie-inpression/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

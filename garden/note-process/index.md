@@ -5,7 +5,7 @@ heading: "『GELEL』での作業プロセス"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-06T10:41:19.325111+00:00">更新 2026-09-06 19:41</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 23%" title="PageRank 0.048100"><i style="width:22.56%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-06T10:41:19.325111+00:00">更新 2026-09-06 19:41</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 55%" title="PageRank 0.053162"><i style="width:54.99%"></i></span><div class="garden-body" markdown="1">
 
 [『GELEL』](https://umedakouki.work/works/gelel.html)
 
@@ -90,6 +90,12 @@ hide_description: true
 自主選に行って感じたことは、「現実にないものを画面上で実現する」ことが特撮の本懐ではある一方で、それが反転した「実現しきれないものへの想像力を惹起する」こともまた特撮の力ではないかということだった。特に自主映画は実現されないことや不完全なことばかりだが、どの作品にもロマンチックな夢は等しく潜在している。これを引き出し、日常に問いかける作用を大事にしていきたい。
 
 ## ページリンク
+
+- [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
+- [映像研究会オリヲン座]({{ '/garden/film-club-orion/' | relative_url }})
+
+
+## このページへの言及
 
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 

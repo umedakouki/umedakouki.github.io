@@ -5,9 +5,9 @@ heading: "交換可能な文化"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T05:21:09.321279100+00:00">更新 2026-09-07 14:21</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 36%" title="PageRank 0.076400"><i style="width:35.83%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T11:46:25.424014300+00:00">更新 2026-09-07 20:46</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 50%" title="PageRank 0.048426"><i style="width:50.09%"></i></span><div class="garden-body" markdown="1">
 
-社会の下部にあるインフラは強固なのに、その上で流行する文化や意味は無限に交換可能で、どれも決定的ではない。これは[インターネット美学]({{ '/garden/internet-ethsetics/' | relative_url }})、特にLiminal spaceを作り出す構造と密接にかかわるのではないか。→[インターネットの交換可能性美学]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
+社会の下部にあるインフラは強固なのに、その上で流行する文化や意味は無限に交換可能で、どれも決定的ではない。これは[インターネット美学]({{ '/garden/internet-ethsetics/' | relative_url }})、特にLiminal Spaceを作り出す構造と密接にかかわるのではないか。→[インターネットの交換可能性美学]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
 
 以下はChatGPTより
 
@@ -21,7 +21,7 @@ hide_description: true
 >
 > たとえばXでは、右翼も左翼も猫動画も広告も個人的な日記も、全部同じ投稿形式、同じタイムライン、同じアルゴリズム、同じAPI的構造の上に載っています。内容同士は激しく対立していても、その対立自体がプラットフォームにとっては単なる「データ」として同型化される。この感じを理論的に考えるなら、かなり近い。
 
-<br />
+
 
 ## ページリンク
 

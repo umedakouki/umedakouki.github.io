@@ -5,7 +5,7 @@ heading: "インターネットの交換可能性美学"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-06T09:31:57.514494600+00:00">更新 2026-09-06 18:31</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 28%" title="PageRank 0.059099"><i style="width:27.72%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-06T09:31:57.514494600+00:00">更新 2026-09-06 18:31</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 44%" title="PageRank 0.042923"><i style="width:44.40%"></i></span><div class="garden-body" markdown="1">
 
 近代的な文化では、
 
@@ -30,7 +30,7 @@ Vaporwave\
 
 しかも、これらは互いに引用し、混合し、分解できます。
 
-これは[東浩紀]({{ '/garden/azuma-hiroki/' | relative_url }})的に言えば、（データベース消費）
+これは[東浩紀]({{ '/garden/azuma-hiroki/' | relative_url }})的に言えば、（[データベース消費]({{ '/garden/databace/' | relative_url }})）
 
 「強固なデータベース＋交換可能な表層」
 

@@ -5,7 +5,7 @@ heading: "作ることと見ること"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-06T10:41:19.171931+00:00">更新 2026-09-06 19:41</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 23%" title="PageRank 0.048100"><i style="width:22.56%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-06T10:41:19.171931+00:00">更新 2026-09-06 19:41</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 30%" title="PageRank 0.029357"><i style="width:30.37%"></i></span><div class="garden-body" markdown="1">
 
 ## 関心と方向性について
 
@@ -22,6 +22,11 @@ hide_description: true
 現実空間とフィクションを二重化する活動をしていきたい。
 
 ## ページリンク
+
+- [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
+
+
+## このページへの言及
 
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 
