@@ -5,7 +5,7 @@ heading: "『空間の生産』の理論構成"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-06T00:09:08.683302+00:00">更新 2026-09-06 09:09</time><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-06T00:09:08.683302+00:00">更新 2026-09-06 09:09</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.011854"><i style="width:5.56%"></i></span><div class="garden-body" markdown="1">
 
 以下はアンリ・ルフェーブル『空間の生産』の内容の要約である。
 

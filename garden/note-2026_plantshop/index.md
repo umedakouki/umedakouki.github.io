@@ -5,7 +5,7 @@ heading: "コレクティブ「プラントショップ」を始めた"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-06T10:41:19.179878+00:00">更新 2026-09-06 19:41</time><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-06T10:41:19.179878+00:00">更新 2026-09-06 19:41</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 23%" title="PageRank 0.048100"><i style="width:22.56%"></i></span><div class="garden-body" markdown="1">
 
 [プラントショップのウェブサイト](https://plantshop.work)
 
@@ -21,7 +21,7 @@ hide_description: true
 
 話し合いや制作を進めるうちに、これが私たちの方向性なのかな、というものが見えてきた気がする。それは、現実に確固として存在する事物についていろいろな見方をすることで、それのあり得るフィクションを捉え可視化したり共有したりすることだと思う。空間の解釈や「Liminal space」や物語といったものが話題になることが多いから。いや、これは私の思い込みかもしれない。とにかく、コミュニケーションを大切にしていきたい。
 
-## このページへの言及
+## ページリンク
 
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 

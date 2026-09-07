@@ -5,7 +5,7 @@ heading: "以前書いた映画感想"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-05T23:03:30.542581+00:00">更新 2026-09-06 08:03</time><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-05T23:03:30.542581+00:00">更新 2026-09-06 08:03</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.011854"><i style="width:5.56%"></i></span><div class="garden-body" markdown="1">
 
 エブリシング・エブリウェア・オール・アット・ワンス
 

@@ -5,7 +5,7 @@ heading: "場所の記述についての習作"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T03:25:16.520902200+00:00">更新 2026-09-07 12:25</time><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T10:19:24.928689600+00:00">更新 2026-09-07 19:19</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 32%" title="PageRank 0.068542"><i style="width:32.15%"></i></span><div class="garden-body" markdown="1">
 
 * [シリーズ1（YouTube）](https://youtu.be/wbiqQ-mI8yw)
 
@@ -61,10 +61,16 @@ hide_description: true
 
   位置情報付きの記録物を投稿し、関係づけ、クラスタとして編集・探索するためのプロトタイプ。
 
+
+
+## ページリンク
+
+- [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
+
+
 ## このページへの言及
 
 - [無意識的な場所の意味と、その共有について]({{ '/garden/note-2026_interest/' | relative_url }})
-- [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

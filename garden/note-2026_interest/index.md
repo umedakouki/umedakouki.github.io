@@ -5,7 +5,7 @@ heading: "無意識的な場所の意味と、その共有について"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-06T10:41:19.303608+00:00">更新 2026-09-06 19:41</time><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-06T10:41:19.303608+00:00">更新 2026-09-06 19:41</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 23%" title="PageRank 0.048100"><i style="width:22.56%"></i></span><div class="garden-body" markdown="1">
 
 ## 現在の関心
 
@@ -51,7 +51,7 @@ hide_description: true
 
 [場所の記述についての習作]({{ '/garden/note-2026_desctiption/' | relative_url }})
 
-## このページへの言及
+## ページリンク
 
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 
