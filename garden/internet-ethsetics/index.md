@@ -5,12 +5,13 @@ heading: "インターネット美学"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T11:45:49.425894+00:00">更新 2026-09-07 20:45</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 42%" title="PageRank 0.040791"><i style="width:42.19%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T11:45:49.425894+00:00">更新 2026-09-07 20:45</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 44%" title="PageRank 0.028307"><i style="width:44.23%"></i></span><div class="garden-body" markdown="1">
 
 [美学ウィキ](https://scrapbox.io/AestheticsWiki/)
 
 ## ページリンク
 
+- [Liminal Space]({{ '/garden/liminal-space/' | relative_url }})
 - [インターネットの交換可能性美学]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
 - [映画『バックルームズ』]({{ '/garden/backrooms-moovie/' | relative_url }})
 

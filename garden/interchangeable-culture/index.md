@@ -5,13 +5,13 @@ heading: "交換可能な文化"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T11:46:25.424014300+00:00">更新 2026-09-07 20:46</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 50%" title="PageRank 0.048426"><i style="width:50.09%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T12:34:30.728410300+00:00">更新 2026-09-07 21:34</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 37%" title="PageRank 0.023974"><i style="width:37.46%"></i></span><div class="garden-body" markdown="1">
 
-社会の下部にあるインフラは強固なのに、その上で流行する文化や意味は無限に交換可能で、どれも決定的ではない。これは[インターネット美学]({{ '/garden/internet-ethsetics/' | relative_url }})、特にLiminal Spaceを作り出す構造と密接にかかわるのではないか。→[インターネットの交換可能性美学]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
+社会の下部にあるインフラは強固なのに、その上で流行する文化や意味は無限に交換可能で、どれも決定的ではない。これは[インターネット美学]({{ '/garden/internet-ethsetics/' | relative_url }})、特に[Liminal Space]({{ '/garden/liminal-space/' | relative_url }})を作り出す構造と密接にかかわるのではないか。→[インターネットの交換可能性美学]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
 
 以下はChatGPTより
 
-> 『プロトコル――脱中心化以後のコントロールはいかに作動するのか』はインターネットは自由で無秩序な空間に見えるけれど、実際にはTCP/IP、DNS、HTMLなどのプロトコルによって非常に厳密に成立している、と論じます。つまり「上では何でもあり、下では非常に硬い」という構造です。
+> [『プロトコル――脱中心化以後のコントロールはいかに作動するのか』]({{ '/garden/protocol/' | relative_url }})はインターネットは自由で無秩序な空間に見えるけれど、実際にはTCP/IP、DNS、HTMLなどのプロトコルによって非常に厳密に成立している、と論じます。つまり「上では何でもあり、下では非常に硬い」という構造です。
 >
 > これはかなり重要で、現代社会を
 >

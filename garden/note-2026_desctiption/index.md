@@ -5,7 +5,7 @@ heading: "場所の記述についての習作"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T11:31:54.438362600+00:00">更新 2026-09-07 20:31</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 48%" title="PageRank 0.046434"><i style="width:48.03%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T11:31:54.438362600+00:00">更新 2026-09-07 20:31</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 33%" title="PageRank 0.020915"><i style="width:32.68%"></i></span><div class="garden-body" markdown="1">
 
 * [シリーズ1（YouTube）](https://youtu.be/wbiqQ-mI8yw)
 
@@ -60,8 +60,6 @@ hide_description: true
 * [シリーズ11](https://umedakouki.work/practice/description/11/index.html)
 
   位置情報付きの記録物を投稿し、関係づけ、クラスタとして編集・探索するためのプロトタイプ。
-
-
 
 ## ページリンク
 

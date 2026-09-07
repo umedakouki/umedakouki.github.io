@@ -5,7 +5,7 @@ heading: "以前書いた映画感想"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T10:50:20.471826800+00:00">更新 2026-09-07 19:50</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 26%" title="PageRank 0.025608"><i style="width:26.49%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T10:50:20.471826800+00:00">更新 2026-09-07 19:50</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 20%" title="PageRank 0.012581"><i style="width:19.66%"></i></span><div class="garden-body" markdown="1">
 
 エブリシング・エブリウェア・オール・アット・ワンス
 
@@ -173,7 +173,7 @@ CURE キュア
 
 ## ページリンク
 
-- [映画感想]({{ '/garden/movie-inpression/' | relative_url }})
+- [観た映画]({{ '/garden/movie-inpression/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

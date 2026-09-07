@@ -5,11 +5,11 @@ heading: "管理＝制御型社会"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T10:54:05.718129400+00:00">更新 2026-09-07 19:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 31%" title="PageRank 0.030315"><i style="width:31.36%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T12:41:21.025440400+00:00">更新 2026-09-07 21:41</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 23%" title="PageRank 0.014675"><i style="width:22.93%"></i></span><div class="garden-body" markdown="1">
 
 管理や制御といったものについて考えていきたい。
 
-『プロトコル――脱中心化以後のコントロールはいかに作動するのか』
+[『プロトコル――脱中心化以後のコントロールはいかに作動するのか』]({{ '/garden/protocol/' | relative_url }})
 
 > ジル・ドゥルーズの「追伸　管理＝制御社会について」
 > 近代と呼ばれてきた時代の次の時期区分を明確化することから始まる。その近代の後の時期区分は、もはや君主＝主権による中心的な管理にも、監獄や工場における脱中心的な管理にも基づいてはいない。本書の目的は、この第三の歴史の並みが持つ固有性を、そこで生じたコンピュータ技術の管理＝制御に焦点を合わせることによって具体化して論じることである。

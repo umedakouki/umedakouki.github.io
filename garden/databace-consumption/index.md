@@ -5,10 +5,11 @@ heading: "データベース消費"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T10:49:29.486682400+00:00">更新 2026-09-07 19:49</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 48%" title="PageRank 0.046367"><i style="width:47.96%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T13:30:31.884447100+00:00">更新 2026-09-07 22:30</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 63%" title="PageRank 0.040248"><i style="width:62.88%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 
+- [『ゲーム的リアリズムの誕生』]({{ '/garden/game-realism/' | relative_url }})
 - [東浩紀]({{ '/garden/azuma-hiroki/' | relative_url }})
 
 
