@@ -50,6 +50,11 @@ Vaporwave\
 
 これはかなりあなたの最初の問題意識と噛み合っています。単なるノスタルジー論よりも、こちらの方向で考えた方が面白いです。
 
+## ページリンク
+
+- [インターネット美学]({{ '/garden/internet-ethsetics/' | relative_url }})
+
+
 ## このページへの言及
 
 - [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})

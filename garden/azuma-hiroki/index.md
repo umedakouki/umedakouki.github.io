@@ -5,7 +5,7 @@ heading: "東浩紀"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-06T10:23:57.467911300+00:00">更新 2026-09-06 19:23</time><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T05:41:22.067990400+00:00">更新 2026-09-07 14:41</time><div class="garden-body" markdown="1">
 
 ゲンロンのリベラルテック月報は、初回から毎月視聴している。二次会もちゃんと購入して全部見ている。二次会が本編みたいなきらいもある。
 
