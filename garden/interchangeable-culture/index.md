@@ -25,7 +25,13 @@ hide_description: true
 
 ## ページリンク
 
+- [交換可能空間／交換可能建築]({{ '/garden/interchangeable-space/' | relative_url }})
 - [管理＝制御型社会]({{ '/garden/management-control-oriented-society/' | relative_url }})
+
+
+## このページへの言及
+
+- [交換可能空間／交換可能建築]({{ '/garden/interchangeable-space/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>
