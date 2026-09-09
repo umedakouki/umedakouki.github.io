@@ -5,7 +5,7 @@ heading: "映像研究会オリヲン座"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:49:16.433580700+00:00">更新 2026-09-07 23:49</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 42%" title="PageRank 0.028295"><i style="width:42.00%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:49:16.433580700+00:00">更新 2026-09-07 23:49</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 43%" title="PageRank 0.028476"><i style="width:43.44%"></i></span><div class="garden-body" markdown="1">
 
 [梅田航輝]({{ '/garden/kouki-umeda/' | relative_url }})がかつて所属していた、京都工芸繊維大学のサークル。
 

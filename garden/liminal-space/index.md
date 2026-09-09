@@ -5,15 +5,15 @@ heading: "リミナルスペース"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:58:14.529730300+00:00">更新 2026-09-09 14:58</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 35%" title="PageRank 0.023641"><i style="width:35.09%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:58:14.529730300+00:00">更新 2026-09-09 14:58</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 35%" title="PageRank 0.023114"><i style="width:35.26%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 
 - [8番出口]({{ '/garden/exit-8/' | relative_url }})
 - [インターネット美学]({{ '/garden/internet-ethsetics/' | relative_url }})
+- [バックルームズ]({{ '/garden/backrooms/' | relative_url }})
 - [ミーム]({{ '/garden/meme/' | relative_url }})
 - [交換可能空間／交換可能建築]({{ '/garden/interchangeable-space/' | relative_url }})
-- [映画『バックルームズ』]({{ '/garden/backrooms-moovie/' | relative_url }})
 
 
 ## このページへの言及

@@ -5,7 +5,7 @@ heading: "似非論理"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:47:41.729804500+00:00">更新 2026-09-09 14:47</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 10%" title="PageRank 0.006611"><i style="width:9.81%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:47:41.729804500+00:00">更新 2026-09-09 14:47</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 10%" title="PageRank 0.006487"><i style="width:9.90%"></i></span><div class="garden-body" markdown="1">
 
 > ストーリーの出来で重要なのは情報の整合性であって、完全性ではない。むしろ手元に少ししか情報がないときのほうが、うまいことすべての情報を筋書き通りにはめ込むことができる。
 
@@ -22,7 +22,6 @@ hide_description: true
 「メロスは走っている。なぜなら激怒したから」という文はもはや論理の体をなしていない。しかし激怒しているなら仕方ないか、と思わせてくる妙な説得感がある。説得感がないとしても、それがフィクションであるというたてつけであれば、その大枠の中でコントのような面白がり方をすることができる。
 
 話の論理性を取り上げてもあまり面白くはない。あらゆるバリエーションの限られた情報から組み上げられる似非論理が、別のなにかの質へと変化していく。その変化の様子に自分は興味がある。
-
 
 ## ページリンク
 

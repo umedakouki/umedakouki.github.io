@@ -10,12 +10,13 @@
 .garden-notes-sort button[aria-pressed="true"]::before { background: #000; }
 .garden-notes-sort span { color: #666; font-size: .72rem; }
 .garden-page-list article[hidden] { display: none; }
-.garden-page-list article > a { display: grid; grid-template-columns: 96px minmax(0,1fr) auto; gap: 8px 24px; padding: 14px 0; color: inherit; text-decoration: none; }
+.garden-page-list article > a { display: grid; grid-template-columns: 96px minmax(0,1fr) 82px; gap: 8px 24px; padding: 14px 0; color: inherit; text-decoration: none; }
 .garden-page-list article > a:hover { background: #e7e7e7; }
 .garden-page-list time, .garden-page-list small { color: #666; font-size: .72rem; white-space: nowrap; }
 .garden-page-list strong { font-weight: 400; }
 .garden-page-list p { grid-column: 2; margin: 0; overflow: hidden; color: #666; font-size: .8rem; text-overflow: ellipsis; white-space: nowrap; }
-.garden-list-meta { grid-column: 3; grid-row: 1; display: flex; align-items: center; gap: 9px; }
+.garden-list-meta { grid-column: 3; grid-row: 1; display: grid; grid-template-columns: 48px 25px; align-items: center; gap: 9px; width: 82px; }
+.garden-list-meta small { text-align: right; font-variant-numeric: tabular-nums; }
 .garden-rank { display: inline-block; width: 48px; height: 3px; overflow: hidden; background: #e7e7e7; }
 .garden-rank i { display: block; min-width: 1px; height: 100%; background: #000; }
 .garden-note-reader > time { display: block; margin-bottom: 10px; color: #666; font-size: .72rem; }
@@ -26,4 +27,4 @@
 .garden-body a:hover { background: #e7e7e7; text-decoration: none; }
 .garden-body img, .garden-body video { max-width: 100%; height: auto; }
 .garden-body audio { width: min(100%, 520px); }
-@media (max-width:560px) { .garden-page-list article > a { grid-template-columns:76px minmax(0,1fr); gap:8px 12px; } .garden-list-meta { grid-column:1; grid-row:2; margin-top:7px; } .garden-list-meta small { display:none; } .garden-page-list p { grid-column:2; } }
+@media (max-width:560px) { .garden-page-list article > a { grid-template-columns:76px minmax(0,1fr); gap:8px 12px; } .garden-list-meta { grid-column:1; grid-row:2; grid-template-columns:48px; width:48px; margin-top:7px; } .garden-list-meta small { display:none; } .garden-page-list p { grid-column:2; } }

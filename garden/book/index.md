@@ -5,10 +5,9 @@ heading: "本"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:26:29.364686800+00:00">更新 2026-09-09 15:26</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 22%" title="PageRank 0.015058"><i style="width:22.35%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T06:26:29.364686800+00:00">更新 2026-09-09 15:26</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 23%" title="PageRank 0.014755"><i style="width:22.51%"></i></span><div class="garden-body" markdown="1">
 
 [Garden／庭]({{ '/garden/garden/' | relative_url }})で言及される本。
-
 
 ## ページリンク
 

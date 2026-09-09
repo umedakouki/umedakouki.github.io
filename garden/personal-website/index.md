@@ -5,7 +5,7 @@ heading: "個人ウェブサイト集"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:37:01.519210800+00:00">更新 2026-09-09 14:37</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 18%" title="PageRank 0.012417"><i style="width:18.43%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:37:01.519210800+00:00">更新 2026-09-09 14:37</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 19%" title="PageRank 0.012450"><i style="width:18.99%"></i></span><div class="garden-body" markdown="1">
 
 ## ego
 
@@ -28,7 +28,6 @@ hide_description: true
 [橋本麦]({{ '/garden/baku89/' | relative_url }})：<https://baku89.com/>
 
 森博嗣の浮遊工作室：<https://www.ne.jp/asahi/beat/non/mori/>
-
 
 ## ページリンク
 

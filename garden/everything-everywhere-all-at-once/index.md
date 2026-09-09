@@ -5,7 +5,7 @@ heading: "エブリシング・エブリウェア・オール・アット・ワ�
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:05:39.967327+00:00">更新 2026-09-09 14:05</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.004356"><i style="width:6.47%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:05:39.967327+00:00">更新 2026-09-09 14:05</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.004234"><i style="width:6.46%"></i></span><div class="garden-body" markdown="1">
 
 マルチバースのSF的設定や、弁証法的な愛の再確認という展開はそれなりに深い内容だが、絵やセリフですべて説明してしまったので、映画において想像させられるものが少なかった。その点で私の中の評価はいま一つ。映像の迫力は唯一無二だった。
 

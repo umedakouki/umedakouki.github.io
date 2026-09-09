@@ -5,7 +5,7 @@ heading: "作ることと見ること"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:47:33.525761500+00:00">更新 2026-09-09 14:47</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 21%" title="PageRank 0.013918"><i style="width:20.66%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:47:33.525761500+00:00">更新 2026-09-09 14:47</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 21%" title="PageRank 0.013668"><i style="width:20.85%"></i></span><div class="garden-body" markdown="1">
 
 ## 関心と方向性について
 
@@ -20,7 +20,6 @@ hide_description: true
 そして今、やはり私の関心は「見る」側にある。特に建築や都市空間で、さまざまな事物の複雑な相互関係によって成り立っている場所性について考えることが多い。それは意識的に捉えられるものではないし、原理で説明できるものでもないが、なんとか読み取ったことから解釈し共有することはできる。つまり、現実にある複雑なことを[フィクション]({{ '/garden/fiction/' | relative_url }})を通じて解釈し共有する実践が考えられる。
 
 現実空間とフィクションを二重化する活動をしていきたい。
-
 
 ## ページリンク
 

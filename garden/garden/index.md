@@ -5,7 +5,7 @@ heading: "Garden／庭"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:30:23.149853500+00:00">更新 2026-09-09 15:30</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 65%" title="PageRank 0.043930"><i style="width:65.20%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T06:30:23.149853500+00:00">更新 2026-09-09 15:30</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 70%" title="PageRank 0.045872"><i style="width:69.98%"></i></span><div class="garden-body" markdown="1">
 
 Garden／庭は、日々のメモ、考え、人物、作品、資料などを、ページ同士のつながりによって整理する個人用の[Wiki]({{ '/garden/wiki/' | relative_url }})です。記録を最初からカテゴリに分けず、すべてを同じ「ページ」として保存します。
 
@@ -18,6 +18,7 @@ Garden／庭は、日々のメモ、考え、人物、作品、資料などを�
 
 ## このページへの言及
 
+- [ゲーム]({{ '/garden/game/' | relative_url }})
 - [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [Garden／庭のナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 - [人物]({{ '/garden/person/' | relative_url }})

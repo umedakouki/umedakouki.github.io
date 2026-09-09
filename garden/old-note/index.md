@@ -5,7 +5,7 @@ heading: "旧「ノート」"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:15:12.871054900+00:00">更新 2026-09-09 15:15</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 27%" title="PageRank 0.018326"><i style="width:27.20%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T06:15:12.871054900+00:00">更新 2026-09-09 15:15</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 28%" title="PageRank 0.018104"><i style="width:27.62%"></i></span><div class="garden-body" markdown="1">
 
 2026年8月まで「ホーム」、「活動・作品」、「ノート」、「日記」の4コンテンツがあったが、新たに[Wiki]({{ '/garden/wiki/' | relative_url }})的な運用をする[Garden／庭]({{ '/garden/garden/' | relative_url }})を作成したため、そこに「ノート」を統合した。以下のページリンクは、「ノート」に8月まで存在していたページである。
 
@@ -20,7 +20,6 @@ hide_description: true
 [作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})
 
 [コレクティブ「プラントショップ」を始めた]({{ '/garden/note-2026_plantshop/' | relative_url }})
-
 
 ## ページリンク
 

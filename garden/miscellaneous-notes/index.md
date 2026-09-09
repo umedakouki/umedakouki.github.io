@@ -5,10 +5,9 @@ heading: "小論"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:35:12.867805700+00:00">更新 2026-09-09 15:35</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 43%" title="PageRank 0.029077"><i style="width:43.16%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T06:35:12.867805700+00:00">更新 2026-09-09 15:35</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 44%" title="PageRank 0.028731"><i style="width:43.83%"></i></span><div class="garden-body" markdown="1">
 
 [Garden／庭]({{ '/garden/garden/' | relative_url }})上の、[梅田航輝]({{ '/garden/kouki-umeda/' | relative_url }})による小論。
-
 
 ## ページリンク
 

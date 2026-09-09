@@ -5,7 +5,7 @@ heading: "『空間の生産』"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:33:16.276844500+00:00">更新 2026-09-09 14:33</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008211"><i style="width:12.19%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:33:16.276844500+00:00">更新 2026-09-09 14:33</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008027"><i style="width:12.25%"></i></span><div class="garden-body" markdown="1">
 
 以下はアンリ・ルフェーブル『空間の生産』の内容の要約である。
 
@@ -93,8 +93,6 @@ hide_description: true
 * 「抽象空間」は単に抽象的な思想や設計図を意味せず、資本と国家が具体的な場所を交換・測定・管理可能にする現実的な空間形式である。
 * 「差異の空間」は多様性を称賛するだけの概念ではない。空間を使用し変形する能力、領有、自己管理を伴う政治的実践として理解する必要がある。
 * 本書は完成した都市計画の手順書ではなく、空間が生産される社会的過程を批判的に分析する理論である。個別事例へ適用する際は、三契機、歴史的形成、権力、身体、使用と領有を具体的に調べる必要がある。
-
-
 
 ## ページリンク
 
