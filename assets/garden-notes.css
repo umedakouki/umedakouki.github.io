@@ -32,8 +32,4 @@
 .garden-url-preview audio { display: block; width: min(100%, 520px); }
 .garden-url-preview iframe { display: block; width: min(100%, 640px); height: 360px; border: 0; background: #eee; }
 .garden-url-spotify iframe { height: 152px; }
-.garden-url-card { display: grid; gap: 3px; width: min(100%, 640px); border: 1px solid #aaa; padding: 13px 15px; color: inherit; text-decoration: none; }
-.garden-url-card:hover { border-color: #000; }
-.garden-url-card strong { overflow: hidden; font-size: 14px; font-weight: 400; text-overflow: ellipsis; white-space: nowrap; }
-.garden-url-card small { color: #666; font-size: 10px; }
 @media (max-width:560px) { .garden-page-list article > a { grid-template-columns:76px minmax(0,1fr); gap:8px 12px; } .garden-list-meta { grid-column:1; grid-row:2; grid-template-columns:48px; width:48px; margin-top:7px; } .garden-list-meta small { display:none; } .garden-page-list p { grid-column:2; } }

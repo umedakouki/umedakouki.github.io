@@ -5,9 +5,9 @@ heading: "映像メモ"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T07:44:43.773606900+00:00">更新 2026-09-09 16:44</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 28%" title="PageRank 0.015141"><i style="width:27.54%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T07:44:43.773606900+00:00">更新 2026-09-09 16:44</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 28%" title="PageRank 0.015169"><i style="width:27.58%"></i></span><div class="garden-body" markdown="1">
 
-[Garden]({{ '/garden/garden/' | relative_url }})上の、[梅田航輝]({{ '/garden/kouki-umeda/' | relative_url }})による[映像]({{ '/garden/video/' | relative_url }})についての思考やメモ。
+[Garden]({{ '/garden/garden/' | relative_url }})上の、[梅田航輝]({{ '/garden/umedakouki/' | relative_url }})による[映像]({{ '/garden/video/' | relative_url }})についての思考やメモ。
 
 ## ページリンク
 

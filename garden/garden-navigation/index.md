@@ -5,13 +5,13 @@ heading: "Gardenのナビゲーション"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T11:00:04.685766+00:00">更新 2026-09-09 20:00</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 19%" title="PageRank 0.010672"><i style="width:19.41%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T11:00:04.685766+00:00">更新 2026-09-09 20:00</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 19%" title="PageRank 0.010413"><i style="width:18.93%"></i></span><div class="garden-body" markdown="1">
 
 [Garden]({{ '/garden/garden/' | relative_url }})の、ナビゲーションとなるページ。
 
 <br />
 
-[梅田航輝]({{ '/garden/kouki-umeda/' | relative_url }})
+[梅田航輝]({{ '/garden/umedakouki/' | relative_url }})
 
 [プラントショップ]({{ '/garden/plantshop/' | relative_url }})
 

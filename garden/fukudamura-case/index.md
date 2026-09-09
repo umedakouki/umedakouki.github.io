@@ -5,7 +5,7 @@ heading: "福田村事件"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:20:33.516195+00:00">更新 2026-09-09 17:20</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.003291"><i style="width:5.99%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:20:33.516195+00:00">更新 2026-09-09 17:20</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.003292"><i style="width:5.99%"></i></span><div class="garden-body" markdown="1">
 
 監督が[森達也]({{ '/garden/moritatsuya/' | relative_url }})
 

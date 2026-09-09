@@ -5,17 +5,15 @@ heading: "garden.ooo"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.463893+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 16%" title="PageRank 0.008998"><i style="width:16.37%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T14:31:01.330860200+00:00">更新 2026-09-09 23:31</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 16%" title="PageRank 0.008989"><i style="width:16.34%"></i></span><div class="garden-body" markdown="1">
 
-[橋本麦]({{ '/garden/baku89/' | relative_url }})氏の[Garden]({{ '/garden/garden/' | relative_url }}).oooは、単なる「メモをリンクできる[Wiki]({{ '/garden/wiki/' | relative_url }})」ではありません。中心にあるのは、現在のCMSやSNSが情報に与えている「分類」「時系列」「[プラットフォーム]({{ '/garden/platform/' | relative_url }})への従属」を解体し、Webをもう一度、自分で関係を編める場所として取り戻す考え方です。
+[橋本麦]({{ '/garden/baku89/' | relative_url }})氏のgarden.ooo、単なる「メモをリンクできる[Wiki]({{ '/garden/wiki/' | relative_url }})」ではありません。中心にあるのは、現在のCMSやSNSが情報に与えている「分類」「時系列」「[プラットフォーム]({{ '/garden/platform/' | relative_url }})への従属」を解体し、Webをもう一度、自分で関係を編める場所として取り戻す考え方です。
 
 ### 1. 情報を先に分類しない
 
 一般的なCMSでは、記事を書く前に「作品」「日記」「人物」「イベント」などの投稿タイプやカテゴリを決めます。しかし橋本氏は、その分類はその時点での一時的な見立てにすぎないと考えます。あるページが作品であると同時にイベントでもあるように、現実の対象は一つの箱に収まりません。
 
 そこでgardenでは、すべてを同じ構造の「ページ」として保存します。ページとタグにも本質的な区別を設けません。情報の構造は「AがBに属する」という分類ではなく、「AがBを指し示す」というリンクの集積から、事後的に浮かび上がります。[設計思想](https://baku89.com/ja/garden/design-principles)
-
-<div class="garden-url-preview"><a class="garden-url-card" href="https://baku89.com/ja/garden/design-principles"><strong>設計思想</strong><small>baku89.com</small></a></div>
 
 これは「正しい整理方法を先に設計する」のではなく、「書きながら関係を発見する」ための構造です。完成された知識体系を格納する書庫というより、知識体系そのものが成長していく庭に近いといえます。
 
@@ -27,8 +25,6 @@ gardenでは、ページの価値を新しさだけで決めず、本文リン�
 
 この発想の背景には、Ted Nelsonのハイパーテキスト、初期WWW、Zettelkasten、京大式カード、Cosenseなどがあります。いずれも、断片同士の関係から全体がボトムアップに生まれる仕組みです。[思想的な背景](https://baku89.com/ja/garden/references)
 
-<div class="garden-url-preview"><a class="garden-url-card" href="https://baku89.com/ja/garden/references"><strong>思想的な背景</strong><small>baku89.com</small></a></div>
-
 ### 3. リンクには異なる強さがある
 
 gardenでは、リンクをおおむね二つに分けています。
@@ -38,8 +34,6 @@ gardenでは、リンクをおおむね二つに分けています。
 
 どちらもバックリンクを生みますが、意味は同じではありません。たとえば人物ページを「チーム」ページへTag linkでつなげれば、固定された「人物」という投稿タイプを作らなくても、チームの一覧を構成できます。一方、本文で偶然その人物に言及したページは、より弱い参照として扱えます。[情報設計](https://baku89.com/ja/garden/information-architecture)
 
-<div class="garden-url-preview"><a class="garden-url-card" href="https://baku89.com/ja/garden/information-architecture"><strong>情報設計</strong><small>baku89.com</small></a></div>
-
 重要なのは、リンクを単なる移動ボタンではなく、情報構造をつくるデータとして扱っていることです。
 
 ### 4. ローカルが原本で、クラウドは複製
@@ -47,8 +41,6 @@ gardenでは、リンクをおおむね二つに分けています。
 もう一つの柱がローカル・ファーストです。原本はサービス上のデータベースではなく、利用者の手元にあるMarkdownファイルです。クラウドは公開や端末間同期のためのミラーにすぎません。
 
 そのため、サービスが終了しても文章は残ります。garden以外にも、Obsidian、メモ帳、コードエディタ、AI、コマンドラインなどから扱えます。プレーンテキストを「もっとも普遍的なインターフェース」と見なし、特定のアプリに知識を閉じ込めない設計です。[設計思想](https://baku89.com/ja/garden/design-principles)
-
-<div class="garden-url-preview"><a class="garden-url-card" href="https://baku89.com/ja/garden/design-principles"><strong>設計思想</strong><small>baku89.com</small></a></div>
 
 これは単なるバックアップ方針ではなく、書いたものの所有権と[編集]({{ '/garden/editing/' | relative_url }})権を利用者へ戻す思想です。
 
@@ -58,19 +50,13 @@ gardenは、完成した記事だけを載せる場所ではありません。�
 
 橋本氏は、内容がつぶやきのような状態から、曖昧なまとまりを経て、保存すべき文書へ成熟していくグラデーションを想定しています。そのため、公開範囲には `public`、`unlisted`、`protected`、`private` があり、さらに長期的に残すページかどうかを示す `permanent` が別軸で存在します。[設計思想](https://baku89.com/ja/garden/design-principles)
 
-<div class="garden-url-preview"><a class="garden-url-card" href="https://baku89.com/ja/garden/design-principles"><strong>設計思想</strong><small>baku89.com</small></a></div>
-
 特に`unlisted`は興味深い設計です。検索や一覧には出さず、別のページから文脈をたどった場合だけ到達できます。何でも無差別にタイムラインへ流すSNSとは違い、「どこからその文章へ来たか」を読解の一部として守ろうとしています。[思想的な背景](https://baku89.com/ja/garden/references)
-
-<div class="garden-url-preview"><a class="garden-url-card" href="https://baku89.com/ja/garden/references"><strong>思想的な背景</strong><small>baku89.com</small></a></div>
 
 ### 6. 完成を終点にしない
 
 通常のブログは「執筆して公開する」までが一つの単位です。一方gardenでは、公開後も同じページを繰り返し手入れします。文章は完成品というより、環境や思考に応じて分化、結合、再構成されるものです。
 
 この考え方は、橋本氏が別の文章で述べる「修理や改造が可能で、複数の道具が協調し、その人固有の生態系をつくる」という道具観とも共通しています。[完成概念](https://baku89.com/ja/%E5%AE%8C%E6%88%90%E6%A6%82%E5%BF%B5)
-
-<div class="garden-url-preview"><a class="garden-url-card" href="https://baku89.com/ja/%E5%AE%8C%E6%88%90%E6%A6%82%E5%BF%B5"><strong>完成概念</strong><small>baku89.com</small></a></div>
 
 ### 7. 利用者が壊す自由も残す
 

@@ -5,7 +5,7 @@ heading: "インフラ"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 11%" title="PageRank 0.006029"><i style="width:10.97%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 11%" title="PageRank 0.006095"><i style="width:11.08%"></i></span><div class="garden-body" markdown="1">
 
 インフラは普段は背景に退き、止まったときや別の使い方を試したときに姿を現す。上に載る活動を支えるだけでなく、その活動の範囲、速度、交換のしやすさをあらかじめ形づくっている。
 

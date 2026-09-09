@@ -5,11 +5,9 @@ heading: "『GELEL』での作業プロセス"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.472867+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 21%" title="PageRank 0.011810"><i style="width:21.48%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.472867+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 22%" title="PageRank 0.011875"><i style="width:21.59%"></i></span><div class="garden-body" markdown="1">
 
 [『GELEL』](https://umedakouki.work/works/gelel.html)
-
-<div class="garden-url-preview"><a class="garden-url-card" href="https://umedakouki.work/works/gelel.html"><strong>『GELEL』</strong><small>umedakouki.work</small></a></div>
 
 ## 美術製作前夜（2024年2月～2025年1月）
 

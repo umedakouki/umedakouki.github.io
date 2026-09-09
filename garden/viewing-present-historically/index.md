@@ -5,7 +5,7 @@ heading: "現在を歴史的にながめる眼差し"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.457587+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 25%" title="PageRank 0.013620"><i style="width:24.78%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.457587+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 25%" title="PageRank 0.013604"><i style="width:24.73%"></i></span><div class="garden-body" markdown="1">
 
 [身体]({{ '/garden/body/' | relative_url }})を持ったひとりの人間は、あまりに多様な、多量の情報の入力に対して、なんとなくそれに合わせながらぷかぷかと生きている。「なんとなく」の中身は認知科学などの見識に任せるとして、ではそうして生きている現在の状況はどのように解釈したらいいのだろうか、ということに私は関心がある。
 

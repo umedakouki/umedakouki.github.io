@@ -5,7 +5,7 @@ heading: "インターネット暗号"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T04:44:36.913833600+00:00">更新 2026-09-09 13:44</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 3%" title="PageRank 0.001810"><i style="width:3.29%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T04:44:36.913833600+00:00">更新 2026-09-09 13:44</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 3%" title="PageRank 0.001811"><i style="width:3.29%"></i></span><div class="garden-body" markdown="1">
 
 インターネットでは、通信内容が複数の機器やネットワークを経由するため、途中で情報を見られる可能性がある。そこで暗号を使い、第三者に見られても内容を理解できない形に変換する。暗号化と復号に使う情報が「鍵」である。
 

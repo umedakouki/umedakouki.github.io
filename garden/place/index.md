@@ -5,7 +5,7 @@ heading: "場所"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 34%" title="PageRank 0.018608"><i style="width:33.85%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 34%" title="PageRank 0.018609"><i style="width:33.83%"></i></span><div class="garden-body" markdown="1">
 
 Gardenで場所は、位置を示すだけの語ではない。身体による経験、反復される使い方、記憶、表象が重なり、その場所らしさが立ち現れる。形や機能だけでは取りこぼすものを考えるための基礎的なページ。
 
