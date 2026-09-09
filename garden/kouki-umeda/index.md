@@ -5,9 +5,15 @@ heading: "梅田航輝"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:28:56.735173200+00:00">更新 2026-09-07 23:28</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 48%" title="PageRank 0.027258"><i style="width:48.43%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T13:45:46.049183300+00:00">更新 2026-09-09 22:45</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 53%" title="PageRank 0.029199"><i style="width:53.11%"></i></span><div class="garden-body" markdown="1">
 
 [このサイト](https://www.umedakouki.work/)や[Garden]({{ '/garden/garden/' | relative_url }})を更新している人。
+
+<div class="garden-url-preview"><a class="garden-url-card" href="https://www.umedakouki.work/"><strong>このサイト</strong><small>umedakouki.work</small></a></div>
+
+<br />
+
+<span class="garden-media garden-image"><img src="{{ '/assets/garden/61be49e8-727a-436a-b977-f643450373d9.jpg' | relative_url }}" alt="d91daff9-65a3-48ba-a2ed-79a125313d4d.jpg" loading="lazy"></span>
 
 ## ページリンク
 
@@ -18,6 +24,7 @@ hide_description: true
 
 ## このページへの言及
 
+- [好きな〇〇]({{ '/garden/favorite/' | relative_url }})
 - [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 - [SNSについて]({{ '/garden/sns/' | relative_url }})
 - [AOMOU]({{ '/garden/aomou/' | relative_url }})

@@ -5,9 +5,11 @@ heading: "コレクティブ「プラントショップ」を始めた"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.458878+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 16%" title="PageRank 0.009281"><i style="width:16.49%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.458878+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 17%" title="PageRank 0.009176"><i style="width:16.69%"></i></span><div class="garden-body" markdown="1">
 
 [プラントショップのウェブサイト](https://plantshop.work)
+
+<div class="garden-url-preview"><a class="garden-url-card" href="https://plantshop.work"><strong>プラントショップのウェブサイト</strong><small>plantshop.work</small></a></div>
 
 「[プラントショップ]({{ '/garden/plantshop/' | relative_url }})」は、「さまざまな分野を横断し、持続的に制作・展示・販売を行う」ための組織としている。すごく抽象的だ。今の参加者は大学の建築学生がほとんどなので、かろうじて建築的な性格を帯びるだろうが、それよりも[映像]({{ '/garden/video/' | relative_url }})や美術や演劇といった実験的な活動を志向している。つまり、まだやりたいことや方向性が決まっていないのだ。
 

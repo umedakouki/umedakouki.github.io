@@ -5,7 +5,7 @@ heading: "建築メモ"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T07:44:18.552598100+00:00">更新 2026-09-09 16:44</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 8%" title="PageRank 0.004471"><i style="width:7.94%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T07:44:18.552598100+00:00">更新 2026-09-09 16:44</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 8%" title="PageRank 0.004172"><i style="width:7.59%"></i></span><div class="garden-body" markdown="1">
 
 [Garden]({{ '/garden/garden/' | relative_url }})上での、[梅田航輝]({{ '/garden/kouki-umeda/' | relative_url }})による建築についての思考やメモ。
 

@@ -5,13 +5,15 @@ heading: "森達也"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-08T01:04:14.777716900+00:00">更新 2026-09-08 10:04</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.006840"><i style="width:12.15%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-08T01:04:14.777716900+00:00">更新 2026-09-08 10:04</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.006593"><i style="width:11.99%"></i></span><div class="garden-body" markdown="1">
 
 [梅田航輝]({{ '/garden/kouki-umeda/' | relative_url }})と同じ新潟高校出身らしい。だから何だ。
 
 <br />
 
 前に[YouTube動画](https://youtu.be/ntxM8zSVhIE?si=vsRDRbvb1C3qvaMX)で見たが、面白そうな人だった。
+
+<div class="garden-url-preview garden-url-video"><iframe src="https://www.youtube-nocookie.com/embed/ntxM8zSVhIE" title="YouTube動画" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
 
 ## ページリンク
 

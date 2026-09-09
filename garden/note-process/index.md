@@ -5,9 +5,11 @@ heading: "『GELEL』での作業プロセス"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.472867+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 21%" title="PageRank 0.011988"><i style="width:21.30%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.472867+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 21%" title="PageRank 0.011810"><i style="width:21.48%"></i></span><div class="garden-body" markdown="1">
 
 [『GELEL』](https://umedakouki.work/works/gelel.html)
+
+<div class="garden-url-preview"><a class="garden-url-card" href="https://umedakouki.work/works/gelel.html"><strong>『GELEL』</strong><small>umedakouki.work</small></a></div>
 
 ## 美術製作前夜（2024年2月～2025年1月）
 
@@ -62,6 +64,8 @@ hide_description: true
 下の動画は、作業の様子をメイキング[映像]({{ '/garden/video/' | relative_url }})的に[編集]({{ '/garden/editing/' | relative_url }})したもの。
 
 [動画を見る](https://www.youtube.com/watch?v=18W7YTAloqg)
+
+<div class="garden-url-preview garden-url-video"><iframe src="https://www.youtube-nocookie.com/embed/18W7YTAloqg" title="動画を見る" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
 
 ## 撮影（2025年2月～10月）
 
