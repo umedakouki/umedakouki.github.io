@@ -5,7 +5,7 @@ heading: "フォントの勉強"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:31:44.231137300+00:00">更新 2026-09-07 23:31</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.007628"><i style="width:11.64%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:31:44.231137300+00:00">更新 2026-09-07 23:31</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.007648"><i style="width:12.18%"></i></span><div class="garden-body" markdown="1">
 
 [web-typography-glossary](https://github.com/fontplus/web-typography-glossary/tree/master)
 

@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "バックルームズ"
-heading: "バックルームズ"
+title: "バックルームズ（映画）"
+heading: "バックルームズ（映画）"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:39:00.413936300+00:00">更新 2026-09-09 15:39</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 22%" title="PageRank 0.014599"><i style="width:22.27%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T07:32:30.864318800+00:00">更新 2026-09-09 16:32</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 23%" title="PageRank 0.014262"><i style="width:22.72%"></i></span><div class="garden-body" markdown="1">
 
-backroomsを取り巻く創作にありがちなホラー演出や、怪物、ネット怪談文脈、迷宮といった、リミナルスペースの美学から外れたものを最小限にとどめていたということもあって、リミナルスペースにひたすら浸ることのできた2時間だった。
+backroomsを取り巻く創作にありがちなホラー演出や、怪物、ネット怪談文脈、迷宮といった、[リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})の美学から外れたものを最小限にとどめていたということもあって、リミナルスペースにひたすら浸ることのできた2時間だった。
 
 <br />
 

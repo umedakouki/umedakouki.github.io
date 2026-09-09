@@ -5,7 +5,7 @@ heading: "無意識的な場所の意味と、その共有について"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:40:03.127744100+00:00">更新 2026-09-09 14:40</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 20%" title="PageRank 0.013392"><i style="width:20.43%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:40:03.127744100+00:00">更新 2026-09-09 14:40</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 21%" title="PageRank 0.013362"><i style="width:21.28%"></i></span><div class="garden-body" markdown="1">
 
 ## 現在の関心
 

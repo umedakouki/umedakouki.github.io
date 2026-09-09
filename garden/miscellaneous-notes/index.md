@@ -5,14 +5,13 @@ heading: "小論"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:35:12.867805700+00:00">更新 2026-09-09 15:35</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 44%" title="PageRank 0.028731"><i style="width:43.83%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T06:35:12.867805700+00:00">更新 2026-09-09 15:35</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 44%" title="PageRank 0.027591"><i style="width:43.94%"></i></span><div class="garden-body" markdown="1">
 
 [Garden]({{ '/garden/garden/' | relative_url }})上の、[梅田航輝]({{ '/garden/kouki-umeda/' | relative_url }})による小論。
 
 ## ページリンク
 
 - [なくしたもののための目録]({{ '/garden/inventory-of-lost/' | relative_url }})
-- [コレクティブ「プラントショップ」を始めた]({{ '/garden/note-2026_plantshop/' | relative_url }})
 - [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 - [似非論理]({{ '/garden/pseudo-logic/' | relative_url }})
 - [何を、どこに、なぜつくるのか]({{ '/garden/make-what-where-why/' | relative_url }})

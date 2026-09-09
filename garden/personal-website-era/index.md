@@ -5,7 +5,7 @@ heading: "個人ウェブサイトの時代"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:37:01.529781100+00:00">更新 2026-09-09 14:37</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 9%" title="PageRank 0.006042"><i style="width:9.22%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:37:01.529781100+00:00">更新 2026-09-09 14:37</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 10%" title="PageRank 0.006025"><i style="width:9.60%"></i></span><div class="garden-body" markdown="1">
 
 SNSに対抗し個人サイトどうしの紐帯を取り戻す時代だと思う。
 

@@ -5,7 +5,7 @@ heading: "記録と解釈について"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:47:48.960937400+00:00">更新 2026-09-09 14:47</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 10%" title="PageRank 0.006487"><i style="width:9.90%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:47:48.960937400+00:00">更新 2026-09-09 14:47</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 10%" title="PageRank 0.006535"><i style="width:10.41%"></i></span><div class="garden-body" markdown="1">
 
 私たちが実際に経験している世界は、どうしようもなくつかみどころがない。書き言葉、絵画、写真、映像といった記録は、そうした世界を何かしらの形で定着する強力な手段だが、可逆的に世界を再現するものではなく、記録すればするほど世界のつかみどころのなさに呆然とする。
 

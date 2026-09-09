@@ -5,7 +5,7 @@ heading: "『空間の生産』"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:33:16.276844500+00:00">更新 2026-09-09 14:33</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008027"><i style="width:12.25%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:33:16.276844500+00:00">更新 2026-09-09 14:33</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.007882"><i style="width:12.55%"></i></span><div class="garden-body" markdown="1">
 
 以下はアンリ・ルフェーブル『空間の生産』の内容の要約である。
 

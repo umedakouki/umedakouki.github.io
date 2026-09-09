@@ -5,7 +5,7 @@ heading: "以前noteに投稿していた記事"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:13:58.441932900+00:00">更新 2026-09-09 15:13</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 31%" title="PageRank 0.020113"><i style="width:30.69%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T06:13:58.441932900+00:00">更新 2026-09-09 15:13</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 32%" title="PageRank 0.020370"><i style="width:32.44%"></i></span><div class="garden-body" markdown="1">
 
 以下の記事は、2024年から2026年にかけて[note](https://note.com/aomou2001)に投稿していた記事。2026年9月に[Garden]({{ '/garden/garden/' | relative_url }})に移行。
 

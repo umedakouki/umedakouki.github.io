@@ -5,9 +5,14 @@ heading: "プラントショップ"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:32:22.546145800+00:00">更新 2026-09-09 15:32</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 41%" title="PageRank 0.026750"><i style="width:40.81%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T07:49:15.987037200+00:00">更新 2026-09-09 16:49</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 44%" title="PageRank 0.027603"><i style="width:43.96%"></i></span><div class="garden-body" markdown="1">
 
 [梅田航輝]({{ '/garden/kouki-umeda/' | relative_url }})が所属し活動を行っているコレクティブ。
+
+<br />
+
+[プラントショップのウェブサイト](https://www.plantshop.work/)
+
 
 ## ページリンク
 

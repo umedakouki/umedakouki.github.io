@@ -5,7 +5,7 @@ heading: "映画"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:26:21.217131200+00:00">更新 2026-09-09 15:26</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 100%" title="PageRank 0.065545"><i style="width:100.00%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T06:26:21.217131200+00:00">更新 2026-09-09 15:26</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 100%" title="PageRank 0.062785"><i style="width:100.00%"></i></span><div class="garden-body" markdown="1">
 
 [Garden]({{ '/garden/garden/' | relative_url }})で言及される映画。
 
@@ -22,7 +22,7 @@ hide_description: true
 - [チルド]({{ '/garden/chilled/' | relative_url }})
 - [ナミビアの砂漠]({{ '/garden/desert-of-namibia/' | relative_url }})
 - [ニヒル]({{ '/garden/nihil/' | relative_url }})
-- [バックルームズ]({{ '/garden/backrooms/' | relative_url }})
+- [バックルームズ（映画）]({{ '/garden/backrooms/' | relative_url }})
 - [プリティ・プリンセス]({{ '/garden/the-princess-diaries/' | relative_url }})
 - [ミレニアム・マンボ]({{ '/garden/millennium-mambo/' | relative_url }})
 - [メッセージ]({{ '/garden/arrival/' | relative_url }})
@@ -35,7 +35,7 @@ hide_description: true
 - [新幹線大爆破]({{ '/garden/the-bullet-train-explosion/' | relative_url }})
 - [旅と日々]({{ '/garden/two-seasons-two-strangers/' | relative_url }})
 - [映像]({{ '/garden/video/' | relative_url }})
-- [映像について考える]({{ '/garden/video-thoutht/' | relative_url }})
+- [映像メモ]({{ '/garden/video-thoutht/' | relative_url }})
 - [最後にして最初の人類]({{ '/garden/last-and-first-men/' | relative_url }})
 - [港町]({{ '/garden/inland-sea/' | relative_url }})
 - [満月の月]({{ '/garden/full-moon/' | relative_url }})

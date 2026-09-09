@@ -5,7 +5,7 @@ heading: "インターネットの交換可能性美学"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T04:51:16.857324200+00:00">更新 2026-09-09 13:51</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 11%" title="PageRank 0.007247"><i style="width:11.06%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T04:51:16.857324200+00:00">更新 2026-09-09 13:51</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 11%" title="PageRank 0.007093"><i style="width:11.30%"></i></span><div class="garden-body" markdown="1">
 
 近代的な文化では、
 

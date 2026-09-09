@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "映像について考える"
-heading: "映像について考える"
+title: "映像メモ"
+heading: "映像メモ"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:22:57.142246900+00:00">更新 2026-09-09 15:22</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 14%" title="PageRank 0.009132"><i style="width:13.93%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T07:44:43.773606900+00:00">更新 2026-09-09 16:44</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 10%" title="PageRank 0.006579"><i style="width:10.48%"></i></span><div class="garden-body" markdown="1">
 
 [Garden]({{ '/garden/garden/' | relative_url }})上の、[梅田航輝]({{ '/garden/kouki-umeda/' | relative_url }})による[映像]({{ '/garden/video/' | relative_url }})についての思考やメモ。
 
@@ -13,11 +13,6 @@ hide_description: true
 
 - [映像]({{ '/garden/video/' | relative_url }})
 - [映画]({{ '/garden/movie-inpression/' | relative_url }})
-
-
-## このページへの言及
-
-- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>
