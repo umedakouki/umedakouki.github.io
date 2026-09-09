@@ -5,7 +5,7 @@ heading: "交換可能性"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 17%" title="PageRank 0.009112"><i style="width:16.68%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 17%" title="PageRank 0.008966"><i style="width:16.76%"></i></span><div class="garden-body" markdown="1">
 
 交換可能性は、下部の仕組みを残したまま、その上の内容や意味を取り替えられる性質である。自由や柔軟さを生む一方、異なるものが同じ形式へ揃えられ、差異が表層だけになる危うさも含む。
 

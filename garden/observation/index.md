@@ -5,7 +5,7 @@ heading: "観察"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 30%" title="PageRank 0.016563"><i style="width:30.31%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 30%" title="PageRank 0.016237"><i style="width:30.35%"></i></span><div class="garden-body" markdown="1">
 
 観察は説明を減らすことではなく、対象を既知の結論へ急いで回収しない態度である。何が重要かを先に決めず、出来事の時間や周囲の音、偶然入り込む関係を受け取る。
 

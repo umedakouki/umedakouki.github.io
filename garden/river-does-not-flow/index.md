@@ -5,7 +5,7 @@ heading: "リバー、流れないでよ"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:05:39.967327+00:00">更新 2026-09-09 14:05</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.003248"><i style="width:5.94%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:05:39.967327+00:00">更新 2026-09-09 14:05</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.003180"><i style="width:5.94%"></i></span><div class="garden-body" markdown="1">
 
 シンプルな造りで演劇的なドラマを持ち込む、さすがヨーロッパ企画な作品。冒頭のタイトルが出るまでの7分を観返す(ループする)と、作品の丁寧さが分かる。あと、音響が積極的にシーンを作り出していて、気持ちを入れやすい。
 

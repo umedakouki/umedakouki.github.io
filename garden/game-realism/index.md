@@ -5,7 +5,7 @@ heading: "『ゲーム的リアリズムの誕生』"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T12:48:05.563649500+00:00">更新 2026-09-07 21:48</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 24%" title="PageRank 0.013090"><i style="width:23.96%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T12:48:05.563649500+00:00">更新 2026-09-07 21:48</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 25%" title="PageRank 0.013329"><i style="width:24.91%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 

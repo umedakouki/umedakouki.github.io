@@ -5,7 +5,7 @@ heading: "アイアムアヒーロー"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:05:39.967327+00:00">更新 2026-09-09 14:05</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.003248"><i style="width:5.94%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:05:39.967327+00:00">更新 2026-09-09 14:05</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.003180"><i style="width:5.94%"></i></span><div class="garden-body" markdown="1">
 
 日本の街並みのコードがゾンビの出現によって崩壊していく様が気持ちいい。ちょっと人物像が荒いけど、自分的にはそれくらいで良くて、むしろ街がどう変容していったかの描写を見てみたかった。画面の出来はばっちり。
 

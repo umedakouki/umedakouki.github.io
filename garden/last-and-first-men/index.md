@@ -5,7 +5,7 @@ heading: "最後にして最初の人類"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:05:39.967327+00:00">更新 2026-09-09 14:05</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.003248"><i style="width:5.94%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:05:39.967327+00:00">更新 2026-09-09 14:05</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.003180"><i style="width:5.94%"></i></span><div class="garden-body" markdown="1">
 
 宇宙の広さへの畏怖と憐憫。地球年で20億年経た人類も変わらないな。画面に映る人工物は意味を失っていて、マグリットの絵画のような崇高さを放つ。人工物は宇宙に飲み込まれる。
 
