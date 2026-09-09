@@ -5,7 +5,7 @@ heading: "Gardenの思想"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.453883+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 38%" title="PageRank 0.020781"><i style="width:37.78%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.453883+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 38%" title="PageRank 0.020700"><i style="width:37.89%"></i></span><div class="garden-body" markdown="1">
 
 [Garden]({{ '/garden/garden/' | relative_url }})は、メモを分類して収納するための場所ではなく、ページ同士を結びながら思考の形を育てていく場所です。すべての[記録]({{ '/garden/record/' | relative_url }})を同じ「ページ」として扱い、それが作品、日記、研究、人物、概念のどれなのかを最初から固定しません。ページの意味は、何とつながり、どこから言及されているかによって徐々に現れます。
 

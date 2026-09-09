@@ -5,7 +5,7 @@ heading: "リベラルテック月報"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:59:46.685089500+00:00">更新 2026-09-09 14:59</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 9%" title="PageRank 0.004745"><i style="width:8.63%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:59:46.685089500+00:00">更新 2026-09-09 14:59</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 9%" title="PageRank 0.005034"><i style="width:9.21%"></i></span><div class="garden-body" markdown="1">
 
 ゲンロンのリベラルテック月報は、初回から毎月視聴している。二次会もちゃんと購入して全部見ている。二次会が本編みたいなきらいもある。
 

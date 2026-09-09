@@ -5,13 +5,13 @@ heading: "賭けること"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T12:13:26.057403400+00:00">更新 2026-09-09 21:13</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 3%" title="PageRank 0.001811"><i style="width:3.29%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T14:58:22.262982800+00:00">更新 2026-09-09 23:58</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 3%" title="PageRank 0.001797"><i style="width:3.29%"></i></span><div class="garden-body" markdown="1">
 
 ゲス◎の2026年公演の稽古に観光客としてかかわっている。そのテーマは賭けるということについてであり、ドストエフスキーの『賭博者』を主なテキストとしている。ということもあり、最近は賭けることについて考えることが多い。
 
 <br />
 
-[東浩紀]()による[東浩紀の恒例無料突発雑談配信 9月8日編](https://www.youtube.com/live/gmi-Plczlts?si=uDz-ih-ltxYnzJBO)をなんとなく流していたら、稽古でもよく話していた、統計と経験の違いについて話していたので文字起こしを以下に引用。
+[東浩紀]({{ '/garden/azuma-hiroki/' | relative_url }})による[東浩紀の恒例無料突発雑談配信 9月8日編](https://www.youtube.com/live/gmi-Plczlts?si=uDz-ih-ltxYnzJBO)をなんとなく流していたら、稽古でもよく話していた、統計と経験の違いについて話していたので文字起こしを以下に引用。
 
 <div class="garden-url-preview garden-url-video"><iframe src="https://www.youtube-nocookie.com/embed/gmi-Plczlts" title="東浩紀の恒例無料突発雑談配信 9月8日編" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
 

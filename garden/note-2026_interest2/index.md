@@ -5,7 +5,7 @@ heading: "作ることと見ること"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.434729+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 14%" title="PageRank 0.007429"><i style="width:13.51%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.434729+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 14%" title="PageRank 0.007385"><i style="width:13.52%"></i></span><div class="garden-body" markdown="1">
 
 ## 関心と方向性について
 

@@ -5,7 +5,7 @@ heading: "インターネット美学"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:57:50.320454300+00:00">更新 2026-09-09 14:57</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 15%" title="PageRank 0.008208"><i style="width:14.92%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:57:50.320454300+00:00">更新 2026-09-09 14:57</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 15%" title="PageRank 0.008159"><i style="width:14.93%"></i></span><div class="garden-body" markdown="1">
 
 [美学ウィキ](https://scrapbox.io/AestheticsWiki/)に詳しく紹介されている。
 

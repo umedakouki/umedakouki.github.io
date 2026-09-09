@@ -5,7 +5,7 @@ heading: "プラットフォーム"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 17%" title="PageRank 0.009541"><i style="width:17.35%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 17%" title="PageRank 0.009492"><i style="width:17.37%"></i></span><div class="garden-body" markdown="1">
 
 プラットフォームは、発信や制作を可能にする土台でありながら、そこで可能な行為の形式も規定する。内容が自由に見えるときほど、投稿単位、表示順、公開範囲といった下部の決定を見直す必要がある。
 
