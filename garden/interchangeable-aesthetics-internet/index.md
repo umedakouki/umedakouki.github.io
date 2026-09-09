@@ -5,7 +5,7 @@ heading: "インターネットの交換可能性美学"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T04:51:16.857324200+00:00">更新 2026-09-09 13:51</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 11%" title="PageRank 0.007093"><i style="width:11.30%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.461753+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.006789"><i style="width:12.06%"></i></span><div class="garden-body" markdown="1">
 
 近代的な文化では、
 
@@ -32,11 +32,11 @@ Vaporwave\
 
 これは[東浩紀]({{ '/garden/azuma-hiroki/' | relative_url }})的に言えば、（[データベース消費]({{ '/garden/databace-consumption/' | relative_url }})）
 
-「強固なデータベース＋交換可能な表層」
+「強固なデータベース＋[交換可能性]({{ '/garden/interchangeability/' | relative_url }})な表層」
 
 という構造として考えられます。
 
-さらに興味深いのは、Liminal Spaceがまさにその「下部構造」を被写体にしていることです。ショッピングモール、ホテル、学校、空港、オフィス、地下通路、駐車場というのは、個人的意味よりも先に存在する、標準化された近代社会のインフラ的空間です。
+さらに興味深いのは、Liminal Spaceがまさにその「下部構造」を被写体にしていることです。ショッピングモール、ホテル、学校、空港、オフィス、地下通路、駐車場というのは、個人的意味よりも先に存在する、標準化された近代社会の[インフラ]({{ '/garden/infrastructure/' | relative_url }})的空間です。
 
 そこから人間、広告、商品、活動などの「意味」を除去すると、
 
@@ -58,6 +58,7 @@ Vaporwave\
 ## このページへの言及
 
 - [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
+- [交換可能性]({{ '/garden/interchangeability/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

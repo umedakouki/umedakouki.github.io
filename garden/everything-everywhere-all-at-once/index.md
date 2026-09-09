@@ -5,9 +5,9 @@ heading: "エブリシング・エブリウェア・オール・アット・ワ�
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:05:39.967327+00:00">更新 2026-09-09 14:05</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 7%" title="PageRank 0.004085"><i style="width:6.51%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:20:33.477697+00:00">更新 2026-09-09 17:20</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.003369"><i style="width:5.98%"></i></span><div class="garden-body" markdown="1">
 
-マルチバースのSF的設定や、弁証法的な愛の再確認という展開はそれなりに深い内容だが、絵やセリフですべて説明してしまったので、映画において想像させられるものが少なかった。その点で私の中の評価はいま一つ。映像の迫力は唯一無二だった。
+マルチバースのSF的設定や、弁証法的な愛の再確認という展開はそれなりに深い内容だが、絵やセリフですべて説明してしまったので、[映画]({{ '/garden/movie-inpression/' | relative_url }})において想像させられるものが少なかった。その点で私の中の評価はいま一つ。[映像]({{ '/garden/video/' | relative_url }})の迫力は唯一無二だった。
 
 ## ページリンク
 

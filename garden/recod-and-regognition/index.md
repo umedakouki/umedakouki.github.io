@@ -5,9 +5,9 @@ heading: "記録と解釈について"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:47:48.960937400+00:00">更新 2026-09-09 14:47</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 10%" title="PageRank 0.006535"><i style="width:10.41%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.456419+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 22%" title="PageRank 0.012344"><i style="width:21.93%"></i></span><div class="garden-body" markdown="1">
 
-私たちが実際に経験している世界は、どうしようもなくつかみどころがない。書き言葉、絵画、写真、映像といった記録は、そうした世界を何かしらの形で定着する強力な手段だが、可逆的に世界を再現するものではなく、記録すればするほど世界のつかみどころのなさに呆然とする。
+私たちが実際に経験している世界は、どうしようもなくつかみどころがない。書き言葉、絵画、写真、[映像]({{ '/garden/video/' | relative_url }})といった[記録]({{ '/garden/record/' | relative_url }})は、そうした世界を何かしらの形で定着する強力な手段だが、可逆的に世界を再現するものではなく、記録すればするほど世界のつかみどころのなさに呆然とする。
 
 むしろ、その記録は元の世界とは無関係に、全く別の新しい経験、記録にとっては不本意の経験（＝解釈）をもたらすものと考えられないだろうか。というか、記録されるほとんどのものがビット化され、記録の種類をも横断しながらインターネットに流通し、無限の組み合わせが生成され続ける現代においてその事実は疑いようがない。
 
@@ -23,6 +23,8 @@ hide_description: true
 
 ## このページへの言及
 
+- [記憶]({{ '/garden/memory/' | relative_url }})
+- [編集]({{ '/garden/editing/' | relative_url }})
 - [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 
 </div></article>

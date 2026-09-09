@@ -5,7 +5,7 @@ heading: "フォントの勉強"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:31:44.231137300+00:00">更新 2026-09-07 23:31</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.007648"><i style="width:12.18%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:20:33.498096+00:00">更新 2026-09-09 17:20</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 8%" title="PageRank 0.004373"><i style="width:7.77%"></i></span><div class="garden-body" markdown="1">
 
 [web-typography-glossary](https://github.com/fontplus/web-typography-glossary/tree/master)
 
@@ -33,11 +33,11 @@ webタイポグラフィの基礎知識。なんとなく使っている用語�
 
 &#x20;   プログラマーのための、誤読しにくい等幅フォント。見た目のわいわい感も好き。
 
-自分の環境（ウェブサイトやGarden等）としては、M PLUS 1 Codeが最もいいかもしれない。ダウンロードした。
+自分の環境（ウェブサイトや[Garden]({{ '/garden/garden/' | relative_url }})等）としては、[M PLUS 1 Code]({{ '/garden/m-plus-1-code/' | relative_url }})が最もいいかもしれない。ダウンロードした。
 
 <br />
 
-追記　やっぱりLINE Seed JPにしようかな。
+追記　やっぱり[LINE Seed JP]({{ '/garden/line-seed-jp/' | relative_url }})にしようかな。
 
 ## このページへの言及
 

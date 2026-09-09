@@ -5,7 +5,7 @@ heading: "Gardenのナビゲーション"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T07:44:54.502774200+00:00">更新 2026-09-09 16:44</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 27%" title="PageRank 0.017101"><i style="width:27.24%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:44:04.679802200+00:00">更新 2026-09-09 17:44</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 19%" title="PageRank 0.010857"><i style="width:19.29%"></i></span><div class="garden-body" markdown="1">
 
 [Garden]({{ '/garden/garden/' | relative_url }})の、ナビゲーションとなるページ。
 
@@ -17,7 +17,7 @@ hide_description: true
 
 [建築メモ]({{ '/garden/architecture-thought/' | relative_url }})
 
-<br />
+[映像メモ]({{ '/garden/video-thoutht/' | relative_url }})
 
 [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 

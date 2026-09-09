@@ -5,9 +5,9 @@ heading: "なくしたもののための目録"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:46:59.144068400+00:00">更新 2026-09-09 14:46</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 15%" title="PageRank 0.009582"><i style="width:15.26%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.452561+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 18%" title="PageRank 0.009864"><i style="width:17.52%"></i></span><div class="garden-body" markdown="1">
 
-「収集記録」というプライベートなデータベースをつくって管理している。そのことをChatGPTに伝えた。
+「収集[記録]({{ '/garden/record/' | relative_url }})」というプライベートなデータベースをつくって管理している。そのことをChatGPTに伝えた。
 
 > 街でふと拾ったメモ、手元に残っていたプリント、スキャンされた断片。\
 > それ自体は何でもないように見えるものが、ふとしたきっかけで記録の対象になる。\
@@ -17,7 +17,7 @@ hide_description: true
 > この記録には、二つの意識がある。\
 > ひとつは、物や出来事の**背景を丁寧にたどること**。\
 > 何を拾ったか、だけでなく「どこで」「どうして」「そのとき自分は何をしていたか」――そういった文脈をできる限り書き留めていく。\
-> だからこの記録は、モノのリストであると同時に、時間の記録であり、風景の記憶でもある。\
+> だからこの記録は、モノのリストであると同時に、時間の記録であり、風景の[記憶]({{ '/garden/memory/' | relative_url }})でもある。\
 > もうひとつは、**拾われなかったものたちへのまなざし**。\
 > 記録に残されたものの背後には、無数の「記録されなかったものたち」がある。\
 > その存在の圧倒的な重さを、私はいつも感じている。\
@@ -36,6 +36,7 @@ hide_description: true
 
 ## このページへの言及
 
+- [記憶]({{ '/garden/memory/' | relative_url }})
 - [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 
 </div></article>

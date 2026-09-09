@@ -5,7 +5,7 @@ heading: "場所の記述についての習作"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:32:54.038475100+00:00">更新 2026-09-09 14:32</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 18%" title="PageRank 0.011106"><i style="width:17.69%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:41:44.754402900+00:00">更新 2026-09-09 17:41</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 24%" title="PageRank 0.013752"><i style="width:24.43%"></i></span><div class="garden-body" markdown="1">
 
 * [シリーズ1（YouTube）](https://youtu.be/wbiqQ-mI8yw)
 
@@ -13,7 +13,7 @@ hide_description: true
 
   コマ撮り写真、音声、起こっていることのメモをもとに、
 
-  おおむね時系列順に、少しずつ関連させながら並べ編集した作品。
+  おおむね時系列順に、少しずつ関連させながら並べ[編集]({{ '/garden/editing/' | relative_url }})した作品。
 
 * [シリーズ2](https://umedakouki.work/practice/description/2/index.html)
 
@@ -27,11 +27,11 @@ hide_description: true
 
 * [シリーズ4](https://umedakouki.work/practice/description/4/index.html)
 
-  路上には、植木や貼り紙や生活道具など、住人による仮設的な介入がみられる。公共空間という共同のものの表面を、不特定多数の住人が形作っている。この様子を集めたものを、住人たちによる共同作業の結果として見ることはできないだろうか
+  路上には、植木や貼り紙や生活道具など、住人による仮設的な介入がみられる。公共空間という[共同性]({{ '/garden/collaboration/' | relative_url }})のものの表面を、不特定多数の住人が形作っている。この様子を集めたものを、住人たちによる共同作業の結果として見ることはできないだろうか
 
 * [シリーズ5](https://umedakouki.work/practice/description/5/index.html)
 
-  記録物を比較して並べるという作業をする際には、その記録のフォーマットがある程度揃っていることが好ましい。これはシリーズ2の「連続と差分」というテーマにもつながることであり、[シリーズ2-2](https://umedakouki.work/practice/description/2/2-2/index.html)において、対象物をスキャンするような正対した写真は有効であることを確認した。
+  [記録]({{ '/garden/record/' | relative_url }})物を比較して並べるという作業をする際には、その記録のフォーマットがある程度揃っていることが好ましい。これはシリーズ2の「連続と差分」というテーマにもつながることであり、[シリーズ2-2](https://umedakouki.work/practice/description/2/2-2/index.html)において、対象物をスキャンするような正対した写真は有効であることを確認した。
 
   対象物をスキャンするように「正対」してカメラを向ける以外のこととしては、「望遠」が考えられた。望遠は、通常の視野に比べてパースが緩いという点で、スキャン的でもある。望遠の可能性を考えたい。
 
@@ -39,7 +39,7 @@ hide_description: true
 
   「remo NPO法人 記録と表現とメディアのための組織」という組織がある。そこで行われていた「remoscope」という一連のワークショップに興味を持った。（[「remoscope」についての公式サイト](https://www.remo.or.jp/ja/project/remoscope/)）
 
-  remoscopeは、「固定カメラ・無音・無加工・無編集・ズーム無し・最長一分」というリュミエール・ルールに従って撮影された映像を集め、その映像を持ち寄って上映し、語り合う場がつくられる。初心者でも経験者でも作品を創作し、発表し、互いに鑑賞できる。日常的に見過ごしている場所に新しい発見がありうること、そして映像を切り取ることで日常の中にある動画メディアの役割や可能性、映像文法そのものを再考することが目的として示されている。
+  remoscopeは、「固定カメラ・無音・無加工・無編集・ズーム無し・最長一分」というリュミエール・ルールに従って撮影された[映像]({{ '/garden/video/' | relative_url }})を集め、その映像を持ち寄って上映し、語り合う場がつくられる。初心者でも経験者でも作品を創作し、発表し、互いに鑑賞できる。[日常]({{ '/garden/everyday-life/' | relative_url }})的に見過ごしている[場所]({{ '/garden/place/' | relative_url }})に新しい発見がありうること、そして映像を切り取ることで日常の中にある動画メディアの役割や可能性、映像文法そのものを再考することが目的として示されている。
 
 * [シリーズ7](https://umedakouki.work/practice/description/7/index.html)
 
@@ -61,6 +61,8 @@ hide_description: true
 
   位置情報付きの記録物を投稿し、関係づけ、クラスタとして編集・探索するためのプロトタイプ。
 
+
+
 ## ページリンク
 
 - [作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})
@@ -71,8 +73,10 @@ hide_description: true
 
 ## このページへの言及
 
-- [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 - [無意識的な場所の意味と、その共有について]({{ '/garden/note-2026_interest/' | relative_url }})
+- [場所]({{ '/garden/place/' | relative_url }})
+- [編集]({{ '/garden/editing/' | relative_url }})
+- [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

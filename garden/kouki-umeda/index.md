@@ -5,7 +5,7 @@ heading: "梅田航輝"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:28:56.735173200+00:00">更新 2026-09-07 23:28</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 57%" title="PageRank 0.035755"><i style="width:56.95%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:28:56.735173200+00:00">更新 2026-09-07 23:28</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 48%" title="PageRank 0.027258"><i style="width:48.43%"></i></span><div class="garden-body" markdown="1">
 
 [このサイト](https://www.umedakouki.work/)や[Garden]({{ '/garden/garden/' | relative_url }})を更新している人。
 
@@ -18,13 +18,13 @@ hide_description: true
 
 ## このページへの言及
 
-- [SNSについて]({{ '/garden/sns/' | relative_url }})
-- [プラントショップ]({{ '/garden/plantshop/' | relative_url }})
 - [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
-- [映像メモ]({{ '/garden/video-thoutht/' | relative_url }})
-- [建築メモ]({{ '/garden/architecture-thought/' | relative_url }})
+- [SNSについて]({{ '/garden/sns/' | relative_url }})
 - [AOMOU]({{ '/garden/aomou/' | relative_url }})
 - [A列車で行こう]({{ '/garden/a-train-game/' | relative_url }})
+- [プラントショップ]({{ '/garden/plantshop/' | relative_url }})
+- [映像メモ]({{ '/garden/video-thoutht/' | relative_url }})
+- [建築メモ]({{ '/garden/architecture-thought/' | relative_url }})
 - [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [個人ウェブサイト集]({{ '/garden/personal-website/' | relative_url }})
 - [森達也]({{ '/garden/moritatsuya/' | relative_url }})

@@ -5,7 +5,7 @@ heading: "『GELEL』での作業プロセス"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:35:22.921383900+00:00">更新 2026-09-09 15:35</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 15%" title="PageRank 0.009385"><i style="width:14.95%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.472867+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 21%" title="PageRank 0.011988"><i style="width:21.30%"></i></span><div class="garden-body" markdown="1">
 
 [『GELEL』](https://umedakouki.work/works/gelel.html)
 
@@ -59,7 +59,7 @@ hide_description: true
 
 <span class="garden-media garden-image"><img src="{{ '/assets/garden/78560533-4dff-576b-a20f-bd93acc46e5d.jpg' | relative_url }}" alt="17.jpg" loading="lazy"></span>
 
-下の動画は、作業の様子をメイキング映像的に編集したもの。
+下の動画は、作業の様子をメイキング[映像]({{ '/garden/video/' | relative_url }})的に[編集]({{ '/garden/editing/' | relative_url }})したもの。
 
 [動画を見る](https://www.youtube.com/watch?v=18W7YTAloqg)
 
@@ -79,7 +79,7 @@ hide_description: true
 
 ## 合成（2025年11月～12月）
 
-合成は、屋内撮影素材に空を合成したり、被写体と背景が別々の素材を合成したり、画面に映り込んでいる余計なものを消したりする作業を担当した。撮影時に合成を見越して撮っていた素材などもあり、スムーズに作業に移ることができた。作業は11月の松ヶ崎祭（大学祭）での初公開時と、12月初めの自主怪獣映画選手権へのエントリー前に集中して行った。基本的には監督やCG統括の指示に従いながら、合成の違和感をできるだけなくしていくことを目指していた。ソフトは主にPremiere Proを使い、クロマキー合成とトリミング、キーフレームを駆使して地道に作業した。
+合成は、屋内撮影素材に空を合成したり、被写体と背景が別々の素材を合成したり、画面に映り込んでいる余計なものを消したりする作業を担当した。撮影時に合成を見越して撮っていた素材などもあり、スムーズに作業に移ることができた。作業は11月の松ヶ崎祭（大学祭）での初公開時と、12月初めの自主怪獣[映画]({{ '/garden/movie-inpression/' | relative_url }})選手権へのエントリー前に集中して行った。基本的には監督やCG統括の指示に従いながら、合成の違和感をできるだけなくしていくことを目指していた。ソフトは主にPremiere Proを使い、クロマキー合成とトリミング、キーフレームを駆使して地道に作業した。
 
 ## 振り返って
 
@@ -97,6 +97,8 @@ hide_description: true
 
 ## このページへの言及
 
+- [共同性]({{ '/garden/collaboration/' | relative_url }})
+- [編集]({{ '/garden/editing/' | relative_url }})
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 
 </div></article>

@@ -5,7 +5,7 @@ heading: "似非論理"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:47:41.729804500+00:00">更新 2026-09-09 14:47</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 10%" title="PageRank 0.006535"><i style="width:10.41%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:20:33.532947+00:00">更新 2026-09-09 17:20</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 11%" title="PageRank 0.005964"><i style="width:10.60%"></i></span><div class="garden-body" markdown="1">
 
 > ストーリーの出来で重要なのは情報の整合性であって、完全性ではない。むしろ手元に少ししか情報がないときのほうが、うまいことすべての情報を筋書き通りにはめ込むことができる。
 
@@ -17,7 +17,7 @@ hide_description: true
 
 「～だから、～は～だ。」は、学術的な考証を行っている場以外ではほとんど再現性のない妄言なんじゃないか。と、とうに自分含め多くの人が知っている事実をなんとなく書いてみる。
 
-似非「論理」をバカにしたいわけではない。むしろ自分はそれにおもしろみを感じているし、人間の豊かさだと思っている。なぜなら、「～だから」に含まれるのはフィクションの設定であり、想像力の萌芽だからだ。
+似非「論理」をバカにしたいわけではない。むしろ自分はそれにおもしろみを感じているし、人間の豊かさだと思っている。なぜなら、「～だから」に含まれるのは[フィクション]({{ '/garden/fiction/' | relative_url }})の設定であり、想像力の萌芽だからだ。
 
 「メロスは走っている。なぜなら激怒したから」という文はもはや論理の体をなしていない。しかし激怒しているなら仕方ないか、と思わせてくる妙な説得感がある。説得感がないとしても、それがフィクションであるというたてつけであれば、その大枠の中でコントのような面白がり方をすることができる。
 
@@ -31,6 +31,7 @@ hide_description: true
 
 ## このページへの言及
 
+- [物語]({{ '/garden/narrative/' | relative_url }})
 - [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 
 </div></article>

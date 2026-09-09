@@ -5,9 +5,9 @@ heading: "garden.ooo"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T04:52:36.857454400+00:00">更新 2026-09-09 13:52</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 22%" title="PageRank 0.013676"><i style="width:21.78%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.463893+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 17%" title="PageRank 0.009289"><i style="width:16.50%"></i></span><div class="garden-body" markdown="1">
 
-[橋本麦]({{ '/garden/baku89/' | relative_url }})氏のgarden.oooは、単なる「メモをリンクできる[Wiki]({{ '/garden/wiki/' | relative_url }})」ではありません。中心にあるのは、現在のCMSやSNSが情報に与えている「分類」「時系列」「プラットフォームへの従属」を解体し、Webをもう一度、自分で関係を編める場所として取り戻す考え方です。
+[橋本麦]({{ '/garden/baku89/' | relative_url }})氏の[Garden]({{ '/garden/garden/' | relative_url }}).oooは、単なる「メモをリンクできる[Wiki]({{ '/garden/wiki/' | relative_url }})」ではありません。中心にあるのは、現在のCMSやSNSが情報に与えている「分類」「時系列」「[プラットフォーム]({{ '/garden/platform/' | relative_url }})への従属」を解体し、Webをもう一度、自分で関係を編める場所として取り戻す考え方です。
 
 ### 1. 情報を先に分類しない
 
@@ -42,7 +42,7 @@ gardenでは、リンクをおおむね二つに分けています。
 
 そのため、サービスが終了しても文章は残ります。garden以外にも、Obsidian、メモ帳、コードエディタ、AI、コマンドラインなどから扱えます。プレーンテキストを「もっとも普遍的なインターフェース」と見なし、特定のアプリに知識を閉じ込めない設計です。[設計思想](https://baku89.com/ja/garden/design-principles)
 
-これは単なるバックアップ方針ではなく、書いたものの所有権と編集権を利用者へ戻す思想です。
+これは単なるバックアップ方針ではなく、書いたものの所有権と[編集]({{ '/garden/editing/' | relative_url }})権を利用者へ戻す思想です。
 
 ### 5. 公開と非公開、完成と未完成を混在させる
 
@@ -64,7 +64,7 @@ gardenは、完成した記事だけを載せる場所ではありません。�
 
 これは「誰でも失敗せずに使える均質なサービス」より、「自分の場所を自分で作り、必要なら壊して作り直せる道具」を重視する考え方です。かつての個人ホームページ文化を、ローカル保存や同期などの現代的な技術によって再構築しようとしているともいえます。
 
-要約すると、橋本氏のgardenは、**ページを分類して陳列するCMSではなく、断片を書き、リンクし、公開範囲を調整しながら、その人固有の知識と活動の構造を育て続けるための基盤**です。究極のWikiという表現は近いですが、それに加えて、個人ホームページ、ローカルな文章環境、公開CMSを一つの連続した生態系として扱おうとしている点が特徴です。
+要約すると、橋本氏のgardenは、**ページを分類して陳列するCMSではなく、断片を書き、リンクし、公開範囲を調整しながら、その人固有の知識と活動の構造を育て続けるための基盤**です。究極の[Wiki]({{ '/garden/wiki/' | relative_url }})という表現は近いですが、それに加えて、個人ホームページ、ローカルな文章環境、公開CMSを一つの連続した生態系として扱おうとしている点が特徴です。
 
 ## ページリンク
 

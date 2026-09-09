@@ -5,9 +5,9 @@ heading: "8番出口"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:10:00.033605200+00:00">更新 2026-09-09 14:10</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.007883"><i style="width:12.56%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:20:33.484485+00:00">更新 2026-09-09 17:20</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 10%" title="PageRank 0.005535"><i style="width:9.83%"></i></span><div class="garden-body" markdown="1">
 
-ゲームの一人称視点のような画面、長回しショット、ブレンダーで作ったような、現実なのかヴァーチャルなのか分からない世界。今まで見たことがない斬新な映画だった。ボレロや貝殻、そしてループという設定が、現代人の主観を暴き出している感じ。カメラの存在が消えている。
+[ゲーム]({{ '/garden/game/' | relative_url }})の一人称視点のような画面、長回しショット、ブレンダーで作ったような、現実なのかヴァーチャルなのか分からない世界。今まで見たことがない斬新な[映画]({{ '/garden/movie-inpression/' | relative_url }})だった。ボレロや貝殻、そしてループという設定が、現代人の主観を暴き出している感じ。カメラの存在が消えている。
 
 ## ページリンク
 
