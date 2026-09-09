@@ -5,7 +5,7 @@ heading: "作ることと見ること"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:45:59.297100200+00:00">更新 2026-09-07 23:45</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 17%" title="PageRank 0.010078"><i style="width:17.14%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:47:33.525761500+00:00">更新 2026-09-09 14:47</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 21%" title="PageRank 0.013918"><i style="width:20.66%"></i></span><div class="garden-body" markdown="1">
 
 ## 関心と方向性について
 
@@ -24,12 +24,17 @@ hide_description: true
 
 ## ページリンク
 
+- [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
+- [場所の記述についての習作]({{ '/garden/note-2026_desctiption/' | relative_url }})
+- [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
+- [無意識的な場所の意味と、その共有について]({{ '/garden/note-2026_interest/' | relative_url }})
 
 
 ## このページへの言及
 
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
+- [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

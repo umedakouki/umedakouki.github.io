@@ -5,7 +5,7 @@ heading: "Wiki"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T13:47:47.101107700+00:00">更新 2026-09-07 22:47</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 39%" title="PageRank 0.022755"><i style="width:38.70%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T13:47:47.101107700+00:00">更新 2026-09-07 22:47</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 36%" title="PageRank 0.024103"><i style="width:35.77%"></i></span><div class="garden-body" markdown="1">
 
 Wikiは、複数のページを簡単に作成・編集し、それらをリンクで結びながら情報を蓄積する仕組みです。代表例はWikipediaですが、Wikiそのものは百科事典に限らず、個人メモ、社内文書、研究記録などにも使えます。
 
@@ -17,7 +17,6 @@ WikipediaのようなWikiは、多くの人が共通の知識を編集するこ�
 
 [Garden／庭]({{ '/garden/garden/' | relative_url }})も個人Wikiの一種です。ただし、単に情報を整理するだけでなく、未完成のメモを残し、ページ同士の関係を育て、そこから新しい考えを発見することを重視しています。フォルダやカテゴリよりリンクを中心にすることで、一つのページが複数の文脈に同時に属せるようになっています。
 
-
 ## ページリンク
 
 - [Garden／庭の思想]({{ '/garden/garden-thought/' | relative_url }})
@@ -26,7 +25,8 @@ WikipediaのようなWikiは、多くの人が共通の知識を編集するこ�
 ## このページへの言及
 
 - [Garden／庭]({{ '/garden/garden/' | relative_url }})
-- [Garden／庭の主要ページ]({{ '/garden/front-garden/' | relative_url }})
+- [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
+- [garden.ooo]({{ '/garden/garden-ooo/' | relative_url }})
 - [Garden／庭の思想]({{ '/garden/garden-thought/' | relative_url }})
 
 </div></article>

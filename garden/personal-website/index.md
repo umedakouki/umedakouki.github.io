@@ -5,7 +5,7 @@ heading: "個人ウェブサイト集"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:36:09.023237400+00:00">更新 2026-09-07 23:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 31%" title="PageRank 0.017963"><i style="width:30.55%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:37:01.519210800+00:00">更新 2026-09-09 14:37</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 18%" title="PageRank 0.012417"><i style="width:18.43%"></i></span><div class="garden-body" markdown="1">
 
 ## ego
 
@@ -29,17 +29,18 @@ hide_description: true
 
 森博嗣の浮遊工作室：<https://www.ne.jp/asahi/beat/non/mori/>
 
+
 ## ページリンク
 
-- [Garden／庭の主要ページ]({{ '/garden/front-garden/' | relative_url }})
 - [Garden／庭の思想]({{ '/garden/garden-thought/' | relative_url }})
 - [個人ウェブサイトの時代]({{ '/garden/personal-website-era/' | relative_url }})
+- [外部サイト]({{ '/garden/external-website/' | relative_url }})
 
 
 ## このページへの言及
 
+- [外部サイト]({{ '/garden/external-website/' | relative_url }})
 - [個人ウェブサイトの時代]({{ '/garden/personal-website-era/' | relative_url }})
-- [Garden／庭の主要ページ]({{ '/garden/front-garden/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

@@ -5,7 +5,7 @@ heading: "管理＝制御型社会"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:40:00.477472+00:00">更新 2026-09-07 23:40</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 25%" title="PageRank 0.014543"><i style="width:24.73%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:40:00.477472+00:00">更新 2026-09-07 23:40</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 14%" title="PageRank 0.009200"><i style="width:13.65%"></i></span><div class="garden-body" markdown="1">
 
 管理や制御といったものについて考えていきたい。
 
@@ -14,8 +14,6 @@ hide_description: true
 > ジル・ドゥルーズの「追伸　管理＝制御社会について」
 > 近代と呼ばれてきた時代の次の時期区分を明確化することから始まる。その近代の後の時期区分は、もはや君主＝主権による中心的な管理にも、監獄や工場における脱中心的な管理にも基づいてはいない。本書の目的は、この第三の歴史の並みが持つ固有性を、そこで生じたコンピュータ技術の管理＝制御に焦点を合わせることによって具体化して論じることである。
 > 君主＝主権型社会から規律＝訓練型社会、そして管理＝制御型社会へ
-
-
 
 ## ページリンク
 

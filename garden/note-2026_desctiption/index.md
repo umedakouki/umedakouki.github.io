@@ -5,7 +5,7 @@ heading: "場所の記述についての習作"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T13:58:26.704498800+00:00">更新 2026-09-07 22:58</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 36%" title="PageRank 0.020910"><i style="width:35.56%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:32:54.038475100+00:00">更新 2026-09-09 14:32</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 17%" title="PageRank 0.011431"><i style="width:16.97%"></i></span><div class="garden-body" markdown="1">
 
 * [シリーズ1（YouTube）](https://youtu.be/wbiqQ-mI8yw)
 
@@ -65,14 +65,16 @@ hide_description: true
 
 ## ページリンク
 
+- [作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
+- [無意識的な場所の意味と、その共有について]({{ '/garden/note-2026_interest/' | relative_url }})
 - [生きられた場所]({{ '/garden/lived-place/' | relative_url }})
 
 
 ## このページへの言及
 
-- [無意識的な場所の意味と、その共有について]({{ '/garden/note-2026_interest/' | relative_url }})
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
+- [無意識的な場所の意味と、その共有について]({{ '/garden/note-2026_interest/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

@@ -5,7 +5,7 @@ heading: "映画『バックルームズ』"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T11:45:34.732515700+00:00">更新 2026-09-07 20:45</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 39%" title="PageRank 0.022704"><i style="width:38.61%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T11:45:34.732515700+00:00">更新 2026-09-07 20:45</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 22%" title="PageRank 0.014965"><i style="width:22.21%"></i></span><div class="garden-body" markdown="1">
 
 backroomsを取り巻く創作にありがちなホラー演出や、怪物、ネット怪談文脈、迷宮といった、リミナルスペースの美学から外れたものを最小限にとどめていたということもあって、リミナルスペースにひたすら浸ることのできた2時間だった。
 
@@ -25,12 +25,12 @@ backroomsを取り巻く創作にありがちなホラー演出や、怪物、�
 
 - [インターネット美学]({{ '/garden/internet-ethsetics/' | relative_url }})
 - [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
-- [観た映画]({{ '/garden/movie-inpression/' | relative_url }})
+- [映画]({{ '/garden/movie-inpression/' | relative_url }})
 
 
 ## このページへの言及
 
-- [観た映画]({{ '/garden/movie-inpression/' | relative_url }})
+- [ミーム]({{ '/garden/meme/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

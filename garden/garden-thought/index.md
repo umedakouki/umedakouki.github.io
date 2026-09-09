@@ -5,7 +5,7 @@ heading: "Garden／庭の思想"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:31:28.135341900+00:00">更新 2026-09-07 23:31</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 64%" title="PageRank 0.037865"><i style="width:64.39%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:31:28.135341900+00:00">更新 2026-09-07 23:31</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 54%" title="PageRank 0.036188"><i style="width:53.71%"></i></span><div class="garden-body" markdown="1">
 
 [Garden／庭]({{ '/garden/garden/' | relative_url }})は、メモを分類して収納するための場所ではなく、ページ同士を結びながら思考の形を育てていく場所です。すべての記録を同じ「ページ」として扱い、それが作品、日記、研究、人物、概念のどれなのかを最初から固定しません。ページの意味は、何とつながり、どこから言及されているかによって徐々に現れます。
 
@@ -23,13 +23,13 @@ Gardenでは、文章を完成させてから保存・公開する必要もあ�
 
 [フォントの勉強]({{ '/garden/font-study/' | relative_url }})
 
-
 ## ページリンク
 
 - [Garden／庭]({{ '/garden/garden/' | relative_url }})
 - [Wiki]({{ '/garden/wiki/' | relative_url }})
 - [garden.ooo]({{ '/garden/garden-ooo/' | relative_url }})
 - [個人ウェブサイト集]({{ '/garden/personal-website/' | relative_url }})
+- [現在を歴史的にながめる眼差し]({{ '/garden/viewing-present-historically/' | relative_url }})
 - [管理＝制御型社会]({{ '/garden/management-control-oriented-society/' | relative_url }})
 
 

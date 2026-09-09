@@ -5,7 +5,7 @@ heading: "交換可能な文化"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:44:30.743384200+00:00">更新 2026-09-07 23:44</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 32%" title="PageRank 0.018837"><i style="width:32.03%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:44:30.743384200+00:00">更新 2026-09-07 23:44</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.008697"><i style="width:12.91%"></i></span><div class="garden-body" markdown="1">
 
 社会の下部にあるインフラは強固なのに、その上で流行する文化や意味は無限に交換可能で、どれも決定的ではない。これは[インターネット美学]({{ '/garden/internet-ethsetics/' | relative_url }})、特に[リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})を作り出す構造と密接にかかわるのではないか。→[インターネットの交換可能性美学]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
 

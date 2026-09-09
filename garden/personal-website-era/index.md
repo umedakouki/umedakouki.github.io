@@ -5,9 +5,13 @@ heading: "個人ウェブサイトの時代"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T15:12:14.280335900+00:00">更新 2026-09-08 00:12</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 16%" title="PageRank 0.009190"><i style="width:15.63%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:37:01.529781100+00:00">更新 2026-09-09 14:37</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 9%" title="PageRank 0.006096"><i style="width:9.05%"></i></span><div class="garden-body" markdown="1">
 
 SNSに対抗し個人サイトどうしの紐帯を取り戻す時代だと思う。
+
+<br />
+
+[橋本麦]({{ '/garden/baku89/' | relative_url }})氏は、[garden.ooo]({{ '/garden/garden-ooo/' | relative_url }})など、個人サイト上で魅力的なものを作り上げている。
 
 <br />
 
@@ -18,7 +22,6 @@ SNSに対抗し個人サイトどうしの紐帯を取り戻す時代だと思�
 <br />
 
 ということで[Garden／庭]({{ '/garden/garden/' | relative_url }})をしっかり運用したい。[個人ウェブサイト集]({{ '/garden/personal-website/' | relative_url }})も習慣的に見るようにしたい。
-
 
 ## ページリンク
 

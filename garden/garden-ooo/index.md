@@ -5,9 +5,9 @@ heading: "garden.ooo"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T13:15:18.925110500+00:00">更新 2026-09-07 22:15</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 29%" title="PageRank 0.016855"><i style="width:28.66%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T04:52:36.857454400+00:00">更新 2026-09-09 13:52</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 20%" title="PageRank 0.013593"><i style="width:20.18%"></i></span><div class="garden-body" markdown="1">
 
-[橋本麦]({{ '/garden/baku89/' | relative_url }})氏のgarden.oooは、単なる「メモをリンクできるWiki」ではありません。中心にあるのは、現在のCMSやSNSが情報に与えている「分類」「時系列」「プラットフォームへの従属」を解体し、Webをもう一度、自分で関係を編める場所として取り戻す考え方です。
+[橋本麦]({{ '/garden/baku89/' | relative_url }})氏のgarden.oooは、単なる「メモをリンクできる[Wiki]({{ '/garden/wiki/' | relative_url }})」ではありません。中心にあるのは、現在のCMSやSNSが情報に与えている「分類」「時系列」「プラットフォームへの従属」を解体し、Webをもう一度、自分で関係を編める場所として取り戻す考え方です。
 
 ### 1. 情報を先に分類しない
 
@@ -70,6 +70,11 @@ gardenは、完成した記事だけを載せる場所ではありません。�
 
 - [Garden／庭の思想]({{ '/garden/garden-thought/' | relative_url }})
 - [橋本麦]({{ '/garden/baku89/' | relative_url }})
+
+
+## このページへの言及
+
+- [個人ウェブサイトの時代]({{ '/garden/personal-website-era/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

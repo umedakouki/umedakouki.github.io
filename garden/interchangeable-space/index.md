@@ -5,7 +5,7 @@ heading: "交換可能空間／交換可能建築"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T11:46:02.727127+00:00">更新 2026-09-07 20:46</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 34%" title="PageRank 0.019915"><i style="width:33.87%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:33:02.173661500+00:00">更新 2026-09-09 14:33</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 18%" title="PageRank 0.012361"><i style="width:18.35%"></i></span><div class="garden-body" markdown="1">
 
 思いついた用語。Interchangeable Space。[交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})を考えたときに。
 
@@ -17,10 +17,13 @@ hide_description: true
 
 > このプロジェクトでは、地上レベルを[駐車場](https://ja.wikipedia.org/wiki/%E9%A7%90%E8%BB%8A%E5%A0%B4 "駐車場")とし、その上に人工のコンクリート・デッキの[人工地盤](https://ja.wikipedia.org/wiki/%E4%BA%BA%E5%B7%A5%E5%9C%B0%E7%9B%A4 "人工地盤")を建設し、建替え住宅はそっくり空に持ち上げる。建替えによってすべて過去の建物をクリアランスして、そしてデッキ上に、歩道・広場・[児童公園](https://ja.wikipedia.org/wiki/%E5%85%90%E7%AB%A5%E5%85%AC%E5%9C%92 "児童公園")などのある住宅地を建設。また植栽が施され、植物が生い茂っている。当然上にも駐車場も用意されており、坂路を設け自動車も上層に上がってくることができる。空いた[GL](https://ja.wikipedia.org/wiki/GL "GL")平面を将来のニーズのために空き地にしておくという斬新な2階建ての[都市](https://ja.wikipedia.org/wiki/%E9%83%BD%E5%B8%82 "都市")を実現させた。
 
+
+
 ## ページリンク
 
 - [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
 - [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
+- [建築について考える]({{ '/garden/architecture-thought/' | relative_url }})
 
 
 ## このページへの言及

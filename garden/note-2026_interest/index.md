@@ -5,7 +5,7 @@ heading: "無意識的な場所の意味と、その共有について"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:08:57.107498800+00:00">更新 2026-09-07 23:08</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 29%" title="PageRank 0.017263"><i style="width:29.35%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:40:03.127744100+00:00">更新 2026-09-09 14:40</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 20%" title="PageRank 0.013654"><i style="width:20.27%"></i></span><div class="garden-body" markdown="1">
 
 ## 現在の関心
 
@@ -21,7 +21,7 @@ hide_description: true
 
 解体されてから気づく、その場所らしさを作り出していた塀の汚れ
 
-私は、このように弱弱しいとも言える断片的な印象や記憶が、実は日常の建築や都市の把握につながっていると考えます。多木浩二が『生きられた家』で示したように、建築は単なる物理的な器ではなく、そこでの反復的な身体経験や記憶の堆積によって、はじめて「生きられた」場所として立ち現れます。そうした観点から見れば、私が関心を寄せる名づけがたい断片は、機能や形態の説明だけでは捉えきれないような、生きられた文脈を示していると思います。
+私は、このように弱弱しいとも言える断片的な印象や記憶が、実は日常の建築や都市の把握につながっていると考えます。多木浩二が『生きられた家』で示したように、建築は単なる物理的な器ではなく、そこでの反復的な身体経験や記憶の堆積によって、はじめて[生きられた場所]({{ '/garden/lived-place/' | relative_url }})として立ち現れます。そうした観点から見れば、私が関心を寄せる名づけがたい断片は、機能や形態の説明だけでは捉えきれないような、生きられた文脈を示していると思います。
 
 また、都市の場所の無意識的な意味は、それぞれの個人が別々に抱いているものではなく、その場所を共有する人々の公共的な記憶になり、使われ方が伝播していきます。塚本吉晴のビヘイビオロジーが建築や都市を人びとのふるまいの蓄積から読み解こうとしているように、場所の意味とは反復され共有される使われ方そのものとして、都市のなかに公共的に立ち現れます。
 
@@ -51,8 +51,12 @@ hide_description: true
 
 [場所の記述についての習作]({{ '/garden/note-2026_desctiption/' | relative_url }})
 
+
 ## ページリンク
 
+- [作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})
+- [場所の記述についての習作]({{ '/garden/note-2026_desctiption/' | relative_url }})
+- [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 - [生きられた場所]({{ '/garden/lived-place/' | relative_url }})
 

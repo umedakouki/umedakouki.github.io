@@ -5,7 +5,7 @@ heading: "コレクティブ「プラントショップ」を始めた"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:44:30.748738900+00:00">更新 2026-09-07 23:44</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 27%" title="PageRank 0.016004"><i style="width:27.21%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:13:46.167192800+00:00">更新 2026-09-09 14:13</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 18%" title="PageRank 0.011810"><i style="width:17.53%"></i></span><div class="garden-body" markdown="1">
 
 [プラントショップのウェブサイト](https://plantshop.work)
 
@@ -19,17 +19,17 @@ hide_description: true
 
 とはいえ、何かしら方向性は必要である。そのためにまず、あるテーマを決めて参加者で小さな作品を作り、それをギャラリーで展示する企画を最初にやろうと決めた。タイトルは「生産」。「作る」ことを今一度問い直してみて、何を作品にできるのかを考えることが企画の意図だ。妙な企画だけれど、ギャラリーで展示するというデッドラインを設定することで、無理やりにでもアウトプットを生み出そうとしている。アウトプットが出さえすれば、みんなの関心や方向性が見えてくるだろうし、受け止められ方も観察できる。それを今後の活動に活かそうというわけだ。
 
-話し合いや制作を進めるうちに、これが私たちの方向性なのかな、というものが見えてきた気がする。それは、現実に確固として存在する事物についていろいろな見方をすることで、それのあり得るフィクションを捉え可視化したり共有したりすることだと思う。空間の解釈や「[リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})」や物語といったものが話題になることが多いから。いや、これは私の思い込みかもしれない。とにかく、コミュニケーションを大切にしていきたい。
+話し合いや制作を進めるうちに、これが私たちの方向性なのかな、というものが見えてきた気がする。それは、現実に確固として存在する事物についていろいろな見方をすることで、それのあり得る[フィクション]({{ '/garden/fiction/' | relative_url }})を捉え可視化したり共有したりすることだと思う。空間の解釈や「[リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})」や物語といったものが話題になることが多いから。いや、これは私の思い込みかもしれない。とにかく、コミュニケーションを大切にしていきたい。
 
 ## ページリンク
 
 - [プラントショップ]({{ '/garden/plantshop/' | relative_url }})
+- [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 
 
 ## このページへの言及
 
-- [プラントショップ]({{ '/garden/plantshop/' | relative_url }})
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 
 </div></article>
