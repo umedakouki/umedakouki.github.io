@@ -19,11 +19,11 @@ hide_description: true
 
 <br />
 
-（この考え方は私なりの情報整理の試行につながり、後に[Garden／庭]()を作るきっかけになった）
+（この考え方は私なりの情報整理の試行につながり、後に[Garden]()を作るきっかけになった）
 
 ## ページリンク
 
-- [Garden／庭の思想]({{ '/garden/garden-thought/' | relative_url }})
+- [Gardenの思想]({{ '/garden/garden-thought/' | relative_url }})
 - [なくしたもののための目録]({{ '/garden/inventory-of-lost/' | relative_url }})
 - [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 - [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})

@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Garden／庭の思想"
-heading: "Garden／庭の思想"
+title: "Gardenの思想"
+heading: "Gardenの思想"
 garden_page: true
 hide_description: true
 ---
 <article class="garden-note-reader"><time datetime="2026-09-07T14:31:28.135341900+00:00">更新 2026-09-07 23:31</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 56%" title="PageRank 0.036978"><i style="width:56.42%"></i></span><div class="garden-body" markdown="1">
 
-[Garden／庭]({{ '/garden/garden/' | relative_url }})は、メモを分類して収納するための場所ではなく、ページ同士を結びながら思考の形を育てていく場所です。すべての記録を同じ「ページ」として扱い、それが作品、日記、研究、人物、概念のどれなのかを最初から固定しません。ページの意味は、何とつながり、どこから言及されているかによって徐々に現れます。
+[Garden]({{ '/garden/garden/' | relative_url }})は、メモを分類して収納するための場所ではなく、ページ同士を結びながら思考の形を育てていく場所です。すべての記録を同じ「ページ」として扱い、それが作品、日記、研究、人物、概念のどれなのかを最初から固定しません。ページの意味は、何とつながり、どこから言及されているかによって徐々に現れます。
 
 ページ間の関係には、明示的な「ページリンク」と、文章中での言及があります。ページリンクは強い関係として双方向に扱い、本文リンクは「この文章があのページに触れている」という方向を持ちます。バックリンクによって逆側からも辿れるため、一つの概念が別の文章でどのように使われているかを発見できます。
 
@@ -25,7 +25,7 @@ Gardenでは、文章を完成させてから保存・公開する必要もあ�
 
 ## ページリンク
 
-- [Garden／庭]({{ '/garden/garden/' | relative_url }})
+- [Garden]({{ '/garden/garden/' | relative_url }})
 - [Wiki]({{ '/garden/wiki/' | relative_url }})
 - [garden.ooo]({{ '/garden/garden-ooo/' | relative_url }})
 - [個人ウェブサイト集]({{ '/garden/personal-website/' | relative_url }})
@@ -35,7 +35,7 @@ Gardenでは、文章を完成させてから保存・公開する必要もあ�
 
 ## このページへの言及
 
-- [Garden／庭]({{ '/garden/garden/' | relative_url }})
+- [Garden]({{ '/garden/garden/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

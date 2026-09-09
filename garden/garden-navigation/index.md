@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Garden／庭のナビゲーション"
-heading: "Garden／庭のナビゲーション"
+title: "Gardenのナビゲーション"
+heading: "Gardenのナビゲーション"
 garden_page: true
 hide_description: true
 ---
 <article class="garden-note-reader"><time datetime="2026-09-09T06:34:49.637705300+00:00">更新 2026-09-09 15:34</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 26%" title="PageRank 0.016804"><i style="width:25.64%"></i></span><div class="garden-body" markdown="1">
 
-[Garden／庭]({{ '/garden/garden/' | relative_url }})の、ナビゲーションとなるページ。
+[Garden]({{ '/garden/garden/' | relative_url }})の、ナビゲーションとなるページ。
 
 <br />
 
@@ -25,7 +25,7 @@ hide_description: true
 
 ## このページへの言及
 
-- [Garden／庭]({{ '/garden/garden/' | relative_url }})
+- [Garden]({{ '/garden/garden/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

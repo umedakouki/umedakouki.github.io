@@ -68,7 +68,7 @@ gardenは、完成した記事だけを載せる場所ではありません。�
 
 ## ページリンク
 
-- [Garden／庭の思想]({{ '/garden/garden-thought/' | relative_url }})
+- [Gardenの思想]({{ '/garden/garden-thought/' | relative_url }})
 - [橋本麦]({{ '/garden/baku89/' | relative_url }})
 
 

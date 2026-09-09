@@ -7,7 +7,7 @@ hide_description: true
 ---
 <article class="garden-note-reader"><time datetime="2026-09-09T06:35:12.867805700+00:00">更新 2026-09-09 15:35</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 44%" title="PageRank 0.028731"><i style="width:43.83%"></i></span><div class="garden-body" markdown="1">
 
-[Garden／庭]({{ '/garden/garden/' | relative_url }})上の、[梅田航輝]({{ '/garden/kouki-umeda/' | relative_url }})による小論。
+[Garden]({{ '/garden/garden/' | relative_url }})上の、[梅田航輝]({{ '/garden/kouki-umeda/' | relative_url }})による小論。
 
 ## ページリンク
 
@@ -25,7 +25,7 @@ hide_description: true
 
 ## このページへの言及
 
-- [Garden／庭のナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
+- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

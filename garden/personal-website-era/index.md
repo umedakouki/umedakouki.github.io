@@ -21,7 +21,7 @@ SNSに対抗し個人サイトどうしの紐帯を取り戻す時代だと思�
 
 <br />
 
-ということで[Garden／庭]({{ '/garden/garden/' | relative_url }})をしっかり運用したい。[個人ウェブサイト集]({{ '/garden/personal-website/' | relative_url }})も習慣的に見るようにしたい。
+ということで[Garden]({{ '/garden/garden/' | relative_url }})をしっかり運用したい。[個人ウェブサイト集]({{ '/garden/personal-website/' | relative_url }})も習慣的に見るようにしたい。
 
 ## ページリンク
 

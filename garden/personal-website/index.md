@@ -31,7 +31,7 @@ hide_description: true
 
 ## ページリンク
 
-- [Garden／庭の思想]({{ '/garden/garden-thought/' | relative_url }})
+- [Gardenの思想]({{ '/garden/garden-thought/' | relative_url }})
 - [個人ウェブサイトの時代]({{ '/garden/personal-website-era/' | relative_url }})
 - [外部サイト]({{ '/garden/external-website/' | relative_url }})
 

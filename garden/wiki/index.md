@@ -15,19 +15,19 @@ Wikiの重要な機能は、ページリンク、バックリンク、編集履�
 
 WikipediaのようなWikiは、多くの人が共通の知識を編集することを目的としています。一方、個人Wikiは、自分の経験や考えを保存し、断片的な記録を後から結び直すために使います。客観的な正解を完成させるというより、自分の知識がどのようにつながっているかを可視化する道具です。
 
-[Garden／庭]({{ '/garden/garden/' | relative_url }})も個人Wikiの一種です。ただし、単に情報を整理するだけでなく、未完成のメモを残し、ページ同士の関係を育て、そこから新しい考えを発見することを重視しています。フォルダやカテゴリよりリンクを中心にすることで、一つのページが複数の文脈に同時に属せるようになっています。
+[Garden]({{ '/garden/garden/' | relative_url }})も個人Wikiの一種です。ただし、単に情報を整理するだけでなく、未完成のメモを残し、ページ同士の関係を育て、そこから新しい考えを発見することを重視しています。フォルダやカテゴリよりリンクを中心にすることで、一つのページが複数の文脈に同時に属せるようになっています。
 
 ## ページリンク
 
-- [Garden／庭の思想]({{ '/garden/garden-thought/' | relative_url }})
+- [Gardenの思想]({{ '/garden/garden-thought/' | relative_url }})
 
 
 ## このページへの言及
 
-- [Garden／庭]({{ '/garden/garden/' | relative_url }})
+- [Garden]({{ '/garden/garden/' | relative_url }})
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 - [garden.ooo]({{ '/garden/garden-ooo/' | relative_url }})
-- [Garden／庭の思想]({{ '/garden/garden-thought/' | relative_url }})
+- [Gardenの思想]({{ '/garden/garden-thought/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

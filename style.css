@@ -44,9 +44,7 @@ li + li { margin-top: .6em; }
 .site-rail .site-name { display: inline-block; margin-bottom: 44px; font-size: 1rem; font-weight: 700; }
 .chapter-nav { display: grid; }
 .chapter-nav a {
-  display: grid;
-  grid-template-columns: 2.4em 1fr;
-  gap: 8px;
+  display: block;
   padding: 10px 0;
   font-size: .8rem;
   text-decoration: none;
@@ -66,18 +64,16 @@ li + li { margin-top: .6em; }
 .section > h2 { margin-bottom: 22px; }
 
 .chapter-index { margin: 0; padding: 0; list-style: none; }
-.chapter-index li { display: grid; grid-template-columns: 52px 1fr; gap: 16px; padding: 22px 0; }
+.chapter-index li { display: block; padding: 22px 0; }
 .chapter-index li:first-child { padding-top: 0; }
 .chapter-index li + li { margin-top: 0; }
 .chapter-index h3 { font-size: 1.2rem; }
 .chapter-index p { margin: 5px 0 0; color: #444; }
-.chapter-number { font-family: "LINE Seed JP", "Yu Gothic", sans-serif; font-size: .82rem; }
 .contact-links { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 14px 24px; margin: 0; font-style: normal; }
 .contact-row { display: contents; }
 .contact-links a { color: inherit; text-decoration: underline; text-underline-offset: .18em; }
 .contact-kind { font-size: .7rem; font-weight: 700; }
 .contact-value { overflow-wrap: anywhere; }
-.social-links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .document-link { margin: 0 0 36px; font-family: "LINE Seed JP", "Yu Gothic", sans-serif; font-size: .86rem; }
 .catalog-entry {
   display: grid;
@@ -186,7 +182,6 @@ li + li { margin-top: .6em; }
   .page-header h1 { font-size: 2.15rem; }
   .catalog-entry { grid-template-columns: 58px 1fr; }
   .catalog-image { grid-column: 2; width: min(100%, 220px); }
-  .chapter-index li { grid-template-columns: 38px 1fr; gap: 10px; }
   .note-entry { grid-template-columns: 58px 1fr; }
   .garden-page-list article { display: block; }
   .image-set { display: grid; gap: 12px; }

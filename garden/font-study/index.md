@@ -41,7 +41,7 @@ webタイポグラフィの基礎知識。なんとなく使っている用語�
 
 ## このページへの言及
 
-- [Garden／庭の思想]({{ '/garden/garden-thought/' | relative_url }})
+- [Gardenの思想]({{ '/garden/garden-thought/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

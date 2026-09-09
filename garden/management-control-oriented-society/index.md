@@ -17,7 +17,7 @@ hide_description: true
 
 ## ページリンク
 
-- [Garden／庭の思想]({{ '/garden/garden-thought/' | relative_url }})
+- [Gardenの思想]({{ '/garden/garden-thought/' | relative_url }})
 - [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
 - [個人ウェブサイトの時代]({{ '/garden/personal-website-era/' | relative_url }})
 

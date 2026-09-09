@@ -20,7 +20,7 @@ hide_description: true
 
 ## このページへの言及
 
-- [Garden／庭のナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
+- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 - [歩く植木鉢]({{ '/garden/walking-pod/' | relative_url }})
 
 </div></article>

@@ -7,7 +7,7 @@ hide_description: true
 ---
 <article class="garden-note-reader"><time datetime="2026-09-09T06:29:03.482853700+00:00">更新 2026-09-09 15:29</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 60%" title="PageRank 0.039317"><i style="width:59.98%"></i></span><div class="garden-body" markdown="1">
 
-[Garden／庭]({{ '/garden/garden/' | relative_url }})で言及される人物。
+[Garden]({{ '/garden/garden/' | relative_url }})で言及される人物。
 
 ## ページリンク
 

@@ -20,7 +20,7 @@ hide_description: true
 
 ## このページへの言及
 
-- [Garden／庭のナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
+- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

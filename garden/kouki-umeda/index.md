@@ -7,7 +7,7 @@ hide_description: true
 ---
 <article class="garden-note-reader"><time datetime="2026-09-07T14:28:56.735173200+00:00">更新 2026-09-07 23:28</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 50%" title="PageRank 0.032937"><i style="width:50.25%"></i></span><div class="garden-body" markdown="1">
 
-[このサイト](https://www.umedakouki.work/)や[Garden／庭]({{ '/garden/garden/' | relative_url }})を更新している人。
+[このサイト](https://www.umedakouki.work/)や[Garden]({{ '/garden/garden/' | relative_url }})を更新している人。
 
 ## ページリンク
 
@@ -20,7 +20,7 @@ hide_description: true
 
 - [A列車で行こう]({{ '/garden/a-train-game/' | relative_url }})
 - [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
-- [Garden／庭のナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
+- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 - [プラントショップ]({{ '/garden/plantshop/' | relative_url }})
 - [映像について考える]({{ '/garden/video-thoutht/' | relative_url }})
 - [建築について考える]({{ '/garden/architecture-thought/' | relative_url }})
