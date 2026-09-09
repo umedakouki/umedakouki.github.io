@@ -5,7 +5,7 @@ heading: "Gardenのナビゲーション"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T11:00:04.685766+00:00">更新 2026-09-09 20:00</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 19%" title="PageRank 0.010183"><i style="width:19.03%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T15:08:02.268927600+00:00">更新 2026-09-10 00:08</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 19%" title="PageRank 0.010236"><i style="width:18.96%"></i></span><div class="garden-body" markdown="1">
 
 [Garden]({{ '/garden/garden/' | relative_url }})の、ナビゲーションとなるページ。
 
@@ -24,6 +24,11 @@ hide_description: true
 [好きな〇〇]({{ '/garden/favorite/' | relative_url }})
 
 [外部サイト]({{ '/garden/external-website/' | relative_url }})
+
+## ページリンク
+
+- [Garden]({{ '/garden/garden/' | relative_url }})
+
 
 ## このページへの言及
 

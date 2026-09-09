@@ -5,7 +5,7 @@ heading: "身体"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.006805"><i style="width:12.72%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.006856"><i style="width:12.70%"></i></span><div class="garden-body" markdown="1">
 
 身体は場所を受け取る感覚器であると同時に、歩く、見る、聞く、立ち止まるといった行為によって場所をつくる側でもある。図面や情報へ還元できない経験を考えるとき、身体が媒介になる。
 

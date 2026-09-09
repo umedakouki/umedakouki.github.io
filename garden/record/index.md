@@ -5,7 +5,7 @@ heading: "記録"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 54%" title="PageRank 0.028807"><i style="width:53.84%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 54%" title="PageRank 0.028957"><i style="width:53.63%"></i></span><div class="garden-body" markdown="1">
 
 記録は世界の複製ではない。何を残し、どこを切り取り、どの順序で見せるかによって、新しい解釈を生む。Gardenのページも完成品の保管ではなく、後から関係を見つけるための記録として考えられる。
 

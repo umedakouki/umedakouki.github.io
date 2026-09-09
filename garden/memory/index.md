@@ -5,7 +5,7 @@ heading: "記憶"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 35%" title="PageRank 0.018957"><i style="width:35.43%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 35%" title="PageRank 0.019091"><i style="width:35.36%"></i></span><div class="garden-body" markdown="1">
 
 記憶は過去をそのまま保存したものではなく、現在から読み返すたびに輪郭が変わる。写真、映像、文章、物の記録は記憶を固定するというより、別の時点から触れ直すための足場になる。
 

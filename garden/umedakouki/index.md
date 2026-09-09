@@ -5,7 +5,7 @@ heading: "梅田航輝"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T14:30:05.585776+00:00">更新 2026-09-09 23:30</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 53%" title="PageRank 0.028616"><i style="width:53.48%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T14:30:05.585776+00:00">更新 2026-09-09 23:30</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 52%" title="PageRank 0.028014"><i style="width:51.89%"></i></span><div class="garden-body" markdown="1">
 
 [このサイト](https://www.umedakouki.work/)や[Garden]({{ '/garden/garden/' | relative_url }})を更新している人。
 
@@ -22,10 +22,9 @@ hide_description: true
 
 ## このページへの言及
 
-- [好きな〇〇]({{ '/garden/favorite/' | relative_url }})
-- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 - [SNSについて]({{ '/garden/sns/' | relative_url }})
-- [AOMOU]({{ '/garden/aomou/' | relative_url }})
+- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
+- [好きな〇〇]({{ '/garden/favorite/' | relative_url }})
 - [A列車で行こう]({{ '/garden/a-train-game/' | relative_url }})
 - [プラントショップ]({{ '/garden/plantshop/' | relative_url }})
 - [映像メモ]({{ '/garden/video-thoutht/' | relative_url }})

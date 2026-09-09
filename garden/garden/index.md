@@ -5,7 +5,7 @@ heading: "Garden"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:30:23.149853500+00:00">更新 2026-09-09 15:30</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 69%" title="PageRank 0.037066"><i style="width:69.28%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T06:30:23.149853500+00:00">更新 2026-09-09 15:30</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 69%" title="PageRank 0.037223"><i style="width:68.95%"></i></span><div class="garden-body" markdown="1">
 
 Gardenは、日々のメモ、考え、人物、作品、資料などを、ページ同士のつながりによって整理する個人用の[Wiki]({{ '/garden/wiki/' | relative_url }})です。記録を最初からカテゴリに分けず、すべてを同じ「ページ」として保存します。
 
@@ -13,15 +13,16 @@ Gardenは、日々のメモ、考え、人物、作品、資料などを、ペ�
 
 ## ページリンク
 
+- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 - [Gardenの思想]({{ '/garden/garden-thought/' | relative_url }})
 - [記録]({{ '/garden/record/' | relative_url }})
 
 
 ## このページへの言及
 
-- [梅田航輝]({{ '/garden/umedakouki/' | relative_url }})
-- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 - [SNSについて]({{ '/garden/sns/' | relative_url }})
+- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
+- [梅田航輝]({{ '/garden/umedakouki/' | relative_url }})
 - [Wiki]({{ '/garden/wiki/' | relative_url }})
 - [Gardenの思想]({{ '/garden/garden-thought/' | relative_url }})
 - [フォントの勉強]({{ '/garden/font-study/' | relative_url }})

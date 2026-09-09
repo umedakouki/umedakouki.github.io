@@ -5,7 +5,7 @@ heading: "2026年公演"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T15:03:22.259060+00:00">更新 2026-09-10 00:03</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 10%" title="PageRank 0.005406"><i style="width:10.10%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T15:03:22.259060+00:00">更新 2026-09-10 00:03</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 10%" title="PageRank 0.005463"><i style="width:10.12%"></i></span><div class="garden-body" markdown="1">
 
 以下は観光客について、その雰囲気を伝えるために現在の観光客として寄せたコメント。
 
@@ -26,8 +26,6 @@ hide_description: true
 > 5月～稽古に参加して一番印象に残っていること
 >
 > 毎回のことですが、稽古中に太田さんがメモするホワイトボードの文字が、体の角度に応じて斜めになっていくことです。文字というよりもグラフィックとして味わい深く印象に残っています。
-
-
 
 ## ページリンク
 

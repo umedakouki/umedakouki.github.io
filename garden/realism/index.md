@@ -5,7 +5,7 @@ heading: "リアリズム"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:46:47.836122200+00:00">更新 2026-09-07 23:46</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 20%" title="PageRank 0.010576"><i style="width:19.77%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:46:47.836122200+00:00">更新 2026-09-07 23:46</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 20%" title="PageRank 0.010659"><i style="width:19.74%"></i></span><div class="garden-body" markdown="1">
 
 <br />
 

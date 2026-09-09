@@ -5,7 +5,7 @@ heading: "何を、どこに、なぜつくるのか"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.446819+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 8%" title="PageRank 0.004117"><i style="width:7.69%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.446819+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 8%" title="PageRank 0.004153"><i style="width:7.69%"></i></span><div class="garden-body" markdown="1">
 
 生活に必要最小限のものすら入手が難しかった戦後復興期や、より「豊かな」暮らしを実現していった経済成長期においては、それらを得るための建築生産・都市の発展が必要だった。社会が抱える課題が比較的明確で、何をつくるかがはっきりしていて、あとは「どのように」建築や都市をつくるかが問題だった。技術や効率を追求し、与えられた前提のもとで最適な解決策を導き出すことが、設計やものづくりにおける中心的な目的であった。そのため、「機能」に準じることを是とする計画学によって建築は設計され、解釈された。
 

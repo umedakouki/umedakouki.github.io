@@ -5,7 +5,7 @@ heading: "M PLUS 1 Code"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-06T01:53:12.635049+00:00">更新 2026-09-06 10:53</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 5%" title="PageRank 0.002941"><i style="width:5.50%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-06T01:53:12.635049+00:00">更新 2026-09-06 10:53</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 5%" title="PageRank 0.002963"><i style="width:5.49%"></i></span><div class="garden-body" markdown="1">
 
 M PLUS 1 Code は、プログラミングやコンピュータ上で文字を読むことを意識して設計された日本語フォントです。見た目を単純に「デジタル風」にしているのではなく、画面上で文字を正確に識別しやすいことを重視して作られています。
 

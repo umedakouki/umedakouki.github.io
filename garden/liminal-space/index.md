@@ -5,7 +5,7 @@ heading: "リミナルスペース"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:58:14.529730300+00:00">更新 2026-09-09 14:58</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 23%" title="PageRank 0.012250"><i style="width:22.90%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:58:14.529730300+00:00">更新 2026-09-09 14:58</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 23%" title="PageRank 0.012331"><i style="width:22.84%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 

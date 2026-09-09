@@ -5,7 +5,7 @@ heading: "プラットフォーム"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 17%" title="PageRank 0.009305"><i style="width:17.39%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.422149+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 16%" title="PageRank 0.008504"><i style="width:15.75%"></i></span><div class="garden-body" markdown="1">
 
 プラットフォームは、発信や制作を可能にする土台でありながら、そこで可能な行為の形式も規定する。内容が自由に見えるときほど、投稿単位、表示順、公開範囲といった下部の決定を見直す必要がある。
 
@@ -19,9 +19,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [garden.ooo]({{ '/garden/garden-ooo/' | relative_url }})
 - [SNSについて]({{ '/garden/sns/' | relative_url }})
-- [AOMOU]({{ '/garden/aomou/' | relative_url }})
+- [garden.ooo]({{ '/garden/garden-ooo/' | relative_url }})
 - [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
 - [交換可能空間／交換可能建築]({{ '/garden/interchangeable-space/' | relative_url }})
 
