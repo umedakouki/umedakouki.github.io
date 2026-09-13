@@ -5,9 +5,9 @@ heading: "Gardenの思想"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.453883+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 37%" title="PageRank 0.020241"><i style="width:37.49%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-13T00:17:38.141839+00:00">更新 2026-09-13 09:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 51%" title="PageRank 0.036309"><i style="width:50.83%"></i></span><div class="garden-body" markdown="1">
 
-[Garden]({{ '/garden/garden/' | relative_url }})は、メモを分類して収納するための場所ではなく、ページ同士を結びながら思考の形を育てていく場所です。すべての[記録]({{ '/garden/record/' | relative_url }})を同じ「ページ」として扱い、それが作品、日記、研究、人物、概念のどれなのかを最初から固定しません。ページの意味は、何とつながり、どこから言及されているかによって徐々に現れます。
+[Garden]({{ '/garden/garden/' | relative_url }})は、メモを分類して収納するための場所ではなく、ページ同士を結びながら思考の形を育てていく場所です。すべての記録を同じ「ページ」として扱い、それが作品、日記、研究、人物、概念のどれなのかを最初から固定しません。ページの意味は、何とつながり、どこから言及されているかによって徐々に現れます。
 
 ページ間の関係には、明示的な「ページリンク」と、文章中での言及があります。ページリンクは強い関係として双方向に扱い、本文リンクは「この文章があのページに触れている」という方向を持ちます。バックリンクによって逆側からも辿れるため、一つの概念が別の文章でどのように使われているかを発見できます。
 
@@ -35,7 +35,6 @@ hide_description: true
 
 ## このページへの言及
 
-- [プラットフォーム]({{ '/garden/platform/' | relative_url }})
 - [Garden]({{ '/garden/garden/' | relative_url }})
 
 </div></article>

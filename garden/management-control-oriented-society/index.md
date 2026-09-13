@@ -5,7 +5,7 @@ heading: "管理＝制御型社会"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:40:00.477472+00:00">更新 2026-09-07 23:40</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.006784"><i style="width:12.57%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-13T11:51:42.485880700+00:00">更新 2026-09-13 20:51</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.008944"><i style="width:12.52%"></i></span><div class="garden-body" markdown="1">
 
 管理や制御といったものについて考えていきたい。
 
@@ -18,7 +18,6 @@ hide_description: true
 ## ページリンク
 
 - [Gardenの思想]({{ '/garden/garden-thought/' | relative_url }})
-- [プラットフォーム]({{ '/garden/platform/' | relative_url }})
 - [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
 - [個人ウェブサイトの時代]({{ '/garden/personal-website-era/' | relative_url }})
 

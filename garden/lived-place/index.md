@@ -5,7 +5,7 @@ heading: "生きられた場所"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:32:42.613684600+00:00">更新 2026-09-09 14:32</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 19%" title="PageRank 0.010395"><i style="width:19.25%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:32:42.613684600+00:00">更新 2026-09-09 14:32</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008876"><i style="width:12.42%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 
@@ -16,10 +16,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [何を、どこに、なぜつくるのか]({{ '/garden/make-what-where-why/' | relative_url }})
 - [無意識的な場所の意味と、その共有について]({{ '/garden/note-2026_interest/' | relative_url }})
-- [場所]({{ '/garden/place/' | relative_url }})
-- [日常]({{ '/garden/everyday-life/' | relative_url }})
+- [何を、どこに、なぜつくるのか]({{ '/garden/make-what-where-why/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

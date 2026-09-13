@@ -5,9 +5,9 @@ heading: "garden.ooo"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T14:51:42.275443500+00:00">更新 2026-09-09 23:51</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 16%" title="PageRank 0.008793"><i style="width:16.29%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-13T00:17:38.141839+00:00">更新 2026-09-13 09:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 18%" title="PageRank 0.012947"><i style="width:18.12%"></i></span><div class="garden-body" markdown="1">
 
-[橋本麦]({{ '/garden/baku89/' | relative_url }})氏のgarden.oooは、単なる「メモをリンクできる[Wiki]({{ '/garden/wiki/' | relative_url }})」ではありません。中心にあるのは、現在のCMSやSNSが情報に与えている「分類」「時系列」「[プラットフォーム]({{ '/garden/platform/' | relative_url }})への従属」を解体し、Webをもう一度、自分で関係を編める場所として取り戻す考え方です。
+[橋本麦]({{ '/garden/baku89/' | relative_url }})氏のgarden.oooは、単なる「メモをリンクできる[Wiki]({{ '/garden/wiki/' | relative_url }})」ではありません。中心にあるのは、現在のCMSやSNSが情報に与えている「分類」「時系列」「プラットフォームへの従属」を解体し、Webをもう一度、自分で関係を編める場所として取り戻す考え方です。
 
 ### 1. 情報を先に分類しない
 
@@ -42,7 +42,7 @@ gardenでは、リンクをおおむね二つに分けています。
 
 そのため、サービスが終了しても文章は残ります。garden以外にも、Obsidian、メモ帳、コードエディタ、AI、コマンドラインなどから扱えます。プレーンテキストを「もっとも普遍的なインターフェース」と見なし、特定のアプリに知識を閉じ込めない設計です。[設計思想](https://baku89.com/ja/garden/design-principles)
 
-これは単なるバックアップ方針ではなく、書いたものの所有権と[編集]({{ '/garden/editing/' | relative_url }})権を利用者へ戻す思想です。
+これは単なるバックアップ方針ではなく、書いたものの所有権と編集権を利用者へ戻す思想です。
 
 ### 5. 公開と非公開、完成と未完成を混在させる
 

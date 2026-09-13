@@ -5,15 +5,12 @@ heading: "リアリズム"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:46:47.836122200+00:00">更新 2026-09-07 23:46</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 20%" title="PageRank 0.010659"><i style="width:19.74%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-13T12:08:53.684992200+00:00">更新 2026-09-13 21:08</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008764"><i style="width:12.27%"></i></span><div class="garden-body" markdown="1">
 
-<br />
-
-> a
+メタジャンル的環境のこと。
 
 ## ページリンク
 
-- [『ゲーム的リアリズムの誕生』]({{ '/garden/game-realism/' | relative_url }})
 - [フィクション]({{ '/garden/fiction/' | relative_url }})
 - [東浩紀]({{ '/garden/azuma-hiroki/' | relative_url }})
 

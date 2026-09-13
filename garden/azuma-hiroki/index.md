@@ -5,11 +5,10 @@ heading: "東浩紀"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:59:18.506789700+00:00">更新 2026-09-09 14:59</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 35%" title="PageRank 0.018759"><i style="width:34.75%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:59:18.506789700+00:00">更新 2026-09-09 14:59</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 26%" title="PageRank 0.018670"><i style="width:26.13%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 
-- [『ゲーム的リアリズムの誕生』]({{ '/garden/game-realism/' | relative_url }})
 - [データベース消費]({{ '/garden/databace-consumption/' | relative_url }})
 - [リアリズム]({{ '/garden/realism/' | relative_url }})
 - [リベラルテック月報]({{ '/garden/liberal-tech/' | relative_url }})
@@ -18,8 +17,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [賭けること]({{ '/garden/betting/' | relative_url }})
 - [インターネットの交換可能性美学]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
+- [賭けること]({{ '/garden/betting/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

@@ -5,7 +5,7 @@ heading: "『GELEL』での作業プロセス"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:36:30.472867+00:00">更新 2026-09-09 17:36</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 22%" title="PageRank 0.011656"><i style="width:21.59%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-13T00:17:38.141839+00:00">更新 2026-09-13 09:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008621"><i style="width:12.07%"></i></span><div class="garden-body" markdown="1">
 
 [『GELEL』](https://umedakouki.work/works/gelel.html)
 
@@ -59,7 +59,7 @@ hide_description: true
 
 <span class="garden-media garden-image"><img src="{{ '/assets/garden/78560533-4dff-576b-a20f-bd93acc46e5d.jpg' | relative_url }}" alt="17.jpg" loading="lazy"></span>
 
-下の動画は、作業の様子をメイキング[映像]({{ '/garden/video/' | relative_url }})的に[編集]({{ '/garden/editing/' | relative_url }})したもの。
+下の動画は、作業の様子をメイキング[映像]({{ '/garden/video/' | relative_url }})的に編集したもの。
 
 [動画を見る](https://www.youtube.com/watch?v=18W7YTAloqg)
 
@@ -99,8 +99,6 @@ hide_description: true
 
 ## このページへの言及
 
-- [共同性]({{ '/garden/collaboration/' | relative_url }})
-- [編集]({{ '/garden/editing/' | relative_url }})
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 
 </div></article>

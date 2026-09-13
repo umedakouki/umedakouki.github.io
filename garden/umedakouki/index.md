@@ -5,13 +5,11 @@ heading: "梅田航輝"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T14:30:05.585776+00:00">更新 2026-09-09 23:30</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 52%" title="PageRank 0.028014"><i style="width:51.89%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-11T22:42:38.684408+00:00">更新 2026-09-12 07:42</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 54%" title="PageRank 0.038354"><i style="width:53.69%"></i></span><div class="garden-body" markdown="1">
 
 [このサイト](https://www.umedakouki.work/)や[Garden]({{ '/garden/garden/' | relative_url }})を更新している人。
 
 <br />
-
-<span class="garden-media garden-image"><img src="{{ '/assets/garden/61be49e8-727a-436a-b977-f643450373d9.jpg' | relative_url }}" alt="d91daff9-65a3-48ba-a2ed-79a125313d4d.jpg" loading="lazy"></span>
 
 ## ページリンク
 

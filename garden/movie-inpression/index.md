@@ -5,7 +5,7 @@ heading: "映画"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:26:21.217131200+00:00">更新 2026-09-09 15:26</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 100%" title="PageRank 0.053990"><i style="width:100.00%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T06:26:21.217131200+00:00">更新 2026-09-09 15:26</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 100%" title="PageRank 0.071437"><i style="width:100.00%"></i></span><div class="garden-body" markdown="1">
 
 [Garden]({{ '/garden/garden/' | relative_url }})で言及される映画。
 
@@ -39,19 +39,18 @@ hide_description: true
 - [最後にして最初の人類]({{ '/garden/last-and-first-men/' | relative_url }})
 - [港町]({{ '/garden/inland-sea/' | relative_url }})
 - [満月の月]({{ '/garden/full-moon/' | relative_url }})
-- [物語]({{ '/garden/narrative/' | relative_url }})
 - [福田村事件]({{ '/garden/fukudamura-case/' | relative_url }})
 - [秒速5センチメートル（実写）]({{ '/garden/five-centimeters-per-second-live-action/' | relative_url }})
 
 
 ## このページへの言及
 
-- [『GELEL』での作業プロセス]({{ '/garden/note-process/' | relative_url }})
-- [現在を歴史的にながめる眼差し]({{ '/garden/viewing-present-historically/' | relative_url }})
-- [メッセージ]({{ '/garden/arrival/' | relative_url }})
 - [港町]({{ '/garden/inland-sea/' | relative_url }})
-- [バックルームズ（映画）]({{ '/garden/backrooms/' | relative_url }})
+- [メッセージ]({{ '/garden/arrival/' | relative_url }})
+- [『GELEL』での作業プロセス]({{ '/garden/note-process/' | relative_url }})
 - [作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})
+- [バックルームズ（映画）]({{ '/garden/backrooms/' | relative_url }})
+- [現在を歴史的にながめる眼差し]({{ '/garden/viewing-present-historically/' | relative_url }})
 - [福田村事件]({{ '/garden/fukudamura-case/' | relative_url }})
 - [富江]({{ '/garden/tomie/' | relative_url }})
 - [いつか読書する日]({{ '/garden/milk-woman/' | relative_url }})
