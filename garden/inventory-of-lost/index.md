@@ -5,7 +5,7 @@ heading: "なくしたもののための目録"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.009559"><i style="width:12.84%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.673840+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.008612"><i style="width:12.64%"></i></span><div class="garden-body" markdown="1">
 
 「収集記録」というプライベートなデータベースをつくって管理している。そのことをChatGPTに伝えた。
 
@@ -23,9 +23,10 @@ hide_description: true
 > その存在の圧倒的な重さを、私はいつも感じている。\
 > \
 > この「収集記録」は、都市の隙間や日常のかけらに潜む、名付けられない意味をとらえようとする試みである。\
-> それはどこかで、[建築]({{ '/garden/architecture/' | relative_url }})や都市を読み取るまなざしにもつながっていくかもしれない。
+> それはどこかで、建築や都市を読み取るまなざしにもつながっていくかもしれない。
 
 今（2025年7月）現在、ここには1118のオブジェクトが記録されている。
+
 
 ## ページリンク
 

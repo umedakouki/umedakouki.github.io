@@ -5,7 +5,7 @@ heading: "青木志央理"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:04:07.816418+00:00">更新 2026-09-07 23:04</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 26%" title="PageRank 0.019343"><i style="width:25.99%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:04:07.816418+00:00">更新 2026-09-07 23:04</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 34%" title="PageRank 0.022981"><i style="width:33.72%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 
@@ -16,6 +16,7 @@ hide_description: true
 
 ## このページへの言及
 
+- [個人ウェブサイト集]({{ '/garden/personal-website/' | relative_url }})
 - [フィクション]({{ '/garden/fiction/' | relative_url }})
 
 </div></article>

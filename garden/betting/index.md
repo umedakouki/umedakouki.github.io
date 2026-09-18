@@ -5,13 +5,13 @@ heading: "賭けること"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 8%" title="PageRank 0.005867"><i style="width:7.88%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.778639+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008487"><i style="width:12.45%"></i></span><div class="garden-body" markdown="1">
 
-ゲス◎の2026年公演の稽古に観光客としてかかわっている。そのテーマは賭けるということについてであり、ドストエフスキーの『賭博者』を主なテキストとしている。ということもあり、最近は賭けることについて考えることが多い。
+[ゲス◎]({{ '/garden/gesuwa/' | relative_url }})の2026年公演の稽古に観光客としてかかわっている。そのテーマは賭けるということについてであり、ドストエフスキーの『賭博者』を主なテキストとしている。ということもあり、最近は賭けることについて考えることが多い。
 
 <br />
 
-東浩紀による[東浩紀の恒例無料突発雑談配信 9月8日編](https://www.youtube.com/live/gmi-Plczlts?si=uDz-ih-ltxYnzJBO)をなんとなく流していたら、稽古でもよく話していた、統計と経験の違いについて話していたので文字起こしを以下に引用。
+[東浩紀]({{ '/garden/azuma-hiroki/' | relative_url }})による[東浩紀の恒例無料突発雑談配信 9月8日編](https://www.youtube.com/live/gmi-Plczlts?si=uDz-ih-ltxYnzJBO)をなんとなく流していたら、稽古でもよく話していた、統計と経験の違いについて話していたので文字起こしを以下に引用。
 
 <div class="garden-url-preview garden-url-video"><iframe src="https://www.youtube-nocookie.com/embed/gmi-Plczlts" title="東浩紀の恒例無料突発雑談配信 9月8日編" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
 
@@ -48,8 +48,7 @@ hide_description: true
 > そのときに、僕はやっぱり「行く」しかないと思っているわけよね。もちろん、統計的に見たら、ゲンロンはここで普通に畳んだほうがいいのかもしれないけど、行くしかないでしょ。
 >
 > だって、俺も思うよ。普通に考えて、俺が死んだらゲンロンは終わりだよ。たぶん、95パーセント終わりだよ。でも、行くしかないでしょ。そういうことじゃないの？　それをバカと言ったら、バカでしょ。そんなことを言ったら、俺は前からバカだよ。
->
-> <br />
+
 
 ## ページリンク
 

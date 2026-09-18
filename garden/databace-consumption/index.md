@@ -5,11 +5,16 @@ heading: "データベース消費"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T13:30:31.884447100+00:00">更新 2026-09-07 22:30</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 7%" title="PageRank 0.005446"><i style="width:7.32%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T13:30:31.884447100+00:00">更新 2026-09-07 22:30</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.008545"><i style="width:12.54%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 
 - [東浩紀]({{ '/garden/azuma-hiroki/' | relative_url }})
+
+
+## このページへの言及
+
+- [インターネットの交換可能性美学]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

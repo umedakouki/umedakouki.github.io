@@ -5,7 +5,7 @@ heading: "フィクション"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T03:45:57.377129200+00:00">更新 2026-09-18 12:45</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 16%" title="PageRank 0.012225"><i style="width:16.43%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:45:57.377129200+00:00">更新 2026-09-18 12:45</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 20%" title="PageRank 0.013520"><i style="width:19.83%"></i></span><div class="garden-body" markdown="1">
 
 [青木志央理]({{ '/garden/shiori-aoki/' | relative_url }})と激論を交わしている。
 
@@ -16,8 +16,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [コレクティブ「プラントショップ」を始めた]({{ '/garden/note-2026_plantshop/' | relative_url }})
 - [作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})
+- [コレクティブ「プラントショップ」を始めた]({{ '/garden/note-2026_plantshop/' | relative_url }})
 - [似非論理]({{ '/garden/pseudo-logic/' | relative_url }})
 
 </div></article>

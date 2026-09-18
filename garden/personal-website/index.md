@@ -5,19 +5,30 @@ heading: "個人ウェブサイト集"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 14%" title="PageRank 0.010416"><i style="width:14.00%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.743134+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 14%" title="PageRank 0.009373"><i style="width:13.75%"></i></span><div class="garden-body" markdown="1">
 
-[梅田航輝](https://www.umedakouki.work/)
+## ego
 
-[大久保颯](https://s8kubo.github.io/)
+[梅田航輝]({{ '/garden/umedakouki/' | relative_url }})：<https://www.umedakouki.work/>
 
-[青木志央理](https://book8mark8tree.github.io/)
+<br />
 
-[tsukis HP](https://tsukis-hp.pages.dev/)
+## alters
 
-[橋本麦](https://baku89.com/)
+[大久保颯]({{ '/garden/hayate-okubo/' | relative_url }})：<https://s8kubo.github.io/>
 
-[森博嗣の浮遊工作室](https://www.ne.jp/asahi/beat/non/mori/)
+[青木志央理]({{ '/garden/shiori-aoki/' | relative_url }})：<https://book8mark8tree.github.io/>
+
+[tsukis HP]({{ '/garden/tsukis-hp/' | relative_url }})：<https://tsukis-hp.pages.dev/>
+
+<br />
+
+## strangers
+
+[橋本麦]({{ '/garden/baku89/' | relative_url }})：<https://baku89.com/>
+
+[森博嗣]({{ '/garden/morihiroshi/' | relative_url }})の浮遊工作室：<https://www.ne.jp/asahi/beat/non/mori/>
+
 
 ## ページリンク
 
@@ -28,8 +39,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 - [個人ウェブサイトの時代]({{ '/garden/personal-website-era/' | relative_url }})
+- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 - [外部サイト]({{ '/garden/external-website/' | relative_url }})
 
 </div></article>

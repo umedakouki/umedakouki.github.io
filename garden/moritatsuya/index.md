@@ -5,7 +5,7 @@ heading: "森達也"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-08T01:04:14.777716900+00:00">更新 2026-09-08 10:04</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 11%" title="PageRank 0.008229"><i style="width:11.06%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-08T01:04:14.777716900+00:00">更新 2026-09-08 10:04</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.008978"><i style="width:13.17%"></i></span><div class="garden-body" markdown="1">
 
 [梅田航輝]({{ '/garden/umedakouki/' | relative_url }})と同じ新潟高校出身らしい。だから何だ。
 

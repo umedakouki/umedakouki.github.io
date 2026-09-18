@@ -5,7 +5,7 @@ heading: "人物"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T03:45:35.955733900+00:00">更新 2026-09-18 12:45</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 51%" title="PageRank 0.037596"><i style="width:50.52%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:45:35.955733900+00:00">更新 2026-09-18 12:45</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 67%" title="PageRank 0.045513"><i style="width:66.77%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 

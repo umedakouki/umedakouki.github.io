@@ -5,7 +5,7 @@ heading: "Gardenのナビゲーション"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T05:55:13.972661900+00:00">更新 2026-09-18 14:55</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 18%" title="PageRank 0.013613"><i style="width:18.29%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T05:55:13.972661900+00:00">更新 2026-09-18 14:55</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 15%" title="PageRank 0.010141"><i style="width:14.88%"></i></span><div class="garden-body" markdown="1">
 
 [ゲーム]({{ '/garden/game/' | relative_url }})
 

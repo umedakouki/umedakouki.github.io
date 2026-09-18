@@ -5,13 +5,13 @@ heading: "『GELEL』での作業プロセス"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 19%" title="PageRank 0.014391"><i style="width:19.34%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.658794+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 20%" title="PageRank 0.013503"><i style="width:19.81%"></i></span><div class="garden-body" markdown="1">
 
 [『GELEL』](https://umedakouki.work/works/gelel.html)
 
 ## 美術製作前夜（2024年2月～2025年1月）
 
-[映像研究会オリヲン座]({{ '/garden/film-club-orion/' | relative_url }})で森監督が特撮を作ると常々言っていたのでかなりゆきで関わることになった。特撮の美術に多少興味があり、他にやりそうな人もいなかったため担当した。美術については、立体造形や[建築]({{ '/garden/architecture/' | relative_url }})模型制作の経験があったため、比較的スムーズにできたと思う。照明、撮影、合成まで担当するつもりはなかったが、人手不足だったためやらざるを得なかった。
+[映像研究会オリヲン座]({{ '/garden/film-club-orion/' | relative_url }})で森監督が特撮を作ると常々言っていたのでかなりゆきで関わることになった。特撮の美術に多少興味があり、他にやりそうな人もいなかったため担当した。美術については、立体造形や建築模型制作の経験があったため、比較的スムーズにできたと思う。照明、撮影、合成まで担当するつもりはなかったが、人手不足だったためやらざるを得なかった。
 
 詳細な設定や脚本が決まる前は、シーンのスケッチ、ロケハン、建物の試作、セットの設計をしていた。限られた予算で最大効果を出せる量、質を考えたり、破壊する建物の部材の試作や材料の調達を進めていた。問題は継続して作業と保管ができるスペースで、初めの頃は大学の実習室や倉庫、教室を利用した時期があった。2024年12月にオリヲン座がある程度の広さがある部室に移動したため、そこで作業と保管をすることにした。参加していたのは合計で10人ほどで、作業内容はほとんど私が指示していた。
 
@@ -59,7 +59,7 @@ hide_description: true
 
 <span class="garden-media garden-image"><img src="{{ '/assets/garden/78560533-4dff-576b-a20f-bd93acc46e5d.jpg' | relative_url }}" alt="17.jpg" loading="lazy"></span>
 
-下の動画は、作業の様子をメイキング[映像]({{ '/garden/video-thoutht/' | relative_url }})的に編集したもの。
+下の動画は、作業の様子をメイキング[映像]({{ '/garden/video/' | relative_url }})的に編集したもの。
 
 [動画を見る](https://www.youtube.com/watch?v=18W7YTAloqg)
 
@@ -90,6 +90,7 @@ hide_description: true
 映像については画コンテから撮影、合成まですっと見ていたが、音声や音響、音楽が加わると一気に世界が立ち現れてきた感じがして、『GELEL』が何なのかようやく分かった気がした。もちろん制作者としては、良かった点もあれば反省することもたくさんあるが、一観客としては印象に残る良い作品だと思った。
 
 自主選に行って感じたことは、「現実にないものを画面上で実現する」ことが特撮の本懐ではある一方で、それが反転した「実現しきれないものへの想像力を惹起する」こともまた特撮の力ではないかということだった。特に自主映画は実現されないことや不完全なことばかりだが、どの作品にもロマンチックな夢は等しく潜在している。これを引き出し、日常に問いかける作用を大事にしていきたい。
+
 
 ## ページリンク
 

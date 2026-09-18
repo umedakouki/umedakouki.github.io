@@ -5,7 +5,7 @@ heading: "2026年公演"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 8%" title="PageRank 0.006158"><i style="width:8.27%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.007858"><i style="width:11.53%"></i></span><div class="garden-body" markdown="1">
 
 以下は観光客について、その雰囲気を伝えるために現在の観光客として寄せたコメント。
 
