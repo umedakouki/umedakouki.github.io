@@ -9,6 +9,8 @@ hide_description: true
 
 <https://open.spotify.com/show/6fRvms2YDICubHjnrbha1V>
 
+<div class="garden-url-preview garden-url-spotify"><iframe src="https://open.spotify.com/embed/show/6fRvms2YDICubHjnrbha1V" title="https://open.spotify.com/show/6fRvms2YDICubHjnrbha1V" loading="lazy" allow="autoplay; encrypted-media"></iframe></div>
+
 <br />
 
 [プラントショップ]({{ '/garden/plantshop/' | relative_url }})でやっているポッドキャスト。

@@ -38,8 +38,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 - [映画]({{ '/garden/movie-inpression/' | relative_url }})
+- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 - [エブリシング・エブリウェア・オール・アット・ワンス]({{ '/garden/everything-everywhere-all-at-once/' | relative_url }})
 - [事の次第]({{ '/garden/the-way-things-go/' | relative_url }})
 - [ナミビアの砂漠]({{ '/garden/desert-of-namibia/' | relative_url }})

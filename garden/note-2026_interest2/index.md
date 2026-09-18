@@ -33,8 +33,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [建築]({{ '/garden/architecture/' | relative_url }})
 - [映画]({{ '/garden/movie-inpression/' | relative_url }})
+- [建築]({{ '/garden/architecture/' | relative_url }})
 - [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
 - [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [映像]({{ '/garden/video-thoutht/' | relative_url }})

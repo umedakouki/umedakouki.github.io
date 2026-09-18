@@ -36,8 +36,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})
 - [コレクティブ「プラントショップ」を始めた]({{ '/garden/note-2026_plantshop/' | relative_url }})
+- [作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})
 - [インターネットの交換可能性美学]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
 - [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
 - [『バックルームズ』（映画）]({{ '/garden/backrooms/' | relative_url }})

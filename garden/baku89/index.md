@@ -15,8 +15,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [個人ウェブサイト集]({{ '/garden/personal-website/' | relative_url }})
 - [個人ウェブサイトの時代]({{ '/garden/personal-website-era/' | relative_url }})
+- [個人ウェブサイト集]({{ '/garden/personal-website/' | relative_url }})
 - [garden.ooo]({{ '/garden/garden-ooo/' | relative_url }})
 
 </div></article>

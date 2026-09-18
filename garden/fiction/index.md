@@ -16,8 +16,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})
 - [コレクティブ「プラントショップ」を始めた]({{ '/garden/note-2026_plantshop/' | relative_url }})
+- [作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})
 - [似非論理]({{ '/garden/pseudo-logic/' | relative_url }})
 
 </div></article>

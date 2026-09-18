@@ -100,8 +100,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [建築]({{ '/garden/architecture/' | relative_url }})
 - [映画]({{ '/garden/movie-inpression/' | relative_url }})
+- [建築]({{ '/garden/architecture/' | relative_url }})
 - [映像]({{ '/garden/video-thoutht/' | relative_url }})
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 

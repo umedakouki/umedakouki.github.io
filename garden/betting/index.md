@@ -5,7 +5,7 @@ heading: "賭けること"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.778639+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008487"><i style="width:12.45%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T12:18:19.777407900+00:00">更新 2026-09-18 21:18</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008487"><i style="width:12.45%"></i></span><div class="garden-body" markdown="1">
 
 [ゲス◎]({{ '/garden/gesuwa/' | relative_url }})の2026年公演の稽古に観光客としてかかわっている。そのテーマは賭けるということについてであり、ドストエフスキーの『賭博者』を主なテキストとしている。ということもあり、最近は賭けることについて考えることが多い。
 
@@ -48,6 +48,7 @@ hide_description: true
 > そのときに、僕はやっぱり「行く」しかないと思っているわけよね。もちろん、統計的に見たら、ゲンロンはここで普通に畳んだほうがいいのかもしれないけど、行くしかないでしょ。
 >
 > だって、俺も思うよ。普通に考えて、俺が死んだらゲンロンは終わりだよ。たぶん、95パーセント終わりだよ。でも、行くしかないでしょ。そういうことじゃないの？　それをバカと言ったら、バカでしょ。そんなことを言ったら、俺は前からバカだよ。
+
 
 
 ## ページリンク

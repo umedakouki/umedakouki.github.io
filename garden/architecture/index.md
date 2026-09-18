@@ -42,9 +42,9 @@ hide_description: true
 
 ## このページへの言及
 
+- [交換可能空間／交換可能建築]({{ '/garden/interchangeable-space/' | relative_url }})
 - [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 - [満月の月]({{ '/garden/full-moon/' | relative_url }})
-- [交換可能空間／交換可能建築]({{ '/garden/interchangeable-space/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

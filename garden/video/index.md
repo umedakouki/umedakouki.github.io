@@ -9,12 +9,12 @@ hide_description: true
 
 ## このページへの言及
 
+- [コレクティブ「プラントショップ」を始めた]({{ '/garden/note-2026_plantshop/' | relative_url }})
 - [記録と解釈について]({{ '/garden/recod-and-regognition/' | relative_url }})
 - [観察映画]({{ '/garden/observation-movie/' | relative_url }})
 - [無意識的な場所の意味と、その共有について]({{ '/garden/note-2026_interest/' | relative_url }})
 - [作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})
 - [何を、どこに、なぜつくるのか]({{ '/garden/make-what-where-why/' | relative_url }})
-- [コレクティブ「プラントショップ」を始めた]({{ '/garden/note-2026_plantshop/' | relative_url }})
 - [『GELEL』での作業プロセス]({{ '/garden/note-process/' | relative_url }})
 
 </div></article>
