@@ -5,25 +5,31 @@ heading: "Gardenのナビゲーション"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T15:08:02.268927600+00:00">更新 2026-09-10 00:08</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 24%" title="PageRank 0.017361"><i style="width:24.30%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T05:55:13.972661900+00:00">更新 2026-09-18 14:55</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 18%" title="PageRank 0.013613"><i style="width:18.29%"></i></span><div class="garden-body" markdown="1">
 
-[Garden]({{ '/garden/garden/' | relative_url }})の、ナビゲーションとなるページ。
-
-<br />
-
-[梅田航輝]({{ '/garden/umedakouki/' | relative_url }})
+[ゲーム]({{ '/garden/game/' | relative_url }})
 
 [プラントショップ]({{ '/garden/plantshop/' | relative_url }})
 
-[建築メモ]({{ '/garden/architecture-thought/' | relative_url }})
+[人物]({{ '/garden/person/' | relative_url }})
 
-[映像メモ]({{ '/garden/video-thoutht/' | relative_url }})
+修士研究 0912-
+
+[個人ウェブサイト集]({{ '/garden/personal-website/' | relative_url }})
+
+[好きなYouTube]({{ '/garden/favorite-youtube/' | relative_url }})
 
 [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 
-[好きな〇〇]({{ '/garden/favorite/' | relative_url }})
+[建築]({{ '/garden/architecture/' | relative_url }})
 
-[外部サイト]({{ '/garden/external-website/' | relative_url }})
+[映像]({{ '/garden/video-thoutht/' | relative_url }})
+
+[映画]({{ '/garden/movie-inpression/' | relative_url }})
+
+[本]({{ '/garden/book/' | relative_url }})
+
+[梅田航輝]({{ '/garden/umedakouki/' | relative_url }})
 
 ## ページリンク
 

@@ -5,7 +5,7 @@ heading: "映像研究会オリヲン座"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:49:16.433580700+00:00">更新 2026-09-07 23:49</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 38%" title="PageRank 0.026907"><i style="width:37.67%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:49:16.433580700+00:00">更新 2026-09-07 23:49</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 33%" title="PageRank 0.024432"><i style="width:32.83%"></i></span><div class="garden-body" markdown="1">
 
 [梅田航輝]({{ '/garden/umedakouki/' | relative_url }})がかつて所属していた、京都工芸繊維大学のサークル。
 

@@ -5,7 +5,7 @@ heading: "似非論理"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:20:33.532947+00:00">更新 2026-09-09 17:20</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 7%" title="PageRank 0.004649"><i style="width:6.51%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 6%" title="PageRank 0.004827"><i style="width:6.49%"></i></span><div class="garden-body" markdown="1">
 
 > ストーリーの出来で重要なのは情報の整合性であって、完全性ではない。むしろ手元に少ししか情報がないときのほうが、うまいことすべての情報を筋書き通りにはめ込むことができる。
 
@@ -25,12 +25,12 @@ hide_description: true
 
 ## ページリンク
 
-- [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 - [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 
 
 ## このページへの言及
 
+- [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 
 </div></article>

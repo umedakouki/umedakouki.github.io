@@ -5,7 +5,7 @@ heading: "好きなYouTube"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T11:46:06.059203400+00:00">更新 2026-09-09 20:46</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 9%" title="PageRank 0.006453"><i style="width:9.03%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T11:46:06.059203400+00:00">更新 2026-09-09 20:46</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 9%" title="PageRank 0.006624"><i style="width:8.90%"></i></span><div class="garden-body" markdown="1">
 
 主に「高く評価」した動画。「高く評価」した順。
 
@@ -191,6 +191,7 @@ hide_description: true
 
 ## このページへの言及
 
+- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 - [好きな〇〇]({{ '/garden/favorite/' | relative_url }})
 
 </div></article>

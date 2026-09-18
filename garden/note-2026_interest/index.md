@@ -5,11 +5,11 @@ heading: "無意識的な場所の意味と、その共有について"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-13T00:17:38.141839+00:00">更新 2026-09-13 09:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.009347"><i style="width:13.08%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 22%" title="PageRank 0.016166"><i style="width:21.72%"></i></span><div class="garden-body" markdown="1">
 
 ## 現在の関心
 
-建築や都市空間において身体的な経験によって醸成される、その場所の無意識的な場所の意味に関心があります。例えば、
+[建築]({{ '/garden/architecture/' | relative_url }})や都市空間において身体的な経験によって醸成される、その場所の無意識的な場所の意味に関心があります。例えば、
 
 子供のときに遊びで使っていた、家と家の隙間
 
@@ -21,7 +21,7 @@ hide_description: true
 
 解体されてから気づく、その場所らしさを作り出していた塀の汚れ
 
-私は、このように弱弱しいとも言える断片的な印象や記憶が、実は日常の建築や都市の把握につながっていると考えます。多木浩二が『生きられた家』で示したように、建築は単なる物理的な器ではなく、そこでの反復的な身体経験や記憶の堆積によって、はじめて[生きられた場所]({{ '/garden/lived-place/' | relative_url }})として立ち現れます。そうした観点から見れば、私が関心を寄せる名づけがたい断片は、機能や形態の説明だけでは捉えきれないような、生きられた文脈を示していると思います。
+私は、このように弱弱しいとも言える断片的な印象や記憶が、実は日常の[建築]({{ '/garden/architecture/' | relative_url }})や都市の把握につながっていると考えます。多木浩二が『生きられた家』で示したように、建築は単なる物理的な器ではなく、そこでの反復的な身体経験や記憶の堆積によって、はじめて[生きられた場所]({{ '/garden/lived-place/' | relative_url }})として立ち現れます。そうした観点から見れば、私が関心を寄せる名づけがたい断片は、機能や形態の説明だけでは捉えきれないような、生きられた文脈を示していると思います。
 
 また、都市の場所の無意識的な意味は、それぞれの個人が別々に抱いているものではなく、その場所を共有する人々の公共的な記憶になり、使われ方が伝播していきます。塚本吉晴のビヘイビオロジーが建築や都市を人びとのふるまいの蓄積から読み解こうとしているように、場所の意味とは反復され共有される使われ方そのものとして、都市のなかに公共的に立ち現れます。
 
@@ -37,7 +37,7 @@ hide_description: true
 
 <span class="garden-media garden-image"><img src="{{ '/assets/garden/c33751ad-8cc4-57cd-8852-af0ce8d341d0.jpg' | relative_url }}" alt="img (5).JPG" loading="lazy"></span>
 
-その手法として、私は写真や音声や[映像]({{ '/garden/video/' | relative_url }})や演劇といったメディアに注目しています。
+その手法として、私は写真や音声や[映像]({{ '/garden/video-thoutht/' | relative_url }})や演劇といったメディアに注目しています。
 
 上記のような対象は、無意識であるために言語や類像で記録することは難しいですが、意識しきれないものも含めて定着できるメディア技術を用いれば捉えることができます。「技術的無意識」と呼ばれることもあります。特に写真や映像や音声などは、気軽にカメラやマイクを向ければいいし、再生すれば容易に記憶をなぞり返すことができるという点で魅力的です。
 
@@ -56,12 +56,16 @@ hide_description: true
 - [作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})
 - [場所の記述についての習作]({{ '/garden/note-2026_desctiption/' | relative_url }})
 - [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
+- [建築]({{ '/garden/architecture/' | relative_url }})
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 - [生きられた場所]({{ '/garden/lived-place/' | relative_url }})
 
 
 ## このページへの言及
 
+- [建築]({{ '/garden/architecture/' | relative_url }})
+- [生きられた場所]({{ '/garden/lived-place/' | relative_url }})
+- [映像]({{ '/garden/video-thoutht/' | relative_url }})
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 
 </div></article>

@@ -5,14 +5,23 @@ heading: "小論"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:35:12.867805700+00:00">更新 2026-09-09 15:35</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 22%" title="PageRank 0.015621"><i style="width:21.87%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 27%" title="PageRank 0.020187"><i style="width:27.13%"></i></span><div class="garden-body" markdown="1">
 
-[Garden]({{ '/garden/garden/' | relative_url }})上の、[梅田航輝]({{ '/garden/umedakouki/' | relative_url }})による小論。
+[なくしたもののための目録]({{ '/garden/inventory-of-lost/' | relative_url }})
+
+[似非論理]({{ '/garden/pseudo-logic/' | relative_url }})
+
+[何を、どこに、なぜつくるのか]({{ '/garden/make-what-where-why/' | relative_url }})
+
+[作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})
+
+[現在を歴史的にながめる眼差し]({{ '/garden/viewing-present-historically/' | relative_url }})
+
+[記録と解釈について]({{ '/garden/recod-and-regognition/' | relative_url }})
 
 ## ページリンク
 
 - [なくしたもののための目録]({{ '/garden/inventory-of-lost/' | relative_url }})
-- [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 - [似非論理]({{ '/garden/pseudo-logic/' | relative_url }})
 - [何を、どこに、なぜつくるのか]({{ '/garden/make-what-where-why/' | relative_url }})
 - [作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})

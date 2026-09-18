@@ -5,7 +5,7 @@ heading: "8番出口"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:20:33.484485+00:00">更新 2026-09-09 17:20</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 11%" title="PageRank 0.007693"><i style="width:10.77%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:20:33.484485+00:00">更新 2026-09-09 17:20</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008606"><i style="width:11.56%"></i></span><div class="garden-body" markdown="1">
 
 [ゲーム]({{ '/garden/game/' | relative_url }})の一人称視点のような画面、長回しショット、ブレンダーで作ったような、現実なのかヴァーチャルなのか分からない世界。今まで見たことがない斬新な[映画]({{ '/garden/movie-inpression/' | relative_url }})だった。ボレロや貝殻、そしてループという設定が、現代人の主観を暴き出している感じ。カメラの存在が消えている。
 
@@ -13,6 +13,13 @@ hide_description: true
 
 - [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
 - [映画]({{ '/garden/movie-inpression/' | relative_url }})
+
+
+## このページへの言及
+
+- [映画]({{ '/garden/movie-inpression/' | relative_url }})
+- [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
+- [ゲーム]({{ '/garden/game/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

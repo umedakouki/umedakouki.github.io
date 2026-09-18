@@ -5,7 +5,7 @@ heading: "現在を歴史的にながめる眼差し"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-13T00:17:38.141839+00:00">更新 2026-09-13 09:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 15%" title="PageRank 0.010988"><i style="width:15.38%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 17%" title="PageRank 0.012815"><i style="width:17.22%"></i></span><div class="garden-body" markdown="1">
 
 身体を持ったひとりの人間は、あまりに多様な、多量の情報の入力に対して、なんとなくそれに合わせながらぷかぷかと生きている。「なんとなく」の中身は認知科学などの見識に任せるとして、ではそうして生きている現在の状況はどのように解釈したらいいのだろうか、ということに私は関心がある。
 
@@ -25,12 +25,13 @@ hide_description: true
 
 - [Gardenの思想]({{ '/garden/garden-thought/' | relative_url }})
 - [なくしたもののための目録]({{ '/garden/inventory-of-lost/' | relative_url }})
-- [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 - [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 
 
 ## このページへの言及
 
+- [映画]({{ '/garden/movie-inpression/' | relative_url }})
+- [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 
 </div></article>

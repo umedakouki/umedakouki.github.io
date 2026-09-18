@@ -5,14 +5,26 @@ heading: "本"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:26:29.364686800+00:00">更新 2026-09-09 15:26</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 14%" title="PageRank 0.009969"><i style="width:13.95%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T06:30:45.462893700+00:00">更新 2026-09-18 15:30</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 10%" title="PageRank 0.007763"><i style="width:10.43%"></i></span><div class="garden-body" markdown="1">
 
-[Garden]({{ '/garden/garden/' | relative_url }})で言及される本。
+『ゲーム的リアリズムの誕生』
+
+[『空間の生産』]({{ '/garden/production-of-space/' | relative_url }})
+
+[『プロトコル――脱中心化以後のコントロールはいかに作動するのか』]({{ '/garden/protocol/' | relative_url }})
+
+「地域資源の国民的利用」
+
 
 ## ページリンク
 
 - [『プロトコル――脱中心化以後のコントロールはいかに作動するのか』]({{ '/garden/protocol/' | relative_url }})
 - [『空間の生産』]({{ '/garden/production-of-space/' | relative_url }})
+
+
+## このページへの言及
+
+- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

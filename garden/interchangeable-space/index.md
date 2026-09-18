@@ -5,7 +5,7 @@ heading: "交換可能空間／交換可能建築"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-13T11:51:28.133908900+00:00">更新 2026-09-13 20:51</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 15%" title="PageRank 0.010936"><i style="width:15.31%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 16%" title="PageRank 0.011720"><i style="width:15.75%"></i></span><div class="garden-body" markdown="1">
 
 思いついた用語。Interchangeable Space。[交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})を考えたときに。
 
@@ -13,7 +13,7 @@ hide_description: true
 
 <span class="garden-media garden-image"><img src="{{ '/assets/garden/316a0708-4e12-4fd0-b67d-c953caff9be8.png' | relative_url }}" alt="スクリーンショット 2026-09-06 180111.png" loading="lazy"></span>
 
-2023年の夏に愛宕山で[『そして、光を知る。』](https://youtu.be/PUmLZHC8rtw?si=eP6ApEzKcxQqRSJw)の撮影があったときに訪れたふもとの集落で、上の画像のような家を見かけた。どこにでもあるような感じだけれど、なぜか記憶に残っていた。その後思ったことだが、1階部分のRC構造の上に木造らしき2階部分が乗っかるというのは、ひとつの交換可能建築なのではないか。というのも、構造的に合理的なのは2階までRCで作りきることだが、それをわざわざ土台＝プラットフォーム＝インフラとして、その上に自由で交換できるものを置いている。
+2023年の夏に愛宕山で[『そして、光を知る。』](https://youtu.be/PUmLZHC8rtw?si=eP6ApEzKcxQqRSJw)の撮影があったときに訪れたふもとの集落で、上の画像のような家を見かけた。どこにでもあるような感じだけれど、なぜか記憶に残っていた。その後思ったことだが、1階部分のRC構造の上に木造らしき2階部分が乗っかるというのは、ひとつの交換可能[建築]({{ '/garden/architecture/' | relative_url }})なのではないか。というのも、構造的に合理的なのは2階までRCで作りきることだが、それをわざわざ土台＝プラットフォーム＝インフラとして、その上に自由で交換できるものを置いている。
 
 <div class="garden-url-preview garden-url-video"><iframe src="https://www.youtube-nocookie.com/embed/PUmLZHC8rtw" title="『そして、光を知る。』" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
 
@@ -27,12 +27,14 @@ hide_description: true
 
 - [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
 - [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
-- [建築メモ]({{ '/garden/architecture-thought/' | relative_url }})
+- [建築]({{ '/garden/architecture/' | relative_url }})
 
 
 ## このページへの言及
 
-- [バックルームズ（映画）]({{ '/garden/backrooms/' | relative_url }})
+- [建築]({{ '/garden/architecture/' | relative_url }})
+- [『バックルームズ』（映画）]({{ '/garden/backrooms/' | relative_url }})
+- [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

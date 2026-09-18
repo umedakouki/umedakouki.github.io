@@ -5,14 +5,14 @@ heading: "インターネット美学"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T05:57:50.320454300+00:00">更新 2026-09-09 14:57</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 18%" title="PageRank 0.012565"><i style="width:17.59%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T05:57:50.320454300+00:00">更新 2026-09-09 14:57</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 19%" title="PageRank 0.014043"><i style="width:18.87%"></i></span><div class="garden-body" markdown="1">
 
 [美学ウィキ](https://scrapbox.io/AestheticsWiki/)に詳しく紹介されている。
 
 ## ページリンク
 
+- [『バックルームズ』（映画）]({{ '/garden/backrooms/' | relative_url }})
 - [インターネットの交換可能性美学]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
-- [バックルームズ（映画）]({{ '/garden/backrooms/' | relative_url }})
 - [ミーム]({{ '/garden/meme/' | relative_url }})
 - [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
 
@@ -20,6 +20,7 @@ hide_description: true
 ## このページへの言及
 
 - [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
+- [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

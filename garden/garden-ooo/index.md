@@ -5,9 +5,9 @@ heading: "garden.ooo"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-13T00:17:38.141839+00:00">更新 2026-09-13 09:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 18%" title="PageRank 0.012947"><i style="width:18.12%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 16%" title="PageRank 0.011992"><i style="width:16.11%"></i></span><div class="garden-body" markdown="1">
 
-[橋本麦]({{ '/garden/baku89/' | relative_url }})氏のgarden.oooは、単なる「メモをリンクできる[Wiki]({{ '/garden/wiki/' | relative_url }})」ではありません。中心にあるのは、現在のCMSやSNSが情報に与えている「分類」「時系列」「プラットフォームへの従属」を解体し、Webをもう一度、自分で関係を編める場所として取り戻す考え方です。
+橋本麦氏のgarden.oooは、単なる「メモをリンクできる[Wiki]({{ '/garden/wiki/' | relative_url }})」ではありません。中心にあるのは、現在のCMSやSNSが情報に与えている「分類」「時系列」「プラットフォームへの従属」を解体し、Webをもう一度、自分で関係を編める場所として取り戻す考え方です。
 
 ### 1. 情報を先に分類しない
 

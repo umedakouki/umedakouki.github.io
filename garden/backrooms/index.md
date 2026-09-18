@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "バックルームズ（映画）"
-heading: "バックルームズ（映画）"
+title: "『バックルームズ』（映画）"
+heading: "『バックルームズ』（映画）"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-13T00:17:38.141839+00:00">更新 2026-09-13 09:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 18%" title="PageRank 0.013096"><i style="width:18.33%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 17%" title="PageRank 0.012308"><i style="width:16.54%"></i></span><div class="garden-body" markdown="1">
 
 backroomsを取り巻く創作にありがちなホラー演出や、怪物、ネット怪談文脈、迷宮といった、[リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})の美学から外れたものを最小限にとどめていたということもあって、リミナルスペースにひたすら浸ることのできた2時間だった。
 
@@ -21,6 +21,10 @@ backroomsを取り巻く創作にありがちなホラー演出や、怪物、�
 
 私にとってのリミナルスペースの魅力は、このような記憶の行き先としての深層空間というよりは、意味が宙づりになったスーパーモダンな空間としての、何をも許容する懐の深さにある。この辺は[交換可能空間／交換可能建築]({{ '/garden/interchangeable-space/' | relative_url }})で考えていきたい。
 
+<br />
+
+同じインターネット的な不安を描いた映画として『回路』があると思う。そのことについても考えていきたい。
+
 ## ページリンク
 
 - [インターネット美学]({{ '/garden/internet-ethsetics/' | relative_url }})
@@ -30,6 +34,8 @@ backroomsを取り巻く創作にありがちなホラー演出や、怪物、�
 
 ## このページへの言及
 
+- [映画]({{ '/garden/movie-inpression/' | relative_url }})
+- [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
 - [ミーム]({{ '/garden/meme/' | relative_url }})
 
 </div></article>

@@ -5,7 +5,7 @@ heading: "『プロトコル――脱中心化以後のコントロールはい�
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T12:48:20.449858600+00:00">更新 2026-09-07 21:48</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 11%" title="PageRank 0.007800"><i style="width:10.92%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T12:48:20.449858600+00:00">更新 2026-09-07 21:48</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 8%" title="PageRank 0.005821"><i style="width:7.82%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 
@@ -14,8 +14,7 @@ hide_description: true
 
 ## このページへの言及
 
-- [管理＝制御型社会]({{ '/garden/management-control-oriented-society/' | relative_url }})
-- [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
+- [本]({{ '/garden/book/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

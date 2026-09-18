@@ -5,7 +5,7 @@ heading: "リアリズム"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-13T12:08:53.684992200+00:00">更新 2026-09-13 21:08</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008764"><i style="width:12.27%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-13T12:08:53.684992200+00:00">更新 2026-09-13 21:08</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008665"><i style="width:11.64%"></i></span><div class="garden-body" markdown="1">
 
 メタジャンル的環境のこと。
 

@@ -5,9 +5,7 @@ heading: "人物"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:29:03.482853700+00:00">更新 2026-09-09 15:29</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 64%" title="PageRank 0.045810"><i style="width:64.13%"></i></span><div class="garden-body" markdown="1">
-
-[Garden]({{ '/garden/garden/' | relative_url }})で言及される人物。
+<article class="garden-note-reader"><time datetime="2026-09-18T03:45:35.955733900+00:00">更新 2026-09-18 12:45</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 51%" title="PageRank 0.037596"><i style="width:50.52%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 
@@ -21,6 +19,11 @@ hide_description: true
 - [森達也]({{ '/garden/moritatsuya/' | relative_url }})
 - [橋本麦]({{ '/garden/baku89/' | relative_url }})
 - [青木志央理]({{ '/garden/shiori-aoki/' | relative_url }})
+
+
+## このページへの言及
+
+- [Gardenのナビゲーション]({{ '/garden/garden-navigation/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

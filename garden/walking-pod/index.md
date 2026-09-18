@@ -5,7 +5,7 @@ heading: "歩く植木鉢"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T15:13:02.847075200+00:00">更新 2026-09-08 00:13</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008486"><i style="width:11.88%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T15:13:02.847075200+00:00">更新 2026-09-08 00:13</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008705"><i style="width:11.70%"></i></span><div class="garden-body" markdown="1">
 
 <https://open.spotify.com/show/6fRvms2YDICubHjnrbha1V>
 

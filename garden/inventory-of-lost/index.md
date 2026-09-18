@@ -5,7 +5,7 @@ heading: "なくしたもののための目録"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-13T00:17:38.141839+00:00">更新 2026-09-13 09:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 9%" title="PageRank 0.006390"><i style="width:8.94%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.009559"><i style="width:12.84%"></i></span><div class="garden-body" markdown="1">
 
 「収集記録」というプライベートなデータベースをつくって管理している。そのことをChatGPTに伝えた。
 
@@ -23,19 +23,20 @@ hide_description: true
 > その存在の圧倒的な重さを、私はいつも感じている。\
 > \
 > この「収集記録」は、都市の隙間や日常のかけらに潜む、名付けられない意味をとらえようとする試みである。\
-> それはどこかで、建築や都市を読み取るまなざしにもつながっていくかもしれない。
+> それはどこかで、[建築]({{ '/garden/architecture/' | relative_url }})や都市を読み取るまなざしにもつながっていくかもしれない。
 
 今（2025年7月）現在、ここには1118のオブジェクトが記録されている。
 
 ## ページリンク
 
-- [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 - [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [現在を歴史的にながめる眼差し]({{ '/garden/viewing-present-historically/' | relative_url }})
 
 
 ## このページへの言及
 
+- [建築]({{ '/garden/architecture/' | relative_url }})
+- [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 
 </div></article>

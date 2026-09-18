@@ -5,9 +5,9 @@ heading: "何を、どこに、なぜつくるのか"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-13T00:17:38.141839+00:00">更新 2026-09-13 09:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 7%" title="PageRank 0.004715"><i style="width:6.60%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 15%" title="PageRank 0.011169"><i style="width:15.01%"></i></span><div class="garden-body" markdown="1">
 
-生活に必要最小限のものすら入手が難しかった戦後復興期や、より「豊かな」暮らしを実現していった経済成長期においては、それらを得るための建築生産・都市の発展が必要だった。社会が抱える課題が比較的明確で、何をつくるかがはっきりしていて、あとは「どのように」建築や都市をつくるかが問題だった。技術や効率を追求し、与えられた前提のもとで最適な解決策を導き出すことが、設計やものづくりにおける中心的な目的であった。そのため、「機能」に準じることを是とする計画学によって建築は設計され、解釈された。
+生活に必要最小限のものすら入手が難しかった戦後復興期や、より「豊かな」暮らしを実現していった経済成長期においては、それらを得るための[建築]({{ '/garden/architecture/' | relative_url }})生産・都市の発展が必要だった。社会が抱える課題が比較的明確で、何をつくるかがはっきりしていて、あとは「どのように」[建築]({{ '/garden/architecture/' | relative_url }})や都市をつくるかが問題だった。技術や効率を追求し、与えられた前提のもとで最適な解決策を導き出すことが、設計やものづくりにおける中心的な目的であった。そのため、「機能」に準じることを是とする計画学によって建築は設計され、解釈された。
 
 もはや生活に必要なものはほとんど手に入り、十分に「豊かな」社会となった20世紀後期以降は、建築・都市は記号化され、生活の地盤からは宙に浮いた記号生産・消費の対象になることもあった。
 
@@ -17,7 +17,7 @@ hide_description: true
 
 何が求められているのかを把握するためには、「機能」や「用途」などの意識化された意味だけではなく、身体的な経験によって醸成される無意識的な意味づけや、生きられた文脈に着目することが重要である。
 
-無意識的な意味づけに着目するとき、ひとまず、建築・都市空間を記録することを考えつく。ふつうは写真や文章を使って、できる限り多くのことを正確に記そうとする。[映像]({{ '/garden/video/' | relative_url }})や3Dスキャン、センサーを用いてもいい。そして「この場所はこのような性質を持つ」というようにデータを組み合わせ整理していくことにより、検索・共有可能なものにすることができる。
+無意識的な意味づけに着目するとき、ひとまず、建築・都市空間を記録することを考えつく。ふつうは写真や文章を使って、できる限り多くのことを正確に記そうとする。[映像]({{ '/garden/video-thoutht/' | relative_url }})や3Dスキャン、センサーを用いてもいい。そして「この場所はこのような性質を持つ」というようにデータを組み合わせ整理していくことにより、検索・共有可能なものにすることができる。
 
 ところが、どれだけ記録しても取り逃してしまうような場所の質があるし、どれだけデータを整理しようとしても、その組み合わせ方や分節の仕方が無数にあるので不可能であることに気づく。またそのようにして記録されたものが、人々が実際に感じているものと異なる可能性もある。
 
@@ -57,12 +57,16 @@ hide_description: true
 
 ## ページリンク
 
-- [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 - [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
+- [建築]({{ '/garden/architecture/' | relative_url }})
 
 
 ## このページへの言及
 
+- [建築]({{ '/garden/architecture/' | relative_url }})
+- [生きられた場所]({{ '/garden/lived-place/' | relative_url }})
+- [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
+- [映像]({{ '/garden/video-thoutht/' | relative_url }})
 - [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 
 </div></article>

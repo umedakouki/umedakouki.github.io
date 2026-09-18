@@ -5,11 +5,11 @@ heading: "コレクティブ「プラントショップ」を始めた"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-13T00:17:38.141839+00:00">更新 2026-09-13 09:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008618"><i style="width:12.06%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 20%" title="PageRank 0.014908"><i style="width:20.03%"></i></span><div class="garden-body" markdown="1">
 
 [プラントショップのウェブサイト](https://plantshop.work)
 
-「[プラントショップ]({{ '/garden/plantshop/' | relative_url }})」は、「さまざまな分野を横断し、持続的に制作・展示・販売を行う」ための組織としている。すごく抽象的だ。今の参加者は大学の建築学生がほとんどなので、かろうじて建築的な性格を帯びるだろうが、それよりも[映像]({{ '/garden/video/' | relative_url }})や美術や演劇といった実験的な活動を志向している。つまり、まだやりたいことや方向性が決まっていないのだ。
+「[プラントショップ]({{ '/garden/plantshop/' | relative_url }})」は、「さまざまな分野を横断し、持続的に制作・展示・販売を行う」ための組織としている。すごく抽象的だ。今の参加者は大学の[建築]({{ '/garden/architecture/' | relative_url }})学生がほとんどなので、かろうじて建築的な性格を帯びるだろうが、それよりも[映像]({{ '/garden/video-thoutht/' | relative_url }})や美術や演劇といった実験的な活動を志向している。つまり、まだやりたいことや方向性が決まっていないのだ。
 
 なぜこのように中途半端な状態で始めたのか。それは、単に「作りたいものを作る」のではなくて、考え方やスキルが異なるいろいろな人が、持続的に共同で何かを作るというプロセスに重点を置いているからだ。持続的になるためには、組織の仕組みづくりやマーケティングの視点も欠かせない。「作ること」と「作るためのこと」を両輪で進めることを目指している。
 
@@ -29,6 +29,9 @@ hide_description: true
 
 ## このページへの言及
 
+- [建築]({{ '/garden/architecture/' | relative_url }})
+- [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
+- [映像]({{ '/garden/video-thoutht/' | relative_url }})
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 
 </div></article>

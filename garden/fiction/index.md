@@ -5,7 +5,7 @@ heading: "フィクション"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:44:01.955190300+00:00">更新 2026-09-07 23:44</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 15%" title="PageRank 0.010399"><i style="width:14.56%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:45:57.377129200+00:00">更新 2026-09-18 12:45</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 16%" title="PageRank 0.012225"><i style="width:16.43%"></i></span><div class="garden-body" markdown="1">
 
 [青木志央理]({{ '/garden/shiori-aoki/' | relative_url }})と激論を交わしている。
 
