@@ -78,6 +78,7 @@ hide_description: true
 
 ## このページへの言及
 
+- [映像]({{ '/garden/video-thoutht/' | relative_url }})
 - [現在を歴史的にながめる眼差し]({{ '/garden/viewing-present-historically/' | relative_url }})
 - [作ることと見ること]({{ '/garden/note-2026_interest2/' | relative_url }})
 - [『GELEL』での作業プロセス]({{ '/garden/note-process/' | relative_url }})
@@ -85,7 +86,6 @@ hide_description: true
 - [エブリシング・エブリウェア・オール・アット・ワンス]({{ '/garden/everything-everywhere-all-at-once/' | relative_url }})
 - [ナミビアの砂漠]({{ '/garden/desert-of-namibia/' | relative_url }})
 - [『バックルームズ』（映画）]({{ '/garden/backrooms/' | relative_url }})
-- [映像]({{ '/garden/video-thoutht/' | relative_url }})
 - [港町]({{ '/garden/inland-sea/' | relative_url }})
 - [メッセージ]({{ '/garden/arrival/' | relative_url }})
 - [福田村事件]({{ '/garden/fukudamura-case/' | relative_url }})

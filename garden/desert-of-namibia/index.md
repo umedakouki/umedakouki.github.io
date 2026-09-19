@@ -16,8 +16,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [映画]({{ '/garden/movie-inpression/' | relative_url }})
 - [映像]({{ '/garden/video-thoutht/' | relative_url }})
+- [映画]({{ '/garden/movie-inpression/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

@@ -23,8 +23,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [映像]({{ '/garden/video-thoutht/' | relative_url }})
+- [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 
 </div></article>

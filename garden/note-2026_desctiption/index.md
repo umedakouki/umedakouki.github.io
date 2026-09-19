@@ -74,10 +74,10 @@ hide_description: true
 
 ## このページへの言及
 
+- [映像]({{ '/garden/video-thoutht/' | relative_url }})
 - [無意識的な場所の意味と、その共有について]({{ '/garden/note-2026_interest/' | relative_url }})
 - [建築]({{ '/garden/architecture/' | relative_url }})
 - [生きられた場所]({{ '/garden/lived-place/' | relative_url }})
-- [映像]({{ '/garden/video-thoutht/' | relative_url }})
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 
 </div></article>

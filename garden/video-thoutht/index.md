@@ -5,7 +5,7 @@ heading: "映像"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 21%" title="PageRank 0.014176"><i style="width:20.80%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T12:44:11.239024200+00:00">更新 2026-09-18 21:44</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 21%" title="PageRank 0.014176"><i style="width:20.80%"></i></span><div class="garden-body" markdown="1">
 
 [『GELEL』での作業プロセス]({{ '/garden/note-process/' | relative_url }})
 
