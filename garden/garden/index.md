@@ -5,7 +5,7 @@ heading: "Garden"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T11:55:50.129387+00:00">更新 2026-09-18 20:55</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 35%" title="PageRank 0.023518"><i style="width:34.50%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T11:55:50.129387+00:00">更新 2026-09-18 20:55</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 35%" title="PageRank 0.023463"><i style="width:34.50%"></i></span><div class="garden-body" markdown="1">
 
 Gardenは、日々のメモ、考え、人物、作品、資料などを、ページ同士のつながりによって整理する個人用の[Wiki]({{ '/garden/wiki/' | relative_url }})です。記録を最初からカテゴリに分けず、すべてを同じ「ページ」として保存します。
 

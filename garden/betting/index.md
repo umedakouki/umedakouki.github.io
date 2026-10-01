@@ -5,7 +5,7 @@ heading: "賭けること"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T12:18:19.777407900+00:00">更新 2026-09-18 21:18</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008487"><i style="width:12.45%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T12:18:19.777407900+00:00">更新 2026-09-18 21:18</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.008466"><i style="width:12.45%"></i></span><div class="garden-body" markdown="1">
 
 [ゲス◎]({{ '/garden/gesuwa/' | relative_url }})の2026年公演の稽古に観光客としてかかわっている。そのテーマは賭けるということについてであり、ドストエフスキーの『賭博者』を主なテキストとしている。ということもあり、最近は賭けることについて考えることが多い。
 

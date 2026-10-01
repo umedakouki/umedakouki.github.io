@@ -5,7 +5,7 @@ heading: "小論"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 28%" title="PageRank 0.018807"><i style="width:27.59%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-10-01T05:59:48.582571500+00:00">更新 2026-10-01 14:59</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 28%" title="PageRank 0.018763"><i style="width:27.59%"></i></span><div class="garden-body" markdown="1">
 
 [なくしたもののための目録]({{ '/garden/inventory-of-lost/' | relative_url }})
 
@@ -18,6 +18,11 @@ hide_description: true
 [現在を歴史的にながめる眼差し]({{ '/garden/viewing-present-historically/' | relative_url }})
 
 [記録と解釈について]({{ '/garden/recod-and-regognition/' | relative_url }})
+
+建築批判と実践の方向
+
+なぜリミナルスペースか？――バックルーム・ファウンドフッテージの背景と美学
+
 
 ## ページリンク
 
