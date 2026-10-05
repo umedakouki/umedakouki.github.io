@@ -5,7 +5,7 @@ heading: "森博嗣"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T08:05:35.477986+00:00">更新 2026-09-09 17:05</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 11%" title="PageRank 0.007323"><i style="width:10.77%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T08:05:35.477986+00:00">更新 2026-09-09 17:05</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 11%" title="PageRank 0.006953"><i style="width:11.03%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 

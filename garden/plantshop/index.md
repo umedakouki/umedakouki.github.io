@@ -5,7 +5,7 @@ heading: "プラントショップ"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T07:49:15.987037200+00:00">更新 2026-09-09 16:49</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 38%" title="PageRank 0.025563"><i style="width:37.59%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-10-05T10:03:26.621630+00:00">更新 2026-10-05 19:03</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 46%" title="PageRank 0.029161"><i style="width:46.27%"></i></span><div class="garden-body" markdown="1">
 
 [梅田航輝]({{ '/garden/umedakouki/' | relative_url }})が所属し活動を行っているコレクティブ。
 
@@ -16,6 +16,7 @@ hide_description: true
 ## ページリンク
 
 - [コレクティブ「プラントショップ」を始めた]({{ '/garden/note-2026_plantshop/' | relative_url }})
+- [作家として]({{ '/garden/as-an-artist/' | relative_url }})
 - [大久保颯]({{ '/garden/hayate-okubo/' | relative_url }})
 - [梅田航輝]({{ '/garden/umedakouki/' | relative_url }})
 - [歩く植木鉢]({{ '/garden/walking-pod/' | relative_url }})

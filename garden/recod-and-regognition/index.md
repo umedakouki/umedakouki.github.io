@@ -5,7 +5,7 @@ heading: "記録と解釈について"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.773335+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 8%" title="PageRank 0.005774"><i style="width:8.49%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.773335+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 9%" title="PageRank 0.005625"><i style="width:8.92%"></i></span><div class="garden-body" markdown="1">
 
 私たちが実際に経験している世界は、どうしようもなくつかみどころがない。書き言葉、絵画、写真、[映像]({{ '/garden/video/' | relative_url }})といった記録は、そうした世界を何かしらの形で定着する強力な手段だが、可逆的に世界を再現するものではなく、記録すればするほど世界のつかみどころのなさに呆然とする。
 
@@ -23,8 +23,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [映像]({{ '/garden/video-thoutht/' | relative_url }})
+- [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [以前noteに投稿していた記事]({{ '/garden/previously-posted-note-article/' | relative_url }})
 
 </div></article>

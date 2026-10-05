@@ -5,7 +5,7 @@ heading: "管理＝制御型社会"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.762006+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.007953"><i style="width:11.70%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.762006+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 11%" title="PageRank 0.007238"><i style="width:11.48%"></i></span><div class="garden-body" markdown="1">
 
 管理や制御といったものについて考えていきたい。
 

@@ -5,7 +5,7 @@ heading: "作ることと見ること"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.699813+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 23%" title="PageRank 0.015899"><i style="width:23.38%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.699813+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 24%" title="PageRank 0.015127"><i style="width:24.00%"></i></span><div class="garden-body" markdown="1">
 
 ## 関心と方向性について
 
@@ -33,8 +33,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [映像]({{ '/garden/video-thoutht/' | relative_url }})
+- [小論]({{ '/garden/miscellaneous-notes/' | relative_url }})
 - [映画]({{ '/garden/movie-inpression/' | relative_url }})
 - [建築]({{ '/garden/architecture/' | relative_url }})
 - [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})

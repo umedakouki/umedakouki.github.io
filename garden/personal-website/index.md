@@ -5,7 +5,7 @@ heading: "個人ウェブサイト集"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.743134+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 14%" title="PageRank 0.009351"><i style="width:13.75%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.743134+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.008490"><i style="width:13.47%"></i></span><div class="garden-body" markdown="1">
 
 ## ego
 

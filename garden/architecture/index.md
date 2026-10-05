@@ -5,7 +5,7 @@ heading: "建築"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T11:34:24.587023800+00:00">更新 2026-09-18 20:34</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 30%" title="PageRank 0.020413"><i style="width:30.02%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T11:34:24.587023800+00:00">更新 2026-09-18 20:34</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 30%" title="PageRank 0.018960"><i style="width:30.08%"></i></span><div class="garden-body" markdown="1">
 
 [『GELEL』での作業プロセス]({{ '/garden/note-process/' | relative_url }})
 

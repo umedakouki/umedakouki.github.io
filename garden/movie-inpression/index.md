@@ -5,7 +5,7 @@ heading: "映画"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T12:17:09.807244200+00:00">更新 2026-09-18 21:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 100%" title="PageRank 0.068000"><i style="width:100.00%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T12:17:09.807244200+00:00">更新 2026-09-18 21:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 100%" title="PageRank 0.063026"><i style="width:100.00%"></i></span><div class="garden-body" markdown="1">
 
 [8番出口]({{ '/garden/exit-8/' | relative_url }})
 

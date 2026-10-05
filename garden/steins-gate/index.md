@@ -5,7 +5,7 @@ heading: "『STEINS;GATE』"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-17T13:38:07.813384900+00:00">更新 2026-09-17 22:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 9%" title="PageRank 0.006125"><i style="width:9.01%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-17T13:38:07.813384900+00:00">更新 2026-09-17 22:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 9%" title="PageRank 0.005569"><i style="width:8.84%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 

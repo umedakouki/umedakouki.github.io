@@ -5,7 +5,7 @@ heading: "tsukis HP"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:04:35.991652500+00:00">更新 2026-09-07 23:04</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 17%" title="PageRank 0.011810"><i style="width:17.37%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:04:35.991652500+00:00">更新 2026-09-07 23:04</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 18%" title="PageRank 0.011147"><i style="width:17.69%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 
