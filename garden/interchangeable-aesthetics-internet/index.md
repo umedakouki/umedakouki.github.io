@@ -5,7 +5,7 @@ heading: "インターネットの交換可能性美学"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.680401+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.007826"><i style="width:12.42%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.680401+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.007604"><i style="width:12.15%"></i></span><div class="garden-body" markdown="1">
 
 近代的な文化では、
 
@@ -59,8 +59,8 @@ Vaporwave\
 
 ## このページへの言及
 
-- [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
 - [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
+- [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

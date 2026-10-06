@@ -5,7 +5,7 @@ heading: "大久保颯"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-07T14:04:25.556225700+00:00">更新 2026-09-07 23:04</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 24%" title="PageRank 0.015382"><i style="width:24.41%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-07T14:04:25.556225700+00:00">更新 2026-09-07 23:04</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 25%" title="PageRank 0.015400"><i style="width:24.61%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 

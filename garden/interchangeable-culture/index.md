@@ -5,7 +5,7 @@ heading: "交換可能な文化"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T05:54:36.472733100+00:00">更新 2026-09-18 14:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 14%" title="PageRank 0.009137"><i style="width:14.50%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T05:54:36.472733100+00:00">更新 2026-09-18 14:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 14%" title="PageRank 0.008547"><i style="width:13.66%"></i></span><div class="garden-body" markdown="1">
 
 社会の下部にあるインフラは強固なのに、その上で流行する文化や意味は無限に交換可能で、どれも決定的ではない。これは[インターネット美学]({{ '/garden/internet-ethsetics/' | relative_url }})、特に[リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})を作り出す構造と密接にかかわるのではないか。→[インターネットの交換可能性美学]({{ '/garden/interchangeable-aesthetics-internet/' | relative_url }})
 
@@ -30,8 +30,8 @@ hide_description: true
 
 ## このページへの言及
 
-- [交換可能空間／交換可能建築]({{ '/garden/interchangeable-space/' | relative_url }})
 - [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
+- [交換可能空間／交換可能建築]({{ '/garden/interchangeable-space/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

@@ -5,7 +5,7 @@ heading: "個人ウェブサイト集"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.743134+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.008490"><i style="width:13.47%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.743134+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 16%" title="PageRank 0.010130"><i style="width:16.19%"></i></span><div class="garden-body" markdown="1">
 
 ## ego
 
@@ -33,6 +33,7 @@ hide_description: true
 ## ページリンク
 
 - [Gardenの思想]({{ '/garden/garden-thought/' | relative_url }})
+- [いいサイト集]({{ '/garden/good-site/' | relative_url }})
 - [個人ウェブサイトの時代]({{ '/garden/personal-website-era/' | relative_url }})
 - [外部サイト]({{ '/garden/external-website/' | relative_url }})
 

@@ -5,7 +5,7 @@ heading: "『バックルームズ』（映画）"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 16%" title="PageRank 0.009941"><i style="width:15.77%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 16%" title="PageRank 0.009781"><i style="width:15.63%"></i></span><div class="garden-body" markdown="1">
 
 backroomsを取り巻く創作にありがちなホラー演出や、怪物、ネット怪談文脈、迷宮といった、[リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})の美学から外れたものを最小限にとどめていたということもあって、リミナルスペースにひたすら浸ることのできた2時間だった。
 
@@ -34,8 +34,8 @@ backroomsを取り巻く創作にありがちなホラー演出や、怪物、�
 
 ## このページへの言及
 
-- [映画]({{ '/garden/movie-inpression/' | relative_url }})
 - [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
+- [映画]({{ '/garden/movie-inpression/' | relative_url }})
 - [ミーム]({{ '/garden/meme/' | relative_url }})
 
 </div></article>

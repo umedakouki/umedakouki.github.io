@@ -5,7 +5,7 @@ heading: "想田和弘"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-10-05T10:05:41.126048700+00:00">更新 2026-10-05 19:05</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 22%" title="PageRank 0.013574"><i style="width:21.54%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-10-05T10:05:41.126048700+00:00">更新 2026-10-05 19:05</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 21%" title="PageRank 0.013417"><i style="width:21.44%"></i></span><div class="garden-body" markdown="1">
 
 想田和弘は、台本やナレーション、事前の構成をできるだけ置かず、目の前で起きる出来事を長時間観察し、その場で発見された関係や出来事から映画を組み立てる「観察映画」の作家です。
 

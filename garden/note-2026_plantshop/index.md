@@ -5,7 +5,7 @@ heading: "コレクティブ「プラントショップ」を始めた"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T12:17:05.362926800+00:00">更新 2026-09-18 21:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 20%" title="PageRank 0.012772"><i style="width:20.26%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T12:17:05.362926800+00:00">更新 2026-09-18 21:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 20%" title="PageRank 0.012665"><i style="width:20.24%"></i></span><div class="garden-body" markdown="1">
 
 [プラントショップのウェブサイト](https://plantshop.work)
 
@@ -30,9 +30,9 @@ hide_description: true
 
 ## このページへの言及
 
+- [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
 - [映像]({{ '/garden/video-thoutht/' | relative_url }})
 - [建築]({{ '/garden/architecture/' | relative_url }})
-- [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
 - [旧「ノート」]({{ '/garden/old-note/' | relative_url }})
 
 </div></article>

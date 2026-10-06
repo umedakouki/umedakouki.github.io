@@ -5,7 +5,7 @@ heading: "交換可能空間／交換可能建築"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T12:17:10.021413600+00:00">更新 2026-09-18 21:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 14%" title="PageRank 0.008932"><i style="width:14.17%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T12:17:10.021413600+00:00">更新 2026-09-18 21:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 16%" title="PageRank 0.009736"><i style="width:15.56%"></i></span><div class="garden-body" markdown="1">
 
 思いついた用語。Interchangeable Space。[交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})を考えたときに。
 
@@ -27,6 +27,7 @@ hide_description: true
 
 ## ページリンク
 
+- [「コンビニ空間の条件」]({{ '/garden/conbini-condition/' | relative_url }})
 - [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
 - [交換可能な文化]({{ '/garden/interchangeable-culture/' | relative_url }})
 - [建築]({{ '/garden/architecture/' | relative_url }})
@@ -34,9 +35,9 @@ hide_description: true
 
 ## このページへの言及
 
+- [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
 - [建築]({{ '/garden/architecture/' | relative_url }})
 - [『バックルームズ』（映画）]({{ '/garden/backrooms/' | relative_url }})
-- [リミナルスペース]({{ '/garden/liminal-space/' | relative_url }})
 
 </div></article>
 <script src="{{ '/assets/garden-notes.js' | relative_url }}" defer></script>

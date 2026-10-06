@@ -5,7 +5,7 @@ heading: "なくしたもののための目録"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.673840+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 13%" title="PageRank 0.007901"><i style="width:12.54%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T11:54:09.673840+00:00">更新 2026-09-18 20:54</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 12%" title="PageRank 0.007726"><i style="width:12.34%"></i></span><div class="garden-body" markdown="1">
 
 「収集記録」というプライベートなデータベースをつくって管理している。そのことをChatGPTに伝えた。
 

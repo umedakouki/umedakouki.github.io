@@ -5,7 +5,7 @@ heading: "映画"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T12:17:09.807244200+00:00">更新 2026-09-18 21:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 100%" title="PageRank 0.063026"><i style="width:100.00%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T12:17:09.807244200+00:00">更新 2026-09-18 21:17</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 100%" title="PageRank 0.062587"><i style="width:100.00%"></i></span><div class="garden-body" markdown="1">
 
 [8番出口]({{ '/garden/exit-8/' | relative_url }})
 
@@ -48,13 +48,13 @@ hide_description: true
 - [CURE キュア]({{ '/garden/cure/' | relative_url }})
 - [Love Letter 4K リマスター]({{ '/garden/love-letter-4k/' | relative_url }})
 - [『STEINS;GATE』]({{ '/garden/steins-gate/' | relative_url }})
+- [『チルド』]({{ '/garden/chilled/' | relative_url }})
 - [『バックルームズ』（映画）]({{ '/garden/backrooms/' | relative_url }})
 - [いつか読書する日]({{ '/garden/milk-woman/' | relative_url }})
 - [ぬいぐるみとしゃべる人はやさしい]({{ '/garden/people-who-talk-to-plushies-are-kind/' | relative_url }})
 - [アイアムアヒーロー]({{ '/garden/i-am-a-hero/' | relative_url }})
 - [エブリシング・エブリウェア・オール・アット・ワンス]({{ '/garden/everything-everywhere-all-at-once/' | relative_url }})
 - [ガメラ3 邪神＜イリス＞覚醒]({{ '/garden/gamera-3-revenge-of-iris/' | relative_url }})
-- [チルド]({{ '/garden/chilled/' | relative_url }})
 - [ナミビアの砂漠]({{ '/garden/desert-of-namibia/' | relative_url }})
 - [ニヒル]({{ '/garden/nihil/' | relative_url }})
 - [プリティ・プリンセス]({{ '/garden/the-princess-diaries/' | relative_url }})

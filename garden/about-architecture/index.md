@@ -5,7 +5,7 @@ heading: "建築について"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-10-01T05:57:32.017805900+00:00">更新 2026-10-01 14:57</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 3%" title="PageRank 0.002142"><i style="width:3.40%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-10-01T05:57:32.017805900+00:00">更新 2026-10-01 14:57</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 3%" title="PageRank 0.002100"><i style="width:3.36%"></i></span><div class="garden-body" markdown="1">
 
 2026年3月8日
 
