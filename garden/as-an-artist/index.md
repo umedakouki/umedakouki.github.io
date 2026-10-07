@@ -75,8 +75,8 @@ hide_description: true
 - [フィクション]({{ '/garden/fiction/' | relative_url }})
 - [プラントショップ]({{ '/garden/plantshop/' | relative_url }})
 - [想田和弘]({{ '/garden/soudakazuhiro/' | relative_url }})
-- [映像]({{ '/garden/video-thoutht/' | relative_url }})
 - [映像]({{ '/garden/video/' | relative_url }})
+- [映像]({{ '/garden/video-thoutht/' | relative_url }})
 - [梅田航輝]({{ '/garden/umedakouki/' | relative_url }})
 
 </div></article>
