@@ -5,7 +5,7 @@ heading: "映像"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-10-05T10:06:18.832170400+00:00">更新 2026-10-05 19:06</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 35%" title="PageRank 0.021774"><i style="width:34.79%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-10-05T10:06:18.832170400+00:00">更新 2026-10-05 19:06</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 35%" title="PageRank 0.020964"><i style="width:34.95%"></i></span><div class="garden-body" markdown="1">
 
 ## ページリンク
 

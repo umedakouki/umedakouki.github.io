@@ -5,7 +5,7 @@ heading: "外部サイト"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T06:22:38.259492500+00:00">更新 2026-09-09 15:22</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 5%" title="PageRank 0.002862"><i style="width:4.57%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T06:22:38.259492500+00:00">更新 2026-09-09 15:22</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 5%" title="PageRank 0.002743"><i style="width:4.57%"></i></span><div class="garden-body" markdown="1">
 
 積極的に訪れたいウェブサイト。
 

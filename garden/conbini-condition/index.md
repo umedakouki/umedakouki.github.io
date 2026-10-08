@@ -5,7 +5,7 @@ heading: "「コンビニ空間の条件」"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-10-06T00:37:47.859346500+00:00">更新 2026-10-06 09:37</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 7%" title="PageRank 0.004283"><i style="width:6.84%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-10-06T00:37:47.859346500+00:00">更新 2026-10-06 09:37</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 7%" title="PageRank 0.004102"><i style="width:6.84%"></i></span><div class="garden-body" markdown="1">
 
 [コンビニ空間の条件](https://vaultsjp.substack.com/p/09d?utm_source=share\&utm_medium=android\&r=8t65dz)を読んだ。
 

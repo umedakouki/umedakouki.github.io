@@ -5,7 +5,7 @@ heading: "生きられた場所"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 17%" title="PageRank 0.010883"><i style="width:17.39%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-18T03:38:02.301822+00:00">更新 2026-09-18 12:38</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 17%" title="PageRank 0.010434"><i style="width:17.40%"></i></span><div class="garden-body" markdown="1">
 
 [『空間の生産』]({{ '/garden/production-of-space/' | relative_url }})
 

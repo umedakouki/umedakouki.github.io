@@ -5,7 +5,7 @@ heading: "ゲス◎"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-09-09T15:00:02.325496+00:00">更新 2026-09-10 00:00</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 8%" title="PageRank 0.004984"><i style="width:7.96%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-09-09T15:00:02.325496+00:00">更新 2026-09-10 00:00</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 8%" title="PageRank 0.004771"><i style="width:7.95%"></i></span><div class="garden-body" markdown="1">
 
 [2026年公演]({{ '/garden/gesuwa-2026/' | relative_url }})
 

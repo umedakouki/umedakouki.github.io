@@ -5,7 +5,7 @@ heading: "小論"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-10-01T05:59:48.582571500+00:00">更新 2026-10-01 14:59</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 27%" title="PageRank 0.017163"><i style="width:27.42%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-10-01T05:59:48.582571500+00:00">更新 2026-10-01 14:59</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 27%" title="PageRank 0.016470"><i style="width:27.46%"></i></span><div class="garden-body" markdown="1">
 
 [なくしたもののための目録]({{ '/garden/inventory-of-lost/' | relative_url }})
 

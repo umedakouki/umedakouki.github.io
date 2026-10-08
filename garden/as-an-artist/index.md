@@ -5,7 +5,7 @@ heading: "作家として"
 garden_page: true
 hide_description: true
 ---
-<article class="garden-note-reader"><time datetime="2026-10-05T10:07:57.978166+00:00">更新 2026-10-05 19:07</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 59%" title="PageRank 0.036753"><i style="width:58.72%"></i></span><div class="garden-body" markdown="1">
+<article class="garden-note-reader"><time datetime="2026-10-05T10:07:57.978166+00:00">更新 2026-10-05 19:07</time><span class="garden-rank garden-page-rank" role="img" aria-label="つながりの強さ 59%" title="PageRank 0.035587"><i style="width:59.33%"></i></span><div class="garden-body" markdown="1">
 
 自分はこれまでさまざまな制作活動（それに満たない習作的なものも含めて）をしてきたけれど、それの根本となる自分の考え方やアプローチについて、あまり明確にしてこなかった。いわゆる「作家性」を、見出そうともしていなかったし、ことさらに強調することはなかった。これには、「作家性」を限定して自分の制作の幅を狭めたくなかったということ、作家としての自覚がなかったということの、大きく2点の理由がある。作ってきたものが後付けで自分を説明するものだろうと考えていたし、それと関係して、「自分は作家である」とあらかじめ言ってしまうことのダサさを感じていたことが根本にあった。
 
@@ -75,8 +75,8 @@ hide_description: true
 - [フィクション]({{ '/garden/fiction/' | relative_url }})
 - [プラントショップ]({{ '/garden/plantshop/' | relative_url }})
 - [想田和弘]({{ '/garden/soudakazuhiro/' | relative_url }})
-- [映像]({{ '/garden/video/' | relative_url }})
 - [映像]({{ '/garden/video-thoutht/' | relative_url }})
+- [映像]({{ '/garden/video/' | relative_url }})
 - [梅田航輝]({{ '/garden/umedakouki/' | relative_url }})
 
 </div></article>
